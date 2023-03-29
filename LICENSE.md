@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2023 Rancher Federal and Amazon Web Services 
+Copyright (c) 2023 Rancher Federal and Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
