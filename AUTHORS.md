@@ -7,11 +7,11 @@
 * Andy Clemenko, Field Engineer, Rancher Federal
   * [@clemenko](https://github.com/clemenko) | andy.clemenko@rancherfederal.com
 * Connor Lytle, Cloud Consultant, Amazon Web Services
-  * [@TBDTBDTBD](https://github.com/TBD) | celytle@amazon.com
+  * [@lytlecon](https://github.com/lytlecon) | celytle@amazon.com
 * Kevin Marshall, Cloud Consultant, Amazon Web Services
-  * [@TBDTBDTBD](https://github.com/TBD) | marshkkm@amazon.com
+  * [@TBD](https://github.com/TBD) | marshkkm@amazon.com
 * Everett deVries, Cloud Consultant, Amazon Web Services
-  * [@TBDTBDTBD](https://github.com/TBD) | evd@amazon.com
+  * [@TBD](https://github.com/TBD) | evd@amazon.com
 
 ## Special Thanks
 * TBD
