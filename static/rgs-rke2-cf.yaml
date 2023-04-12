@@ -28,7 +28,7 @@ Parameters:
     Type: String
     MinLength: '3'
     MaxLength: '7'
-    Default: '10.0'
+    Default: '10.10'
     AllowedPattern: (\d{1,3})\.(\d{1,3})
     ConstraintDescription: must be a valid dot-separated string of the form x.x
   AllowedCidr:
@@ -480,6 +480,7 @@ Resources:
         InstanceType: 'm5.large'
         SecurityGroupIds:
           - !GetAtt 'RKE2CPSecurityGroup.GroupId'
+        KeyName: aws-rancher
         BlockDeviceMappings:
           - Ebs:
               VolumeSize: !Ref 'VolumeSize'

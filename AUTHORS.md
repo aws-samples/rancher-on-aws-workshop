@@ -14,4 +14,9 @@
   * [@TBD](https://github.com/TBD) | evd@amazon.com
 
 ## Special Thanks
-* TBD
+* Dan McGuan | Rancher Federal
+  * Director of Cloud and Partner GTM
+  * dan.mcguan@rancherfederal.com
+* Nicholas Czabaranek | Amazon Web Services
+  * Principal Solutions Architect
+  * nczabara@amazon.com

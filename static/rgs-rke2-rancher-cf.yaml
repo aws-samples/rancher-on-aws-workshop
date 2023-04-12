@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Rancher Manager and RKE2 AWS CloudFormation Template
+Description: Rancher Manager and RKE2 Kubernetes CloudFormation Template
 
 Metadata: 
   AWS::CloudFormation::Interface: 
