@@ -103,7 +103,7 @@ infrastructure:
       # Friendly name for the corresponding cloudformation template.
       label: Rancher Manager Stack
 
-    - templateLocation: static/rgs-rke2-rancher-cf.yaml
+    - templateLocation: static/blueprint_eks.yml
 
       # Friendly name for the corresponding cloudformation template.
-      label: Extra Provisioned Stack
+      label: EKS with AWS Controllers for K8s
