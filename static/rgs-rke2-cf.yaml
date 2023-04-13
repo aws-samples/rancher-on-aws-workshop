@@ -1,0 +1,795 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: RKE2 Kubernetes AWS CloudFormation Template
+
+Metadata: 
+  AWS::CloudFormation::Interface: 
+    ParameterGroups: 
+      - 
+        Label: 
+          default: "AWS Configuration Options"
+        Parameters: 
+          - VolumeSize
+          - VPCCidr
+          - AllowedCidr
+      - 
+        Label: 
+          default: "RKE2 Configuration Options"
+        Parameters: 
+          - ClusterJoinToken
+
+Parameters:
+  VolumeSize:
+    Description: "Volume Size for RKE2 Nodes (Default: 128)"
+    Type: Number
+    MinValue: '25'
+    Default: '128'
+  VPCCidr:
+    Description: "VPC CIDR - First 2 Octects Only (Default: 10.0)"
+    Type: String
+    MinLength: '3'
+    MaxLength: '7'
+    Default: '10.20'
+    AllowedPattern: (\d{1,3})\.(\d{1,3})
+    ConstraintDescription: must be a valid dot-separated string of the form x.x
+  AllowedCidr:
+    Description: "Allow CIDR for Inbound Traffic to RKE2 (Default: 0.0.0.0/0)"
+    Type: String
+    Default: '0.0.0.0/0'
+  ClusterJoinToken:
+    Description: "Cluster Join Token for RKE2 Cluster (Default: Pa22word)"
+    Type: String
+    Default: Pa22word
+    MinLength: '5'
+    MaxLength: '200'
+    NoEcho: true
+
+Mappings:
+  AWSRegionArch2AMI:
+    us-east-1:
+      HVM64: ami-0760a22ab9aa4a9eb
+    us-west-2:
+      HVM64: ami-03b3895e256f31173
+
+Resources:
+  #######
+  # VPC #
+  #######
+  RKE2VPC:
+    Properties:
+      CidrBlock: !Join
+        - ''
+        - - !Ref 'VPCCidr'
+          - .0.0/16
+      EnableDnsSupport: 'true'
+      EnableDnsHostnames: 'true'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - rke2-vpc
+    Type: AWS::EC2::VPC
+
+  ##################
+  # Public Subnets #
+  ##################
+  RKE2PublicSubnet1:
+    Properties:
+      CidrBlock: !Join
+        - ''
+        - - !Ref 'VPCCidr'
+          - .1.0/24
+      MapPublicIpOnLaunch: 'true'
+      VpcId: !Ref 'RKE2VPC'
+      AvailabilityZone: !Select
+        - 0
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - rke2-public-1
+    Type: AWS::EC2::Subnet
+  RKE2PublicSubnet2:
+    Properties:
+      CidrBlock: !Join
+        - ''
+        - - !Ref 'VPCCidr'
+          - .2.0/24
+      MapPublicIpOnLaunch: 'true'
+      VpcId: !Ref 'RKE2VPC'
+      AvailabilityZone: !Select
+        - 1
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - rke2-public-2
+    Type: AWS::EC2::Subnet
+  RKE2PublicSubnet3:
+    Properties:
+      CidrBlock: !Join
+        - ''
+        - - !Ref 'VPCCidr'
+          - .3.0/24
+      MapPublicIpOnLaunch: 'true'
+      VpcId: !Ref 'RKE2VPC'
+      AvailabilityZone: !Select
+        - 2
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - rke2-public-3
+    Type: AWS::EC2::Subnet
+  
+  ###################
+  # Private Subnets #
+  ###################
+  RKE2PrivateSubnet1:
+    Properties:
+      CidrBlock: !Join
+        - ''
+        - - !Ref 'VPCCidr'
+          - .10.0/24
+      MapPublicIpOnLaunch: 'false'
+      VpcId: !Ref 'RKE2VPC'
+      AvailabilityZone: !Select
+        - 0
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - rke2-private-1
+    Type: AWS::EC2::Subnet
+  RKE2PrivateSubnet2:
+    Properties:
+      CidrBlock: !Join
+        - ''
+        - - !Ref 'VPCCidr'
+          - .11.0/24
+      MapPublicIpOnLaunch: 'false'
+      VpcId: !Ref 'RKE2VPC'
+      AvailabilityZone: !Select
+        - 1
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - rke2-private-2
+    Type: AWS::EC2::Subnet
+  RKE2PrivateSubnet3:
+    Properties:
+      CidrBlock: !Join
+        - ''
+        - - !Ref 'VPCCidr'
+          - .12.0/24
+      MapPublicIpOnLaunch: 'false'
+      VpcId: !Ref 'RKE2VPC'
+      AvailabilityZone: !Select
+        - 2
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - rke2-private-3
+    Type: AWS::EC2::Subnet
+
+  #########################
+  # NAT Gateway (Private) #
+  #########################
+  RKE2NATGateway:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId: !GetAtt 'RKE2NATGatewayEIP.AllocationId'
+      SubnetId: !Ref 'RKE2PublicSubnet1'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - nat-gateway
+  RKE2NATGatewayEIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+  RKE2PrivateRouteTable:
+    Properties:
+      VpcId: !Ref 'RKE2VPC'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - rke2-private-rt-table
+    Type: AWS::EC2::RouteTable
+  RKE2RouteNATGateway:
+    DependsOn:
+      - RKE2NATGateway
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref 'RKE2PrivateRouteTable'
+      DestinationCidrBlock: '0.0.0.0/0'
+      NatGatewayId: !Ref 'RKE2NATGateway'
+  RKE2PrivateRouteTableAssociation1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref 'RKE2PrivateRouteTable'
+      SubnetId: !Ref 'RKE2PrivateSubnet1'
+  RKE2PrivateRouteTableAssociation2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref 'RKE2PrivateRouteTable'
+      SubnetId: !Ref 'RKE2PrivateSubnet2'
+  RKE2PrivateRouteTableAssociation3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref 'RKE2PrivateRouteTable'
+      SubnetId: !Ref 'RKE2PrivateSubnet3'
+
+  #############################
+  # Internet Gateway (Public) #
+  #############################
+  RKE2PublicInternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - rke2-igw
+  RKE2PublicGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref 'RKE2VPC'
+      InternetGatewayId: !Ref 'RKE2PublicInternetGateway'
+  RKE2PublicRouteTable:
+    Properties:
+      VpcId: !Ref 'RKE2VPC'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - rke2-public-rt-table
+    Type: AWS::EC2::RouteTable
+  RKE2PublicRouteToGateway:
+    Type: AWS::EC2::Route
+    DependsOn: RKE2PublicGatewayAttachment
+    Properties:
+      DestinationCidrBlock: '0.0.0.0/0'
+      RouteTableId: !Ref 'RKE2PublicRouteTable'
+      GatewayId: !Ref 'RKE2PublicInternetGateway'
+  RKE2PublicRouteTableAssociation1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref 'RKE2PublicRouteTable'
+      SubnetId: !Ref 'RKE2PublicSubnet1'
+  RKE2PublicRouteTableAssociation2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref 'RKE2PublicRouteTable'
+      SubnetId: !Ref 'RKE2PublicSubnet2'
+  RKE2PublicRouteTableAssociation3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref 'RKE2PublicRouteTable'
+      SubnetId: !Ref 'RKE2PublicSubnet3'
+
+  #############
+  # IAM Roles #
+  #############
+  RKE2AwsCPRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: /
+      Policies:
+        - PolicyName: rke2-instance-policy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - autoscaling:DescribeAutoScalingGroups
+                  - autoscaling:DescribeLaunchConfigurations
+                  - autoscaling:DescribeTags
+                  - ec2:DescribeInstances
+                  - ec2:DescribeRegions
+                  - ec2:DescribeRouteTables
+                  - ec2:DescribeSecurityGroups
+                  - ec2:DescribeSubnets
+                  - ec2:DescribeVolumes
+                  - ec2:DescribeAvailabilityZones
+                  - ec2:CreateSecurityGroup
+                  - ec2:CreateTags
+                  - ec2:CreateVolume
+                  - ec2:ModifyInstanceAttribute
+                  - ec2:ModifyVolume
+                  - ec2:AttachVolume
+                  - ec2:AuthorizeSecurityGroupIngress
+                  - ec2:CreateRoute
+                  - ec2:DeleteRoute
+                  - ec2:DeleteSecurityGroup
+                  - ec2:DeleteVolume
+                  - ec2:DetachVolume
+                  - ec2:RevokeSecurityGroupIngress
+                  - ec2:DescribeVpcs
+                  - elasticloadbalancing:AddTags
+                  - elasticloadbalancing:AttachLoadBalancerToSubnets
+                  - elasticloadbalancing:ApplySecurityGroupsToLoadBalancer
+                  - elasticloadbalancing:CreateLoadBalancer
+                  - elasticloadbalancing:CreateLoadBalancerPolicy
+                  - elasticloadbalancing:CreateLoadBalancerListeners
+                  - elasticloadbalancing:ConfigureHealthCheck
+                  - elasticloadbalancing:DeleteLoadBalancer
+                  - elasticloadbalancing:DeleteLoadBalancerListeners
+                  - elasticloadbalancing:DescribeLoadBalancers
+                  - elasticloadbalancing:DescribeLoadBalancerAttributes
+                  - elasticloadbalancing:DetachLoadBalancerFromSubnets
+                  - elasticloadbalancing:DeregisterInstancesFromLoadBalancer
+                  - elasticloadbalancing:ModifyLoadBalancerAttributes
+                  - elasticloadbalancing:RegisterInstancesWithLoadBalancer
+                  - elasticloadbalancing:SetLoadBalancerPoliciesForBackendServer
+                  - elasticloadbalancing:AddTags
+                  - elasticloadbalancing:CreateListener
+                  - elasticloadbalancing:CreateTargetGroup
+                  - elasticloadbalancing:DeleteListener
+                  - elasticloadbalancing:DeleteTargetGroup
+                  - elasticloadbalancing:DescribeListeners
+                  - elasticloadbalancing:DescribeLoadBalancerPolicies
+                  - elasticloadbalancing:DescribeTargetGroups
+                  - elasticloadbalancing:DescribeTargetHealth
+                  - elasticloadbalancing:ModifyListener
+                  - elasticloadbalancing:ModifyTargetGroup
+                  - elasticloadbalancing:RegisterTargets
+                  - elasticloadbalancing:DeregisterTargets
+                  - elasticloadbalancing:SetLoadBalancerPoliciesOfListener
+                  - iam:CreateServiceLinkedRole
+                  - kms:DescribeKey
+                  - kms:ListKeys
+                Resource: '*'
+
+  RKE2AwsCPInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      InstanceProfileName: rke2-profile
+      Path: /
+      Roles:
+        - !Ref 'RKE2AwsCPRole'
+
+  RKE2CloudCredentialUser:
+    Type: AWS::IAM::User
+    Properties: 
+      UserName: rke2-cloud-credential-user
+
+  RKE2CloudCredentialsPolicy:
+    Type: 'AWS::IAM::Policy'
+    DependsOn: RKE2CloudCredentialUser
+    Properties:
+      PolicyName: rke2-cloud-credential-policy
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action:
+              - ec2:*
+              - cloudformation:*
+              - eks:*
+              - kms:Decrypt
+              - kms:GenerateDataKeyWithoutPlaintext
+              - kms:Encrypt
+              - kms:DescribeKey
+              - kms:CreateGrant
+              - iam:PassRole
+              - iam:ListRoles
+              - iam:ListRoleTags
+              - iam:ListInstanceProfilesForRole
+              - iam:ListInstanceProfiles
+              - iam:ListAttachedRolePolicies
+              - iam:GetRole
+              - iam:GetInstanceProfile
+              - iam:DetachRolePolicy
+              - iam:AttachRolePolicy
+              - iam:AddRoleToInstanceProfile
+              - iam:CreateInstanceProfile
+              - iam:CreateRole
+              - iam:CreateServiceLinkedRole
+              - iam:DeleteInstanceProfile
+              - iam:DeleteRole
+              - iam:RemoveRoleFromInstanceProfile
+            Resource: '*'
+      Users:
+      - !Ref RKE2CloudCredentialUser
+
+  RKE2CloudCredentialKey:
+    Type: AWS::IAM::AccessKey
+    DependsOn: RKE2CloudCredentialUser
+    Properties: 
+      UserName: !Ref RKE2CloudCredentialUser
+
+  RKE2InstanceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: /
+      Policies:
+        - PolicyName: rke2-instance-policy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - autoscaling:DescribeAutoScalingGroups
+                  - autoscaling:DescribeAutoScalingInstances
+                Resource: '*'
+
+  RKE2InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Path: /
+      Roles:
+        - !Ref 'RKE2InstanceRole'
+
+  ###############
+  # Autoscaling #
+  ###############
+  RKE2CPLaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    Properties:
+      LaunchTemplateName: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - cp-launch-template
+      LaunchTemplateData:
+        IamInstanceProfile:
+          Arn: !GetAtt 'RKE2InstanceProfile.Arn'
+        DisableApiTermination: 'true'
+        ImageId: !FindInMap
+          - AWSRegionArch2AMI
+          - !Ref 'AWS::Region'
+          - HVM64
+        InstanceType: 'm5.large'
+        SecurityGroupIds:
+          - !GetAtt 'RKE2CPSecurityGroup.GroupId'
+        KeyName: 'aws-rancher'
+        BlockDeviceMappings:
+          - Ebs:
+              VolumeSize: !Ref 'VolumeSize'
+              VolumeType: gp2
+              DeleteOnTermination: true
+              Encrypted: true
+            DeviceName: /dev/sda1
+        UserData: !Base64
+          Fn::Join:
+            - ''
+            - - "#!/bin/bash -xe\n"
+              - "echo 'Initializing RKE2..'\n"
+              - !Join
+                - ' '
+                - - init-rke2.sh
+                  - 'server'
+                  - !Ref 'ClusterJoinToken'
+                  - !GetAtt 'RKE2ControlPlaneELB.DNSName'
+                  - !Ref 'AWS::Region'
+              - "\n"
+  RKE2CPAutoScalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+      LaunchTemplate:
+        LaunchTemplateId: !Ref 'RKE2CPLaunchTemplate'
+        Version: !GetAtt 'RKE2CPLaunchTemplate.LatestVersionNumber'
+      LoadBalancerNames:
+        - !Ref 'RKE2ControlPlaneELB'
+      MaxSize: '3'
+      MinSize: '3'
+      DesiredCapacity: '3'
+      VPCZoneIdentifier:
+        - !Ref 'RKE2PrivateSubnet1'
+        - !Ref 'RKE2PrivateSubnet2'
+        - !Ref 'RKE2PrivateSubnet3'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - cp-asg
+          PropagateAtLaunch: true
+
+  RKE2WorkerLaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    DependsOn:
+      - RKE2CPAutoScalingGroup
+    Properties:
+      LaunchTemplateName: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - worker-launch-template
+      LaunchTemplateData:
+        DisableApiTermination: 'true'
+        ImageId: !FindInMap
+          - AWSRegionArch2AMI
+          - !Ref 'AWS::Region'
+          - HVM64
+        InstanceType: 'm5.large'
+        SecurityGroupIds:
+          - !GetAtt 'RKE2CPSecurityGroup.GroupId'
+        KeyName: 'aws-rancher'
+        BlockDeviceMappings:
+          - Ebs:
+              VolumeSize: !Ref 'VolumeSize'
+              VolumeType: gp2
+              DeleteOnTermination: true
+              Encrypted: true
+            DeviceName: /dev/sda1
+        UserData: !Base64
+          Fn::Join:
+            - ''
+            - - "#!/bin/bash -xe\n"
+              - "echo 'Initializing RKE2..'\n"
+              - !Join
+                - ' '
+                - - init-rke2.sh
+                  - 'agent'
+                  - !Ref 'ClusterJoinToken'
+                  - !GetAtt 'RKE2ControlPlaneELB.DNSName'
+                  - !Ref 'AWS::Region'
+              - "\n"
+  RKE2WorkerAutoScalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    DependsOn:
+      - RKE2CPAutoScalingGroup
+    Properties:
+      LaunchTemplate:
+        LaunchTemplateId: !Ref 'RKE2WorkerLaunchTemplate'
+        Version: !GetAtt 'RKE2WorkerLaunchTemplate.LatestVersionNumber'
+      LoadBalancerNames:
+        - !Ref 'RKE2ControlPlaneELB'
+      MaxSize: '3'
+      MinSize: '3'
+      DesiredCapacity: '3'
+      VPCZoneIdentifier:
+        - !Ref 'RKE2PrivateSubnet1'
+        - !Ref 'RKE2PrivateSubnet2'
+        - !Ref 'RKE2PrivateSubnet3'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - worker-asg
+          PropagateAtLaunch: true
+
+  RKE2BastionLaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    DependsOn:
+      - RKE2CPAutoScalingGroup
+    Properties:
+      LaunchTemplateName: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - bastion-launch-template
+      LaunchTemplateData:
+        DisableApiTermination: 'true'
+        ImageId: !FindInMap
+          - AWSRegionArch2AMI
+          - !Ref 'AWS::Region'
+          - HVM64
+        InstanceType: 'm5.large'
+        SecurityGroupIds:
+          - !GetAtt 'RKE2CPSecurityGroup.GroupId'
+        KeyName: 'aws-rancher'
+        BlockDeviceMappings:
+          - Ebs:
+              VolumeSize: !Ref 'VolumeSize'
+              VolumeType: gp2
+              DeleteOnTermination: true
+              Encrypted: true
+            DeviceName: /dev/sda1
+  RKE2BastionAutoScalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    DependsOn:
+      - RKE2CPAutoScalingGroup
+    Properties:
+      LaunchTemplate:
+        LaunchTemplateId: !Ref 'RKE2BastionLaunchTemplate'
+        Version: !GetAtt 'RKE2BastionLaunchTemplate.LatestVersionNumber'
+      MaxSize: '3'
+      MinSize: '3'
+      DesiredCapacity: '3'
+      VPCZoneIdentifier:
+        - !Ref 'RKE2PublicSubnet1'
+        - !Ref 'RKE2PublicSubnet2'
+        - !Ref 'RKE2PublicSubnet3'
+      Tags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - bastion-host-asg
+          PropagateAtLaunch: true
+
+  ###########################
+  # ElasticFileSystem (EFS) #
+  ###########################
+  RKE2EFS:
+    Type: 'AWS::EFS::FileSystem'
+    Properties:
+      BackupPolicy:
+        Status: ENABLED
+      PerformanceMode: generalPurpose
+      Encrypted: true
+      LifecyclePolicies:
+        - TransitionToIA: AFTER_30_DAYS
+        - TransitionToPrimaryStorageClass: AFTER_1_ACCESS
+      FileSystemTags:
+        - Key: Name
+          Value: !Join
+            - '-'
+            - - !Ref 'AWS::StackName'
+              - efs
+
+  MountTargetPrivateSubnet1:
+    Type: AWS::EFS::MountTarget
+    Properties:
+      FileSystemId: !Ref RKE2EFS
+      SubnetId: !Ref RKE2PrivateSubnet1
+      SecurityGroups:
+      - !Ref RKE2EFSSecurityGroup
+
+  MountTargetPrivateSubnet2:
+    Type: AWS::EFS::MountTarget
+    Properties:
+      FileSystemId: !Ref RKE2EFS
+      SubnetId: !Ref RKE2PrivateSubnet2
+      SecurityGroups:
+      - !Ref RKE2EFSSecurityGroup
+
+  MountTargetPrivateSubnet3:
+    Type: AWS::EFS::MountTarget
+    Properties:
+      FileSystemId: !Ref RKE2EFS
+      SubnetId: !Ref RKE2PrivateSubnet3
+      SecurityGroups:
+      - !Ref RKE2EFSSecurityGroup
+
+  ##################
+  # Security Group #
+  ##################
+  RKE2EFSSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      VpcId: !Ref 'RKE2VPC'
+      GroupDescription: Enable EFS access from RKE2 subnets to port 2049 
+      SecurityGroupEgress:
+        - IpProtocol: '-1'
+          FromPort: '0'
+          ToPort: '65535'
+          CidrIp: '0.0.0.0/0'
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '2049'
+          ToPort: '2049'
+          CidrIp: !Join
+            - ''
+            - - !Ref 'VPCCidr'
+              - .11.0/24
+        - IpProtocol: tcp
+          FromPort: '2049'
+          ToPort: '2049'
+          CidrIp: !Join
+            - ''
+            - - !Ref 'VPCCidr'
+              - .12.0/24
+        - IpProtocol: tcp
+          FromPort: '2049'
+          ToPort: '2049'
+          CidrIp: !Join
+            - ''
+            - - !Ref 'VPCCidr'
+              - .13.0/24
+  RKE2CPSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      VpcId: !Ref 'RKE2VPC'
+      GroupDescription: Enable HTTP/HTTPS access via port 80/443
+      SecurityGroupEgress:
+        - IpProtocol: '-1'
+          FromPort: '0'
+          ToPort: '65535'
+          CidrIp: '0.0.0.0/0'
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '9345'
+          ToPort: '9345'
+          SourceSecurityGroupId: !GetAtt 'RKE2ControlPlaneELBSG.GroupId'
+        - IpProtocol: tcp
+          FromPort: '6443'
+          ToPort: '6443'
+          SourceSecurityGroupId: !GetAtt 'RKE2ControlPlaneELBSG.GroupId'
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          SourceSecurityGroupId: !Ref AllowedCidr
+  RKE2ControlPlaneELBSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      VpcId: !Ref 'RKE2VPC'
+      GroupDescription: Enable controlplane connectivity
+      SecurityGroupEgress:
+        - IpProtocol: '-1'
+          FromPort: '0'
+          ToPort: '65535'
+          CidrIp: '0.0.0.0/0'
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '6443'
+          ToPort: '6443'
+          CidrIp: !Ref AllowedCidr
+        - IpProtocol: tcp
+          FromPort: '9345'
+          ToPort: '9345'
+          CidrIp: !Ref AllowedCidr
+
+  #################
+  # LoadBalancers #
+  #################
+  RKE2ControlPlaneELB:
+    Type: AWS::ElasticLoadBalancing::LoadBalancer
+    Properties:
+      Subnets: 
+        - !Ref 'RKE2PublicSubnet1'
+        - !Ref 'RKE2PublicSubnet2'
+        - !Ref 'RKE2PublicSubnet3'
+      SecurityGroups:
+        - !Ref 'RKE2ControlPlaneELBSG'
+      CrossZone: 'true'
+      Listeners:
+        - LoadBalancerPort: '6443'
+          InstancePort: '6443'
+          Protocol: TCP
+        - LoadBalancerPort: '9345'
+          InstancePort: '9345'
+          Protocol: TCP
+      HealthCheck:
+        Target: TCP:6443
+        HealthyThreshold: '3'
+        UnhealthyThreshold: '5'
+        Interval: '30'
+        Timeout: '5'
+
+Outputs:
+  CloudCredentialKey:
+    Description: AWS Access Key for RKE2
+    Value: !Ref RKE2CloudCredentialKey
+  CloudCredentialSecret:
+    Description: AWS Secret Key for RKE2 (Sensitive!)
+    Value: !GetAtt RKE2CloudCredentialKey.SecretAccessKey
