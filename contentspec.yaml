@@ -101,9 +101,9 @@ infrastructure:
     - templateLocation: static/rgs-rke2-with-SecretsManager.yaml
 
       # Friendly name for the corresponding cloudformation template.
-      label: Rancher Manager Stack
+      label: RKE2/Rancher Manager Stack
 
-    - templateLocation: static/blueprint_eks.yml
+    - templateLocation: /static/eks-import-cluster.yml
 
       # Friendly name for the corresponding cloudformation template.
       label: EKS with AWS Controllers for K8s

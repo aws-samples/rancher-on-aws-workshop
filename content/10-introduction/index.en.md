@@ -9,8 +9,8 @@ weight: 10
 
 In this workshop, we will be utilzing the Rancher Product Stack on AWS Infrastructure to complete the following workshop modules:
 * **Explore** a Rancher RKE2 Kubernetes cluster.
-* **Create** a Amazon EKS Kubernetes cluster.
-* **Import** a existing RKE2 Kuberenetes cluster. 
+* **Create** a Rancher RKE2 Kubernetes cluster.
+* **Import** a existing Amazon EKS Kuberenetes cluster. 
 
 If you're completing this workshop at an official event with Rancher and/or Amazon AWS, your AWS Account will be pre-configured with the required infrastructure. To get started, please head over to the [Workshop Overview](/content/10-introduction/11-workshop-overview/index.en.md).
 

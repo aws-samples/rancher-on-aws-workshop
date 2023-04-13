@@ -3,6 +3,6 @@ title: "Importing a Cluster"
 weight: 40
 ---
 
-# Overview of Importing a Cluster
+# Overview of Importing the Cluster
 
 ...

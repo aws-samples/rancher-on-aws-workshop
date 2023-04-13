@@ -22,7 +22,6 @@ Learn the ease of deployment and intergration of Rancher onto Amazon AWS!
   * [Kubernetes Applications](/content/20-exploring-the-cluster/22-kubernetes-applications/index.en.md)
 * [Creating a Cluster](/content/30-creating-a-cluster/index.en.md)
   * [Creating the Cluster](/content/30-creating-a-cluster/31-creating-the-cluster/index.en.md)
-  * [Optional AWS Addons](/content/30-creating-a-cluster/32-optional-aws-addons/index.en.md)
 * [Importing a Cluster](/content/40-importing-a-cluster/index.en.md)
   * [Importing the Cluster](/content/40-importing-a-cluster/41-importing-the-cluster/index.en.md)
 
