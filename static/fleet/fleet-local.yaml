@@ -1,0 +1,23 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: rancher-demo-app
+  namespace: fleet-local
+spec:
+  repo: https://github.com/aws-samples/rancher-on-aws-workshop
+  branch: main
+  targetNamespace: default
+  paths:
+    - /rancher-demo-app
+---
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: flask-demo-app
+  namespace: fleet-local
+spec:
+  repo: https://github.com/aws-samples/rancher-on-aws-workshop
+  branch: main
+  targetNamespace: default
+  paths:
+    - /flask-demo-app

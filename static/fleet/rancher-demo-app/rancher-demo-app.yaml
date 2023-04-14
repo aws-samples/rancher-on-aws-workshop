@@ -1,0 +1,111 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zackbradys-rancher-demo-app
+  labels:
+    app.kubernetes.io/name: rancher-demo-app
+    helm.sh/chart: rancher-demo-app-1.3.1
+    app.kubernetes.io/instance: zackbradys
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: rancher-demo-app
+      app.kubernetes.io/instance: zackbradys
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: rancher-demo-app
+        app.kubernetes.io/instance: zackbradys
+    spec:
+      containers:
+        - name: rancher-demo-app
+          image: "zackbradys/rancher-demo-app:1.1.0"
+          imagePullPolicy: Always
+          env:
+          - name: TITLE
+            value: "Rancher Federal Demo App"
+          - name: CONTAINER_COLOR
+            value: "black"
+          - name: PETS
+            value: "cows"
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /ping
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /ping
+              port: http
+          resources:
+            {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zackbradys-rancher-demo-app
+  labels:
+    app.kubernetes.io/name: rancher-demo-app
+    helm.sh/chart: rancher-demo-app-1.3.1
+    app.kubernetes.io/instance: zackbradys
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: rancher-demo-app
+    app.kubernetes.io/instance: zackbradys
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: zackbradys-rancher-demo-app
+  labels:
+    app.kubernetes.io/name: rancher-demo-app
+    helm.sh/chart: rancher-demo-app-1.3.1
+    app.kubernetes.io/instance: zackbradys
+    app.kubernetes.io/managed-by: Helm
+spec:
+  tls:
+    - hosts:
+        - "rancher-demo.example.com"
+      secretName: tls-certs
+  rules:
+    - host: "rancher-demo.example.com"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: zackbradys-rancher-demo-app
+              port:
+                name: http
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "zackbradys-rancher-demo-app-test-connection"
+  labels:
+    app.kubernetes.io/name: rancher-demo-app
+    helm.sh/chart: rancher-demo-app-1.3.1
+    app.kubernetes.io/instance: zackbradys
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args:  ['zackbradys-rancher-demo-app:80']
+  restartPolicy: Never
