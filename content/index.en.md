@@ -1,3 +1,7 @@
+---
+title: "Welcome to Rancher on AWS"
+---
+
 ![rgs-aws-banner](/static/images/rgs-aws-banner.png)
 
 # Welcome to the Rancher on AWS Workshop
