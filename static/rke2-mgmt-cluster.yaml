@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Rancher Manager and RKE2 AWS CloudFormation Template
+Description: Rancher Manager and RKE2 Kubernetes CloudFormation Template
 
 Metadata: 
   AWS::CloudFormation::Interface: 
@@ -483,7 +483,7 @@ Resources:
           - AWSRegionArch2AMI
           - !Ref 'AWS::Region'
           - HVM64
-        InstanceType: 'm5.large'
+        InstanceType: 'm5.xlarge'
         SecurityGroupIds:
           - !GetAtt 'RancherCPSecurityGroup.GroupId'
           - !GetAtt 'RancherIngressSecurityGroup.GroupId'
@@ -552,7 +552,7 @@ Resources:
           - AWSRegionArch2AMI
           - !Ref 'AWS::Region'
           - HVM64
-        InstanceType: 'm5.large'
+        InstanceType: 'm5.xlarge'
         SecurityGroupIds:
           - !GetAtt 'RancherCPSecurityGroup.GroupId'
           - !GetAtt 'RancherIngressSecurityGroup.GroupId'

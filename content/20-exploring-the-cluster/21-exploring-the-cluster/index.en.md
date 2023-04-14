@@ -22,3 +22,7 @@ weight: 21
 ![rancher-manager-services](/static/images/content/21-rancher-services.png)
 
 ![rancher-manager-app-catalog](/static/images/content/21-rancher-app-catalog.png)
+
+![rancher-manager-kubectl-shell](/static/images/content/21-rancher-kubectl-shell.png)
+
+![rancher-manager-import-yaml](/static/images/content/21-rancher-import-yaml.png)
