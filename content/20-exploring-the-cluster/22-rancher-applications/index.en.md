@@ -1,9 +1,9 @@
 ---
-title: "Kubernetes Applications"
+title: "Rancher Applications"
 weight: 22
 ---
 
-# Deploying the Kubernetes Applications
+# Deploying the Rancher Applications
 
 ![rancher-app-catalog-longhorn](/static/images/content/22-app-longhorn-search.png)
 
@@ -38,10 +38,3 @@ weight: 22
 
 ![rancher-neuvector-vulnerabilities](/static/images/content/22-neuvector-vulnerabilities.png)
 
-
-![rancher-fleet-menu](/static/images/content/22-fleet-menu.png)
-
-![rancher-fleet-home](/static/images/content/22-fleet-home.png)
-
-
-### WIP - HELM APPLICATIONS HERE ###

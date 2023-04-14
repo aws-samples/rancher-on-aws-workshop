@@ -19,10 +19,12 @@ Learn the ease of deployment and intergration of Rancher onto Amazon AWS!
   * [Documentation](/content/10-introduction/13-documentation/index.en.md)
 * [Exploring the Cluster](/content/20-exploring-the-cluster/index.en.md)
   * [Exploring the Cluster](/content/20-exploring-the-cluster/21-exploring-the-cluster/index.en.md)
-  * [Kubernetes Applications](/content/20-exploring-the-cluster/22-kubernetes-applications/index.en.md)
+  * [Rancher Applications](/content/20-exploring-the-cluster/22-rancher-applications/index.en.md)
+  * [Kubernetes Applications](/content/20-exploring-the-cluster/23-kubernetes-applications/index.en.md)
 * [Creating a Cluster](/content/30-creating-a-cluster/index.en.md)
   * [Creating the Cluster](/content/30-creating-a-cluster/31-creating-the-cluster/index.en.md)
 * [Importing a Cluster](/content/40-importing-a-cluster/index.en.md)
   * [Importing the Cluster](/content/40-importing-a-cluster/41-importing-the-cluster/index.en.md)
+  * [AWS Addons](/content/40-importing-a-cluster/42-aws-addons/index.en.md)
 
 **Note:** [/static](/static/) stores all the static code and resources required for this workshop.
