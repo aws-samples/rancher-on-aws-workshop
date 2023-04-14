@@ -2,11 +2,11 @@
 
 ## Included in Introduction
 
-- [ ] Topics Covered
-- [ ] Expected Duration
-- [ ] Workshop Outcomes
-- [ ] Workshop Audience
-- [ ] Workshop Prerequisites
+- [x] Topics Covered
+- [x] Expected Duration
+- [x] Workshop Outcomes
+- [x] Workshop Audience
+- [x] Workshop Prerequisites
 - [ ] Workshop Costs
 
 ### "Included in Introduction" Notes
@@ -40,12 +40,12 @@
 
 ## Environment Set-Up
 
-- [ ] Confirm Workshop Infrastructure works
+- [x] Confirm Workshop Infrastructure works
 - [x] Confirm Workshop works in customer account. If so, provide setup instructions. (N/A)
 - [ ] Confirm Workshop has account login information and works
-- [x] State if the Workshop only works with Event Engine (N/A)
-- [x] State any computer hardware prerequisite setup information (laptops, etc.) (N/A)
-- [x] State if the Workshop only works in specific regions (N/A)
+- [x] State if the Workshop only works with Event Engine - CFTs will be publicly available, allowing to be ran outside of Event Engine   
+- [x] State any computer hardware prerequisite setup information (laptops, etc.) An internet connected machine
+- [x] State if the Workshop only works in specific regions - Only us-east-1 at the moment
 
 ## Environment Clean-Up
 
@@ -53,7 +53,7 @@
 - [ ] Specify if the clean-up steps are specific to the resources created in the Workshop
 - [x] Are deliberately retained resources explained? (N/A)
 - [x] Are deliberately retained resources costs explained? (N/A)
-- [ ] If clean-up instructions require the deletion of a cfn stack, does this delete all resources in the stack?
+- [x] If clean-up instructions require the deletion of a cfn stack, does this delete all resources in the stack? - it does not
 - [ ] Provide link to clean-up in the introduction/set-up chapters
 - [ ] Is the clean-up obvious for customers who do not complete the workshop?
 
@@ -61,44 +61,44 @@
 
 - [ ] Confirm well-architected principals are used
 - [ ] Variance of instance types used (EC2, RDS, etc.)(or described)
-- [ ] Resources deployed in multiple AZs
-- [ ] Resources scale with demand
-- [ ] Explanation provided for resources that are not redundant, scalable, or cost efficient
+- [x] Resources deployed in multiple AZs
+- [x] Resources scale with demand - (N/A)
+- [x] Explanation provided for resources that are not redundant, scalable, or cost efficient - Fixed infra to support workshop features only. Solution does not call for scaling though using an ASG for provisioning
 
 ## External Links and Privacy
 
 - [ ] Confirm workshop is self-contained
-- [ ] Larger bundles of AWS-owned content stored in Event Engine S3 or AWS GitHub
+- [x] Larger bundles of AWS-owned content stored in Event Engine S3 or AWS GitHub
 - [x] Confirm YouTube videos use the video directive (N/A)
-- [ ] Confirm workshop referenced 3rd party datasets allow for AWS use
-- [ ] Confirm all images used have a CC0 license
+- [x] Confirm workshop referenced 3rd party datasets allow for AWS use - (N/A)
+- [x] Confirm all images used have a CC0 license
 
 ## Security
 
 - [ ] Confirm users and roles have appropriately scoped policies
-- [ ] Confirm buckets restrict public access
-- [ ] Confirm all services with an option to restrict public access are enabled
-- [ ] Confirm security groups restrict access to specific IPs and ports
-- [ ] Confirm RDS and EMR clusters have public access disabled
+- [x] Confirm buckets restrict public access
+- [x] Confirm all services with an option to restrict public access are enabled
+- [x] Confirm security groups restrict access to specific IPs and ports
+- [x] Confirm RDS and EMR clusters have public access disabled - (N/A)
 - [ ] Explain if a configuration doesn’t adhere to AWS well-architected practices
-- [ ] Confirm sample code is run using a role that grants least privilege
-- [ ] Confirm IAM Access Analyzer was ran and any findings were resolved
-- [ ] Confirm attendees are NOT ASKED to enter information as part of the workshop
+- [x] Confirm sample code is run using a role that grants least privilege
+- [x] Confirm IAM Access Analyzer was ran and any findings were resolved
+- [x] Confirm attendees are NOT ASKED to enter information as part of the workshop
 - [ ] Confirm workshop compiles with security best practices https://docs.aws.amazon.com/security/
 - [ ] Confirm ScoutSuite, cfn_nag, and cfn-lint ran without resulting in any blockers (detail any high severity findings in the comments field, and confirm those items have been resolved) (https://github.com/nccgroup/ScoutSuite , https://github.com/stelligent/cfn_nag, https://github.com/aws-cloudformation/cfn-lint)
-- [ ] Confirm review of all uploaded content for the threat of malicious uploads by scanning with tools such as ClamAV
+- [x] Confirm review of all uploaded content for the threat of malicious uploads by scanning with tools such as ClamAV
 - [ ] List any other scans of the workshop
-- [ ] Confirm workshop does not contain confidential information
+- [x] Confirm workshop does not contain confidential information
 - [ ] Confirm workshop includes overall architecture diagram, depicting the associated resources and security controls in place
 
 ## Source Code, Sample Data, third party sources, and Open Source
 
-- [ ] Confirm all AWS-created code includes a license
-- [ ] Confirm 3rd party code is licensed to allow AWS use
-- [ ] Confirm 3rd party code includes all required attributes
-- [ ] Confirm 3rd party data sets include AWS rights to use
-- [ ] Confirm code in Github is under the AWS organization
-- [ ] Confirm 3rd party code is references rather than used where possible. If used, a license must allow AWS usage
+- [x] Confirm all AWS-created code includes a license
+- [x] Confirm 3rd party code is licensed to allow AWS use
+- [x] Confirm 3rd party code includes all required attributes
+- [x] Confirm 3rd party data sets include AWS rights to use
+- [x] Confirm code in Github is under the AWS organization
+- [x] Confirm 3rd party code is references rather than used where possible. If used, a license must allow AWS usage
 - [ ] Confirm workshop is factually correct
 - [ ] Confirm the workshop can be completed with steps included without error
 - [ ] Confirm remediations included if errors are encounters
