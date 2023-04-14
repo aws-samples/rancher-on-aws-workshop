@@ -89,7 +89,6 @@ awsAccountConfig:
         - us-east-1
 
 infrastructure:
-
   # A list of CloudFormation templates (CFTs) that are present in the content's repository. 
   # These CFTs will be used by Workshop Studio's provisioning process and will be deployed to AWS accounts.
   # Note: The order of CFTs defined here will be the same order that Workshop Studio will deploy them to
@@ -98,10 +97,10 @@ infrastructure:
 
       # The template's location relative to the root of the content's repo. 
       # Note: Templates must be located in the `static/` directory
-    - templateLocation: static/rgs-rke2-with-SecretsManager.yaml
+    - templateLocation: static/rke2-mgmt-cluster-ssm.yaml
 
       # Friendly name for the corresponding cloudformation template.
-      label: RKE2/Rancher Manager Stack
+      label: RKE2/Rancher Manager Stack with SecretsManager
 
     - templateLocation: /static/eks-import-cluster.yml
 

@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Rancher Manager and RKE2 Kubernetes CloudFormation Template
+Description: Rancher Manager and RKE2 AWS CloudFormation Template
 
 Metadata: 
   AWS::CloudFormation::Interface: 
@@ -16,7 +16,7 @@ Metadata:
           default: "Rancher Configuration Options"
         Parameters: 
           - ClusterJoinToken
-          - RancherBoostrapPassword
+          - RancherBootstrapPassword
 
 Parameters:
   VolumeSize:
@@ -29,7 +29,7 @@ Parameters:
     Type: String
     MinLength: '3'
     MaxLength: '7'
-    Default: '10.10'
+    Default: '10.0'
     AllowedPattern: (\d{1,3})\.(\d{1,3})
     ConstraintDescription: must be a valid dot-separated string of the form x.x
   AllowedCidr:
@@ -43,7 +43,7 @@ Parameters:
     MinLength: '5'
     MaxLength: '200'
     NoEcho: true
-  RancherBoostrapPassword:
+  RancherBootstrapPassword:
     Description: "Initial Password to Access Rancher Manager (Default: Pa22word)"
     Type: String
     Default: Pa22word
@@ -54,9 +54,7 @@ Parameters:
 Mappings:
   AWSRegionArch2AMI:
     us-east-1:
-      HVM64: ami-0760a22ab9aa4a9eb
-    us-west-2:
-      HVM64: ami-03b3895e256f31173
+      HVM64: ami-082f7dff61c8a5233
 
 Resources:
   #######
@@ -514,7 +512,7 @@ Resources:
                 - ' '
                 - - init-rancher.sh
                   - !GetAtt 'RancherELB.DNSName'
-                  - !Ref 'RancherBoostrapPassword'
+                  - !Ref 'RancherBootstrapPassword'
               - "\n"
   RancherCPAutoScalingGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
@@ -815,7 +813,7 @@ Resources:
         UnhealthyThreshold: '5'
         Interval: '30'
         Timeout: '5'
-
+  
 Outputs:
   RancherURL:
     Description: Rancher Manager Access URL
