@@ -5,6 +5,11 @@ weight: 21
 
 # Exploring the RKE2 Cluster
 
+![aws-console-home](/static/images/content/21-aws-home.png)
+
+![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt.png)
+
+
 ![rancher-bootstrapping-password](/static/images/content/21-rancher-bootstrap-pw.png)
 
 ![rancher-bootstrapping-setup](/static/images/content/21-rancher-bootstrap-setup.png)

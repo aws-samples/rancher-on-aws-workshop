@@ -23,6 +23,7 @@ weight: 31
 
 ![rancher-cluster-create-ec2](/static/images/content/31-cluster-create-ec2.png)
 
+
 ### **Cloud Credential:** aws
 
 ### **Cluster Name:** rke2-cluster
@@ -77,11 +78,14 @@ Pool Name: cp-nodes
 
 **Use only private address:** ✓
 
+
 ![rancher-cluster-create-ec2-pools](/static/images/content/31-cluster-create-ec2-pools.png)
+
 
 ### **Cluster Configuration**
 
 No changes required in this section, please free to explore the configuration options!
+
 
 ![rancher-cluster-create-ec2-config](/static/images/content/31-cluster-create-ec2-config.png)
 

@@ -5,13 +5,15 @@ weight: 13
 
 # Workshop Documentation
 
-Please use the links below to view the official documentation for each of the products featured in this workshop. In order to maintain and sustain this workshop, we avoided hosting our own documentation for each product.
+Please use the links below to view the official documentation for each of the products and services featured in this workshop.
 
 ## For the  Rancher Products:
 * Rancher Kubernetes Engine 2 (RKE2) - [view documentation](https://docs.rke2.io)
 * Rancher Multi Cluster Manager (MCM) - [view documentation](https://ranchermanager.docs.rancher.com)
 * Rancher Longhorn (Storage) - [view documentation](https://docs.longhorn.io)
 * Rancher Neuvector (Security) - [view documentation](https://open-docs.neuvector.com)
+
+For any questions or to get in touch with Rancher, please contact us via email at natsec@rancherfederal.com!
 
 ## For the Amazon AWS Products:
 * Amazon Cloud Formation (CF)- [view documentation](https://docs.aws.amazon.com/cloudformation)
@@ -22,3 +24,5 @@ Please use the links below to view the official documentation for each of the pr
 * Amazon Elastic File System (EFS)- [view documentation](https://docs.aws.amazon.com/efs)
 * Amazon Elastic Block Store (EBS) - [view documentation](https://docs.aws.amazon.com/ebs)
 * Amazon Identity and Access Management (IAM)- [view documentation](https://docs.aws.amazon.com/iam)
+
+For any questions or to get in touch with AWS, please contact us via email at mpo-proserve@amazon.com!

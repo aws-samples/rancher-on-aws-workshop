@@ -9,7 +9,7 @@
 * Connor Lytle, Cloud Consultant, Amazon Web Services
   * [@lytlecon](https://github.com/lytlecon) | celytle@amazon.com
 * Kevin Marshall, Cloud Consultant, Amazon Web Services
-  * [@TBD](https://github.com/TBD) | marshkkm@amazon.com
+  * [@marshkkm](https://github.com/marshkkm) | marshkkm@amazon.com
 * Everett deVries, Cloud Consultant, Amazon Web Services
   * [@TBD](https://github.com/TBD) | evd@amazon.com
 
