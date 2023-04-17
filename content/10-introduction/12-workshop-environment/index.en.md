@@ -17,7 +17,7 @@ If you're completing this workshop at an official event with Rancher and/or Amaz
 To access your generated AWS Account/AWS Infrastructure, please head over to the [AWS Event Engine Dashboard](https://dashboard.eventengine.run) and enter your email address and unique hash.
 
 
-### Step 1: 
+### Step 1:
 
 Enter your unique hash and click **Accept Terms & Login**!
 
@@ -26,7 +26,7 @@ Enter your unique hash and click **Accept Terms & Login**!
 Once you are logged into the AWS Event Engine Dashboard, you are able to view your account related information.
 
 
-### Step 2: 
+### Step 2:
 
 Click the **Open Console** button to launch the AWS Management Console to access your generated AWS Account.
 
@@ -40,16 +40,16 @@ You're done! Now head over to the first workshop by clicking [here](/content/20-
 
 ## For Outside Official Events
 
-If you're completing this workshop outside an official event, you will need to configure the required infrastructure, before starting the workshop.
+If you're completing this workshop outside an official event, you will need to configure the required infrastructure, before starting the workshop content. Please be aware that this will incure costs to your AWS Account.
 
 ### Step 1:
 
-Download the two required workshop CloudFormation templates.
+Download the two required workshop CloudFormation templates, by clicking the links below and clicking *download*.
 * [Rancher RKE2 Management Cluster](/static/rke2-mgmt-cluster-ssm.yaml)
 * [AWS EKS Downstream Cluster](/static/eks-import-cluster.yml)
 
 
-### Step 2: 
+### Step 2:
 
 Log into the [AWS Account Console](https://aws.amazon.com/console/) and open the [CloudFormation](https://console.aws.amazon.com/cloudformation/home) service.
 

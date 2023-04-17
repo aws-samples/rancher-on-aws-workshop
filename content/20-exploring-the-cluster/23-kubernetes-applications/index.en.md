@@ -5,9 +5,29 @@ weight: 23
 
 # Deploying the Kubernetes Applications
 
-![rancher-fleet-menu](/static/images/content/22-fleet-menu.png)
+### Step 1:
 
-![rancher-fleet-home](/static/images/content/22-fleet-home.png)
+![rancher-fleet-menu](/static/images/content/23-fleet-menu.png)
 
 
-### WIP - HELM APPLICATIONS HERE ###
+### Step 2:
+
+![rancher-fleet-home](/static/images/content/23-fleet-home.png)
+
+
+### Step 3:
+
+![rancher-fleet-shell](/static/images/content/23-fleet-shell.png)
+
+
+### Step 4:
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/static/fleet/fleet-default.yaml
+```
+
+
+### Step 5:
+
+
+### Step 6:

@@ -5,26 +5,49 @@ weight: 41
 
 # Importing the EKS Cluster
 
+## Cluster Management
+
+### Step 1:
+
 ![rancher-cluster-menu](/static/images/content/41-cluster-menu.png)
+
+
+### Step 2:
 
 ![rancher-cluster-home](/static/images/content/41-cluster-home.png)
 
+
+### Step 3:
+
 ![rancher-cluster-import-options](/static/images/content/41-cluster-import-options.png)
+
+
+### Step 4:
 
 ![rancher-cluster-import-eks](/static/images/content/41-cluster-import-eks.png)
 
-### **Cluster Configuration**
+<pre>
+<b>Cluster Configuration:</b>
 
-**Cluster Name:** eks-cluster
+<b>Cluster Name:</b> eks-cluster
 
-**Region:** us-east-1
+<b>Region:</b> us-east-1
 
-**Cloud Credentials:** aws
+<b>Cloud Credentials:</b> aws
 
-**Cluster To Register:** eks-cluster
+<b>Cluster To Register:</b> eks-cluster
+</pre>
 
 ![rancher-cluster-import-eks-config](/static/images/content/41-cluster-import-eks-config.png)
 
 ![rancher-cluster-import-eks-cluster](/static/images/content/41-cluster-import-eks-cluster.png)
 
+
+### Step 5:
+
 ![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-success.png)
+
+
+### Step WIP:
+
+### WIP - EKS STEPS HERE ###

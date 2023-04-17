@@ -15,7 +15,7 @@ Metadata:
         Label: 
           default: "Rancher Configuration Options"
         Parameters: 
-          - ClusterJoinToken
+          - RancherClusterToken
           - RancherBootstrapPassword
 
 Parameters:
@@ -36,7 +36,7 @@ Parameters:
     Description: "Allow CIDR for Inbound Traffic to Rancher (Default: 0.0.0.0/0)"
     Type: String
     Default: '0.0.0.0/0'
-  ClusterJoinToken:
+  RancherClusterToken:
     Description: "Cluster Join Token for RKE2 Cluster (Default: Pa22word)"
     Type: String
     Default: Pa22word
@@ -54,7 +54,9 @@ Parameters:
 Mappings:
   AWSRegionArch2AMI:
     us-east-1:
-      HVM64: ami-082f7dff61c8a5233
+      HVM64: ami-0c28399652dee4fc2
+    us-west-2:
+      HVM64: ami-0cc4ffd1169a0710a
 
 Resources:
   #######
@@ -73,6 +75,7 @@ Resources:
   # VPC #
   #######
   RancherVPC:
+    Type: AWS::EC2::VPC
     Properties:
       CidrBlock: !Join
         - ''
@@ -85,13 +88,13 @@ Resources:
           Value: !Join
             - '-'
             - - !Ref 'AWS::StackName'
-              - vpc
-    Type: AWS::EC2::VPC
+              - rancher-vpc
 
   ##################
   # Public Subnets #
   ##################
   RancherPublicSubnet1:
+    Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: !Join
         - ''
@@ -107,9 +110,10 @@ Resources:
           Value: !Join
             - '-'
             - - !Ref 'AWS::StackName'
-              - public-1
-    Type: AWS::EC2::Subnet
+              - rancher-public-1
+
   RancherPublicSubnet2:
+    Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: !Join
         - ''
@@ -125,9 +129,10 @@ Resources:
           Value: !Join
             - '-'
             - - !Ref 'AWS::StackName'
-              - public-2
-    Type: AWS::EC2::Subnet
+              - rancher-public-2
+
   RancherPublicSubnet3:
+    Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: !Join
         - ''
@@ -143,13 +148,13 @@ Resources:
           Value: !Join
             - '-'
             - - !Ref 'AWS::StackName'
-              - public-3
-    Type: AWS::EC2::Subnet
+              - rancher-public-3
   
   ###################
   # Private Subnets #
   ###################
   RancherPrivateSubnet1:
+    Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: !Join
         - ''
@@ -165,9 +170,10 @@ Resources:
           Value: !Join
             - '-'
             - - !Ref 'AWS::StackName'
-              - private-1
-    Type: AWS::EC2::Subnet
+              - rancher-private-1
+
   RancherPrivateSubnet2:
+    Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: !Join
         - ''
@@ -183,9 +189,10 @@ Resources:
           Value: !Join
             - '-'
             - - !Ref 'AWS::StackName'
-              - private-2
-    Type: AWS::EC2::Subnet
+              - rancher-private-2
+
   RancherPrivateSubnet3:
+    Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: !Join
         - ''
@@ -201,28 +208,30 @@ Resources:
           Value: !Join
             - '-'
             - - !Ref 'AWS::StackName'
-              - private-3
-    Type: AWS::EC2::Subnet
+              - rancher-private-3
 
   #########################
   # NAT Gateway (Private) #
   #########################
-  NATGateway:
+  RancherNATGateway:
     Type: AWS::EC2::NatGateway
     Properties:
-      AllocationId: !GetAtt 'NATGatewayEIP.AllocationId'
+      AllocationId: !GetAtt 'RancherNATGatewayEIP.AllocationId'
       SubnetId: !Ref 'RancherPublicSubnet1'
       Tags:
         - Key: Name
           Value: !Join
             - '-'
             - - !Ref 'AWS::StackName'
-              - nat-gateway
-  NATGatewayEIP:
+              - rancher-nat-gateway
+
+  RancherNATGatewayEIP:
     Type: AWS::EC2::EIP
     Properties:
       Domain: vpc
+
   PrivateRouteTable:
+    Type: AWS::EC2::RouteTable
     Properties:
       VpcId: !Ref 'RancherVPC'
       Tags:
@@ -231,25 +240,28 @@ Resources:
             - '-'
             - - !Ref 'AWS::StackName'
               - private-rt-table
-    Type: AWS::EC2::RouteTable
+
   RouteNATGateway:
     DependsOn:
-      - NATGateway
+      - RancherNATGateway
     Type: AWS::EC2::Route
     Properties:
       RouteTableId: !Ref 'PrivateRouteTable'
       DestinationCidrBlock: '0.0.0.0/0'
-      NatGatewayId: !Ref 'NATGateway'
+      NatGatewayId: !Ref 'RancherNATGateway'
+
   PrivateRouteTableAssociation1:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId: !Ref 'PrivateRouteTable'
       SubnetId: !Ref 'RancherPrivateSubnet1'
+
   PrivateRouteTableAssociation2:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId: !Ref 'PrivateRouteTable'
       SubnetId: !Ref 'RancherPrivateSubnet2'
+
   PrivateRouteTableAssociation3:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
@@ -267,13 +279,16 @@ Resources:
           Value: !Join
             - '-'
             - - !Ref 'AWS::StackName'
-              - igw
+              - rancher-igw
+
   PublicGatewayAttachment:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
       VpcId: !Ref 'RancherVPC'
       InternetGatewayId: !Ref 'PublicInternetGateway'
+
   PublicRouteTable:
+    Type: AWS::EC2::RouteTable
     Properties:
       VpcId: !Ref 'RancherVPC'
       Tags:
@@ -282,7 +297,7 @@ Resources:
             - '-'
             - - !Ref 'AWS::StackName'
               - public-rt-table
-    Type: AWS::EC2::RouteTable
+
   PublicRouteToGateway:
     Type: AWS::EC2::Route
     DependsOn: PublicGatewayAttachment
@@ -290,16 +305,19 @@ Resources:
       DestinationCidrBlock: '0.0.0.0/0'
       RouteTableId: !Ref 'PublicRouteTable'
       GatewayId: !Ref 'PublicInternetGateway'
+
   PublicRouteTableAssociation1:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId: !Ref 'PublicRouteTable'
       SubnetId: !Ref 'RancherPublicSubnet1'
+
   PublicRouteTableAssociation2:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId: !Ref 'PublicRouteTable'
       SubnetId: !Ref 'RancherPublicSubnet2'
+
   PublicRouteTableAssociation3:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
@@ -309,7 +327,7 @@ Resources:
   #############
   # IAM Roles #
   #############
-  AwsCPRole:
+  RancherCPRole:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
@@ -388,13 +406,13 @@ Resources:
                   - kms:ListKeys
                 Resource: '*'
 
-  AwsCPInstanceProfile:
+  RancherCPInstanceProfile:
     Type: AWS::IAM::InstanceProfile
     Properties:
       InstanceProfileName: demo-profile
       Path: /
       Roles:
-        - !Ref 'AwsCPRole'
+        - !Ref 'RancherCPRole'
 
   RancherCloudCredentialUser:
     Type: AWS::IAM::User
@@ -515,8 +533,8 @@ Resources:
                 - ' '
                 - - init-rke2.sh
                   - 'server'
-                  - !Ref 'ClusterJoinToken'
-                  - !GetAtt 'ControlPlaneELB.DNSName'
+                  - !Ref 'RancherClusterToken'
+                  - !GetAtt 'RancherCPELB.DNSName'
                   - !Ref 'AWS::Region'
               - "\n"
               - "echo 'Initializing Rancher..'\n"
@@ -526,6 +544,7 @@ Resources:
                   - !GetAtt 'RancherELB.DNSName'
                   - !Ref 'RancherBootstrapPassword'
               - "\n"
+
   RancherCPAutoScalingGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
@@ -533,7 +552,7 @@ Resources:
         LaunchTemplateId: !Ref 'RancherCPLaunchTemplate'
         Version: !GetAtt 'RancherCPLaunchTemplate.LatestVersionNumber'
       LoadBalancerNames:
-        - !Ref 'ControlPlaneELB'
+        - !Ref 'RancherCPELB'
       MaxSize: '3'
       MinSize: '3'
       DesiredCapacity: '3'
@@ -584,10 +603,11 @@ Resources:
                 - ' '
                 - - init-rke2.sh
                   - 'agent'
-                  - !Ref 'ClusterJoinToken'
-                  - !GetAtt 'ControlPlaneELB.DNSName'
+                  - !Ref 'RancherClusterToken'
+                  - !GetAtt 'RancherCPELB.DNSName'
                   - !Ref 'AWS::Region'
               - "\n"
+
   RancherWorkerAutoScalingGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
     DependsOn:
@@ -597,7 +617,7 @@ Resources:
         LaunchTemplateId: !Ref 'RancherWorkerLaunchTemplate'
         Version: !GetAtt 'RancherWorkerLaunchTemplate.LatestVersionNumber'
       LoadBalancerNames:
-        - !Ref 'ControlPlaneELB'
+        - !Ref 'RancherCPELB'
         - !Ref 'RancherELB'
       MaxSize: '3'
       MinSize: '3'
@@ -617,7 +637,7 @@ Resources:
   ###########################
   # ElasticFileSystem (EFS) #
   ###########################
-  DemoEFS:
+  RancherEFS:
     Type: 'AWS::EFS::FileSystem'
     Properties:
       BackupPolicy:
@@ -637,31 +657,31 @@ Resources:
   MountTargetPrivateSubnet1:
     Type: AWS::EFS::MountTarget
     Properties:
-      FileSystemId: !Ref DemoEFS
+      FileSystemId: !Ref RancherEFS
       SubnetId: !Ref RancherPrivateSubnet1
       SecurityGroups:
-      - !Ref EFSSecurityGroup
+      - !Ref RancherEFSSecurityGroup
 
   MountTargetPrivateSubnet2:
     Type: AWS::EFS::MountTarget
     Properties:
-      FileSystemId: !Ref DemoEFS
+      FileSystemId: !Ref RancherEFS
       SubnetId: !Ref RancherPrivateSubnet2
       SecurityGroups:
-      - !Ref EFSSecurityGroup
+      - !Ref RancherEFSSecurityGroup
 
   MountTargetPrivateSubnet3:
     Type: AWS::EFS::MountTarget
     Properties:
-      FileSystemId: !Ref DemoEFS
+      FileSystemId: !Ref RancherEFS
       SubnetId: !Ref RancherPrivateSubnet3
       SecurityGroups:
-      - !Ref EFSSecurityGroup
+      - !Ref RancherEFSSecurityGroup
 
   ##################
   # Security Group #
   ##################
-  EFSSecurityGroup:
+  RancherEFSSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
       VpcId: !Ref 'RancherVPC'
@@ -694,7 +714,6 @@ Resources:
             - - !Ref 'VPCCidr'
               - .13.0/24
 
-
   RancherCPSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -709,11 +728,12 @@ Resources:
         - IpProtocol: tcp
           FromPort: '9345'
           ToPort: '9345'
-          SourceSecurityGroupId: !GetAtt 'ControlPlaneELBSG.GroupId'
+          SourceSecurityGroupId: !GetAtt 'RancherCPELBSecurityGroup.GroupId'
         - IpProtocol: tcp
           FromPort: '6443'
           ToPort: '6443'
-          SourceSecurityGroupId: !GetAtt 'ControlPlaneELBSG.GroupId'
+          SourceSecurityGroupId: !GetAtt 'RancherCPELBSecurityGroup.GroupId'
+
   RancherIngressSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -728,16 +748,17 @@ Resources:
         - IpProtocol: tcp
           FromPort: '30080'
           ToPort: '30080'
-          SourceSecurityGroupId: !GetAtt 'RancherELBSG.GroupId'
+          SourceSecurityGroupId: !GetAtt 'RancherIngressELBSG.GroupId'
         - IpProtocol: tcp
           FromPort: '30443'
           ToPort: '30443'
-          SourceSecurityGroupId: !GetAtt 'RancherELBSG.GroupId'
+          SourceSecurityGroupId: !GetAtt 'RancherIngressELBSG.GroupId'
         - IpProtocol: '-1'
           FromPort: '0'
           ToPort: '65535'
           SourceSecurityGroupId: !GetAtt 'RancherCPSecurityGroup.GroupId'
-  ControlPlaneELBSG:
+
+  RancherCPELBSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
       VpcId: !Ref 'RancherVPC'
@@ -756,7 +777,8 @@ Resources:
           FromPort: '9345'
           ToPort: '9345'
           CidrIp: !Ref AllowedCidr
-  RancherELBSG:
+
+  RancherIngressELBSG:
     Type: AWS::EC2::SecurityGroup
     Properties:
       VpcId: !Ref 'RancherVPC'
@@ -779,7 +801,7 @@ Resources:
   #################
   # LoadBalancers #
   #################
-  ControlPlaneELB:
+  RancherCPELB:
     Type: AWS::ElasticLoadBalancing::LoadBalancer
     Properties:
       Subnets: 
@@ -787,7 +809,7 @@ Resources:
         - !Ref 'RancherPublicSubnet2'
         - !Ref 'RancherPublicSubnet3'
       SecurityGroups:
-        - !Ref 'ControlPlaneELBSG'
+        - !Ref 'RancherCPELBSecurityGroup'
       CrossZone: 'true'
       Listeners:
         - LoadBalancerPort: '6443'
@@ -802,6 +824,7 @@ Resources:
         UnhealthyThreshold: '5'
         Interval: '30'
         Timeout: '5'
+
   RancherELB:
     Type: AWS::ElasticLoadBalancing::LoadBalancer
     Properties:
@@ -810,7 +833,7 @@ Resources:
         - !Ref 'RancherPublicSubnet2'
         - !Ref 'RancherPublicSubnet3'
       SecurityGroups:
-        - !Ref 'RancherELBSG'
+        - !Ref 'RancherIngressELBSG'
       CrossZone: 'true'
       Listeners:
         - LoadBalancerPort: '80'
@@ -831,8 +854,8 @@ Outputs:
     Description: Rancher Manager Access URL
     Value: !GetAtt 'RancherELB.DNSName'
   CloudCredentialKey:
-    Description: AWS Access Key for Rancher
+    Description: AWS Access Key (Sensitive!)
     Value: !Ref RancherCloudCredentialKey
   CloudCredentialSecret:
-    Description: AWS Secret Key for Rancher (Sensitive!)
+    Description: AWS Secret Key (Sensitive!)
     Value: !GetAtt RancherCloudCredentialKey.SecretAccessKey

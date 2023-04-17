@@ -5,94 +5,134 @@ weight: 31
 
 # Creating the RKE2 Cluster
 
+## Cluster Management
+
+### Step 1:
+
 ![rancher-cluster-menu](/static/images/content/31-cluster-menu.png)
+
+
+### Step 2:
 
 ![rancher-cluster-home](/static/images/content/31-cluster-home.png)
 
 
+## Cloud Credentials
+
+### Step 1:
+
 ![rancher-cluster-creds-home](/static/images/content/31-cluster-creds-home.png)
+
+
+### Step 2:
 
 ![rancher-cluster-creds-options](/static/images/content/31-cluster-creds-options.png)
 
+
+### Step 3:
+
 ![rancher-cluster-creds-aws](/static/images/content/31-cluster-creds-aws.png)
+
+
+### Step 4:
 
 ![rancher-cluster-creds-cf](/static/images/content/31-cluster-creds-cf.png)
 
 
+## Creating the Cluster
+
+### Step 1:
+
 ![rancher-cluster-create-options](/static/images/content/31-cluster-create-options.png)
+
+
+### Step 2:
 
 ![rancher-cluster-create-ec2](/static/images/content/31-cluster-create-ec2.png)
 
+<pre>
+<b>Cloud Credential:</b> aws
 
-### **Cloud Credential:** aws
+<b>Cluster Name:</b> rke2-cluster
 
-### **Cluster Name:** rke2-cluster
-
-### **Cluster Description:** rke2 downstream cluster
-
+<b>Cluster Description:</b> rke2 downstream cluster
+</pre>
 
 ### **Machine Pools**
 
-**pool1**
+<pre>
+<b>pool1</b>
 
-**Pool Name:** cp-nodes
+<b>Pool Name:</b> cp-nodes
 
-**Machine Count:** 3
+<b>Machine Count:</b> 3
 
-**Roles:** etcd and Control Plane
+<b>Roles:</b> etcd and Control Plane
 
-**Region:** us-east-1
+<b>Region:</b> us-east-1
 
-**Zone:** A
+<b>Zone:</b> A
 
-**Instance Type:** m5.xlarge
+<b>Instance Type:</b> m5.xlarge
 
-**Root Disk Size:** 128
+<b>Root Disk Size:</b> 128
 
-**VPC/Subnet:** mgmt-private-1
+<b>VPC/Subnet:</b> mgmt-rke2-private-1
 
-*Click Show Advanced*
+<i>Click <b>"Show Advanced"</b></i>
 
-**Use only private address:** ✓
+<b>Use only private address:</b> ✓
+</pre>
 
+<pre>
+<b>pool2</b>
 
-**pool2**
+<b>Pool Name:</b> cp-nodes
 
-Pool Name: cp-nodes
+<b>Machine Count:</b> 3
 
-**Machine Count:** 3
+<b>Roles:</b> Worker
 
-**Roles:** Worker
+<b>Region:</b> us-east-1
 
-**Region:** us-east-1
+<b>Zone:</b> A
 
-**Zone:** A
+<b>Instance Type:</b> m5.xlarge
 
-**Instance Type:** m5.xlarge
+<b>Root Disk Size:</b> 128
 
-**Root Disk Size:** 128
+<b>VPC/Subnet:</b> mgmt-rke2-private-1
 
-**VPC/Subnet:** mgmt-private-1
+<i>Click <b>"Show Advanced"</b></i>
 
-*Click "Show Advanced"*
-
-**Use only private address:** ✓
-
+<b>Use only private address:</b> ✓
+</pre>
 
 ![rancher-cluster-create-ec2-pools](/static/images/content/31-cluster-create-ec2-pools.png)
 
-
-### **Cluster Configuration**
-
-No changes required in this section, please free to explore the configuration options!
-
+<pre>
+<b>Cluster Configuration:</b> 
+No changes required in this section, please free to explore the configuration options.
+</pre>
 
 ![rancher-cluster-create-ec2-config](/static/images/content/31-cluster-create-ec2-config.png)
 
+
+### Step 3:
+
 ![rancher-cluster-create-ec2-success](/static/images/content/31-cluster-create-ec2-success.png)
+
+
+### Step 4:
 
 ![rancher-cluster-create-ec2-success-details](/static/images/content/31-cluster-create-ec2-success-details.png)
 
+
+### Step 5:
+
 ![rancher-cluster-create-ec2-successful](/static/images/content/31-cluster-create-ec2-successful.png)
+
+
+### Step 6:
 
 ![rancher-cluster-create-ec2-detail](/static/images/content/31-cluster-create-ec2-details.png)

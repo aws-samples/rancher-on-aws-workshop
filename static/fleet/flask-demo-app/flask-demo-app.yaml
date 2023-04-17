@@ -23,8 +23,7 @@ spec:
       - name: flask
         securityContext:
           allowPrivilegeEscalation: false
-        image: clemenko/flask_simple #rockylinux
-        #command: [ "/bin/sh", "-c", "sleep 3003003240204242" ]
+        image: clemenko/flask_simple
         ports:
         - containerPort: 5000
         imagePullPolicy: Always
@@ -84,7 +83,7 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 250Mi
+      storage: 10Gi
 ---
 apiVersion: v1
 kind: Service

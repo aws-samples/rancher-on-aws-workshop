@@ -1,23 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: zackbradys-rancher-demo-app
+  name: rancher-demo-app
   labels:
     app.kubernetes.io/name: rancher-demo-app
     helm.sh/chart: rancher-demo-app-1.3.1
-    app.kubernetes.io/instance: zackbradys
     app.kubernetes.io/managed-by: Helm
 spec:
-  replicas: 6
+  replicas: 8
   selector:
     matchLabels:
       app.kubernetes.io/name: rancher-demo-app
-      app.kubernetes.io/instance: zackbradys
   template:
     metadata:
       labels:
         app.kubernetes.io/name: rancher-demo-app
-        app.kubernetes.io/instance: zackbradys
     spec:
       containers:
         - name: rancher-demo-app
@@ -42,17 +39,15 @@ spec:
             httpGet:
               path: /ping
               port: http
-          resources:
-            {}
+          resources: {}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: zackbradys-rancher-demo-app
+  name: rancher-demo-app
   labels:
     app.kubernetes.io/name: rancher-demo-app
     helm.sh/chart: rancher-demo-app-1.3.1
-    app.kubernetes.io/instance: zackbradys
     app.kubernetes.io/managed-by: Helm
 spec:
   type: ClusterIP
@@ -63,22 +58,16 @@ spec:
       name: http
   selector:
     app.kubernetes.io/name: rancher-demo-app
-    app.kubernetes.io/instance: zackbradys
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: zackbradys-rancher-demo-app
+  name: rancher-demo-app
   labels:
     app.kubernetes.io/name: rancher-demo-app
     helm.sh/chart: rancher-demo-app-1.3.1
-    app.kubernetes.io/instance: zackbradys
     app.kubernetes.io/managed-by: Helm
 spec:
-  tls:
-    - hosts:
-        - "rancher-demo.example.com"
-      secretName: tls-certs
   rules:
     - host: "rancher-demo.example.com"
       http:
@@ -87,18 +76,17 @@ spec:
           path: "/"
           backend:
             service:
-              name: zackbradys-rancher-demo-app
+              name: rancher-demo-app
               port:
                 name: http
 ---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "zackbradys-rancher-demo-app-test-connection"
+  name: "rancher-demo-app-test-connection"
   labels:
     app.kubernetes.io/name: rancher-demo-app
     helm.sh/chart: rancher-demo-app-1.3.1
-    app.kubernetes.io/instance: zackbradys
     app.kubernetes.io/managed-by: Helm
   annotations:
     "helm.sh/hook": test-success
@@ -107,5 +95,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args:  ['zackbradys-rancher-demo-app:80']
+      args:  ['rancher-demo-app:80']
   restartPolicy: Never

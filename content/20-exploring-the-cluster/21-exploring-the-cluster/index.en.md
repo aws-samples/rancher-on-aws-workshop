@@ -5,14 +5,31 @@ weight: 21
 
 # Exploring the RKE2 Cluster
 
+## AWS Console
+
+### Step 1:
+
 ![aws-console-home](/static/images/content/21-aws-home.png)
+
+
+### Step 2:
 
 ![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt.png)
 
 
+## Rancher Manager
+
+### Step 1:
+
 ![rancher-bootstrapping-password](/static/images/content/21-rancher-bootstrap-pw.png)
 
+
+### Step 2:
+
 ![rancher-bootstrapping-setup](/static/images/content/21-rancher-bootstrap-setup.png)
+
+
+### Step 3:
 
 ![rancher-manager-home](/static/images/content/21-rancher-home.png)
 
