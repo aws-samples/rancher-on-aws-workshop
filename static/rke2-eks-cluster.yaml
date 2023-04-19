@@ -334,7 +334,10 @@ Resources:
           - Effect: Allow
             Principal:
               Service:
-                - ec2.amazonaws.com
+              - eks.amazonaws.com
+              - ec2.amazonaws.com
+              - iam.amazonaws.com
+              - cloudformation.amazonaws.com
             Action:
               - sts:AssumeRole
       Path: /
@@ -447,7 +450,10 @@ Resources:
           - Effect: Allow
             Principal:
               Service:
-                - ec2.amazonaws.com
+              - eks.amazonaws.com
+              - ec2.amazonaws.com
+              - iam.amazonaws.com
+              - cloudformation.amazonaws.com
             Action:
               - sts:AssumeRole
       Path: /
@@ -481,7 +487,7 @@ Resources:
               - cp-launch-template
       LaunchTemplateData:
         IamInstanceProfile:
-          Arn: !GetAtt 'RancherInstanceProfile.Arn'
+          Arn: !GetAtt RancherInstanceProfile.Arn
         DisableApiTermination: 'true'
         ImageId: !FindInMap
           - AWSRegionArch2AMI
@@ -846,7 +852,10 @@ Resources:
           - Effect: Allow
             Principal:
               Service:
-                - ec2.amazonaws.com
+              - eks.amazonaws.com
+              - ec2.amazonaws.com
+              - iam.amazonaws.com
+              - cloudformation.amazonaws.com
             Action:
               - sts:AssumeRole
       Path: /
@@ -933,7 +942,10 @@ Resources:
           - Effect: Allow
             Principal:
               Service:
-                - ec2.amazonaws.com
+              - eks.amazonaws.com
+              - ec2.amazonaws.com
+              - iam.amazonaws.com
+              - cloudformation.amazonaws.com
             Action:
               - sts:AssumeRole
       Path: /
@@ -963,8 +975,12 @@ Resources:
         Statement:
         - Effect: Allow
           Principal:
+            AWS: !GetAtt RancherCloudCredentialUser.Arn
             Service:
             - eks.amazonaws.com
+            - ec2.amazonaws.com
+            - iam.amazonaws.com
+            - cloudformation.amazonaws.com
           Action:
           - sts:AssumeRole
       ManagedPolicyArns:
@@ -974,7 +990,7 @@ Resources:
     Type: AWS::EKS::Cluster
     Properties:
       Name: "eks-cluster"
-      RoleArn: !GetAtt RancherCloudCredentialUser.Arn
+      RoleArn: !GetAtt EKSClusterRole.Arn
       Version: "1.24"
       ResourcesVpcConfig:
         SubnetIds:
@@ -1004,7 +1020,10 @@ Resources:
         - Effect: Allow
           Principal:
             Service:
+            - eks.amazonaws.com
             - ec2.amazonaws.com
+            - iam.amazonaws.com
+            - cloudformation.amazonaws.com
           Action:
           - sts:AssumeRole
       ManagedPolicyArns:
@@ -1017,7 +1036,7 @@ Resources:
     Properties:
       ClusterName: !Ref EKSCluster
       NodeRole: !GetAtt EKSNodeGroupRole.Arn
-      NodegroupName: "NodeGroup-1"
+      NodegroupName: "EKSCluster-NodeGroup"
       AmiType: "AL2_x86_64"
       InstanceTypes:
         - t3.medium
