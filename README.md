@@ -8,7 +8,7 @@ Learn the ease of deployment and intergration of Rancher onto Amazon AWS!
 **To get started, please review the information below and then head over to the [workshop content](/content/index.en.md)!**
 
 ## Requirements:
-* Basic Knowledge of Kubernetes and AWS Infrastructure.
+* Basic understanding of AWS, Rancher, Kubernetes, and Terminal/CLI (Command Line Interface).
 * AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
 * AWS IAM Account with *elevated privileges* allowing you to interact with various AWS Services.
 

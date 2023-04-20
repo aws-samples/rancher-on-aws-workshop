@@ -18,25 +18,30 @@
   - Deploying Longhorn and NeuVector using the Rancher Management Console
   - Cluster management best-practices with EKS and Rancher
 - Expected Duration
-  - Total (4 Hours)
-  - Deploying Rancher on EKS (45m)
-  - Importing EC2 cluster using the Rancher Management Console (30m)
-  - Creating EKS clusters from the Rancher Management Console (45m)
-  - Deploying Longhorn and NeuVector using the Rancher Management Console (30m)
-  - Break (15m)
-  - Deploying demo flask application using Rancher Fleet (60m)
-  - Cluster management best-practices with EKS and Rancher (15m)
+  - Total (3 Hours)
+  - Exploring a Rancher RKE2 Kubernetes cluster on EC2 Instances. (30m)
+  - Deploying Longhorn and NeuVector using the Rancher Management Console. (15m)
+  - Deploying Kubernetes Demo Applications using the Rancher Management Console. (15m)
+  - Short Break! (15m)
+  - Creating a Rancher RKE2 Kubernetes cluster on EC2 Instances. (30m)
+  - Importing an existing Amazon EKS Kuberenetes cluster. (15m)
+  - Cluster and Application Lifecycle Management best-practices with AWS and Rancher. (15m)
+  - Supply Chain Security and Management with AWS and Rancher. (15m)
 - Workshop Outcomes
-  - Able to deploy and manage Kubernetes Clusters
-  - Able to deploy EKS apps and Helm Charts from EKS/Rancher Management Console
-  - Able to deploy Kubernetes applications from the Rancher Management Console
-  - Understanding of best-practices when deploying and managing Kubernetes Clusters on AWS using Rancher
+  - Able to deploy and manage Kubernetes Clusters.
+  - Able to deploy Kubernetes Applications from the Rancher Management Console.
+  - Able to deploy EKS Applications and Helm Charts from EKS or Rancher Management Console.
+  - Understanding of best-practices when deploying and managing Kubernetes with AWS and Rancher.
+  - Understanding of best-practices when securing and managing Supply Chains with AWS and Rancher.
 - Workshop Audience
-  - Practitioners seeking solutions to manage Kubernetes workflows.
+  - Practitioners seeking solutions to easily and simply manage Kubernetes workloads with AWS and Rancher.
 - Workshop Prerequisites
-  - Basic understanding of Kubernetes, Kubernetes applications, AWS, and CLI maneuverability
+  - Basic understanding of AWS, Rancher, Kubernetes, and Terminal/CLI (Command Line Interface).
+  - AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
+  - AWS IAM Account with *elevated privileges* allowing you to interact with various AWS Services.
 - Workshop Costs
-  - TBD
+  - Total Cost of the Workshop is $$$. 
+  - This infers you're running the workshop for the Expected Duration of 3 hours.
 
 ## Environment Set-Up
 

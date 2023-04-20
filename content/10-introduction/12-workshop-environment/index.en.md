@@ -7,7 +7,9 @@ weight: 12
 
 ## The Workshop Environment
 
-In order to successfully complete this workshop, you need to be at an official event by Rancher/AWS or complete additional steps to have the required infrastructure available to you. Under the hood, this workshop is built off of two AWS CloudFormation Templates and everything else in done inside of Rancher Manager! Please see the steps below to ensure you are completely set up for the workshop.
+In order to successfully complete this workshop, you need to be at an official event by Rancher/AWS or complete additional steps to have the required infrastructure available to you. Under the hood, this workshop is built off of AWS CloudFormation Templates and everything else in done inside of Rancher Manager! 
+
+Please see the steps below to ensure you are successfully set up for the workshop.
 
 
 ## For Official Event Workshops
@@ -35,7 +37,7 @@ Click the **Open Console** button to launch the AWS Management Console to access
 
 ### Step 3:
 
-You're done! Now head over to the first workshop by clicking [here](/content/20-exploring-the-cluster/21-exploring-the-cluster/index.en.md)!
+You're done! Please head over to the [Exploring the Cluster](/content/20-exploring-the-cluster/21-exploring-the-cluster/index.en.md)!
 
 
 ## For Outside Official Events
@@ -44,9 +46,8 @@ If you're completing this workshop outside an official event, you will need to c
 
 ### Step 1:
 
-Download the two required workshop CloudFormation templates, by clicking the links below and clicking *download*.
-* [Rancher RKE2 Management Cluster](/static/rke2-mgmt-cluster-ssm.yaml)
-* [AWS EKS Downstream Cluster](/static/eks-import-cluster.yml)
+Download the two required workshop CloudFormation templates, by clicking the link below and clicking *"download"*.
+* [RKE2/EKS Cloud Formation Template](/static/rke2-eks-cluster.yaml)
 
 
 ### Step 2:
@@ -65,11 +66,10 @@ Click the **Create Stack** button and upload the Rancher RKE2 Management Cluster
 
 Complete all required configuration information and follow the instructions within the AWS CloudFormation Console. You should **NOT** have to change any information, unless you would like to change the configuration.
 
+Here is a an example of the configuration options:
 
-*While the first stack is being created and infrastructure is being provisioned, please repeat the same steps for the AWS EKS Downstream Cluster CloudFormation Template.*
+![aws-console-cf-templates](/static/images/content/12-aws-cf-template.png)
 
 ### Step 5:
 
-Once both CloudFormation Stacks have finished creating and all infrastructure is provisioned, head over to the first workshop by clicking [here](/content/20-exploring-the-cluster/21-exploring-the-cluster/index.en.md)!
-
-![aws-console-cf-stacks](/static/images/content/12-aws-cf-stacks.png)
+Once the Cloud Formation Stack has finished provisioning the infrastructure, Please head over to the [Exploring the Cluster](/content/20-exploring-the-cluster/21-exploring-the-cluster/index.en.md)!
