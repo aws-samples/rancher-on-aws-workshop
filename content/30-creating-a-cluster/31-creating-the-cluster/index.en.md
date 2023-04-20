@@ -87,7 +87,7 @@ weight: 31
 <pre>
 <b>pool2</b>
 
-<b>Pool Name:</b> cp-nodes
+<b>Pool Name:</b> wk-nodes
 
 <b>Machine Count:</b> 3
 

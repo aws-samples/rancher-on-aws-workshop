@@ -1050,9 +1050,9 @@ Resources:
       NodegroupName: "EKSCluster-NodeGroup"
       AmiType: "AL2_x86_64"
       InstanceTypes:
-        - t3.medium
+        - m5.large
       CapacityType: ON_DEMAND
-      DiskSize: 50
+      DiskSize: 64
       ScalingConfig:
         MinSize: 3
         DesiredSize: 3
@@ -1071,12 +1071,15 @@ Resources:
       Name: 'AWS-RGS-Workshop'
   
 Outputs:
-  RancherURL:
-    Description: Rancher Manager Access URL
-    Value: !GetAtt 'RancherELB.DNSName'
+  CloudCredentialArn:
+    Description: AWS Credential ARN
+    Value: !GetAtt RancherCloudCredentialUser.Arn
   CloudCredentialKey:
     Description: AWS Access Key (Sensitive!)
     Value: !Ref RancherCloudCredentialKey
   CloudCredentialSecret:
     Description: AWS Secret Key (Sensitive!)
     Value: !GetAtt RancherCloudCredentialKey.SecretAccessKey
+  RancherURL:
+    Description: Rancher Manager Access URL
+    Value: !GetAtt RancherELB.DNSName
