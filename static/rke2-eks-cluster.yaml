@@ -333,6 +333,8 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
+              AWS: 
+              - !GetAtt RancherCloudCredentialUser.Arn
               Service:
               - eks.amazonaws.com
               - ec2.amazonaws.com
@@ -449,6 +451,8 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
+              AWS: 
+              - !GetAtt RancherCloudCredentialUser.Arn
               Service:
               - eks.amazonaws.com
               - ec2.amazonaws.com
@@ -851,6 +855,8 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
+              AWS: 
+              - !GetAtt RancherCloudCredentialUser.Arn
               Service:
               - eks.amazonaws.com
               - ec2.amazonaws.com
@@ -941,6 +947,8 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
+              AWS: 
+              - !GetAtt RancherCloudCredentialUser.Arn
               Service:
               - eks.amazonaws.com
               - ec2.amazonaws.com
@@ -975,7 +983,8 @@ Resources:
         Statement:
         - Effect: Allow
           Principal:
-            AWS: !GetAtt RancherCloudCredentialUser.Arn
+            AWS: 
+            - !GetAtt RancherCloudCredentialUser.Arn
             Service:
             - eks.amazonaws.com
             - ec2.amazonaws.com
@@ -1019,6 +1028,8 @@ Resources:
         Statement:
         - Effect: Allow
           Principal:
+            AWS: 
+            - !GetAtt RancherCloudCredentialUser.Arn
             Service:
             - eks.amazonaws.com
             - ec2.amazonaws.com
