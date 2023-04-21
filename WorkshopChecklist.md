@@ -28,7 +28,8 @@
   - Cluster and Application Lifecycle Management best-practices with AWS and Rancher. (15m)
   - Supply Chain Security and Management with AWS and Rancher. (15m)
 - Workshop Outcomes
-  - Able to deploy and manage Kubernetes Clusters.
+  - Able to explore and manage RKE2/EKS Kubernetes Clusters.
+  - Able to deploy Kubernetes clusters from the Rancher Management Console.
   - Able to deploy Kubernetes Applications from the Rancher Management Console.
   - Able to deploy EKS Applications and Helm Charts from EKS or Rancher Management Console.
   - Understanding of best-practices when deploying and managing Kubernetes with AWS and Rancher.
@@ -59,13 +60,13 @@
 - [x] Are deliberately retained resources explained? (N/A)
 - [x] Are deliberately retained resources costs explained? (N/A)
 - [x] If clean-up instructions require the deletion of a cfn stack, does this delete all resources in the stack? - it does not
-- [ ] Provide link to clean-up in the introduction/set-up chapters
-- [ ] Is the clean-up obvious for customers who do not complete the workshop?
+- [x] Provide link to clean-up in the introduction/set-up chapters
+- [x] Is the clean-up obvious for customers who do not complete the workshop?
 
 ## Well-Architected Workshop Infrastructure
 
 - [ ] Confirm well-architected principals are used
-- [ ] Variance of instance types used (EC2, RDS, etc.)(or described)
+- [x] Variance of instance types used (EC2, RDS, etc.)(or described)
 - [x] Resources deployed in multiple AZs
 - [x] Resources scale with demand - (N/A)
 - [x] Explanation provided for resources that are not redundant, scalable, or cost efficient - Fixed infra to support workshop features only. Solution does not call for scaling though using an ASG for provisioning
@@ -90,7 +91,7 @@
 - [x] Confirm IAM Access Analyzer was ran and any findings were resolved
 - [x] Confirm attendees are NOT ASKED to enter information as part of the workshop
 - [ ] Confirm workshop compiles with security best practices https://docs.aws.amazon.com/security/
-- [ ] Confirm ScoutSuite, cfn_nag, and cfn-lint ran without resulting in any blockers (detail any high severity findings in the comments field, and confirm those items have been resolved) (https://github.com/nccgroup/ScoutSuite , https://github.com/stelligent/cfn_nag, https://github.com/aws-cloudformation/cfn-lint)
+- [x] Confirm ScoutSuite, cfn_nag, and cfn-lint ran without resulting in any blockers (detail any high severity findings in the comments field, and confirm those items have been resolved) (https://github.com/nccgroup/ScoutSuite , https://github.com/stelligent/cfn_nag, https://github.com/aws-cloudformation/cfn-lint)
 - [x] Confirm review of all uploaded content for the threat of malicious uploads by scanning with tools such as ClamAV
 - [ ] List any other scans of the workshop
 - [x] Confirm workshop does not contain confidential information

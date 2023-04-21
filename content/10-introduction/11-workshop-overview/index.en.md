@@ -20,7 +20,7 @@ weight: 11
 
 
 ## Workshop Expected Duration
-**Total Duration of the workshop is 3 Hours!**
+**Total Duration of the workshop is 3 Hours.**
   * Exploring a Rancher RKE2 Kubernetes cluster on EC2 Instances. (30m)
   * Deploying Longhorn and NeuVector using the Rancher Management Console. (15m)
   * Deploying Kubernetes Demo Applications using the Rancher Management Console. (15m)
@@ -32,7 +32,8 @@ weight: 11
 
 
 ## Workshop Outcomes
-* Able to deploy and manage Kubernetes Clusters.
+* Able to explore and manage RKE2/EKS Kubernetes Clusters.
+* Able to deploy Kubernetes clusters from the Rancher Management Console.
 * Able to deploy Kubernetes Applications from the Rancher Management Console.
 * Able to deploy EKS Applications and Helm Charts from EKS or Rancher Management Console.
 * Understanding of best-practices when deploying and managing Kubernetes with AWS and Rancher.

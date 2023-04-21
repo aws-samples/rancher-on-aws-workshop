@@ -97,12 +97,7 @@ infrastructure:
 
       # The template's location relative to the root of the content's repo. 
       # Note: Templates must be located in the `static/` directory
-    - templateLocation: static/rke2-mgmt-cluster-ssm.yaml
+    - templateLocation: static/rke2-eks-cluster.yaml
 
       # Friendly name for the corresponding cloudformation template.
-      label: RKE2-Rancher Manager Stack with SecretsManager
-
-    - templateLocation: static/eks-import-cluster.yml
-
-      # Friendly name for the corresponding cloudformation template.
-      label: EKS with AWS Controllers for K8s
+      label: RKE2 Kubernetes/Rancher Manager with EKS Cluster CloudFormation Template

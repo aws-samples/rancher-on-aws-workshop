@@ -3,7 +3,7 @@ title: "AWS Addons"
 weight: 42
 ---
 
-# AWS Addons
+# AWS EKS Addons
 
 ### Step 1:
 
