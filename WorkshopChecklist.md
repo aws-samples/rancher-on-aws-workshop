@@ -7,7 +7,7 @@
 - [x] Workshop Outcomes
 - [x] Workshop Audience
 - [x] Workshop Prerequisites
-- [ ] Workshop Costs
+- [x] Workshop Costs
 
 ### "Included in Introduction" Notes
 
@@ -41,7 +41,7 @@
   - AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
   - AWS IAM Account with *elevated privileges* allowing you to interact with various AWS Services.
 - Workshop Costs
-  - Total Cost of the Workshop is $$$. 
+  - Total Cost of the Workshop is less than $10.
   - This infers you're running the workshop for the Expected Duration of 3 hours.
 
 ## Environment Set-Up
@@ -65,7 +65,7 @@
 
 ## Well-Architected Workshop Infrastructure
 
-- [ ] Confirm well-architected principals are used
+- [x] Confirm well-architected principals are used
 - [x] Variance of instance types used (EC2, RDS, etc.)(or described)
 - [x] Resources deployed in multiple AZs
 - [x] Resources scale with demand - (N/A)
@@ -73,7 +73,7 @@
 
 ## External Links and Privacy
 
-- [ ] Confirm workshop is self-contained
+- [x] Confirm workshop is self-contained
 - [x] Larger bundles of AWS-owned content stored in Event Engine S3 or AWS GitHub
 - [x] Confirm YouTube videos use the video directive (N/A)
 - [x] Confirm workshop referenced 3rd party datasets allow for AWS use - (N/A)
@@ -105,16 +105,16 @@
 - [x] Confirm 3rd party data sets include AWS rights to use
 - [x] Confirm code in Github is under the AWS organization
 - [x] Confirm 3rd party code is references rather than used where possible. If used, a license must allow AWS usage
-- [ ] Confirm workshop is factually correct
-- [ ] Confirm the workshop can be completed with steps included without error
-- [ ] Confirm remediations included if errors are encounters
+- [x] Confirm workshop is factually correct
+- [x] Confirm the workshop can be completed with steps included without error
+- [x] Confirm remediations included if errors are encounters
 - [ ] Confirm diagrams and images are included where applicable
-- [ ] Confirm language is clear, even to non-native-language speakers
+- [x] Confirm language is clear, even to non-native-language speakers
 
 ## Accessibility and Inclusion
 
-- [ ] Confirm all images have accurate and depictive alternate text
-- [ ] Confirm images avoid red/green elements that could cause colorblindness issues
+- [x] Confirm all images have accurate and depictive alternate text
+- [x] Confirm images avoid red/green elements that could cause colorblindness issues
 - [x] Confirm videos have subtitles (N/A)
 - [ ] Confirm workshop adheres to Amazon’s Inclusive Tech Guidelines
 

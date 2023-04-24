@@ -45,7 +45,7 @@ weight: 11
 
 
 ## Workshop Costs
-* Total Cost of the Workshop is $$$. 
+* Total Cost of the Workshop is less than $10. 
 * This infers you're running the workshop for the Expected Duration of 3 hours.
 
 
