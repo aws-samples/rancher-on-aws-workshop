@@ -40,13 +40,16 @@ awsAccountConfig:
     # List of paths to files containing valid IAM policies that are to be attached to the account's ParticipantRole.
     # Paths need to be relative to the root of the content's repository and must be located in the `static/` directory.
     # Note: At this moment, only IAM policies defined in JSON format are supported.
-#    iamPolicies: 
-#      - static/iam_policy.json
+    iamPolicies: 
+      - static/iam_policy.json
 
     # List of valid IAM managed policies to be attached to the account's ParticipantRole. Only AWS managed policies are supported at this moment (https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)
     managedPolicies: 
       - "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
       - "arn:aws:iam::aws:policy/AWSCloudFormationReadOnlyAccess"
+      - "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+      - "arn:aws:iam::aws:policy/IAMReadOnlyAccess"
+      - "arn:aws:iam::aws:policy/AWSCloud9Administrator"
     
     # List of valid trusted principals to be referenced in the ParticipantRole's trust policy
     trustedPrincipals:
@@ -100,4 +103,9 @@ infrastructure:
     - templateLocation: static/rke2-eks-cluster.yaml
 
       # Friendly name for the corresponding cloudformation template.
-      label: RKE2 Kubernetes/Rancher Manager with EKS Cluster CloudFormation Template
+      label: RKE2 Kubernetes and Rancher Manager with EKS Cluster CloudFormation Template
+      parameters:
+        - templateParameter: AssetsBucketName
+          defaultValue: "{{.AssetsBucketName}}"
+        - templateParameter: AssetsBucketPrefix
+          defaultValue: "{{.AssetsBucketPrefix}}"

@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+        "Sid": "eksctlRoleAccess",
+        "Effect": "Allow",
+        "Action": "iam:PassRole",
+        "Resource": "arn:aws:iam::841963226967:role/*EKSCTLRole*"
+    },
+      {
+          "Sid": "EksWorkshopParticipant",
+          "Effect": "Allow",
+          "Action": [
+              "eks:*",
+              "elasticloadbalancing:*",
+              "elasticfilesystem:*",
+              "cloudwatch:*",
+              "logs:*",
+              "cloud9:*",
+              "ec2:*",
+              "secretsmanager:*",
+              "kms:*",
+              "ssm:*",
+              "s3:*"
+          ],
+          "Resource": [
+              "*"
+          ]
+      }
+  ]
+}
