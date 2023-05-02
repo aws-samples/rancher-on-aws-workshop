@@ -6,11 +6,12 @@ weight: 11
 # Overview of the Workshop
 
 ## Workshop Topics
-* Deploying Rancher on EKS
-* Importing EC2 cluster using the Rancher Management Console
-* Creating EKS clusters from the Rancher Management Console
-* Deploying Longhorn and NeuVector using the Rancher Management Console
-* Cluster management best-practices with EKS and Rancher
+* Deploying and Exploring the Rancher Ecosystem on AWS
+* Creating a EC2 RKE2 Cluster using the Rancher Manager Console
+* Creating a EKS Cluster using AWS Cloud9 and EKSCTL
+* Importing a EKS Cluster using the Rancher Manager Console
+* Deploying Longhorn and NeuVector using the Rancher Manager Console
+* Kubernetes and Cluster Management Best Practices with AWS and Rancher
 
 
 ## Workshop Requirements
@@ -46,7 +47,7 @@ weight: 11
 
 ## Workshop Costs
 * Total Cost of the Workshop is less than $10. 
-* This infers you're running the workshop for the Expected Duration of 3 hours.
+* Infers running the workshop for the Expected Duration of 3 hours.
 
 
 ## Now Let's Get Started...
