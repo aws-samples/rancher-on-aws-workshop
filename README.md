@@ -8,7 +8,7 @@ Learn the ease of deployment and intergration of Rancher onto Amazon AWS!
 **To get started, please review the information below and then head over to the [workshop content](/content/index.en.md)!**
 
 ## Requirements:
-* Basic understanding of AWS, Rancher, Kubernetes, and Terminal/CLI (Command Line Interface).
+* Basic Knowledge of Kubernetes and AWS Infrastructure.
 * AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
 * AWS IAM Account with *elevated privileges* allowing you to interact with various AWS Services.
 
@@ -23,8 +23,8 @@ Learn the ease of deployment and intergration of Rancher onto Amazon AWS!
   * [Rancher Applications](/content/20-exploring-the-cluster/22-rancher-applications/index.en.md)
   * [Kubernetes Applications](/content/20-exploring-the-cluster/23-kubernetes-applications/index.en.md)
 * [Creating a Cluster](/content/30-creating-a-cluster/index.en.md)
-  * [Creating the EKSctl Cluster](/content/30-creating-a-cluster/31-creating-the-eksctl-cluster/index.en.md)
-  * [Creating the Cluster](/content/30-creating-a-cluster/32-creating-the-cluster/index.en.md)
+  * [Creating EKS Cluster](/content/30-creating-a-cluster/31-creating-eks-cluster/index.en.md)
+  * [Creating RKE2 Cluster](/content/30-creating-a-cluster/32-creating-rke2-cluster/index.en.md)
 * [Importing a Cluster](/content/40-importing-a-cluster/index.en.md)
   * [Importing the Cluster](/content/40-importing-a-cluster/41-importing-the-cluster/index.en.md)
   * [AWS Addons](/content/40-importing-a-cluster/42-aws-addons/index.en.md)

@@ -1,6 +1,6 @@
 ---
-title: "Creating the Cluster"
-weight: 31
+title: "Creating the RKE2 Cluster"
+weight: 32
 ---
 
 # Creating the RKE2 Cluster

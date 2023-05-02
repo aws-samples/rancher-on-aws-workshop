@@ -14,30 +14,33 @@ Please see the steps below to ensure you are successfully set up for the worksho
 
 ## For Official Event Workshops
 
-If you're completing this workshop at an official event with Rancher and/or Amazon AWS, your AWS Account will be pre-configured with the required infrastructure. We are able to this by utilizing AWS Event Engine!
+If you're completing this workshop at an official event with Rancher and/or Amazon AWS, your AWS Account will be pre-configured with the required infrastructure. We are able to this by utilizing AWS Workshop Studio!
 
-To access your generated AWS Account/AWS Infrastructure, please head over to the [AWS Event Engine Dashboard](https://dashboard.eventengine.run) and enter your email address and unique hash.
+To access your generated AWS Account/AWS Infrastructure, please head over to the **[AWS Workshop Studio Dashboard](https://catalog.us-east-1.prod.workshops.aws)!**
 
+![aws-event-engine-dashboard](/static/images/content/12-aws-ws-dashboard.png)
 
 ### Step 1:
 
 Enter your unique hash and click **Accept Terms & Login**!
 
-![aws-event-engine-dashboard](/static/images/content/12-event-engine-dashboard.png)
+![aws-ws-hash](/static/images/content/12-aws-ws-hash.png)
 
-Once you are logged into the AWS Event Engine Dashboard, you are able to view your account related information.
+![aws-ws-terms](/static/images/content/12-aws-ws-terms.png)
+
+Once you are logged into the AWS Workshop Studio Dashboard, you are able to view your account related information.
 
 
 ### Step 2:
 
-Click the **Open Console** button to launch the AWS Management Console to access your generated AWS Account.
+Review the Workshop specific information provided for your account.
 
-![aws-event-engine-home](/static/images/content/12-event-engine-home.png)
+![aws-ws-home](/static/images/content/12-ws-home.png)
 
 
 ### Step 3:
 
-You're done! Please head over to the [Exploring the Cluster](/content/20-exploring-the-cluster/21-exploring-the-cluster/index.en.md)!
+You're done! Please head over and start the workshop by clicking the **"Welcome to Rancher on AWS"**
 
 
 ## For Outside Official Events

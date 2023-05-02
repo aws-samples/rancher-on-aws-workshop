@@ -1063,16 +1063,6 @@ Resources:
            Resource: '*'
   
 Outputs: 
-  Cloud9IDE:
-    Value:
-      Fn::Join:
-      - ''
-      - - https://
-        - Ref: AWS::Region
-        - ".console.aws.amazon.com/cloud9/ide/"
-        - Ref: EKSCloud9Env
-        - "?region="
-        - Ref: AWS::Region
   CloudCredentialArn:
     Description: AWS Credential ARN
     Value: !GetAtt RancherCloudCredentialUser.Arn
@@ -1085,6 +1075,16 @@ Outputs:
   RancherURL:
     Description: Rancher Manager Access URL
     Value: !GetAtt RancherELB.DNSName
+  Cloud9IDE:
+    Value:
+      Fn::Join:
+      - ''
+      - - https://
+        - Ref: AWS::Region
+        - ".console.aws.amazon.com/content/cloud9/ide/"
+        - Ref: EKSCloud9Env
+        - "?region="
+        - Ref: AWS::Region
   EKSClusterConfig:
     Description: Cluster Config to use for the workshop
     Value: 

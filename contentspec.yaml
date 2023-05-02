@@ -7,15 +7,15 @@ localeCodes:
 params:
 
 additionalLinks:
-  - title: AWS Documentation Homepage
+  - title: AWS Documentation
     link: https://docs.aws.amazon.com
-  - title: Rancher Multicluster Management
+  - title: Rancher Manager Docs
     link: https://ranchermanager.docs.rancher.com/
-  - title: Rancher Kubernetes Engine 2 (RKE2)
+  - title: Rancher RKE2 Docs
     link: https://docs.rke2.io/
-  - title: Rancher Longhorn (Storage)
+  - title: Rancher Longhorn Docs
     link: https://docs.longhorn.io
-  - title: Rancher Neuvector (Security)
+  - title: Rancher Neuvector Docs
     link: https://open-docs.neuvector.com
 
 awsAccountConfig:

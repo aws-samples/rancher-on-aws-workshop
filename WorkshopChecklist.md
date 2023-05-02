@@ -48,15 +48,15 @@
 
 - [x] Confirm Workshop Infrastructure works
 - [x] Confirm Workshop works in customer account. If so, provide setup instructions. (N/A)
-- [ ] Confirm Workshop has account login information and works
+- [x] Confirm Workshop has account login information and works
 - [x] State if the Workshop only works with Event Engine - CFTs will be publicly available, allowing to be ran outside of Event Engine   
 - [x] State any computer hardware prerequisite setup information (laptops, etc.) An internet connected machine
 - [x] State if the Workshop only works in specific regions - Only us-east-1 at the moment
 
 ## Environment Clean-Up
 
-- [ ] Provide instructions to clean-up the environment
-- [ ] Specify if the clean-up steps are specific to the resources created in the Workshop
+- [x] Provide instructions to clean-up the environment
+- [x] Specify if the clean-up steps are specific to the resources created in the Workshop
 - [x] Are deliberately retained resources explained? (N/A)
 - [x] Are deliberately retained resources costs explained? (N/A)
 - [x] If clean-up instructions require the deletion of a cfn stack, does this delete all resources in the stack? - it does not
@@ -81,17 +81,17 @@
 
 ## Security
 
-- [ ] Confirm users and roles have appropriately scoped policies
+- [x] Confirm users and roles have appropriately scoped policies
 - [x] Confirm buckets restrict public access
 - [x] Confirm all services with an option to restrict public access are enabled
 - [x] Confirm security groups restrict access to specific IPs and ports
 - [x] Confirm RDS and EMR clusters have public access disabled - (N/A)
-- [ ] Explain if a configuration doesn’t adhere to AWS well-architected practices
+- [x] Explain if a configuration doesn’t adhere to AWS well-architected practices
 - [x] Confirm sample code is run using a role that grants least privilege
 - [x] Confirm IAM Access Analyzer was ran and any findings were resolved
 - [x] Confirm attendees are NOT ASKED to enter information as part of the workshop
-- [ ] Confirm workshop compiles with security best practices https://docs.aws.amazon.com/security/
-- [x] Confirm ScoutSuite, cfn_nag, and cfn-lint ran without resulting in any blockers (detail any high severity findings in the comments field, and confirm those items have been resolved) (https://github.com/nccgroup/ScoutSuite , https://github.com/stelligent/cfn_nag, https://github.com/aws-cloudformation/cfn-lint)
+- [x] Confirm workshop compiles with security best practices https://docs.aws.amazon.com/security/
+- [ ] Confirm ScoutSuite, cfn_nag, and cfn-lint ran without resulting in any blockers (detail any high severity findings in the comments field, and confirm those items have been resolved) (https://github.com/nccgroup/ScoutSuite , https://github.com/stelligent/cfn_nag, https://github.com/aws-cloudformation/cfn-lint)
 - [x] Confirm review of all uploaded content for the threat of malicious uploads by scanning with tools such as ClamAV
 - [ ] List any other scans of the workshop
 - [x] Confirm workshop does not contain confidential information
@@ -116,7 +116,7 @@
 - [x] Confirm all images have accurate and depictive alternate text
 - [x] Confirm images avoid red/green elements that could cause colorblindness issues
 - [x] Confirm videos have subtitles (N/A)
-- [ ] Confirm workshop adheres to Amazon’s Inclusive Tech Guidelines
+- [x] Confirm workshop adheres to Amazon’s Inclusive Tech Guidelines
 
 ## Internalization
 
