@@ -962,10 +962,6 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
-              AWS:
-              - !Sub
-                - 'arn:aws:iam::${AccountId}:assumed-role/WSParticipantRole/Participant'
-                - { AccountId: !Ref AWS::AccountId }
               Service:
               - ec2.amazonaws.com
             Action:
@@ -994,11 +990,6 @@ Resources:
         Statement:
         - Effect: Allow
           Principal:
-            AWS: 
-            - !GetAtt RancherCloudCredentialUser.Arn
-            - !Sub
-              - 'arn:aws:iam::${AccountId}:assumed-role/WSParticipantRole/Participant'
-              - { AccountId: !Ref AWS::AccountId }
             Service:
             - eks.amazonaws.com
             - ec2.amazonaws.com
@@ -1018,11 +1009,6 @@ Resources:
         Statement:
         - Effect: Allow
           Principal:
-            AWS: 
-            - !GetAtt RancherCloudCredentialUser.Arn
-            - !Sub
-              - 'arn:aws:iam::${AccountId}:assumed-role/WSParticipantRole/Participant'
-              - { AccountId: !Ref AWS::AccountId }
             Service:
             - eks.amazonaws.com
             - ec2.amazonaws.com
@@ -1081,7 +1067,7 @@ Outputs:
       - ''
       - - https://
         - Ref: AWS::Region
-        - ".console.aws.amazon.com/content/cloud9/ide/"
+        - ".console.aws.amazon.com/cloud9/ide/"
         - Ref: EKSCloud9Env
         - "?region="
         - Ref: AWS::Region
