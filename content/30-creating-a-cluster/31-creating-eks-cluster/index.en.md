@@ -52,7 +52,7 @@ The setup script will install (or update) a few tools and set environment variab
 
     ```bash
     cd
-aws s3 cp <paste setup link> /tmp
+    aws s3 cp \<paste setup link\> /tmp
     ```
 
     ![Cloud9](/static/images/cloud9/setupScript-download.png)
@@ -61,9 +61,9 @@ aws s3 cp <paste setup link> /tmp
 
 * Run **setup.sh** (Make sure you're in the ec2-user home directory):
     
-    :::code{showCopyAction=true showLineNumbers=false language=bash} 
+    ```bash
     . /tmp/setup.sh
-    :::
+    ```
 
     ![Cloud9](/static/images/cloud9/startSetup_script.png)
 
@@ -77,9 +77,9 @@ The cluster config file defines the EKS cluster settings and permissions for the
 
 * Run the **aws s3 cp** command in the Cloud9 terminal (notice space between the link and the "**.**"):
 
-    :::code{showCopyAction=true showLineNumbers=false language=bash} 
+    ```bash
     aws s3 cp <paste setup link> .
-    ::: 
+    ```
 
     ![Cloud9](/static/images/cloud9/eks-conf-download.png)
 
@@ -134,10 +134,10 @@ Here, we're running the **eksctl create cluster** command as well as the **eksct
 
 * Run **eksctl create cluster** and update identity mapping:
     
-    :::code{showCopyAction=true showLineNumbers=false language=bash} 
+    ```bash
     envsubst < eksctl-cluster.yml > eksctl-cluster-actual.yml
-eksctl create cluster -f eksctl-cluster-actual.yml ; eksctl create iamidentitymapping --cluster $EKS_CLUSTER_NAME --region=$AWS_REGION --arn $rancherUser --group system:masters --username rancher
-    :::
+    eksctl create cluster -f eksctl-cluster-actual.yml ; eksctl create iamidentitymapping --cluster $EKS_CLUSTER_NAME --region=$AWS_REGION --arn $rancherUser --group system:masters --username rancher
+    ```
 
    ![Cloud9](/static/images/cloud9/envsub.png)
 
