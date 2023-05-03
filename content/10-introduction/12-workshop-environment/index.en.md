@@ -51,6 +51,8 @@ If you're completing this workshop outside an official event, you will need to c
 
 Download the two required workshop CloudFormation templates, by clicking the link below and clicking *"download"*.
 * [RKE2/EKS Cloud Formation Template](/static/rke2-eks-cluster.yaml)
+* [EKS cluster config file](/assets/eksctl-cluster.yml)
+* [Environmeent Setup script](/assets/setup.sh)
 
 
 ### Step 2:

@@ -50,10 +50,10 @@ The setup script will install (or update) a few tools and set environment variab
 
 * Run **aws s3 cp** command in the Cloud9 terminal:
 
-    :::code{showCopyAction=true showLineNumbers=false language=bash} 
+    ```bash
     cd
 aws s3 cp <paste setup link> /tmp
-    :::
+    ```
 
     ![Cloud9](/static/images/cloud9/setupScript-download.png)
 
