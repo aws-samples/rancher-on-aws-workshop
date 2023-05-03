@@ -52,7 +52,7 @@ The setup script will install (or update) a few tools and set environment variab
 
     ```bash
     cd
-    aws s3 cp \<paste setup link\> /tmp
+    aws s3 cp <paste setup link> /tmp
     ```
 
     ![Cloud9](/static/images/cloud9/setupScript-download.png)
