@@ -39,16 +39,11 @@ You can close the smaller terminal window at the bottom if you'd like. Otherwise
 ## Step 2: Setup your Cloud9 Environment
 ---
 
-### Download the setup.sh file:
+### Create the setup.sh file:
 
 The setup script will install (or update) a few tools and set environment variables in the Cloud9 IDE
 
-* Copy the S3 link from the bottom of workshop event page:
-
-    ![Cloud9](/static/images/cloud9/event-main.png)
-    ![Cloud9](/static/images/cloud9/copy_setup_link.png)
-
-* Run these commands in the Cloud9 terminal (notice the 'copy' button to the right of the window):
+* Copy and paste these lines in the Cloud9 terminal (notice the 'copy' button to the right of the window):
 
     ```bash
     cd
@@ -92,15 +87,11 @@ The setup script will install (or update) a few tools and set environment variab
 
     ![Cloud9](/static/images/cloud9/startSetup_script.png)
 
-### Download the cluster config:
+### Create the cluster config:
 
 The cluster config file defines the EKS cluster settings and permissions for the cluster.
 
-* Copy the link from the workshop welcome page:
-
-    ![Cloud9](/static/images/cloud9/copy_eksConfig_link.png)
-
-* Run these commands in the Cloud9 terminal (notice the 'copy' button to the right of the window):
+* Copy and paste these lines in the Cloud9 terminal (notice the 'copy' button to the right of the window):
 
     ```bash
     cat <<EOF > eksctl-cluster.yml
@@ -192,7 +183,7 @@ The cluster config file defines the EKS cluster settings and permissions for the
 
 Here, we're running the **eksctl create cluster** command as well as the **eksctl create iamidentitymapping** command to first create the cluster, then add the rancher user to the cluster's primary access group
 
-* Run **eksctl create cluster** and update identity mapping:
+* Run **eksctl create cluster** and update the identity mapping:
     
     ```bash
     eksctl create cluster -f eksctl-cluster-actual.yml ; eksctl create iamidentitymapping --cluster $EKS_CLUSTER_NAME --region=$AWS_REGION --arn $rancherUser --group system:masters --username rancher
