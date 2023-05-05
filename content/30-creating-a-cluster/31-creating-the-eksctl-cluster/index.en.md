@@ -48,7 +48,7 @@ The setup script will install (or update) a few tools and set environment variab
     ![Cloud9](/static/images/cloud9/event-main.png)
     ![Cloud9](/static/images/cloud9/copy_setup_link.png)
 
-* Run **aws s3 cp** command in the Cloud9 terminal:
+* Run these commands in the Cloud9 terminal (notice the 'copy' button to the right of the window):
 
     ```bash
     cd
@@ -82,8 +82,6 @@ The setup script will install (or update) a few tools and set environment variab
     EOF
     ```
 
-    ![Cloud9](/static/images/cloud9/setupScript-download.png)
-
 ### Run the setup script
 
 * Run **setup.sh** (Make sure you're in the ec2-user home directory):
@@ -102,7 +100,7 @@ The cluster config file defines the EKS cluster settings and permissions for the
 
     ![Cloud9](/static/images/cloud9/copy_eksConfig_link.png)
 
-* Run the **aws s3 cp** command in the Cloud9 terminal (notice space between the link and the "**.**"):
+* Run these commands in the Cloud9 terminal (notice the 'copy' button to the right of the window):
 
     ```bash
     cat <<EOF > eksctl-cluster.yml
@@ -144,8 +142,6 @@ The cluster config file defines the EKS cluster settings and permissions for the
        version: latest
     EOF
     ```
-
-    ![Cloud9](/static/images/cloud9/eks-conf-download.png)
 
 ## Step 3: Update Cloud9 Instance
 ---
@@ -201,8 +197,6 @@ Here, we're running the **eksctl create cluster** command as well as the **eksct
     ```bash
     eksctl create cluster -f eksctl-cluster-actual.yml ; eksctl create iamidentitymapping --cluster $EKS_CLUSTER_NAME --region=$AWS_REGION --arn $rancherUser --group system:masters --username rancher
     ```
-
-   ![Cloud9](/static/images/cloud9/envsub.png)
 
    ![Cloud9](/static/images/cloud9/eksctl-create.png)
 > **Note: Cluster creation can takes up to 25 minutes**
