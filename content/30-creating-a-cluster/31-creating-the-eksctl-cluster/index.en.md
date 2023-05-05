@@ -52,7 +52,34 @@ The setup script will install (or update) a few tools and set environment variab
 
     ```bash
     cd
-    aws s3 cp <paste setup link> /tmp
+    cat <<EOF > /tmp/setup.sh
+    #!/bin/bash
+
+    echo '================= Update AWS CLI ================='
+    sudo yum remove awscli -y
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
+    export PATH=/usr/local/bin:$PATH
+
+    echo '================= Install Kubectl, EKSctl & Helm ================='
+    curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.26.2/2023-03-17/bin/linux/amd64/kubectl
+    chmod +x ./kubectl
+    mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+    echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+    curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+    sudo mv /tmp/eksctl /usr/local/bin
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+    chmod 700 get_helm.sh
+    sh get_helm.sh
+
+    echo '================ Set some ENV variables ================='
+    export AWS_REGION=us-east-1
+    export EKS_CLUSTER_NAME="eks-cluster"
+    export ClusterRoleArn=$(aws iam list-roles --query "Roles[?contains(RoleName, 'EKSClusterRole')].Arn" --output text)
+    export NodeGroupRoleArn=$(aws iam list-roles --query "Roles[?contains(RoleName, 'EKSNodeGroupRole')].Arn" --output text)
+    export rancherUser=$(aws iam get-user --user-name rancher-cloud-credential-user --query 'User.Arn' --output text)
+    EOF
     ```
 
     ![Cloud9](/static/images/cloud9/setupScript-download.png)
@@ -78,7 +105,44 @@ The cluster config file defines the EKS cluster settings and permissions for the
 * Run the **aws s3 cp** command in the Cloud9 terminal (notice space between the link and the "**.**"):
 
     ```bash
-    aws s3 cp <paste setup link> .
+    cat <<EOF > eksctl-cluster.yml
+    apiVersion: eksctl.io/v1alpha5
+    kind: ClusterConfig
+
+    #Only use these availability zones
+    availabilityZones:
+    - ${AWS_REGION}a
+    - ${AWS_REGION}b
+    - ${AWS_REGION}c
+
+    metadata:
+    name: ${EKS_CLUSTER_NAME}
+    region: ${AWS_REGION}
+    version: "1.25"
+   
+    iam:
+    serviceRoleARN: ${ClusterRoleArn}
+   
+    managedNodeGroups:
+    - name: nodeGrp-1
+       instanceType: m5.large
+       amiFamily: AmazonLinux2
+       privateNetworking: True
+       desiredCapacity: 3
+       maxSize: 3
+       minSize: 3
+       volumeSize: 64
+       iam:
+          instanceRoleArn: ${NodeGroupRoleArn}
+    addons:
+    - name: vpc-cni # no version is specified so it deploys the default version
+       attachPolicyARNs:
+          - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
+    - name: coredns
+       version: latest # auto discovers the latest available
+    - name: kube-proxy
+       version: latest
+    EOF
     ```
 
     ![Cloud9](/static/images/cloud9/eks-conf-download.png)
@@ -135,7 +199,6 @@ Here, we're running the **eksctl create cluster** command as well as the **eksct
 * Run **eksctl create cluster** and update identity mapping:
     
     ```bash
-    envsubst < eksctl-cluster.yml > eksctl-cluster-actual.yml
     eksctl create cluster -f eksctl-cluster-actual.yml ; eksctl create iamidentitymapping --cluster $EKS_CLUSTER_NAME --region=$AWS_REGION --arn $rancherUser --group system:masters --username rancher
     ```
 
