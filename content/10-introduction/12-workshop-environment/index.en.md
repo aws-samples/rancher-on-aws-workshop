@@ -55,12 +55,10 @@ Please be aware that this will incur costs to your AWS Account.
 
 ### Step 1:
 
-Download the required workshop files by clicking the link below and clicking 
-*"download"* in your browser.
+* :button[RKE2/EKS Cloud Formation Template]{href='/static/rke2-eks-cluster.yaml' action=download variant='link'}
+* :button[EKS cluster config file](href='/static/eksctl-cluster.yml' action=download variant='link')
+* :button[Environmeent Setup script](href='/static/setup.sh' action=download variant='link')
 
-* [RKE2/EKS Cloud Formation Template](/static/rke2-eks-cluster.yaml)
-* [EKS cluster config file](/static/eksctl-cluster.yml)
-* [Environment Setup script](/static/setup.sh)
 
 ### Step 2:
 Log into the [AWS Management Console](https://aws.amazon.com/console/) and 
