@@ -16,13 +16,13 @@ Please use the links below to view the official documentation for each of the pr
 For any questions or to get in touch with Rancher, please contact us via email at natsec@rancherfederal.com!
 
 ## AWS Services:
-* Amazon Cloud Formation (CF)- [documentation](https://docs.aws.amazon.com/cloudformation)
+* AWS CloudFormation - [documentation](https://docs.aws.amazon.com/cloudformation)
 * Amazon Elastic Compute Cloud (EC2) - [documentation](https://docs.aws.amazon.com/ec2)
 * Amazon Elastic Kubernetes Service (EKS) - [documentation](https://docs.aws.amazon.com/eks)
-* Amazon Elastic Load Balancing (ELB)- [documentation](https://docs.aws.amazon.com/elasticloadbalancing)
-* Amazon Auto Scaling (ASG)- [documentation](https://docs.aws.amazon.com/autoscaling)
-* Amazon Elastic File System (EFS)- [documentation](https://docs.aws.amazon.com/efs)
+* Elastic Load Balancing (ELB) - [documentation](https://docs.aws.amazon.com/elasticloadbalancing)
+* Amazon EC2 Auto Scaling - [documentation](https://docs.aws.amazon.com/autoscaling)
+* Amazon Elastic File System (EFS) - [documentation](https://docs.aws.amazon.com/efs)
 * Amazon Elastic Block Store (EBS) - [documentation](https://docs.aws.amazon.com/ebs)
-* Amazon Identity and Access Management (IAM)- [documentation](https://docs.aws.amazon.com/iam)
+* AWS Identity and Access Management (IAM) - [documentation](https://docs.aws.amazon.com/iam)
 
 For any questions or to get in touch with AWS, please contact us via email at mpo-proserve@amazon.com!

@@ -63,7 +63,8 @@ Download the required workshop files by clicking the link below and clicking
 * [Environment Setup script](/static/setup.sh)
 
 ### Step 2:
-Log into the [AWS Management Console](https://aws.amazon.com/console/) and open the [CloudFormation Console](https://console.aws.amazon.com/cloudformation/home).
+Log into the [AWS Management Console](https://aws.amazon.com/console/) and 
+open the [CloudFormation Console](https://console.aws.amazon.com/cloudformation/home).
 
 ### Step 3:
 Click the **Create Stack** button and upload the Rancher RKE2 Management Cluster 
