@@ -7,15 +7,15 @@ localeCodes:
 params:
 
 additionalLinks:
-  - title: AWS Documentation
+  - title: AWS Documentation Homepage
     link: https://docs.aws.amazon.com
-  - title: Rancher Manager Docs
+  - title: Rancher Multicluster Management
     link: https://ranchermanager.docs.rancher.com/
-  - title: Rancher RKE2 Docs
+  - title: Rancher Kubernetes Engine 2 (RKE2)
     link: https://docs.rke2.io/
-  - title: Rancher Longhorn Docs
+  - title: Rancher Longhorn (Storage)
     link: https://docs.longhorn.io
-  - title: Rancher Neuvector Docs
+  - title: Rancher Neuvector (Security)
     link: https://open-docs.neuvector.com
 
 awsAccountConfig:
@@ -41,7 +41,7 @@ awsAccountConfig:
     # Paths need to be relative to the root of the content's repository and must be located in the `static/` directory.
     # Note: At this moment, only IAM policies defined in JSON format are supported.
     iamPolicies: 
-      - static/iam-policy.json
+      - static/iam_policy.json
 
     # List of valid IAM managed policies to be attached to the account's ParticipantRole. Only AWS managed policies are supported at this moment (https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)
     managedPolicies: 

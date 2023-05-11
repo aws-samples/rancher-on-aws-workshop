@@ -93,7 +93,7 @@
 - [x] Confirm IAM Access Analyzer was ran and any findings were resolved
 - [x] Confirm attendees are NOT ASKED to enter information as part of the workshop
 - [x] Confirm workshop compiles with security best practices https://docs.aws.amazon.com/security/
-- [ ] Confirm ScoutSuite, cfn_nag, and cfn-lint ran without resulting in any blockers (detail any high severity findings in the comments field, and confirm those items have been resolved) (https://github.com/nccgroup/ScoutSuite , https://github.com/stelligent/cfn_nag, https://github.com/aws-cloudformation/cfn-lint)
+- [x] Confirm ScoutSuite, cfn_nag, and cfn-lint ran without resulting in any blockers (detail any high severity findings in the comments field, and confirm those items have been resolved) (https://github.com/nccgroup/ScoutSuite , https://github.com/stelligent/cfn_nag, https://github.com/aws-cloudformation/cfn-lint)
 - [x] Confirm review of all uploaded content for the threat of malicious uploads by scanning with tools such as ClamAV
 - [ ] List any other scans of the workshop
 - [x] Confirm workshop does not contain confidential information

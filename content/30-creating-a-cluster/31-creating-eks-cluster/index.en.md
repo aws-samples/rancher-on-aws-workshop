@@ -39,44 +39,23 @@ You can close the smaller terminal window at the bottom if you'd like. Otherwise
 ## Step 2: Set up your Cloud9 Environment
 ---
 
-### Create the setup.sh file:
+### Download the setup.sh file:
 
 The setup script will install (or update) a few tools and set environment variables in the Cloud9 IDE
 
-* Copy and paste these lines in the terminal to create the file in your home 
-directory on the Cloud9 terminal (notice the 'copy' button on the right side of 
-the code block):
+* Copy the S3 link from the bottom of workshop event page:
 
-   ```bash
-   cat <<EOF > /tmp/setup.sh
-   #!/bin/bash
+    ![Cloud9](/static/images/cloud9/event-main.png)
+    ![Cloud9](/static/images/cloud9/copy_setup_link.png)
 
-   echo '================= Update AWS CLI ================='
-   sudo yum remove awscli -y
-   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-   unzip awscliv2.zip
-   sudo ./aws/install
-   export PATH=/usr/local/bin:$PATH
+* Run **curl** command in the Cloud9 terminal:
 
-   echo '================= Install Kubectl, EKSctl & Helm ================='
-   curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.26.2/2023-03-17/bin/linux/amd64/kubectl
-   chmod +x ./kubectl
-   mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
-   echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
-   curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-   sudo mv /tmp/eksctl /usr/local/bin
-   curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-   chmod 700 get_helm.sh
-   sh get_helm.sh
+    ```bash
+    cd
+    curl ':assetUrl{path="/resources/setup.sh" source=s3}' --output /tmp/setup.sh
+    ```
 
-   echo '================ Set some ENV variables ================='
-   export AWS_REGION=us-east-1
-   export EKS_CLUSTER_NAME="eks-cluster"
-   export ClusterRoleArn=$(aws iam list-roles --query "Roles[?contains(RoleName, 'EKSClusterRole')].Arn" --output text)
-   export NodeGroupRoleArn=$(aws iam list-roles --query "Roles[?contains(RoleName, 'EKSNodeGroupRole')].Arn" --output text)
-   export rancherUser=$(aws iam get-user --user-name rancher-cloud-credential-user --query 'User.Arn' --output text)
-   EOF
-   ```
+    ![Cloud9](/static/images/cloud9/setupScript-download.png)
 
 ### Run the setup script
 
@@ -89,57 +68,24 @@ the code block):
 
     ![Cloud9](/static/images/cloud9/startSetup_script.png)
 
-### Create the cluster config:
+### Download the cluster config:
 
 The cluster config file defines the EKS cluster settings and permissions for the cluster.
 
-* Copy and paste these lines in the terminal to create the file in your home 
-directory on the Cloud9 terminal (notice the 'copy' button on the right side of 
-the code block):
+* Copy the link from the workshop welcome page:
+
+    ![Cloud9](/static/images/cloud9/copy_eksConfig_link.png)
+
+* Run the **curl** command in the Cloud9 terminal):
 
     ```bash
-    cat <<EOF > ~/eksctl-cluster.yml
-    apiVersion: eksctl.io/v1alpha5
-    kind: ClusterConfig
-
-    #Only use these availability zones
-    availabilityZones:
-    - ${AWS_REGION}a
-    - ${AWS_REGION}b
-    - ${AWS_REGION}c
-
-    metadata:
-    name: ${EKS_CLUSTER_NAME}
-    region: ${AWS_REGION}
-    version: "1.25"
-   
-    iam:
-    serviceRoleARN: ${ClusterRoleArn}
-   
-    managedNodeGroups:
-    - name: nodeGrp-1
-       instanceType: m5.large
-       amiFamily: AmazonLinux2
-       privateNetworking: True
-       desiredCapacity: 3
-       maxSize: 3
-       minSize: 3
-       volumeSize: 64
-       iam:
-          instanceRoleArn: ${NodeGroupRoleArn}
-    addons:
-    - name: vpc-cni # no version is specified so it deploys the default version
-       attachPolicyARNs:
-          - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
-    - name: coredns
-       version: latest # auto discovers the latest available
-    - name: kube-proxy
-       version: latest
-    EOF
+    curl ':assetUrl{path="/resources/eksctl-cluster.yml" source=s3}' --output eksctl-cluster.yml
     ```
 
----
+    ![Cloud9](/static/images/cloud9/eks-conf-download.png)
+
 ## Step 3: Update Cloud9 Instance
+---
 
 ### Disable Cloud9 temporary credentials:
 * Click the cog wheel in the upper right of the Cloud9 IDE
@@ -182,19 +128,17 @@ the code block):
 
    ![Cloud9](/static/images/cloud9/update-iam-role.png)
 
----
 ## Step 4: Create the cluster
 ---
 
-Here, we're running `eksctl create cluster` and `eksctl create iamidentitymapping` 
-to create the cluster and add the rancher user to the cluster's primary access group
 
-* Run `eksctl create cluster` and update the identity mapping:
     
     ```bash
-    cd
+    envsubst < eksctl-cluster.yml > eksctl-cluster-actual.yml
     eksctl create cluster -f eksctl-cluster-actual.yml ; eksctl create iamidentitymapping --cluster $EKS_CLUSTER_NAME --region=$AWS_REGION --arn $rancherUser --group system:masters --username rancher
     ```
+
+   ![Cloud9](/static/images/cloud9/envsub.png)
 
    ![Cloud9](/static/images/cloud9/eksctl-create.png)
 > **Note: Cluster creation can takes up to 25 minutes**
