@@ -3,6 +3,13 @@ title: "Importing the Cluster"
 weight: 41
 ---
 
+In the following module, you will complete the outcomes listed below:
+
+1.
+
+---
+
+
 # Importing the EKS Cluster
 
 ## Cluster Management
@@ -63,3 +70,7 @@ weight: 41
 ### Step 6:
 
 ![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-details.png)
+
+## Completed!
+
+We're Done! You've just imported an EKS Cluster using the Rancher Multi-Cluster Manager. Let's move onto installing and configuring additional AWS Addons!

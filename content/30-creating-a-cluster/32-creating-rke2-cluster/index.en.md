@@ -3,6 +3,13 @@ title: "Creating the RKE2 Cluster"
 weight: 32
 ---
 
+In the following module, you will complete the outcomes listed below:
+
+1.
+
+---
+
+
 # Creating the RKE2 Cluster
 
 ## Cluster Management
@@ -136,3 +143,7 @@ No changes required in this section, please free to explore the configuration op
 ### Step 6:
 
 ![rancher-cluster-create-ec2-detail](/static/images/content/31-cluster-create-ec2-details.png)
+
+## Completed!
+
+We're Done! You've just created an RKE2 Cluster using the Rancher Multi-Cluster Manager. Let's move onto importing the AWS EKS Cluster into Rancher!

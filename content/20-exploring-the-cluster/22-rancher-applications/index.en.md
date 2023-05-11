@@ -3,6 +3,13 @@ title: "Rancher Applications"
 weight: 22
 ---
 
+In the following module, you will complete the outcomes listed below:
+
+1.
+
+---
+
+
 # Deploying the Rancher Applications
 
 ## Deploying Rancher Longhorn
@@ -74,3 +81,7 @@ weight: 22
 ![rancher-neuvector-containers](/static/images/content/22-neuvector-containers.png)
 
 ![rancher-neuvector-vulnerabilities](/static/images/content/22-neuvector-vulnerabilities.png)
+
+## Completed!
+
+We're Done! You've just deployed the rest of the Rancher Stack using the Rancher Multi-Cluster Manager. Let's move onto deploying a few Kuberenetes applications using Rancher!

@@ -13,19 +13,20 @@
 
 - Topics Covered
   - Deploying and Exploring the Rancher Ecosystem on AWS
-  - Creating a EC2 RKE2 Cluster using the Rancher Manager Console
+  - Deploying Longhorn and NeuVector using the Rancher Multi-Cluster Manager
+  - Creating a EC2 RKE2 Cluster using the Rancher Multi-Cluster Manager
   - Creating a EKS Cluster using AWS Cloud9 and EKSCTL
-  - Importing a EKS Cluster using the Rancher Manager Console
-  - Deploying Longhorn and NeuVector using the Rancher Manager Console
+  - Importing a EKS Cluster using the Rancher Multi-Cluster Manager
   - Kubernetes and Cluster Management Best Practices with AWS and Rancher
 - Expected Duration
   - Total (3 Hours)
   - Exploring a Rancher RKE2 Kubernetes cluster on EC2 Instances. (30m)
-  - Deploying Longhorn and NeuVector using the Rancher Management Console. (15m)
-  - Deploying Kubernetes Demo Applications using the Rancher Management Console. (15m)
+  - Deploying Longhorn and NeuVector using the Rancher Multi-Cluster Manager. (15m)
+  - Deploying Kubernetes Demo Applications using the RRancher Multi-Cluster Manager. (15m)
   - Short Break! (15m)
+  - Creating a AWS EKS Kubernetes cluster on EC2 Instances. (30m)
   - Creating a Rancher RKE2 Kubernetes cluster on EC2 Instances. (30m)
-  - Importing an existing Amazon EKS Kuberenetes cluster. (15m)
+  - Importing an existing AWS EKS Kuberenetes cluster. (15m)
   - Cluster and Application Lifecycle Management best-practices with AWS and Rancher. (15m)
   - Supply Chain Security and Management with AWS and Rancher. (15m)
 - Workshop Outcomes

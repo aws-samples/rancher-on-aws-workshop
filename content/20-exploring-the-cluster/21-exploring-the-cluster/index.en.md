@@ -3,6 +3,14 @@ title: "Exploring the Cluster"
 weight: 21
 ---
 
+In the following module, you will complete the outcomes listed below:
+
+1. 
+2. 
+
+---
+
+
 # Exploring the RKE2 Cluster
 
 ## AWS Console
@@ -17,7 +25,7 @@ weight: 21
 ![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt.png)
 
 
-## Rancher Manager
+## Rancher Multi-Cluster Manager
 
 ### Step 1:
 
@@ -48,3 +56,7 @@ weight: 21
 ![rancher-manager-kubectl-shell](/static/images/content/21-rancher-kubectl-shell.png)
 
 ![rancher-manager-import-yaml](/static/images/content/21-rancher-import-yaml.png)
+
+## Completed!
+
+We're Done! You've just set up and explored an RKE2 Cluster using the Rancher Multi-Cluster Manager. Feel free to take a few minutes and explore more of the features inside of the console. Let's move onto deploying the rest of the Rancher Stack!

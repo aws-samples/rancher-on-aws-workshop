@@ -7,10 +7,10 @@ weight: 11
 
 ## Workshop Topics
 * Deploying and Exploring the Rancher Ecosystem on AWS
-* Creating a EC2 RKE2 Cluster using the Rancher Manager Console
+* Deploying Longhorn and NeuVector using the Rancher Multi-Cluster Manager
+* Creating a EC2 RKE2 Cluster using the Rancher Multi-Cluster Manager
 * Creating a EKS Cluster using AWS Cloud9 and EKSCTL
-* Importing a EKS Cluster using the Rancher Manager Console
-* Deploying Longhorn and NeuVector using the Rancher Manager Console
+* Importing a EKS Cluster using the Rancher Multi-Cluster Manager
 * Kubernetes and Cluster Management Best Practices with AWS and Rancher
 
 
@@ -23,11 +23,12 @@ weight: 11
 ## Workshop Expected Duration
 **Total Duration of the workshop is 3 Hours.**
   * Exploring a Rancher RKE2 Kubernetes cluster on EC2 Instances. (30m)
-  * Deploying Longhorn and NeuVector using the Rancher Management Console. (15m)
-  * Deploying Kubernetes Demo Applications using the Rancher Management Console. (15m)
+  * Deploying Longhorn and NeuVector using the Rancher Multi-Cluster Manager. (15m)
+  * Deploying Kubernetes Demo Applications using the RRancher Multi-Cluster Manager. (15m)
   * Short Break! (15m)
+  * Creating a AWS EKS Kubernetes cluster on EC2 Instances. (30m)
   * Creating a Rancher RKE2 Kubernetes cluster on EC2 Instances. (30m)
-  * Importing an existing Amazon EKS Kuberenetes cluster. (15m)
+  * Importing an existing AWS EKS Kuberenetes cluster. (15m)
   * Cluster and Application Lifecycle Management best-practices with AWS and Rancher. (15m)
   * Supply Chain Security and Management with AWS and Rancher. (15m)
 
@@ -54,4 +55,4 @@ weight: 11
 
 If you're completing this workshop at an official event with Rancher and/or Amazon AWS, your AWS Account will be pre-configured with the required infrastructure. To get started, click **Next** at the bottom of the screen.
 
-If you're completing this workshop outside an official event, you will need to configure the required infrastructure, before starting the workshop. Please be aware that this will incure costs to your AWS Account. To get started, follow the steps [here](/content/10-introduction/12-workshop-environment/index.en.md#for-outside-official-events).
+If you're completing this workshop outside an official event, you will need to configure the required infrastructure, before starting the workshop. Please be aware that this will incure costs to your AWS Account. To get started, follow the steps in the **Workshop Environment!**

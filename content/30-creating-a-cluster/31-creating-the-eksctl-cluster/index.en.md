@@ -1,18 +1,18 @@
 ---
-title: "Creating an EKS Cluster with eksctl"
+title: "Creating the EKS Cluster"
 weight: 31
 ---
 
-In the following steps, you will:
+In the following module, you will complete the outcomes listed below:
 
-1. Access and configure a AWS Cloud9 IDE, a cloud-based integrated development environment that lets you write, run, and debug code all within the browser.
-
-2. Create a simple 3 node EKS Cluster with a provided cluster config
+1. Access and Configure a AWS Cloud9 IDE Environment
+   * AWS Cloud9 is cloud-based integrated development environment that lets you write, run, and debug code all within the browser.
+2. Create a 3 Node EKS Cluster with a provided EKS Cluster Config
 
 ---
+
 
 ## Step 1: Access the Cloud9 IDE
----
 
 Let's start with accessing the Cloud9 IDE and downloading some extras
 
@@ -37,7 +37,6 @@ You can close the smaller terminal window at the bottom if you'd like. Otherwise
 ![Cloud9](/static/images/cloud9/terminal.png)
 
 ## Step 2: Setup your Cloud9 Environment
----
 
 ### Create the setup.sh file:
 
@@ -135,7 +134,6 @@ The cluster config file defines the EKS cluster settings and permissions for the
     ```
 
 ## Step 3: Update Cloud9 Instance
----
 
 ### Disable Cloud9 temporary credentials:
 * Click the cog wheel in the upper right of the Cloud9 IDE
@@ -178,8 +176,7 @@ The cluster config file defines the EKS cluster settings and permissions for the
 
    ![Cloud9](/static/images/cloud9/update-iam-role.png)
 
-## Step 4: Create the cluster
----
+## Step 4: Create the Cluster
 
 Here, we're running the **eksctl create cluster** command as well as the **eksctl create iamidentitymapping** command to first create the cluster, then add the rancher user to the cluster's primary access group
 
@@ -196,6 +193,6 @@ Here, we're running the **eksctl create cluster** command as well as the **eksct
 
    ![Cloud9](/static/images/cloud9/coupleKubeCmds.png)
 
-### Done
+## Completed!
 
-We're Done! You've just created an EKS cluster using the AWS Cloud9 IDE.
+We're Done! You've just created an AWS EKS Cluster using the AWS Cloud9 IDE. Let's move onto creating the RKE2 Cluster!

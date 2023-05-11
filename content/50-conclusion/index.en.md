@@ -10,7 +10,7 @@ weight: 50
 
 ## You've Completed the Workshop!
 
-Thank you for completing the Rancher on AWS Workshop!
+Thank you for completing the Rancher on AWS Workshop! We hope you were able to learn the ease of deployment of Kubernetes with Rancher on AWS! Let's review the expected outcomes of completing this workshop.
 
 Let's review the expected outcomes of completing this workshop...
 * Able to explore and manage RKE2/EKS Kubernetes Clusters.
@@ -20,12 +20,16 @@ Let's review the expected outcomes of completing this workshop...
 * Understanding of best-practices when deploying and managing Kubernetes with AWS and Rancher.
 * Understanding of best-practices when securing and managing Supply Chains with AWS and Rancher.
 
+For any questions or to continue this conversation with Rancher, please contact us via email at natsec@rancherfederal.com!
+
+For any questions or to continue this conversation with AWS, please contact us via email at mpo-proserve@amazon.com!
+
 
 ## Workshop Cleanup
 
 If you're completing this workshop at an official event with Rancher and/or Amazon AWS, there is no environment cleanup required. All infrastructure will be deleted at the conclusion of the workshop!
 
-If you're completing this workshop outside an official event, to cleanup the environment and workshop, please follow the steps below.
+If you're completing this workshop outside an official event, to cleanup the environment and workshop, please follow the steps below:
 
 ### Step 1:
 

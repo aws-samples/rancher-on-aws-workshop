@@ -7,7 +7,7 @@ weight: 12
 
 ## The Workshop Environment
 
-In order to successfully complete this workshop, you need to be at an official event by Rancher/AWS or complete additional steps to have the required infrastructure available to you. Under the hood, this workshop is built off of AWS CloudFormation Templates and everything else in done inside of Rancher Manager! 
+In order to successfully complete this workshop, you need to be at an official event by Rancher/AWS or complete additional steps to have the required infrastructure available to you. Under the hood, this workshop is built off of AWS CloudFormation Templates and everything else in done inside of Rancher Multi-Cluster Manager! 
 
 Please see the steps below to ensure you are successfully set up for the workshop.
 
@@ -78,4 +78,4 @@ Here is a an example of the configuration options:
 
 ### Step 5:
 
-Once the Cloud Formation Stack has finished provisioning the infrastructure, Please head over to the [Exploring the Cluster](/content/20-exploring-the-cluster/21-exploring-the-cluster/index.en.md)!
+Once the Cloud Formation Stack has finished provisioning the infrastructure, Please head over to the **Exploring the Cluster!**
