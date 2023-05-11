@@ -7,22 +7,22 @@ weight: 13
 
 Please use the links below to view the official documentation for each of the products and services featured in this workshop.
 
-## For the  Rancher Products:
-* Rancher Kubernetes Engine 2 (RKE2) - [view documentation](https://docs.rke2.io)
-* Rancher Multi Cluster Manager (MCM) - [view documentation](https://ranchermanager.docs.rancher.com)
-* Rancher Longhorn (Storage) - [view documentation](https://docs.longhorn.io)
-* Rancher Neuvector (Security) - [view documentation](https://open-docs.neuvector.com)
+## Rancher Products:
+* Rancher Kubernetes Engine 2 (RKE2) - [documentation](https://docs.rke2.io)
+* Rancher Multi Cluster Manager (MCM) - [documentation](https://ranchermanager.docs.rancher.com)
+* Rancher Longhorn (Storage) - [documentation](https://docs.longhorn.io)
+* Rancher Neuvector (Security) - [documentation](https://open-docs.neuvector.com)
 
 For any questions or to get in touch with Rancher, please contact us via email at natsec@rancherfederal.com!
 
-## For the Amazon AWS Products:
-* Amazon Cloud Formation (CF)- [view documentation](https://docs.aws.amazon.com/cloudformation)
-* Amazon Elastic Compute Cloud (EC2) - [view documentation](https://docs.aws.amazon.com/ec2)
-* Amazon Elastic Kubernetes Service (EKS) - [view documentation](https://docs.aws.amazon.com/eks)
-* Amazon Elastic Load Balancing (ELB)- [view documentation](https://docs.aws.amazon.com/elasticloadbalancing)
-* Amazon Auto Scaling (ASG)- [view documentation](https://docs.aws.amazon.com/autoscaling)
-* Amazon Elastic File System (EFS)- [view documentation](https://docs.aws.amazon.com/efs)
-* Amazon Elastic Block Store (EBS) - [view documentation](https://docs.aws.amazon.com/ebs)
-* Amazon Identity and Access Management (IAM)- [view documentation](https://docs.aws.amazon.com/iam)
+## AWS Services:
+* Amazon Cloud Formation (CF)- [documentation](https://docs.aws.amazon.com/cloudformation)
+* Amazon Elastic Compute Cloud (EC2) - [documentation](https://docs.aws.amazon.com/ec2)
+* Amazon Elastic Kubernetes Service (EKS) - [documentation](https://docs.aws.amazon.com/eks)
+* Amazon Elastic Load Balancing (ELB)- [documentation](https://docs.aws.amazon.com/elasticloadbalancing)
+* Amazon Auto Scaling (ASG)- [documentation](https://docs.aws.amazon.com/autoscaling)
+* Amazon Elastic File System (EFS)- [documentation](https://docs.aws.amazon.com/efs)
+* Amazon Elastic Block Store (EBS) - [documentation](https://docs.aws.amazon.com/ebs)
+* Amazon Identity and Access Management (IAM)- [documentation](https://docs.aws.amazon.com/iam)
 
 For any questions or to get in touch with AWS, please contact us via email at mpo-proserve@amazon.com!

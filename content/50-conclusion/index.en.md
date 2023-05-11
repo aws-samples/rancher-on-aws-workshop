@@ -39,3 +39,6 @@ If you're completing this workshop outside an official event, to cleanup the env
 
 ### Step 3:
 
+## GitHub Repository
+Visit our [GitHub repository](https://github.com/aws-samples/rancher-on-aws-workshop) to find the workshop source code
+and offer suggestions or improvements.
