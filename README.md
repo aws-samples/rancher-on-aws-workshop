@@ -1,17 +1,16 @@
 ![rgs-aws-banner](/static/images/rgs-aws-banner.png)
 
 # Welcome to the Rancher on AWS Workshop
-Learn the ease of deployment and intergration of Rancher onto Amazon AWS!
+Learn how to easily deploy and manage Kubernetes with Rancher on the AWS Cloud!
 
-**Created in Partnership with [Rancher Government Solutions](https://ranchergovernment.com) and [Amazon Web Services](https://aws.amazon.com) under the MIT-0 and CC-BY-4.0 Licenses.**
+**Created together by [Rancher Government Solutions](https://ranchergovernment.com) and [Amazon Web Services](https://aws.amazon.com) under the MIT-0 and CC-BY-4.0 Licenses.**
 
-**To get started, please review the information below and then head over to the [workshop content](/content/index.en.md)!**
+**To get started, please review the information below and then head over to the workshop content by clicking Next below!**
 
 ## Requirements:
 * Basic Knowledge of Kubernetes and AWS Infrastructure.
 * AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
-* AWS IAM Account with *elevated privileges* allowing you to interact with various AWS Services.
-
+* AWS IAM Account with *elevated privileges* to interact with AWS Services.
 
 ## Table of Contents
 * [Introduction](/content/10-introduction/index.en.md)
