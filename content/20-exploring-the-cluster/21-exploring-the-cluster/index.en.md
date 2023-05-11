@@ -59,4 +59,4 @@ In the following module, you will complete the outcomes listed below:
 
 ## Completed!
 
-We're Done! You've just set up and explored an RKE2 Cluster using the Rancher Multi-Cluster Manager. Feel free to take a few minutes and explore more of the features inside of the console. Let's move onto deploying the rest of the Rancher Stack!
+We're done! You've just set up and explored an RKE2 Cluster using the Rancher Multi-Cluster Manager. Feel free to take a few minutes and explore more of the features inside of the console. Let's move onto deploying the rest of the Rancher Stack!

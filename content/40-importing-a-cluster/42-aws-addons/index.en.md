@@ -12,4 +12,6 @@ In the following module, you will complete the outcomes listed below:
 
 # AWS EKS Addons
 
-TBD TBD TBD
+### Step 1:
+
+### WIP - AWS ADDONS HERE ###

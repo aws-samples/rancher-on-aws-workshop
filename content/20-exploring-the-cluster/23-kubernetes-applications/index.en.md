@@ -41,4 +41,5 @@ kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-wo
 
 ## Completed!
 
-We're Done! You've just deployed two Kubernetes applications using the Rancher Multi-Cluster Manager. Let's move onto creating a AWS EKS Cluster using Cloud9!
+We're done! You've just deployed two Kubernetes applications using the Rancher 
+Multi-Cluster Manager. Let's move onto creating a AWS EKS Cluster using Cloud9!

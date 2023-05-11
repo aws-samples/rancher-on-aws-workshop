@@ -3,28 +3,32 @@ title: "Workshop Environment"
 weight: 12
 ---
 
-# Understanding the Environment of the Workshop
+# Understanding the Workshop Environment
 
-## The Workshop Environment
+In order to successfully complete this workshop, you need to either be at an event operated by
+Rancher/AWS or complete additional steps to have the required infrastructure available to you. 
+The infrastructure for this workshop is built with AWS CloudFormation templates. 
 
-In order to successfully complete this workshop, you need to be at an official event by Rancher/AWS or complete additional steps to have the required infrastructure available to you. Under the hood, this workshop is built off of AWS CloudFormation Templates and everything else in done inside of Rancher Multi-Cluster Manager! 
-
-Please see the steps below to ensure you are successfully set up for the workshop.
+Please follow the steps below to set up for the workshop.
 
 
-## For Official Event Workshops
+## For Workshops at AWS Events
 
-If you're completing this workshop at an official event with Rancher and/or Amazon AWS, your AWS Account will be pre-configured with the required infrastructure. We are able to this by utilizing AWS Workshop Studio!
+If you're completing this workshop at an event operated by Rancher and AWS, an 
+AWS Account will be provided that is pre-configured with the required 
+infrastructure.
 
-To access your generated AWS Account/AWS Infrastructure, please head over to the **[AWS Workshop Studio Dashboard](https://catalog.us-east-1.prod.workshops.aws)!**
+To access your AWS Account for the workshop, please visit the **[AWS Workshop Studio Dashboard](https://catalog.us-east-1.prod.workshops.aws)** and click **Get Started**.
 
 ![aws-event-engine-dashboard](/static/images/content/12-aws-ws-dashboard.png)
 
 ### Step 1:
 
-Enter your unique hash and click **Accept Terms & Login**!
+Enter the event access code provided by your event organizer and click **Next**.
 
 ![aws-ws-hash](/static/images/content/12-aws-ws-hash.png)
+
+Review the platform terms and conditions and click **Join Event**.
 
 ![aws-ws-terms](/static/images/content/12-aws-ws-terms.png)
 
@@ -43,39 +47,41 @@ Review the Workshop specific information provided for your account.
 You're done! Please head over and start the workshop by clicking the **"Welcome to Rancher on AWS"**
 
 
-## For Outside Official Events
+## For Use Outside AWS Events
 
-If you're completing this workshop outside an official event, you will need to configure the required infrastructure, before starting the workshop content. Please be aware that this will incure costs to your AWS Account.
+If you're completing this workshop outside an official AWS event, you will need to 
+configure the required infrastructure before starting the workshop content. 
+Please be aware that this will incur costs to your AWS Account.
 
 ### Step 1:
 
-Download the two required workshop CloudFormation templates, by clicking the link below and clicking *"download"*.
+Download the required workshop files by clicking the link below and clicking 
+*"download"* in your browser.
 
 * [RKE2/EKS Cloud Formation Template](/static/rke2-eks-cluster.yaml)
 * [EKS cluster config file](/static/eksctl-cluster.yml)
-* [Environmeent Setup script](/static/setup.sh)
-
+* [Environment Setup script](/static/setup.sh)
 
 ### Step 2:
-
-Log into the [AWS Account Console](https://aws.amazon.com/console/) and open the [CloudFormation](https://console.aws.amazon.com/cloudformation/home) service.
-
+Log into the [AWS Management Console](https://aws.amazon.com/console/) and 
+open the [CloudFormation Console](https://console.aws.amazon.com/cloudformation/home).
 
 ### Step 3:
-
-Click the **Create Stack** button and upload the Rancher RKE2 Management Cluster CloudFormation Template.
+Click the **Create Stack** button and upload the Rancher RKE2 Management Cluster 
+CloudFormation Template (`rke2-eks-cluster.yaml`).
 
 ![aws-console-cf-home](/static/images/content/12-aws-cf-home.png)
 
-
 ### Step 4:
+Complete all required configuration information and follow the instructions within 
+the AWS CloudFormation Console. You should not have to change any information, 
+unless you would like to deviate from the workshop configuration.
 
-Complete all required configuration information and follow the instructions within the AWS CloudFormation Console. You should **NOT** have to change any information, unless you would like to change the configuration.
-
-Here is a an example of the configuration options:
+Here is an example of the CloudFormation stack deployed successfully:
 
 ![aws-console-cf-templates](/static/images/content/12-aws-cf-template.png)
 
 ### Step 5:
 
-Once the Cloud Formation Stack has finished provisioning the infrastructure, Please head over to the **Exploring the Cluster!**
+Once the CloudFormation Stack has moved to `CREATE_COMPLETE` status, please 
+click **Next** to continue.
