@@ -5,7 +5,8 @@ weight: 41
 
 In the following module, you will complete the outcomes listed below:
 
-1.
+1. Use the Rancher Multi-Cluster Manager to import the newly created EKS Cluster.
+2. Access the manage the imported EKS Cluster using the Rancher Multi-Cluster Manager.
 
 ---
 

@@ -7,7 +7,7 @@ In the following module, you will complete the outcomes listed below:
 
 1. Access and Configure an AWS Cloud9 IDE Environment
    * AWS Cloud9 is cloud-based integrated development environment that lets you write, run, and debug code all within the browser.
-2. Create a 3-node EKS Cluster with a provided EKS Cluster Config
+2. Create a 3 node EKS Cluster with a provided EKS Cluster Config
 
 ---
 

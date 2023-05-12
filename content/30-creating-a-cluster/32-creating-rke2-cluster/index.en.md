@@ -5,7 +5,8 @@ weight: 32
 
 In the following module, you will complete the outcomes listed below:
 
-1.
+1. Use the Rancher Multi-Cluster Manager to create a 6 node RKE2 Cluster.
+2. Access the manage the newly created RKE2 Cluster using the Rancher Multi-Cluster Manager.
 
 ---
 

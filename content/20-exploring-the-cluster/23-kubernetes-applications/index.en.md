@@ -5,7 +5,8 @@ weight: 23
 
 In the following module, you will complete the outcomes listed below:
 
-1. TBD TBD TBD
+1. Use Rancher Fleet to deploy two Kuberenetes applications.
+2. Explore the application lifecycle management of Kubernetes applications with the Rancher Multi-Cluster Manager.
 
 ---
 
