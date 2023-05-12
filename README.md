@@ -30,6 +30,6 @@ To get started, please review the information below and then head over to the wo
   * [Creating the RKE2 Cluster](/content/30-creating-a-cluster/32-creating-rke2-cluster/index.en.md)
 * [Importing a Cluster](/content/40-importing-a-cluster/index.en.md)
   * [Importing the Cluster](/content/40-importing-a-cluster/41-importing-the-cluster/index.en.md)
-  * [AWS Addons](/content/40-importing-a-cluster/42-aws-addons/index.en.md)
+  * [Optional Addons](/content/40-importing-a-cluster/42-optional-addons/index.en.md)
 
 **Note:** [/static](/static/) stores all the static code and resources required for this workshop.
