@@ -10,8 +10,8 @@ In the following module, you will complete the outcomes listed below:
 2. Create a 3-node EKS Cluster with a provided EKS Cluster Config
 
 ---
+
 ## Step 1: Access the Cloud9 IDE
----
 
 Let's start by accessing the Cloud9 IDE.
 
@@ -35,9 +35,7 @@ You can close the smaller terminal window at the bottom if you'd like. Otherwise
 
 ![Cloud9](/static/images/cloud9/terminal.png)
 
----
 ## Step 2: Set up your Cloud9 Environment
----
 
 ### Download the setup.sh file:
 
@@ -85,7 +83,6 @@ The cluster config file defines the EKS cluster settings and permissions for the
     ![Cloud9](/static/images/cloud9/eks-conf-download.png)
 
 ## Step 3: Update Cloud9 Instance
----
 
 ### Disable Cloud9 temporary credentials:
 * Click the cog wheel in the upper right of the Cloud9 IDE
@@ -129,10 +126,7 @@ The cluster config file defines the EKS cluster settings and permissions for the
    ![Cloud9](/static/images/cloud9/update-iam-role.png)
 
 ## Step 4: Create the cluster
----
 
-
-    
     ```bash
     envsubst < eksctl-cluster.yml > eksctl-cluster-actual.yml
     eksctl create cluster -f eksctl-cluster-actual.yml ; eksctl create iamidentitymapping --cluster $EKS_CLUSTER_NAME --region=$AWS_REGION --arn $rancherUser --group system:masters --username rancher

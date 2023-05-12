@@ -84,6 +84,4 @@ In the following module, you will complete the outcomes listed below:
 
 ## Completed!
 
-We're done! You've just deployed the rest of the Rancher Stack using the Rancher 
-Multi-Cluster Manager. Let's move onto deploying a few Kubernetes applications 
-using Rancher!
+We're done! You've just deployed the rest of the Rancher Stack using the Rancher Multi-Cluster Manager. Let's move onto deploying a few Kubernetes applications using Rancher!

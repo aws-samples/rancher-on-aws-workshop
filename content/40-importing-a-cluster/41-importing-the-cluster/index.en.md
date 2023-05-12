@@ -72,4 +72,5 @@ In the following module, you will complete the outcomes listed below:
 ![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-details.png)
 
 ## Completed!
-We're done! You've just imported an EKS Cluster using the Rancher Multi-Cluster Manager. Let's move onto installing and configuring additional AWS Addons!
+
+We're done! You've just imported an EKS Cluster using the Rancher Multi-Cluster Manager. If you have the time, feel free to move onto installing and configuring the **Optional Addons!** Otherwise, head over to the **Conclusion!**

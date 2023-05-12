@@ -1,5 +1,5 @@
 ---
-title: "AWS Addons"
+title: "Optional Addons"
 weight: 42
 ---
 
@@ -10,8 +10,6 @@ In the following module, you will complete the outcomes listed below:
 ---
 
 
-# AWS EKS Addons
+# Optional Addons
 
-### Step 1:
-
-### WIP - AWS ADDONS HERE ###
+TBD TBD TBD

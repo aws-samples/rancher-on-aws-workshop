@@ -14,4 +14,4 @@ In this workshop, we will be utilzing the Rancher Product Stack on AWS Infrastru
 
 ![workshop-overview-diagram](/static/images/workshop-overview-diagram.png)
 
-To get started, please click **Next** below!
+To get started, please click **Next** to head over to the **Workshop Overview!**

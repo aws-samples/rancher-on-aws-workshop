@@ -8,8 +8,7 @@ weight: 50
 # Workshop Conclusion
 ## You've Completed the Workshop!
 
-Thank you for completing the Rancher on AWS Workshop! We hope you were able to 
-learn the ease of deployment of Kubernetes with Rancher on AWS!
+Thank you for completing the Rancher on AWS Workshop! We hope you were able to learn the ease of deployment of Kubernetes with Rancher on AWS!
 
 Let's review what you're accomplished by completing this workshop:
 * Able to explore and manage RKE2/EKS Kubernetes Clusters.
@@ -45,5 +44,4 @@ CloudFormation template.
 Remove any IAM roles or users you created for this workshop.
 
 ## GitHub Repository
-Visit our [GitHub repository](https://github.com/aws-samples/rancher-on-aws-workshop) 
-to find the workshop source code and offer suggestions or improvements.
+Visit our [GitHub repository](https://github.com/aws-samples/rancher-on-aws-workshop) to find the workshop source code and offer suggestions or improvements. Very welcomed!
