@@ -353,10 +353,7 @@ Resources:
               AWS: 
               - !GetAtt RancherCloudCredentialUser.Arn
               Service:
-              - eks.amazonaws.com
               - ec2.amazonaws.com
-              - iam.amazonaws.com
-              - cloudformation.amazonaws.com
             Action:
               - sts:AssumeRole
       Path: /
@@ -449,7 +446,31 @@ Resources:
         Statement:
           - Effect: Allow
             Action:
-              - '*'
+              - ec2:*
+              - cloudformation:*
+              - eks:*
+              - kms:Decrypt
+              - kms:GenerateDataKeyWithoutPlaintext
+              - kms:Encrypt
+              - kms:DescribeKey
+              - kms:CreateGrant
+              - iam:PassRole
+              - iam:ListRoles
+              - iam:ListRoleTags
+              - iam:ListInstanceProfilesForRole
+              - iam:ListInstanceProfiles
+              - iam:ListAttachedRolePolicies
+              - iam:GetRole
+              - iam:GetInstanceProfile
+              - iam:DetachRolePolicy
+              - iam:AttachRolePolicy
+              - iam:AddRoleToInstanceProfile
+              - iam:CreateInstanceProfile
+              - iam:CreateRole
+              - iam:CreateServiceLinkedRole
+              - iam:DeleteInstanceProfile
+              - iam:DeleteRole
+              - iam:RemoveRoleFromInstanceProfile
             Resource: '*'
       Users:
       - !Ref RancherCloudCredentialUser
@@ -471,10 +492,7 @@ Resources:
               AWS: 
               - !GetAtt RancherCloudCredentialUser.Arn
               Service:
-              - eks.amazonaws.com
               - ec2.amazonaws.com
-              - iam.amazonaws.com
-              - cloudformation.amazonaws.com
             Action:
               - sts:AssumeRole
       Path: /
@@ -855,15 +873,6 @@ Resources:
   ###########
   # AWS EKS #
   ###########
-  EKSCPSecurityGroup:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupDescription: EKS Control Plane Security Group
-      SecurityGroupEgress:
-        - CidrIp: 0.0.0.0/0
-          Description: Allow all outbound traffic by default
-          IpProtocol: "-1"
-      VpcId: !Ref 'RancherVPC'
 
   # IAM Roles #
   EksAllAccessManagedPolicy:
@@ -1071,23 +1080,3 @@ Outputs:
         - Ref: EKSCloud9Env
         - "?region="
         - Ref: AWS::Region
-  EKSClusterConfig:
-    Description: Cluster Config to use for the workshop
-    Value: 
-      Fn::Join:
-      - ''
-      - - s3://
-        - Ref: AssetsBucketName
-        - "/"
-        - Ref: AssetsBucketPrefix
-        - "eksctl-cluster.yml"
-  SetupScript:
-    Description: Setup script to use in the Cloud9 IDE
-    Value: 
-      Fn::Join:
-      - ''
-      - - s3://
-        - Ref: AssetsBucketName
-        - "/"
-        - Ref: AssetsBucketPrefix
-        - "setup.sh"
