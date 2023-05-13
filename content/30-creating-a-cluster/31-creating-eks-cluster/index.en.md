@@ -118,10 +118,10 @@ The cluster config file defines the EKS cluster settings and permissions for the
 
 ## Step 4: Create the cluster
 
-    ```bash
+   ```bash
     envsubst < ~/eksctl-cluster.yml > ~/eksctl-cluster-actual.yml
     eksctl create cluster -f eksctl-cluster-actual.yml ; eksctl create iamidentitymapping --cluster $EKS_CLUSTER_NAME --region=$AWS_REGION --arn $rancherUser --group system:masters --username rancher
-    ```
+   ```
 
    ![Cloud9](/static/images/content/cloud9/envsub.png)
 
