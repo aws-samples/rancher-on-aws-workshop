@@ -22,15 +22,17 @@ Let's start by accessing the AWS Console.
 At the top of the page, select the search bar and search for **`"CloudFormation"`** and click on it.
 
 ![aws-console-home](/static/images/content/21-aws-home.png)
+![aws-console-home](/static/images/content/21-search-cfn.png)
 
 
 ### Step 2:
 
-In the **`CloudFormation Console`**, click on the **`Stack`** named **`mgmt`**.
+In the **`CloudFormation Console`**, click on the **`Stack`** named **`rke2-eks-cluster`**.
 
-Inside of the **`mgmt`** stack, click on the **`Outputs`** tab. You should see the **`RancherURL`**, click the link in a new tab to bring up the Rancher Multi-Cluster Manager.
+Inside of the **`rke2-eks-cluster`** stack, click on the **`Outputs`** tab. You should see the **`RancherURL`**, click the link in a new tab to bring up the Rancher Multi-Cluster Manager.
 
 ![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt.png)
+![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt-detail.png)
 
 
 ## Rancher Multi-Cluster Manager
@@ -42,6 +44,7 @@ Once the Rancher Multi-Cluster Manager opens, we will need to complete the boots
 First let's enter the bootstrap password (that was set during installation) of **`"Pa22word"`** and **`Log in with Local User`**.
 
 ![rancher-bootstrapping-password](/static/images/content/21-rancher-bootstrap-pw.png)
+![rancher-bootstrapping-password](/static/images/content/21-rancher-bootstrap-pw-detail.png)
 
 
 ### Step 2:
@@ -52,6 +55,7 @@ Now let's verify the few items on the setup page and click **`Continue`**!
 * **`[X] By checking the box, you accept the End User License Agreement & Terms & Conditions`**
 
 ![rancher-bootstrapping-setup](/static/images/content/21-rancher-bootstrap-setup.png)
+![rancher-bootstrapping-setup](/static/images/content/21-rancher-bootstrap-setup-detail.png)
 
 
 ### Step 3:
@@ -61,6 +65,7 @@ Welcome to the Rancher Multi-Cluster Manager!! Here's your starting point in the
 Under **`Clusters`**, you should see a cluster named **`local`**. This cluster is your **`management cluster`**. As we move through the workshop, we will be creating and importing additional clusters into the Rancher Manager, known as **`downstream cluster(s)`**.
 
 ![rancher-manager-home](/static/images/content/21-rancher-home.png)
+![rancher-manager-home-detail](/static/images/content/21-rancher-home-detail.png)
 
 Let's go ahead and click on the **`local`** cluster and start to explore it.
 
