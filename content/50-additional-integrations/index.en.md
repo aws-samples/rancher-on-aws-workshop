@@ -1,4 +1,4 @@
- ---
+---
 title: "Additional AWS Integrations"
 weight: 50
 ---
