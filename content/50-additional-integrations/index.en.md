@@ -77,6 +77,6 @@ The install script will:
     cd
     . install_ACK_sc_memdb.sh
     ```
-    ![Cloud9](/static/images/content/cloud9/ .png)
+    ![Cloud9](/static/images/content/cloud9/run-install-ACK.png)
 
 > **Note: Cluster creation can takes up to 25 minutes**
