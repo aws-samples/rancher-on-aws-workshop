@@ -1,6 +1,6 @@
----
+ ---
 title: "Additional AWS Integrations"
-weight: 42
+weight: 50
 ---
 
 In the following module, you will complete the outcomes listed below:
@@ -65,7 +65,7 @@ The install script will:
 * Run the **curl** command in the Cloud9 terminal):
 
     ```bash
-    curl ':assetUrl{path="/resources/install_ACK_sc_memdb.sh" source=s3}' --output ~/install_ACK.sh
+    curl ':assetUrl{path="/resources/install_ACK_sc_memdb.sh" source=s3}' --output ~/install_ACK_sc_memdb.sh
     ```
     ![Cloud9](/static/images/content/cloud9/install-ACK-download.png)
 
@@ -75,8 +75,8 @@ The install script will:
     
     ```bash
     cd
-    . install_ACK.sh
+    . install_ACK_sc_memdb.sh
     ```
-    ![Cloud9](/static/images/content/cloud9/run-install-ACK.png)
+    ![Cloud9](/static/images/content/cloud9/ .png)
 
 > **Note: Cluster creation can takes up to 25 minutes**

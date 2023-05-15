@@ -1,6 +1,6 @@
 ---
 title: "Workshop Conclusion"
-weight: 50
+weight: 60
 ---
 
 ![rgs-aws-banner](/static/images/rgs-aws-banner.png)
