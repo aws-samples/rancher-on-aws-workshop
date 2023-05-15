@@ -17,10 +17,10 @@ In the following module, you will complete the outcomes listed below:
 * Setup the Amazon VPC Container Network Interface (CNI) plugin for Kubernetes for the EKS Cluster.
 * AWS IAM permissions to create roles and attach policies to roles.
 * Installed the following tools on the client machine used to access your Kubernetes cluster:
-    ** AWS CLI - A command line tool for interacting with AWS services.
-    ** kubectl - A command line tool for working with Kubernetes clusters.
-    ** eksctl - A command line tool for working with EKS clusters.
-    ** Helm 3.8+ - A tool for installing and managing Kubernetes applications.
+    * AWS CLI - A command line tool for interacting with AWS services.
+    * kubectl - A command line tool for working with Kubernetes clusters.
+    * eksctl - A command line tool for working with EKS clusters.
+    * Helm 3.8+ - A tool for installing and managing Kubernetes applications.
 
 If you've followed this workshop all the way through, all of the prerequisite have been met.
 From here, only the Cloud9 IDE will be used
