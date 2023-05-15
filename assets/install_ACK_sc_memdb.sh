@@ -10,6 +10,7 @@ OIDC_PROVIDER=$(aws eks describe-cluster --name $EKS_CLUSTER_NAME --region $AWS_
 ACK_K8S_NAMESPACE=ack-system
 
 ACK_K8S_SERVICE_ACCOUNT_NAME=ack-$SERVICE-controller
+SECURITY_GROUP_ID=$(aws --region $AWS_REGION eks describe-cluster --name $EKS_CLUSTER_NAME --query cluster.resourcesVpcConfig.clusterSecurityGroupId)
 
 echo '================= Helm Install - MemoryDB Chart ================='
 aws ecr-public get-login-password --region us-east-1 | helm registry login --username AWS --password-stdin public.ecr.aws
@@ -89,22 +90,6 @@ kubectl -n $ACK_K8S_NAMESPACE rollout restart deployment
 kubectl get pods -n $ACK_K8S_NAMESPACE
 kubectl describe pod -n $ACK_K8S_NAMESPACE | grep "^\s*AWS_"
 
-# Create memoryDB cluster
-echo '================= Create MemoryDB Cluster ================='
-
-cat <<EOF > memorydb-cluster.yaml
-apiVersion: memorydb.services.k8s.aws/v1alpha1
-kind: Cluster
-metadata:
-  name: "${MEMORYDB_CLUSTER_NAME}"
-spec:
-  name: "${MEMORYDB_CLUSTER_NAME}"
-  nodeType: db.t4g.small
-  aclName: open-access
-EOF
-
-kubectl apply -f memorydb-cluster.yaml
-
 # Create Amazon MemoryDB subnet group
 echo '================= Create MemoryDB Subnet Group ================='
 
@@ -125,11 +110,28 @@ spec:
   description: "MemoryDB cluster subnet group"
   subnetIDs:
 $(printf "    - %s\n" ${SUBNET_IDS})
-
 EOF
 
-kubectl apply -f memorydb-subnetgroup.yaml
-kubectl describe subnetgroup "${MEMORYDB_SUBNETGROUP_NAME}"
+kubectl apply -f memorydb-subnetgroup.yaml ; kubectl describe subnetgroup "${MEMORYDB_SUBNETGROUP_NAME}"
+
+# Create memoryDB cluster
+echo '================= Create MemoryDB Cluster ================='
+
+cat <<EOF > memorydb-cluster.yaml
+apiVersion: memorydb.services.k8s.aws/v1alpha1
+kind: Cluster
+metadata:
+  name: "${MEMORYDB_CLUSTER_NAME}"
+spec:
+  name: "${MEMORYDB_CLUSTER_NAME}"
+  nodeType: db.t4g.small
+  aclName: open-access
+  securityGroupIDs:
+    - ${SECURITY_GROUP_ID}
+  subnetGroupName: ${MEMORYDB_SUBNETGROUP_NAME}
+EOF
+
+kubectl apply -f memorydb-cluster.yaml
 
 # Check if cluster is creating
 echo "================= kubectl describe cluster "${MEMORYDB_CLUSTER_NAME}" ================="

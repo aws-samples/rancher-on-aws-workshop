@@ -37,11 +37,16 @@ From the EKS console, delete the EKS cluster.
 From the Cloud9 console, delete the Cloud9 instance.
 
 ### Step 3:
-From the CloudFormation console, delete the Rancher RKE2 cluster 
-CloudFormation template.
+From the CloudFormation console, delete the Rancher RKE2 and the eksctl cluster 
+CloudFormation templates.
 
-### Step 4:
+### Step4:
 Remove any IAM roles or users you created for this workshop.
+
+### Additional Integrations Cleanup:
+* From the MemoryDB console, delete the MemoryDB Cluster and the Subnet Group
+* Remove any IAM roles or users you created for this portion.
+
 
 ## GitHub Repository
 Visit our [GitHub repository](https://github.com/aws-samples/rancher-on-aws-workshop) to find the workshop source code. We welcome your suggestions or improvements!
