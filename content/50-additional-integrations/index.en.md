@@ -62,7 +62,7 @@ The install script will:
     ** IRSA is a system that automates the provisioning and rotation of IAM temporary credentials (called a Web Identity) that a Kubernetes ServiceAccount can use to call AWS API
 * Create the Amazon MemoryDB Subnet Group and Cluster
 
-* Run the **curl** command in the Cloud9 terminal):
+* Run the **curl** command in the Cloud9 terminal:
 
     ```bash
     curl ':assetUrl{path="/resources/install_ACK_sc_memdb.sh" source=s3}' --output ~/install_ACK_sc_memdb.sh
@@ -71,7 +71,7 @@ The install script will:
 
 ### Run the setup script
 
-* Run **install_ACK.sh**:
+* Run **install_ACK_sc_memdb.sh**:
     
     ```bash
     cd
