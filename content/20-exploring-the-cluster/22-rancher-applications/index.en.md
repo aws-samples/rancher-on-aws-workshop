@@ -6,7 +6,7 @@ weight: 22
 In the following module, you will complete the outcomes listed below:
 
 1. Use the Rancher App Catalog to deploy Rancher Longhorn and Rancher NeuVector
-1. Explore features inside of Rancher Longhorn and Rancher NeuVector.
+2. Explore features inside of Rancher Longhorn and Rancher NeuVector.
 
 ---
 

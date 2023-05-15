@@ -5,9 +5,9 @@ weight: 31
 
 In the following module, you will complete the outcomes listed below:
 
-1. Access and Configure an AWS Cloud9 IDE Environment
-   * AWS Cloud9 is cloud-based integrated development environment that lets you write, run, and debug code all within the browser.
-2. Create a 3 node EKS Cluster with a provided EKS Cluster Config
+1. Access and Configure an AWS Cloud9 IDE
+   * AWS Cloud9 is cloud-based integrated development environment (IDE) that lets you write, run, and debug code all within the browser.
+2. Create a 3 node Amazon EKS Cluster with a provided cluster config
 
 ---
 
@@ -15,7 +15,8 @@ In the following module, you will complete the outcomes listed below:
 
 Let's start by accessing the Cloud9 IDE.
 
-In the menu on the left of this screen there should be an option named **Open AWS console**. Click this to launch the AWS account for this workshop.
+In the menu on the left of this screen click **Open AWS console** to launch the 
+AWS account for this workshop.
 
 ![Studio](/static/images/content/cloud9/access_console.png)
 
@@ -27,11 +28,13 @@ When the main Cloud9 screen opens, click on **Open** under **Cloud9 IDE**
 
 ![Cloud9](/static/images/content/cloud9/open.png)
 
-Once the IDE has loaded, we recommend you use the **+** button and select **New Terminal** to open a new full screen terminal window.
+Once the IDE has loaded, we recommend you use the **+** button and select 
+**New Terminal** to open a new full screen terminal window.
 
 ![Cloud9](/static/images/content/cloud9/terminal-open.png)
 
-You can close the smaller terminal window at the bottom if you'd like. Otherwise, welcome to Cloud9!
+You can close the smaller terminal window at the bottom if you'd like. Otherwise, 
+welcome to Cloud9!
 
 ![Cloud9](/static/images/content/cloud9/terminal.png)
 
@@ -39,7 +42,8 @@ You can close the smaller terminal window at the bottom if you'd like. Otherwise
 
 ### Download the setup.sh file:
 
-The setup script will install (or update) a few tools and set environment variables in the Cloud9 IDE
+The setup script will install (or update) a few tools and set environment 
+variables in the Cloud9 IDE
 
 * Run **curl** command in the Cloud9 terminal:
 

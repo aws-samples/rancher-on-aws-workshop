@@ -74,4 +74,6 @@ In the following module, you will complete the outcomes listed below:
 
 ## Completed!
 
-We're done! You've just imported an EKS Cluster using the Rancher Multi-Cluster Manager. If you have the time, feel free to move onto installing and configuring the **Optional Addons!** Otherwise, head over to the **Conclusion!**
+We're done! You've just imported an EKS Cluster using the Rancher Multi-Cluster 
+Manager. If you have the time, feel free to move onto installing and configuring 
+the **Additional AWS Integrations**! Otherwise, wrap up with the **Conclusion**!

@@ -30,4 +30,4 @@ Learn how to easily deploy and manage Kubernetes with Rancher on the AWS Cloud!
   * [Creating the RKE2 Cluster](/content/30-creating-a-cluster/32-creating-rke2-cluster/index.en.md)
 * [Importing a Cluster](/content/40-importing-a-cluster/index.en.md)
   * [Importing the Cluster](/content/40-importing-a-cluster/41-importing-the-cluster/index.en.md)
-  * [Optional Addons](/content/40-importing-a-cluster/42-optional-addons/index.en.md)
+  * [Additional AWS Integrations](/content/40-importing-a-cluster/42-additional-integrations/index.en.md)

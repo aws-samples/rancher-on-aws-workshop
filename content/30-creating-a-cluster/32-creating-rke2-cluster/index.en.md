@@ -147,4 +147,4 @@ No changes required in this section, please free to explore the configuration op
 
 ## Completed!
 
-We're Done! You've just created an RKE2 Cluster using the Rancher Multi-Cluster Manager. Let's move onto importing the AWS EKS Cluster into Rancher!
+We're Done! You've just created an RKE2 Cluster using the Rancher Multi-Cluster Manager. Let's move onto importing the Amazon EKS Cluster into Rancher!

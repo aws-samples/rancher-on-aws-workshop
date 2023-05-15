@@ -18,7 +18,8 @@ If you're completing this workshop at an event operated by Rancher and AWS, an
 AWS Account will be provided that is pre-configured with the required 
 infrastructure.
 
-To access your AWS Account for the workshop, please visit the **[AWS Workshop Studio Dashboard](https://catalog.us-east-1.prod.workshops.aws)** and click **Get Started**.
+To access your AWS Account for the workshop, please visit the 
+**[AWS Workshop Studio Dashboard](https://catalog.us-east-1.prod.workshops.aws)** and click **Get Started**.
 
 ![aws-event-engine-dashboard](/static/images/content/12-aws-ws-dashboard.png)
 
@@ -81,4 +82,5 @@ Here is an example of the CloudFormation stack deployed successfully:
 
 ### Step 5:
 
-Once the CloudFormation Stack has moved to `CREATE_COMPLETE` status, please click **Next** to continue.
+Once the CloudFormation Stack has moved to `CREATE_COMPLETE` status, please 
+click **Next** to continue.
