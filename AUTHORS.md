@@ -8,7 +8,7 @@
   * [@marshkkm](https://github.com/marshkkm) | marshkkm@amazon.com
 * Andy Clemenko, Field Engineer @ RGS
   * [@clemenko](https://github.com/clemenko) | andy.clemenko@rancherfederal.com
-* Everett deVries, Principal Cloud Consultant @ AWS
+* Everett deVries, Cloud Consultant @ AWS
   * [@evdevr](https://github.com/evdevr) | evd@amazon.com
 * Connor Lytle, Cloud Consultant @ AWS
   * [@lytlecon](https://github.com/lytlecon) | celytle@amazon.com

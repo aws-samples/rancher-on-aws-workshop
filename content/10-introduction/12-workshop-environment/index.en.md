@@ -18,7 +18,8 @@ If you're completing this workshop at an event operated by Rancher and AWS, an
 AWS Account will be provided that is pre-configured with the required 
 infrastructure.
 
-To access your AWS Account for the workshop, please visit the **[AWS Workshop Studio Dashboard](https://catalog.us-east-1.prod.workshops.aws)** and click **Get Started**.
+To access your AWS Account for the workshop, please visit the 
+**[AWS Workshop Studio Dashboard](https://catalog.us-east-1.prod.workshops.aws)** and click **Get Started**.
 
 ![aws-event-engine-dashboard](/static/images/content/12-aws-ws-dashboard.png)
 
@@ -56,9 +57,9 @@ Please be aware that this will incur costs to your AWS Account.
 ### Step 1:
 Download the required workshop files by clicking the link below and clicking
 *"download"* in your browser.
-* :button[RKE2/EKS Cloud Formation Template]{href='/static/rke2-eks-cluster.yaml' action=download variant='link'}
-* :button[EKS cluster config file]{href='/static/eksctl-cluster.yml' action=download variant='link'}
-* :button[Environment Setup script]{href='/static/setup.sh' action=download variant='link'}
+* :button[RKE2/EKS Cloud Formation Template]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/static/rke2-eks-cluster.yaml' action=download variant='link'}
+* :button[EKS cluster config file]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/assets/eksctl-cluster.yml' action=download variant='link'}
+* :button[Environment Setup script]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/assets/setup.sh' action=download variant='link'}
 
 ### Step 2:
 Log into the [AWS Management Console](https://aws.amazon.com/console/) and 
@@ -81,4 +82,5 @@ Here is an example of the CloudFormation stack deployed successfully:
 
 ### Step 5:
 
-Once the CloudFormation Stack has moved to `CREATE_COMPLETE` status, please click **Next** to continue.
+Once the CloudFormation Stack has moved to `CREATE_COMPLETE` status, please 
+click **Next** to continue.

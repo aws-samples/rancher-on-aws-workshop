@@ -1,5 +1,5 @@
 ---
-title: "Optional Addons"
+title: "Additional AWS Integrations"
 weight: 42
 ---
 

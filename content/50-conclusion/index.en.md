@@ -44,4 +44,4 @@ CloudFormation template.
 Remove any IAM roles or users you created for this workshop.
 
 ## GitHub Repository
-Visit our [GitHub repository](https://github.com/aws-samples/rancher-on-aws-workshop) to find the workshop source code and offer suggestions or improvements. Very welcomed!
+Visit our [GitHub repository](https://github.com/aws-samples/rancher-on-aws-workshop) to find the workshop source code. We welcome your suggestions or improvements!
