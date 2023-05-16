@@ -13,7 +13,7 @@ Please use the links below to view the official documentation for each of the pr
 * Rancher Longhorn (Storage) - [documentation](https://docs.longhorn.io)
 * Rancher Neuvector (Security) - [documentation](https://open-docs.neuvector.com)
 
-For any questions or to get in touch with Rancher, please contact us via email at natsec@rancherfederal.com!
+For any questions or to get in touch with Rancher, please contact us via email at **natsec@rancherfederal.com!**
 
 ## AWS Services:
 * AWS CloudFormation - [documentation](https://docs.aws.amazon.com/cloudformation)
@@ -25,4 +25,4 @@ For any questions or to get in touch with Rancher, please contact us via email a
 * Amazon Elastic Block Store (EBS) - [documentation](https://docs.aws.amazon.com/ebs)
 * AWS Identity and Access Management (IAM) - [documentation](https://docs.aws.amazon.com/iam)
 
-For any questions or to get in touch with AWS, please contact us via email at mpo-proserve@amazon.com!
+For any questions or to get in touch with AWS, please contact us via email at **mpo-proserve@amazon.com!**

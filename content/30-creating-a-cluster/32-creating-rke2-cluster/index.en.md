@@ -17,10 +17,14 @@ In the following module, you will complete the outcomes listed below:
 
 ### Step 1:
 
+
+
 ![rancher-cluster-menu](/static/images/content/31-cluster-menu.png)
 
 
 ### Step 2:
+
+
 
 ![rancher-cluster-home](/static/images/content/31-cluster-home.png)
 
@@ -29,20 +33,28 @@ In the following module, you will complete the outcomes listed below:
 
 ### Step 1:
 
+
+
 ![rancher-cluster-creds-home](/static/images/content/31-cluster-creds-home.png)
 
 
 ### Step 2:
+
+
 
 ![rancher-cluster-creds-options](/static/images/content/31-cluster-creds-options.png)
 
 
 ### Step 3:
 
+
+
 ![rancher-cluster-creds-aws](/static/images/content/31-cluster-creds-aws.png)
 
 
 ### Step 4:
+
+
 
 ![rancher-cluster-creds-cf](/static/images/content/31-cluster-creds-cf.png)
 
@@ -51,12 +63,14 @@ In the following module, you will complete the outcomes listed below:
 
 ### Step 1:
 
+
+
 ![rancher-cluster-create-options](/static/images/content/31-cluster-create-options.png)
 
 
 ### Step 2:
 
-![rancher-cluster-create-ec2](/static/images/content/31-cluster-create-ec2.png)
+### Cluster Information:
 
 <pre>
 <b>Cloud Credential:</b> aws
@@ -66,7 +80,9 @@ In the following module, you will complete the outcomes listed below:
 <b>Cluster Description:</b> rke2 downstream cluster
 </pre>
 
-### **Machine Pools**
+![rancher-cluster-create-ec2](/static/images/content/31-cluster-create-ec2.png)
+
+### Machine Pools:
 
 <pre>
 <b>pool1</b>
@@ -118,10 +134,9 @@ In the following module, you will complete the outcomes listed below:
 
 ![rancher-cluster-create-ec2-pools](/static/images/content/31-cluster-create-ec2-pools.png)
 
-<pre>
-<b>Cluster Configuration:</b> 
+### Cluster Configuration:
+
 No changes required in this section, please free to explore the configuration options.
-</pre>
 
 ![rancher-cluster-create-ec2-config](/static/images/content/31-cluster-create-ec2-config.png)
 

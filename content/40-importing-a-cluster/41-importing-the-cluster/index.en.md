@@ -34,11 +34,9 @@ In the following module, you will complete the outcomes listed below:
 
 ### Step 2:
 
-![rancher-cluster-import-eks](/static/images/content/41-cluster-import-eks.png)
+### Cluster Configuration:
 
 <pre>
-<b>Cluster Configuration:</b>
-
 <b>Cluster Name:</b> eks-cluster
 
 <b>Region:</b> us-east-1
@@ -47,6 +45,8 @@ In the following module, you will complete the outcomes listed below:
 
 <b>Cluster To Register:</b> eks-cluster
 </pre>
+
+![rancher-cluster-import-eks](/static/images/content/41-cluster-import-eks.png)
 
 ![rancher-cluster-import-eks-config](/static/images/content/41-cluster-import-eks-config.png)
 
@@ -74,6 +74,4 @@ In the following module, you will complete the outcomes listed below:
 
 ## Completed!
 
-We're done! You've just imported an EKS Cluster using the Rancher Multi-Cluster 
-Manager. If you have the time, feel free to move onto installing and configuring 
-the **Additional AWS Integrations**! Otherwise, wrap up with the **Conclusion**!
+We're done! You've just imported an EKS Cluster using the Rancher Multi-Cluster Manager. If you have the time, feel free to move onto installing and configuring the **Additional AWS Integrations**! Otherwise, wrap up with the **Conclusion**!

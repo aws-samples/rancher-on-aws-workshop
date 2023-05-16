@@ -82,5 +82,4 @@ Here is an example of the CloudFormation stack deployed successfully:
 
 ### Step 5:
 
-Once the CloudFormation Stack has moved to `CREATE_COMPLETE` status, please 
-click **Next** to continue.
+Once the CloudFormation Stack has moved to `CREATE_COMPLETE` status, please click **Next** to continue.
