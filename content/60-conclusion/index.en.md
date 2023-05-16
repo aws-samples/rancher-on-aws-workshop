@@ -38,11 +38,15 @@ From the EKS console, delete the EKS cluster.
 From the Cloud9 console, delete the Cloud9 instance.
 
 ### Step 3:
-From the CloudFormation console, delete the Rancher RKE2 and the eksctl cluster 
-CloudFormation templates.
+From the CloudFormation console, delete the Cloudformation Templates (Stacks) named:
+* **rke2-eks-cluster** 
+* **eksctl-eks-cluster-nodegroup-nodeGrp-1**
+* **eksctl-eks-cluster-cluster** 
 
 ### Step4:
 Remove any IAM roles or users you created for this workshop.
+
+> **Note: If any failures, look at the Events tab of the failed stack delete for how to properly clean your environment**
 
 ### Additional Integrations Cleanup:
 * From the MemoryDB console, delete the MemoryDB Cluster and the Subnet Group

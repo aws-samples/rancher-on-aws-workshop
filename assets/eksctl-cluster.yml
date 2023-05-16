@@ -15,7 +15,7 @@ metadata:
 iam:
   serviceRoleARN: ${ClusterRoleArn}
   
-nodeGroups:
+managedNodeGroups:
   - name: nodeGrp-1
     instanceType: m5.large
     amiFamily: AmazonLinux2
