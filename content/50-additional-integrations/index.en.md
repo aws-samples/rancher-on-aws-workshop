@@ -10,7 +10,9 @@ In the following module, you will complete the outcomes listed below:
 
 ---
 
+
 # ACK Add-On
+
 ## Prerequisites
 
 * An EKS Cluster with Kubernetes version 1.18 or higher
@@ -54,6 +56,7 @@ welcome to Cloud9!
 
 ## Step 2: Create the Amazon MemoryDB for Redis Cluster
 
+
 ### Download the install_ACK_sc_memdb.sh script
 
 The install script will:
@@ -68,6 +71,7 @@ The install script will:
     curl ':assetUrl{path="/resources/install_ACK_sc_memdb.sh" source=s3}' --output ~/install_ACK_sc_memdb.sh
     ```
     ![Cloud9](/static/images/content/cloud9/install-ACK-download.png)
+
 
 ### Run the setup script
 

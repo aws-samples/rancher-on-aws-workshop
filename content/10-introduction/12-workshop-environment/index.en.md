@@ -35,13 +35,11 @@ Review the platform terms and conditions and click **Join Event**.
 
 Once you are logged into the AWS Workshop Studio Dashboard, you are able to view your account related information.
 
-
 ### Step 2:
 
 Review the Workshop specific information provided for your account.
 
 ![aws-ws-home](/static/images/content/12-ws-home.png)
-
 
 ### Step 3:
 

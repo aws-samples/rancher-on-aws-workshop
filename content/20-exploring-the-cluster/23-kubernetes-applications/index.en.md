@@ -19,7 +19,6 @@ TBD TBD TBD
 
 ![rancher-fleet-menu](/static/images/content/23-fleet-menu.png)
 
-
 ### Step 2:
 
 TBD TBD TBD
@@ -39,6 +38,7 @@ TBD TBD TBD
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/static/fleet/fleet-default.yaml
 ```
+
 
 ## Completed!
 

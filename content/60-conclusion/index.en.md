@@ -6,6 +6,7 @@ weight: 60
 ![rgs-aws-banner](/static/images/rgs-aws-banner.png)
 
 # Workshop Conclusion
+
 ## You've Completed the Workshop!
 
 Thank you for completing the Rancher on AWS Workshop! We hope you were able to learn the ease of deployment of Kubernetes with Rancher on AWS!

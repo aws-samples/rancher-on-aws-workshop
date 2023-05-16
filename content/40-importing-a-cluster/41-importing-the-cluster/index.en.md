@@ -17,10 +17,13 @@ In the following module, you will complete the outcomes listed below:
 
 ### Step 1:
 
+
+
 ![rancher-cluster-menu](/static/images/content/41-cluster-menu.png)
 
-
 ### Step 2:
+
+
 
 ![rancher-cluster-home](/static/images/content/41-cluster-home.png)
 
@@ -29,10 +32,13 @@ In the following module, you will complete the outcomes listed below:
 
 ### Step 1:
 
+
+
 ![rancher-cluster-import-options](/static/images/content/41-cluster-import-options.png)
 
-
 ### Step 2:
+
+
 
 ### Cluster Configuration:
 
@@ -55,22 +61,28 @@ In the following module, you will complete the outcomes listed below:
 
 ### Step 3:
 
-![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-success.png)
 
+
+![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-success.png)
 
 ### Step 4:
 
-![rancher-cluster-import-eks-success-details](/static/images/content/41-cluster-import-eks-success-details.png)
 
+
+![rancher-cluster-import-eks-success-details](/static/images/content/41-cluster-import-eks-success-details.png)
 
 ### Step 5:
 
-![rancher-cluster-import-eks-successful](/static/images/content/41-cluster-import-eks-successful.png)
 
+
+![rancher-cluster-import-eks-successful](/static/images/content/41-cluster-import-eks-successful.png)
 
 ### Step 6:
 
+
+
 ![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-details.png)
+
 
 ## Completed!
 

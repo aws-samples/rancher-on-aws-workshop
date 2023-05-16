@@ -11,6 +11,7 @@ In the following module, you will complete the outcomes listed below:
 
 ---
 
+
 ## Step 1: Access the Cloud9 IDE
 
 Let's start by accessing the Cloud9 IDE.
@@ -40,6 +41,7 @@ welcome to Cloud9!
 
 ## Step 2: Set up your Cloud9 Environment
 
+
 ### Download the setup.sh file:
 
 The setup script will install (or update) a few tools and set environment 
@@ -65,6 +67,7 @@ variables in the Cloud9 IDE
 
     ![Cloud9](/static/images/content/cloud9/startSetup_script.png)
 
+
 ### Download the cluster config:
 
 The cluster config file defines the EKS cluster settings and permissions for the cluster.
@@ -78,6 +81,7 @@ The cluster config file defines the EKS cluster settings and permissions for the
     ![Cloud9](/static/images/content/cloud9/eks-conf-download.png)
 
 ## Step 3: Update Cloud9 Instance
+
 
 ### Disable Cloud9 temporary credentials:
 * Click the cog wheel in the upper right of the Cloud9 IDE
@@ -135,6 +139,7 @@ The cluster config file defines the EKS cluster settings and permissions for the
    ![Cloud9](/static/images/content/cloud9/completeCluster.png)
 
    ![Cloud9](/static/images/content/cloud9/coupleKubeCmds.png)
+
 
 ## Completed!
 

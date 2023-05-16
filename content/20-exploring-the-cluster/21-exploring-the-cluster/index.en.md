@@ -24,7 +24,6 @@ At the top of the page, select the search bar and search for **`"CloudFormation"
 ![aws-console-home](/static/images/content/21-aws-home.png)
 ![aws-console-home](/static/images/content/21-search-cfn.png)
 
-
 ### Step 2:
 
 In the **`CloudFormation Console`**, click on the **`Stack`** named **`rke2-eks-cluster`**.
@@ -46,7 +45,6 @@ First let's enter the bootstrap password (that was set during installation) of *
 ![rancher-bootstrapping-password](/static/images/content/21-rancher-bootstrap-pw.png)
 ![rancher-bootstrapping-password](/static/images/content/21-rancher-bootstrap-pw-detail.png)
 
-
 ### Step 2:
 
 Now let's verify the few items on the setup page and click **`Continue`**!
@@ -56,7 +54,6 @@ Now let's verify the few items on the setup page and click **`Continue`**!
 
 ![rancher-bootstrapping-setup](/static/images/content/21-rancher-bootstrap-setup.png)
 ![rancher-bootstrapping-setup](/static/images/content/21-rancher-bootstrap-setup-detail.png)
-
 
 ### Step 3:
 
@@ -120,6 +117,7 @@ While we are on the topic of application lifecycle management, Rancher has a few
 ![rancher-manager-kubectl-shell](/static/images/content/21-rancher-kubectl-shell.png)
 
 ![rancher-manager-import-yaml](/static/images/content/21-rancher-import-yaml.png)
+
 
 ## Completed!
 

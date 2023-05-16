@@ -21,7 +21,6 @@ In the following module, you will complete the outcomes listed below:
 
 ![rancher-cluster-menu](/static/images/content/31-cluster-menu.png)
 
-
 ### Step 2:
 
 
@@ -37,13 +36,11 @@ In the following module, you will complete the outcomes listed below:
 
 ![rancher-cluster-creds-home](/static/images/content/31-cluster-creds-home.png)
 
-
 ### Step 2:
 
 
 
 ![rancher-cluster-creds-options](/static/images/content/31-cluster-creds-options.png)
-
 
 ### Step 3:
 
@@ -51,13 +48,11 @@ In the following module, you will complete the outcomes listed below:
 
 ![rancher-cluster-creds-aws](/static/images/content/31-cluster-creds-aws.png)
 
-
 ### Step 4:
 
 
 
 ![rancher-cluster-creds-cf](/static/images/content/31-cluster-creds-cf.png)
-
 
 ## Creating the Cluster
 
@@ -66,7 +61,6 @@ In the following module, you will complete the outcomes listed below:
 
 
 ![rancher-cluster-create-options](/static/images/content/31-cluster-create-options.png)
-
 
 ### Step 2:
 
@@ -140,25 +134,30 @@ No changes required in this section, please free to explore the configuration op
 
 ![rancher-cluster-create-ec2-config](/static/images/content/31-cluster-create-ec2-config.png)
 
-
 ### Step 3:
+
+
 
 ![rancher-cluster-create-ec2-success](/static/images/content/31-cluster-create-ec2-success.png)
 
-
 ### Step 4:
+
+
 
 ![rancher-cluster-create-ec2-success-details](/static/images/content/31-cluster-create-ec2-success-details.png)
 
-
 ### Step 5:
+
+
 
 ![rancher-cluster-create-ec2-successful](/static/images/content/31-cluster-create-ec2-successful.png)
 
-
 ### Step 6:
 
+
+
 ![rancher-cluster-create-ec2-detail](/static/images/content/31-cluster-create-ec2-details.png)
+
 
 ## Completed!
 
