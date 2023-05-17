@@ -4,7 +4,7 @@ weight: 50
 ---
 
 In the following module, you will create a managed Amazon MemoryDB for Redis Cluster using the ACK MemoryDB Controller
-    * The ACK service controller for Amazon MemoryDB for Redis lets you manage Amazon MemoryDB Cluster directly from Kubernetes
+* The ACK service controller for Amazon MemoryDB for Redis lets you manage Amazon MemoryDB Cluster directly from Kubernetes
 
 AWS Controllers for Kubernetes, or ACK, is a powerful tool that lets you directly manage AWS services from Kubernetes. ACK makes it simple to build scalable and highly-available Kubernetes applications that utilize AWS services, providing a consistent Kubernetes interface for AWS, regardless of the AWS service API
 
@@ -83,6 +83,7 @@ The install script will:
     ```
     ![Cloud9](/static/images/content/cloud9/run-install-ACK.png)
 
+    ![Cloud9](/static/images/content/cloud9/ACK_complete.png)
+
 > **Note: Cluster creation can takes up to 25 minutes**
 
-    ![Cloud9](/static/images/content/cloud9/ACK_complete.png)
