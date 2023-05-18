@@ -134,7 +134,7 @@ The cluster config file defines the EKS cluster settings and permissions for the
    ![Cloud9](/static/images/content/cloud9/envsub.png)
 
    ![Cloud9](/static/images/content/cloud9/eksctl-create.png)
-> **Note: Cluster creation can takes up to 25 minutes**
+> **Note: Cluster creation can take up to 25 minutes**
 
    ![Cloud9](/static/images/content/cloud9/completeCluster.png)
 

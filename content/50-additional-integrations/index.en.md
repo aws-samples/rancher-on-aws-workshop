@@ -85,5 +85,5 @@ The install script will:
 
     ![Cloud9](/static/images/content/cloud9/ACK_complete.png)
 
-> **Note: Cluster creation can takes up to 25 minutes**
+> **Note: Cluster creation can take up to 25 minutes**
 
