@@ -11,7 +11,7 @@ AWS Controllers for Kubernetes, or ACK, is a powerful tool that lets you directl
 ---
 
 
-# AWS Controllers for Kubernetes - Amazon MemoryDB for Redis
+# AWS Controllers for Kubernetes (ACK) - Amazon MemoryDB for Redis
 
 ## Prerequisites
 
@@ -62,7 +62,7 @@ welcome to Cloud9!
 The install script will:
 * Install the MemoryDB Helm chart
 * Setup IAM Roles for Service Accounts (IRSA)
-    ** IRSA is a system that automates the provisioning and rotation of IAM temporary credentials (called a Web Identity) that a Kubernetes ServiceAccount can use to call AWS API
+    * IRSA is a system that automates the provisioning and rotation of IAM temporary credentials (called a Web Identity) that a Kubernetes ServiceAccount can use to call AWS API
 * Create the Amazon MemoryDB Subnet Group and Cluster
 
 * Run the **curl** command in the Cloud9 terminal:
@@ -73,7 +73,7 @@ The install script will:
     ![Cloud9](/static/images/content/cloud9/install-ACK-download.png)
 
 
-### Run the setup script
+### Run the install ACK script
 
 * Run **install_ACK_sc_memdb.sh**:
     
