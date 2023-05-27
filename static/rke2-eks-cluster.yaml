@@ -67,9 +67,9 @@ Mappings:
       HVM64: ami-08dd0a2361f1e2ac2
 
 Resources:
-  #######
-  # SM  #
-  #######
+  ######
+  # SM #
+  ######
   PlaceSecret:
     Type: AWS::SecretsManager::Secret
     Properties: 
@@ -697,9 +697,9 @@ Resources:
       SecurityGroups:
       - !Ref RancherEFSSecurityGroup
 
-  ##################
-  # Security Group #
-  ##################
+  ###################
+  # Security Groups #
+  ###################
   RancherEFSSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -818,9 +818,9 @@ Resources:
           ToPort: '443'
           CidrIp: !Ref AllowedCidr
 
-  #################
-  # LoadBalancers #
-  #################
+  ##################
+  # Load Balancers #
+  ##################
   RancherCPELB:
     Type: AWS::ElasticLoadBalancing::LoadBalancer
     Properties:
@@ -873,8 +873,6 @@ Resources:
   ###########
   # AWS EKS #
   ###########
-
-  # IAM Roles #
   EksAllAccessManagedPolicy:
     Type: AWS::IAM::ManagedPolicy
     Properties:
@@ -960,6 +958,7 @@ Resources:
                   - "eks.amazonaws.com"
                   - "eks-nodegroup.amazonaws.com"
                   - "eks-fargate.amazonaws.com"
+  
   EKSCTLRole:
     Type: AWS::IAM::Role
     DependsOn: 

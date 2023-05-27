@@ -57,7 +57,7 @@ Download the required workshop files by clicking the link below and clicking
 *"download"* in your browser.
 * :button[RKE2/EKS Cloud Formation Template]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/static/rke2-eks-cluster.yaml' action=download variant='link'}
 * :button[EKS cluster config file]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/assets/eksctl-cluster.yml' action=download variant='link'}
-* :button[Environment Setup script]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/assets/setup.sh' action=download variant='link'}
+* :button[Environment Setup script]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/assets/eks-setup.sh' action=download variant='link'}
 
 ### Step 2:
 Log into the [AWS Management Console](https://aws.amazon.com/console/) and 
