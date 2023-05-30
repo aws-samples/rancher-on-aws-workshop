@@ -2,11 +2,11 @@
 title: "Additional AWS Integrations"
 weight: 50
 ---
+In the following module, you will complete the outcomes listed below:
 
-In the following module, you will create a managed Amazon MemoryDB for Redis Cluster using the ACK MemoryDB Controller
-* The ACK service controller for Amazon MemoryDB for Redis lets you manage Amazon MemoryDB Cluster directly from Kubernetes
-
-AWS Controllers for Kubernetes, or ACK, is a powerful tool that lets you directly manage AWS services from Kubernetes. ACK makes it simple to build scalable and highly-available Kubernetes applications that utilize AWS services, providing a consistent Kubernetes interface for AWS, regardless of the AWS service API
+1. Create a managed Amazon MemoryDB for Redis Cluster using the ACK MemoryDB Controller
+    * The ACK service controller for Amazon MemoryDB for Redis lets you manage Amazon MemoryDB Cluster directly from Kubernetes
+    * AWS Controllers for Kubernetes, or ACK, is a powerful tool that lets you directly manage AWS services from Kubernetes. ACK makes it simple to build scalable and highly-available Kubernetes applications that utilize AWS services, providing a consistent Kubernetes interface for AWS, regardless of the AWS service API.
 
 ---
 
@@ -24,8 +24,7 @@ AWS Controllers for Kubernetes, or ACK, is a powerful tool that lets you directl
     * eksctl - A command line tool for working with EKS clusters.
     * Helm 3.8+ - A tool for installing and managing Kubernetes applications.
 
-If you've followed this workshop all the way through, all of the prerequisite have been met.
-From here, only the Cloud9 IDE will be used
+If you've followed this workshop all the way through, all of the prerequisite have been met. From here, you will only need to use the Cloud9 IDE!
 
 ## Step 1: Access the Cloud9 IDE
 
@@ -56,8 +55,7 @@ welcome to Cloud9!
 
 ## Step 2: Create the Amazon MemoryDB for Redis Cluster
 
-
-### Download the install_ACK_sc_memdb.sh script
+### Download the install-ack-sc-memdb.sh script
 
 The install script will:
 * Install the MemoryDB Helm chart
@@ -68,22 +66,20 @@ The install script will:
 * Run the **curl** command in the Cloud9 terminal:
 
     ```bash
-    curl ':assetUrl{path="/resources/install_ACK_sc_memdb.sh" source=s3}' --output ~/install_ACK_sc_memdb.sh
+    curl ':assetUrl{path="/resources/install-ack-sc-memdb.sh" source=s3}' --output ~/install-ack-sc-memdb.sh
     ```
     ![Cloud9](/static/images/content/cloud9/install-ACK-download.png)
 
-
 ### Run the install ACK script
 
-* Run **install_ACK_sc_memdb.sh**:
+* Run **install-ack-sc-memdb.sh**:
     
     ```bash
     cd
-    . install_ACK_sc_memdb.sh
+    . install-ack-sc-memdb.sh
     ```
     ![Cloud9](/static/images/content/cloud9/run-install-ACK.png)
 
     ![Cloud9](/static/images/content/cloud9/ACK_complete.png)
 
 > **Note: Cluster creation can take up to 25 minutes**
-

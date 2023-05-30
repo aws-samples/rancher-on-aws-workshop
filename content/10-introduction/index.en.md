@@ -6,7 +6,9 @@ weight: 10
 ![rgs-aws-banner](/static/images/rgs-aws-banner.png)
 
 # Welcome to the Rancher on AWS Workshop!
-In this workshop, we will be utilzing the Rancher Product Stack on AWS Infrastructure to complete the following workshop modules:
+
+In this workshop, we will be utilzing the Rancher Product Stack on the AWS Cloud to complete the following workshop modules:
+
 * **Exploring** a Rancher RKE2 Kubernetes cluster.
 * **Creating** a AWS EKS Kubernetes cluster.
 * **Creating** a Rancher RKE2 Kubernetes cluster.
