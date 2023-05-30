@@ -42,7 +42,7 @@ welcome to Cloud9!
 ## Step 2: Set up your Cloud9 Environment
 
 
-### Download the eks-setup.sh file:
+### Download the env-setup.sh file:
 
 The setup script will install (or update) a few tools and set environment 
 variables in the Cloud9 IDE
@@ -51,18 +51,18 @@ variables in the Cloud9 IDE
 
     ```bash
     cd
-    curl ':assetUrl{path="/resources/eks-setup.sh" source=s3}' --output /tmp/eks-setup.sh
+    curl ':assetUrl{path="/resources/env-setup.sh" source=s3}' --output /tmp/env-setup.sh
     ```
 
     ![Cloud9](/static/images/content/cloud9/setupScript-download.png)
 
 ### Run the setup script
 
-* Run **eks-setup.sh**:
+* Run **env-setup.sh**:
     
     ```bash
     cd
-    . /tmp/eks-setup.sh
+    . /tmp/env-setup.sh
     ```
 
     ![Cloud9](/static/images/content/cloud9/startSetup_script.png)
