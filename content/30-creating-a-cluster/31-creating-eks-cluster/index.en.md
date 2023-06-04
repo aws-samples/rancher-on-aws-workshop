@@ -41,7 +41,7 @@ welcome to Cloud9!
 ## Step 2: Set up your Cloud9 Environment
 
 
-### Download the setup.sh file:
+### Download the env-setup.sh file:
 
 The setup script will install (or update) a few tools and set environment variables in the Cloud9 IDE.
 
@@ -49,18 +49,18 @@ The setup script will install (or update) a few tools and set environment variab
 
     ```bash
     cd
-    curl ':assetUrl{path="/resources/setup.sh" source=s3}' --output /tmp/setup.sh
+    curl ':assetUrl{path="/resources/env-setup.sh" source=s3}' --output /tmp/env-setup.sh
     ```
 
     ![Cloud9](/static/images/content/cloud9/setupScript-download.png)
 
 ### Run the setup script
 
-* Run **setup.sh**:
+* Run **env-setup.sh**:
     
     ```bash
     cd
-    . /tmp/setup.sh
+    . /tmp/env-setup.sh
     ```
 
     ![Cloud9](/static/images/content/cloud9/startSetup_script.png)

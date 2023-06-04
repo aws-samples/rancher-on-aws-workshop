@@ -9,10 +9,8 @@ Learn how to easily deploy and manage Kubernetes with Rancher on the AWS Cloud!
 
 **Created together by [Rancher Government Solutions](https://ranchergovernment.com) and [Amazon Web Services](https://aws.amazon.com) under the MIT-0 and CC-BY-4.0 Licenses.**
 
-This repository has the source code for the workshop content and environment. To 
-get started with Rancher on AWS by running the workshop, please head to the 
-workshop content at [AWS Workshop Studio](https://catalog.us-east-1.prod.workshops.aws/workshops/be7b2281-57e8-44d0-a40e-1b7ea0d88f2a/en-US) 
-and follow along.
+This repository has the source code for the workshop content and environment. To get started with the **Rancher on AWS Workshop**, please head to the 
+workshop content in the [AWS Workshop Studio](https://catalog.us-east-1.prod.workshops.aws/workshops/be7b2281-57e8-44d0-a40e-1b7ea0d88f2a/en-US)!
 
 ## Requirements:
 * Basic Knowledge of Kubernetes and AWS Infrastructure.
@@ -33,6 +31,9 @@ and follow along.
   * [Creating the RKE2 Cluster](/content/30-creating-a-cluster/32-creating-rke2-cluster/index.en.md)
 * [Importing a Cluster](/content/40-importing-a-cluster/index.en.md)
   * [Importing the Cluster](/content/40-importing-a-cluster/41-importing-the-cluster/index.en.md)
-  * [Additional AWS Integrations](/content/40-importing-a-cluster/42-additional-integrations/index.en.md)
+* [Additional AWS Integrations](/content/50-importing-a-cluster/51-additional-integrations/index.en.md)
 
-**Note:** [/static](/static/) stores all the static code and resources required for this workshop.
+**Please Note:**
+* [/assets/](/assets/) stores the static code and resources for the workshop environment.
+* [/content/](/content/) stores all the content and instructions for the workshop.
+* [/static/](/static/) stores all the static code and resources.
