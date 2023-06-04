@@ -15,7 +15,7 @@ additionalLinks:
     link: https://docs.rke2.io/
   - title: Rancher Longhorn (Storage)
     link: https://docs.longhorn.io
-  - title: Rancher Neuvector (Security)
+  - title: Rancher NeuVector (Security)
     link: https://open-docs.neuvector.com
 
 awsAccountConfig:

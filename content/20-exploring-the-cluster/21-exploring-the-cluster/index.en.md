@@ -57,7 +57,7 @@ Now let's verify the few items on the setup page and click **`Continue`**!
 
 ### Step 3:
 
-Welcome to the Rancher Multi-Cluster Manager!! Here's your starting point in the Rancher Multi-Cluster Manager. As you can see, we are seeing an overview of the Multi-Cluster aspect of the Rancher Manager. 
+Welcome to the Rancher Multi-Cluster Manager!! Here is the starting point in the Rancher Multi-Cluster Manager. As you can see, we are seeing an overview of the Multi-Cluster aspect of the Rancher Multi-Cluster Manager.
 
 Under **`Clusters`**, you should see a cluster named **`local`**. This cluster is your **`management cluster`**. As we move through the workshop, we will be creating and importing additional clusters into the Rancher Manager, known as **`downstream cluster(s)`**.
 
