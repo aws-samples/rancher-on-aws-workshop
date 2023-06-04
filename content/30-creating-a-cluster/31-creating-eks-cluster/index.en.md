@@ -16,8 +16,7 @@ In the following module, you will complete the outcomes listed below:
 
 Let's start by accessing the Cloud9 IDE.
 
-In the menu on the left of this screen click **Open AWS console** to launch the 
-AWS account for this workshop.
+In the menu on the left of this screen click **Open AWS console** to launch the AWS account for this workshop.
 
 ![Studio](/static/images/content/cloud9/access_console.png)
 
@@ -44,8 +43,7 @@ welcome to Cloud9!
 
 ### Download the setup.sh file:
 
-The setup script will install (or update) a few tools and set environment 
-variables in the Cloud9 IDE
+The setup script will install (or update) a few tools and set environment variables in the Cloud9 IDE.
 
 * Run **curl** command in the Cloud9 terminal:
 
