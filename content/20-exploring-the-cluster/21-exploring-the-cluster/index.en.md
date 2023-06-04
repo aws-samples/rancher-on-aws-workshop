@@ -57,7 +57,7 @@ Now let's verify the few items on the setup page and click **`Continue`**!
 
 ### Step 3:
 
-Welcome to the Rancher Multi-Cluster Manager!! Here's your starting point in the Rancher Multi-Cluster Manager. As you can see, we are seeing an overview of the Multi-Cluster aspect of the Rancher Manager. 
+Welcome to the Rancher Multi-Cluster Manager!! Here is the starting point in the Rancher Multi-Cluster Manager. As you can see, we are seeing an overview of the Multi-Cluster aspect of the Rancher Multi-Cluster Manager.
 
 Under **`Clusters`**, you should see a cluster named **`local`**. This cluster is your **`management cluster`**. As we move through the workshop, we will be creating and importing additional clusters into the Rancher Manager, known as **`downstream cluster(s)`**.
 
@@ -66,10 +66,7 @@ Under **`Clusters`**, you should see a cluster named **`local`**. This cluster i
 
 Let's go ahead and click on the **`local`** cluster and start to explore it.
 
-This is the homepage for the cluster where you are able to see a overview of the 
-entire cluster. The overview has everything from node statistics to recent 
-cluster events to various Kubernetes resources. Normally, you would have to run 
-many **`kubectl`** commands to get this amount of information about your cluster.
+This is the homepage for the cluster where you are able to see a overview of the entire cluster. The overview has everything from node statistics to recent cluster events to various Kubernetes resources. Normally, you would have to run many **`kubectl`** commands to get this amount of information about your cluster.
 
 ![rancher-local-cluster-home](/static/images/content/21-rancher-local-home.png)
 
