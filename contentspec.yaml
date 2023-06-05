@@ -104,6 +104,7 @@ infrastructure:
 
       # Friendly name for the corresponding cloudformation template.
       label: RKE2 Kubernetes and Rancher Manager with EKS Cluster CloudFormation Template
+      participantAllStackOutputsVisible: true
       parameters:
         - templateParameter: AssetsBucketName
           defaultValue: "{{.AssetsBucketName}}"
