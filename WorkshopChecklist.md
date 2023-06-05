@@ -30,12 +30,12 @@
   - Cluster and Application Lifecycle Management best-practices with AWS and Rancher. (15m)
   - Supply Chain Security and Management with AWS and Rancher. (15m)
 - Workshop Outcomes
-  - Able to explore and manage RKE2/EKS Kubernetes Clusters.
-  - Able to deploy Kubernetes clusters from the Rancher Management Console.
-  - Able to deploy Kubernetes Applications from the Rancher Management Console.
-  - Able to deploy EKS Applications and Helm Charts from EKS or Rancher Management Console.
-  - Understanding of best-practices when deploying and managing Kubernetes with AWS and Rancher.
-  - Understanding of best-practices when securing and managing Supply Chains with AWS and Rancher.
+  - Ability to explore and manage RKE2/EKS Kubernetes Clusters.
+  - Ability to deploy Kubernetes clusters from the Rancher Management Console.
+  - Ability to deploy Kubernetes Applications from the Rancher Management Console.
+  - Ability to deploy EKS Applications and Helm Charts from EKS or Rancher Management Console.
+  - Understanding of best-practices for deploying and managing Kubernetes with AWS and Rancher.
+  - Understanding of best-practices for securing and managing Software Supply Chains with AWS and Rancher.
 - Workshop Audience
   - Practitioners seeking solutions to easily and simply manage Kubernetes workloads with AWS and Rancher.
 - Workshop Prerequisites
@@ -95,9 +95,9 @@
 - [x] Confirm workshop compiles with security best practices https://docs.aws.amazon.com/security/
 - [x] Confirm ScoutSuite, cfn_nag, and cfn-lint ran without resulting in any blockers (detail any high severity findings in the comments field, and confirm those items have been resolved) (https://github.com/nccgroup/ScoutSuite , https://github.com/stelligent/cfn_nag, https://github.com/aws-cloudformation/cfn-lint)
 - [x] Confirm review of all uploaded content for the threat of malicious uploads by scanning with tools such as ClamAV
-- [ ] List any other scans of the workshop
+- [x] List any other scans of the workshop
 - [x] Confirm workshop does not contain confidential information
-- [ ] Confirm workshop includes overall architecture diagram, depicting the associated resources and security controls in place
+- [x] Confirm workshop includes overall architecture diagram, depicting the associated resources and security controls in place
 
 ## Source Code, Sample Data, third party sources, and Open Source
 
@@ -110,7 +110,7 @@
 - [x] Confirm workshop is factually correct
 - [x] Confirm the workshop can be completed with steps included without error
 - [x] Confirm remediations included if errors are encounters
-- [ ] Confirm diagrams and images are included where applicable
+- [x] Confirm diagrams and images are included where applicable
 - [x] Confirm language is clear, even to non-native-language speakers
 
 ## Accessibility and Inclusion
