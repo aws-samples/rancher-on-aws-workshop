@@ -13,14 +13,12 @@ weight: 11
 * Importing a EKS Cluster using the Rancher Multi-Cluster Manager
 * Kubernetes and Cluster Management Best Practices with AWS and Rancher
 
-
 ## Workshop Requirements
 * Basic Knowledge of Kubernetes and AWS Infrastructure.
 * AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
 * AWS IAM Account with *elevated privileges* allowing you to interact with various AWS Services.
 
 The `AdministratorAccess` managed policy in IAM provides sufficient permissions, although your organization may choose to use a custom policy with more restrictions. For more information, see [AWS managed policies for job functions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html).
-
 
 ## Workshop Expected Duration
 **Total Duration of the workshop is 3 Hours.**
@@ -34,23 +32,19 @@ The `AdministratorAccess` managed policy in IAM provides sufficient permissions,
   * Cluster and Application Lifecycle Management best-practices with AWS and Rancher. (15m)
   * Supply Chain Security and Management with AWS and Rancher. (15m)
 
-
 ## Workshop Outcomes
-* Able to explore and manage RKE2/EKS Kubernetes Clusters.
-* Able to deploy Kubernetes clusters from the Rancher Management Console.
-* Able to deploy Kubernetes Applications from the Rancher Management Console.
-* Able to deploy EKS Applications and Helm Charts from EKS or Rancher Management Console.
-* Understand best-practices for deploying and managing Kubernetes with AWS and Rancher.
-* Understand best-practices for securing and managing Software Supply Chains with AWS and Rancher.
-
+* Ability to explore and manage RKE2/EKS Kubernetes Clusters.
+* Ability to deploy Kubernetes clusters from the Rancher Management Console.
+* Ability to deploy Kubernetes Applications from the Rancher Management Console.
+* Ability to deploy EKS Applications and Helm Charts from EKS or Rancher Management Console.
+* Understanding of best-practices for deploying and managing Kubernetes with AWS and Rancher.
+* Understanding of best-practices for securing and managing Software Supply Chains with AWS and Rancher.
 
 ## Workshop Audience
 * Practitioners seeking solutions to easily and simply manage Kubernetes workloads with AWS and Rancher.
 
-
 ## Workshop Costs
 * For the expected 3 hour workshop duration, the total cost of the AWS resources is expected to be less than $10. 
-
 
 ## Now Let's Get Started...
 

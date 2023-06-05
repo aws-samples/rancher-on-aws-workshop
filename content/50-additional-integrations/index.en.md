@@ -30,28 +30,27 @@ If you've followed this workshop all the way through, all of the prerequisite ha
 
 Let's start by accessing the Cloud9 IDE.
 
-In the menu on the left of this screen click **Open AWS console** to launch the 
-AWS account for this workshop.
+In the menu on the left of this screen click **Open AWS console** to launch the AWS account for this workshop.
 
-![Studio](/static/images/content/cloud9/access_console.png)
+![workshop-studio-console](/static/images/content/cloud9/access-console.png)
 
 Access the Cloud9 service by searching for it in the menu bar at the top of the screen:
 
-![Cloud9](/static/images/content/cloud9/search.png)
+![aws-console-search](/static/images/content/cloud9/search.png)
 
 When the main Cloud9 screen opens, click on **Open** under **Cloud9 IDE**
 
-![Cloud9](/static/images/content/cloud9/open.png)
+![aws-console-cloud9](/static/images/content/cloud9/open.png)
 
 Once the IDE has loaded, we recommend you use the **+** button and select 
 **New Terminal** to open a new full screen terminal window.
 
-![Cloud9](/static/images/content/cloud9/terminal-open.png)
+![cloud9-dashboard](/static/images/content/cloud9/terminal-open.png)
 
 You can close the smaller terminal window at the bottom if you'd like. Otherwise, 
 welcome to Cloud9!
 
-![Cloud9](/static/images/content/cloud9/terminal.png)
+![cloud9-new-terminal](/static/images/content/cloud9/terminal.png)
 
 ## Step 2: Create the Amazon MemoryDB for Redis Cluster
 
@@ -65,22 +64,27 @@ The install script will:
 
 * Run the **curl** command in the Cloud9 terminal:
 
-    ```bash
-    curl ':assetUrl{path="/resources/install-ack-sc-memdb.sh" source=s3}' --output ~/install-ack-sc-memdb.sh
-    ```
-    ![Cloud9](/static/images/content/cloud9/install-ACK-download.png)
+ ```bash
+curl ':assetUrl{path="/resources/install-ack-sc-memdb.sh" source=s3}' --output ~/install-ack-sc-memdb.sh
+```
+
+![cloud9-ackScript-download](/static/images/content/cloud9/install-ACK-download.png)
 
 ### Run the install ACK script
 
 * Run **install-ack-sc-memdb.sh**:
     
-    ```bash
-    cd
-    . install-ack-sc-memdb.sh
-    ```
-    ![Cloud9](/static/images/content/cloud9/run-install-ACK.png)
+```bash
+cd
+. install-ack-sc-memdb.sh
+```
 
-    ![Cloud9](/static/images/content/cloud9/ACK_complete.png)
+![cloud9-ackScript-run](/static/images/content/cloud9/run-install-ACK.png)
 
+![cloud-ackScript-completed](/static/images/content/cloud9/ACK-complete.png)
 
 > **Note: Cluster creation can take up to 25 minutes**
+
+## Completed!
+
+We're done! You've just created a managed Amazon MemoryDB for a Redis Cluster using the ACK MemoryDB Controller! Let's wrap up with taking a look at the **Conclusion**.

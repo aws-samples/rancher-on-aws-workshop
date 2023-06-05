@@ -11,7 +11,6 @@ The infrastructure for this workshop is built with AWS CloudFormation templates.
 
 Please follow the steps below to set up for the workshop.
 
-
 ## For Workshops at AWS Events
 
 If you're completing this workshop at an event operated by Rancher and AWS, an 
@@ -44,7 +43,6 @@ Review the Workshop specific information provided for your account.
 ### Step 3:
 
 You're done! Please head over and start the workshop by clicking the **"Welcome to Rancher on AWS"**
-
 
 ## For Use Outside AWS Events
 
