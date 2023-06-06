@@ -31,7 +31,8 @@ workshop content in the [AWS Workshop Studio](https://catalog.us-east-1.prod.wor
   * [Creating the RKE2 Cluster](/content/30-creating-a-cluster/32-creating-rke2-cluster/index.en.md)
 * [Importing a Cluster](/content/40-importing-a-cluster/index.en.md)
   * [Importing the Cluster](/content/40-importing-a-cluster/41-importing-the-cluster/index.en.md)
-* [Additional AWS Integrations](/content/50-importing-a-cluster/51-additional-integrations/index.en.md)
+* [Additional AWS Integrations](/content/50-additional-integrations/index.en.md)
+* [Conclusion](/content/60-conclusion/index.en.md)
 
 **Please Note:**
 * [/assets/](/assets/) stores the static code and resources for the workshop environment.
