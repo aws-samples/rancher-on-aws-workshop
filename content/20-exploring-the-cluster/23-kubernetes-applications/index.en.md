@@ -36,7 +36,11 @@ In the following module, you will complete the outcomes listed below:
 
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/static/fleet/fleet-default.yaml
+kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/static/fleet/fleet-default.yaml 
+```
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/static/fleet/fleet-local.yaml
 ```
 
 ### Step 5:

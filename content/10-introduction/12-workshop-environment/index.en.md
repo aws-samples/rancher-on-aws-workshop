@@ -5,20 +5,15 @@ weight: 12
 
 # Understanding the Workshop Environment
 
-In order to successfully complete this workshop, you need to either be at an event operated by
-Rancher/AWS or complete additional steps to have the required infrastructure available to you. 
-The infrastructure for this workshop is built with AWS CloudFormation templates. 
+In order to successfully complete this workshop, you need to either be at an event operated by Rancher/AWS or complete additional steps to have the required infrastructure available to you. The infrastructure for this workshop is built with AWS CloudFormation templates. 
 
 Please follow the steps below to set up for the workshop.
 
 ## For Workshops at AWS Events
 
-If you're completing this workshop at an event operated by Rancher and AWS, an 
-AWS Account will be provided that is pre-configured with the required 
-infrastructure.
+If you're completing this workshop at an event operated by Rancher and AWS, an AWS Account will be provided that is pre-configured with the required infrastructure.
 
-To access your AWS Account for the workshop, please visit the 
-**[AWS Workshop Studio Dashboard](https://catalog.us-east-1.prod.workshops.aws)** and click **Get Started**.
+To access your AWS Account for the workshop, please visit the **[AWS Workshop Studio Dashboard](https://catalog.us-east-1.prod.workshops.aws)** and click **Get Started**.
 
 ![aws-event-engine-dashboard](/static/images/content/12-aws-ws-dashboard.png)
 
@@ -46,13 +41,10 @@ You're done! Please head over and start the workshop by clicking the **"Welcome 
 
 ## For Use Outside AWS Events
 
-If you're completing this workshop outside an official AWS event, you will need to 
-configure the required infrastructure before starting the workshop content. 
-Please be aware that this will incur costs to your AWS Account.
+If you're completing this workshop outside an official AWS event, you will need to configure the required infrastructure before starting the workshop content. Please be aware that this will incur costs to your AWS Account.
 
 ### Step 1:
-Download the required workshop files by clicking the link below and clicking
-*"download"* in your browser.
+Download the required workshop files by clicking the link below and clicking *"download"* in your browser.
 * :button[RKE2/EKS Cloud Formation Template]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/static/rke2-eks-cluster.yaml' action=download variant='link'}
     * Cloudformation template to deploy the Rancher Cluster
 * :button[EKS cluster config file]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/assets/eksctl-cluster.yml' action=download variant='link'}
@@ -61,19 +53,15 @@ Download the required workshop files by clicking the link below and clicking
     * A simple shell script to set environment variables, install software, etc. which will be done in a Cloud based IDE
 
 ### Step 2:
-Log into the [AWS Management Console](https://aws.amazon.com/console/) and 
-open the [CloudFormation Console](https://console.aws.amazon.com/cloudformation/home).
+Log into the [AWS Management Console](https://aws.amazon.com/console/) and open the [CloudFormation Console](https://console.aws.amazon.com/cloudformation/home).
 
 ### Step 3:
-Click the **Create Stack** button and upload the Rancher RKE2 Management Cluster 
-CloudFormation Template (`rke2-eks-cluster.yaml`).
+Click the **Create Stack** button and upload the Rancher RKE2 Management Cluster CloudFormation Template (`rke2-eks-cluster.yaml`).
 
 ![aws-console-cf-home](/static/images/content/12-aws-cf-home.png)
 
 ### Step 4:
-Complete all required configuration information and follow the instructions within 
-the AWS CloudFormation Console. You should not have to change any information, 
-unless you would like to deviate from the workshop configuration.
+Complete all required configuration information and follow the instructions within the AWS CloudFormation Console. You should not have to change any information, unless you would like to deviate from the workshop configuration.
 
 Here is an example of the CloudFormation stack deployed successfully:
 
