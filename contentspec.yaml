@@ -100,7 +100,7 @@ infrastructure:
 
       # The template's location relative to the root of the content's repo. 
       # Note: Templates must be located in the `static/` directory
-    - templateLocation: static/rke2-eks-cluster.yaml
+    - templateLocation: static/rke2-eks-cluster-workshop.yaml
 
       # Friendly name for the corresponding cloudformation template.
       label: RKE2 Kubernetes and Rancher Manager with EKS Cluster CloudFormation Template

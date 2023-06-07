@@ -1032,6 +1032,9 @@ Resources:
   EKSCloud9Env:
     Type: AWS::Cloud9::EnvironmentEC2
     Properties:
+      OwnerArn: !Sub
+        - 'arn:aws:sts::${AccountId}:assumed-role/WSParticipantRole/Participant'
+        - { AccountId: !Ref AWS::AccountId }
       AutomaticStopTimeMinutes: 120
       ImageId: 'amazonlinux-2-x86_64'
       InstanceType: 't2.medium'
