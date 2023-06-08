@@ -26,9 +26,16 @@ At the top of the page, select the search bar and search for **`"CloudFormation"
 
 ### Step 2:
 
-In the **`CloudFormation Console`**, click on the **`Stack`** named **`rke2-eks-cluster`**.
+In the **`CloudFormation Console`**, click on the Rancher Manager **`Stack`**. If you are using Workshop Studio at an 
+AWS event, the stack will be named **`rke2-eks-cluster`**. Outside Workshop Studio, the stack will have a user-defined
+name from when it was created in the previous section.
 
-Inside of the **`rke2-eks-cluster`** stack, click on the **`Outputs`** tab. You should see the **`RancherURL`**, click the link in a new tab to bring up the Rancher Multi-Cluster Manager.
+Inside of the **`rke2-eks-cluster`** stack, click on the **`Outputs`** tab. You should see the **`RancherURL`**, click 
+the link in a new tab to bring up the Rancher Multi-Cluster Manager. If you a presented with a certificate warning, you 
+can safely proceed since the workshop environment uses self-signed certificates for learning purposes. In a production 
+environment, always use certificates issued from a trusted Certificate Authority. 
+[AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) makes it easy to provision, manage, 
+deploy, and renew SSL/TLS certificates.
 
 ![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt.png)
 ![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt-detail.png)
@@ -57,7 +64,8 @@ Now let's verify the few items on the setup page and click **`Continue`**!
 
 ### Step 3:
 
-Welcome to the Rancher Multi-Cluster Manager!! Here is the starting point in the Rancher Multi-Cluster Manager. As you can see, we are seeing an overview of the Multi-Cluster aspect of the Rancher Multi-Cluster Manager.
+Welcome to the Rancher Multi-Cluster Manager!! The starting page in the Rancher Multi-Cluster Manager provides an 
+overview of the cluster managed by this MCM cluster.
 
 Under **`Clusters`**, you should see a cluster named **`local`**. This cluster is your **`management cluster`**. As we move through the workshop, we will be creating and importing additional clusters into the Rancher Manager, known as **`downstream cluster(s)`**.
 
@@ -66,7 +74,8 @@ Under **`Clusters`**, you should see a cluster named **`local`**. This cluster i
 
 Let's go ahead and click on the **`local`** cluster and start to explore it.
 
-This is the homepage for the cluster where you are able to see a overview of the entire cluster. The overview has everything from node statistics to recent cluster events to various Kubernetes resources. Normally, you would have to run many **`kubectl`** commands to get this amount of information about your cluster.
+This is the homepage for the cluster where you are able to see a overview of the entire cluster. The overview has everything from node statistics to recent cluster events to various Kubernetes resources. Collecting the same information with **`kubectl`** 
+commands takes significantly more effort.
 
 ![rancher-local-cluster-home](/static/images/content/21-rancher-local-home.png)
 
@@ -85,7 +94,9 @@ In Kubernetes, that is done through Taints and Tolerations, as you can see here.
 
 Let's dive a little deeper into workloads. We mentioned system workloads, so let's check out everything we have running on this cluster.
 
-In the menu, under **`Workload`**, click the **`Deployments`** menu item. Here we can see all the deployments running on our cluster. If you are familiar with RKE2 or Rancher, you will see that the only deployments are system related workloads. As we move through the workshop, we can come back here to see the additional deployments.
+In the menu, under **`Workload`**, click the **`Deployments`** menu item. Here we can see all the deployments running 
+on our cluster. If you don't see any deployments that's because there are no deployments in the Kubernetes default 
+namespace. Change the drop-down at the top of the screen to select `All Namespaces`. If you are familiar with RKE2 or Rancher, you will see that the only deployments are Rancher MCM-related workloads. As we move through the workshop, we can come back here to see the additional deployments.
 
 *A Kubernetes **deployment** is a resource object that provides a declarative configuration to containerized applications and allows you to describe an applications lifecycle.*
 
@@ -97,7 +108,7 @@ Under the same **`Workload`** menu, let's click the **`Pods`** menu item. Here w
 
 ![rancher-manager-pods](/static/images/content/21-rancher-pods.png)
 
-Instead of going through all the **`Workload`** items in the menu, let's head over to **`Service Discovery`** and click the **`Services`** menu item. Here we are able to see all the services inside of your cluster. Let's take a look at the **`rancher`** service. You will notice that a few of the resources that we already viewed will be displayed. It's cool to see how easy Rancher helps you manage your clusters.
+Instead of going through all the **`Workload`** items in the menu, let's head over to **`Service Discovery`** and click the **`Services`** menu item. Here we are able to see all the services inside of your cluster. Let's take a look at the **`rancher`** service. You will notice that some of the services have the same name as the pods they forward traffic to, which is set in the `Selector` column.
 
 *A Kubernetes **service** is a resource object for exposing a network application that is running as one or more Pods in your cluster by abstracting away manually configuration.*
 
@@ -105,11 +116,11 @@ Instead of going through all the **`Workload`** items in the menu, let's head ov
 
 Next let's take a look at one of the most popular features of the Rancher Multi-Cluster Manager. On the left menu, click on the **`Apps`** menu item. 
 
-This is the Rancher App Catalog, which provides intergrated and improved Helm Charts aka "Rancher Charts" for the most popular Kubernetes applications. You will defintely recognize some of the products and projects. A really cool feature inside of the App Catalog is the ability to add your own Helm Charts so your teams are able to easily deploy their internal applications.
+This is the Rancher App Catalog, which provides intergrated and improved Helm Charts aka "Rancher Charts" for the most popular Kubernetes applications. You will likely recognize some of the popular products and projects. Developer can also add their own Helm Charts to the Rancher App Catalog so user and deployment teams are able to deploy them easily.
 
 ![rancher-manager-app-catalog](/static/images/content/21-rancher-app-catalog.png)
 
-While we are on the topic of application lifecycle management, Rancher has a few ways for your teams is deploy applications. Right from the console, you are able to deploy from the App Catalog, use the included kubectl shell, or by manually importing a yaml. Additionally, you are able to use Rancher's GitOps tool, known as Fleet, which we will get into more later in the workshop. Let's take a look at some additional ways to deploy applications below:
+Rancher has a few ways for your teams is deploy applications. Right from the console, you are able to deploy from the App Catalog, use the included kubectl shell, or by manually importing a yaml. Additionally, you are able to use Rancher's GitOps tool, known as Fleet, which we will get into more later in the workshop. Let's take a look at some additional ways to deploy applications below:
 
 ![rancher-manager-kubectl-shell](/static/images/content/21-rancher-kubectl-shell.png)
 
@@ -118,4 +129,4 @@ While we are on the topic of application lifecycle management, Rancher has a few
 
 ## Completed!
 
-We're Done! You've just explored an RKE2 Cluster using the Rancher Multi-Cluster Manager. Feel free to take a few minutes and explore more of the features inside of the console. Then click **Next** to move on to deploy the rest of the Rancher Stack!
+We're done! You've just explored an RKE2 Cluster using the Rancher Multi-Cluster Manager. Feel free to take a few minutes and explore more of the features inside of the console. Then click **Next** to move on to deploy the rest of the Rancher Stack!
