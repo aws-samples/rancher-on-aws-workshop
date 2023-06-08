@@ -33,15 +33,12 @@ If you're completing this workshop outside an official event, please follow the 
 From the Rancher Multi-Cluster Manager, delete the **`rke2-cluster`** and **`eks-cluster`**.
 
 ### Step 2:
-From the CloudFormation console, delete the Cloudformation Templates (Stacks) named:
-* **rke2-eks-cluster** 
-* **eksctl-eks-cluster-nodegroup-nodeGrp-1**
-* **eksctl-eks-cluster-cluster** 
+From the AWS Console and Cloud Formation Console, delete the Cloudformation Templates Stack **`rke2-eks-cluster`**.
 
 ### Step 3:
-Verify and Remove any IAM roles or users created for this workshop.
+Wait for the Cloud Formation Stack to delete then verify and remove any IAM roles or users created for this workshop.
 
-**Note: If any failures, look at the Events tab of the failed stack delete for how to properly clean your environment.**
+Note: If any failures, look at the **`Events`** tab of the failed stack and delete any resources that failed to automatically delete.
 
 ### Additional Integrations Cleanup:
 * From the MemoryDB Console, delete the MemoryDB Cluster and the Subnet Group.
