@@ -33,17 +33,32 @@ Here you will see all the relevant information related to **`Longhorn`** such as
 
 ### Step 3:
 
-Once you finish reviewing the chart, click on **`Install`**. Then click **`Next`** and **`Install`** to complete the 
+Before we install Longhorn, we have to make sure we have the prequistes installed on each node in the cluster. Longhorn requires **`nfs`** and **`iscsi`** and provides two **`kubectl`** commands to easily install both packages.
+
+To run these commnads, let's use the kubectl shell provided by the Rancher Manager. On your keyboard, click the **`backtick`** key.
+
+![rancher-app-longhorn-kubectl](/static/images/content/22-app-longhorn-kubectl.png)
+
+Once the kubectl shell opens, copy and paste the two commands below and once they complete, you can close the kubectl shell.
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.4.2/deploy/prerequisite/longhorn-iscsi-installation.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.4.2/deploy/prerequisite/longhorn-nfs-installation.yaml
+```
+
+![rancher-app-longhorn-kubectl-complete](/static/images/content/22-app-longhorn-kubectl-complete.png)
+
+### Step 4:
+
+Once you close the kubectl shell and finish reviewing the chart, click on **`Install`**. Then click **`Next`** and **`Install`** to complete the 
 installation. You shouldn't need to change any configuration options.
 
-If you are familiar with Helm, you may recognize the Helm commands running in the shell pane at the bottom of the page.
-Under the hood the App Catalog is deploying Longhorn with Helm using specific Helm Values.
-Feel free to close the shell pane as soon as it opens or after you see the **`SUCCESS`** 
-message. 
+If you are familiar with Helm, you may recognize the Helm commands running in the shell pane at the bottom of the page. Under the hood the App Catalog is deploying Longhorn with Helm using specific Helm Values. Feel free to close the shell pane as soon as it opens or after you see the **`SUCCESS`** message. 
 
 ![rancher-app-longhorn-installed](/static/images/content/22-app-longhorn-installed.png)
 
-### Step 4:
+### Step 5:
 
 In the left menu, you should now see an item named **`Longhorn`**.
 
@@ -51,7 +66,7 @@ Let's click on it and then right click on the **`Longhorn`** box and **`Open in 
 
 ![rancher-app-longhorn-menu](/static/images/content/22-app-longhorn-menu.png)
 
-### Step 5:
+### Step 6:
 
 Welcome to Rancher Longhorn! Here is the overview of anything and everything storage related on the cluster, including important storage metrics.
 
@@ -142,5 +157,4 @@ Another important aspect to NeuVector is Vulnerabilities scanning, detection, an
 
 ## Completed!
 
-We're done! You've deployed and explored Rancher Longhorn and Rancher NeuVector using the Rancher Multi-Cluster 
-Manager, all without a single line of code! Let's move onto deploying a few Kubernetes applications using Rancher.
+We're done! You've deployed and explored Rancher Longhorn and Rancher NeuVector using the Rancher Multi-Cluster Manager, all without a single line of code! Let's move onto deploying a few Kubernetes applications using Rancher.
