@@ -54,6 +54,9 @@ welcome to Cloud9!
 
 ## Step 2: Create the Amazon MemoryDB for Redis Cluster
 
+<details>
+<summary>Using AWS Workshop Studio</summary>
+
 ### Download the install-ack-sc-memdb.sh script
 
 The install script will:
@@ -69,6 +72,49 @@ curl ':assetUrl{path="/resources/install-ack-sc-memdb.sh" source=s3}' --output ~
 ```
 
 ![cloud9-ackScript-download](/static/images/content/cloud9/install-ACK-download.png)
+
+</details>
+
+<details>
+<summary>Using Personal AWS Account</summary>
+
+### Download the install-ack-sc-memdb.sh script
+
+The install script will:
+* Install the MemoryDB Helm chart
+* Setup IAM Roles for Service Accounts (IRSA)
+    * IRSA is a system that automates the provisioning and rotation of IAM temporary credentials (called a Web Identity) that a Kubernetes ServiceAccount can use to call AWS API
+* Create the Amazon MemoryDB Subnet Group and Cluster
+
+* Upload the required files
+
+You can upload files directly to your Cloud9 environment using drag and drop
+
+   * Click **File** in the top left of the Cloud9 environment
+   * Click **Upload Local Files...**
+
+![cloud9-setupScript-download](/static/images/content/cloud9/upload-files.png)
+
+   * Drag and drop the eks-cluster.yml and env-setup.sh files into the **Upload Files** pop-up window
+
+![cloud9-setupScript-download](/static/images/content/cloud9/drag-drop.png)
+
+   * Verify File upload
+
+![cloud9-setupScript-download](/static/images/content/cloud9/confirm-upload-ACK.png)
+
+Though files upload to the **environment** directory, it's somewhat more straightforward to work in the home directory.
+
+* Run **copy** command in the Cloud9 terminal:
+
+```bash
+cd
+cp environment/install-acl-sc-memdb.sh .
+```
+
+![cloud9-setupScript-download](/static/images/content/cloud9/setupScripts-ACK.png)
+
+</details>
 
 ### Run the install ACK script
 

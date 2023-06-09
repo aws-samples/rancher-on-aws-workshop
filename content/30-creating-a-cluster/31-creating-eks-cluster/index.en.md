@@ -39,6 +39,8 @@ You can close the smaller terminal window at the bottom if you'd like. Welcome t
 
 ## Step 2: Set up your Cloud9 Environment
 
+<details>
+<summary>Using AWS Workshop Studio</summary>
 
 ### Download the env-setup.sh file:
 
@@ -48,7 +50,7 @@ The setup script will install (or update) a few tools and set environment variab
 
 ```bash
 cd
-curl ':assetUrl{path="/resources/env-setup.sh" source=s3}' --output /tmp/env-setup.sh
+curl ':assetUrl{path="/resources/env-setup.sh" source=s3}' --output /tmp/setup.sh
 ```
 
 ![cloud9-setupScript-download](/static/images/content/cloud9/setupScript-download.png)
@@ -59,7 +61,7 @@ curl ':assetUrl{path="/resources/env-setup.sh" source=s3}' --output /tmp/env-set
     
 ```bash
 cd
-. /tmp/env-setup.sh
+. /tmp/setup.sh
 ```
 
 ![cloud9-setupScript-start](/static/images/content/cloud9/startSetup-script.png)
@@ -76,6 +78,59 @@ curl ':assetUrl{path="/resources/eksctl-cluster.yml" source=s3}' --output ~/eksc
 ```
 
 ![cloud9-eks-config-download](/static/images/content/cloud9/eks-conf-download.png)
+
+</details>
+
+<details>
+<summary>Using Personal AWS Account</summary>
+
+### Upload the required files:
+
+Upload the **env-setup.sh** and **eks-cluster.yml** files that were downloaded in the **Workshop Environment** section of the instructions to the Cloud9 environment
+
+The setup script will install (or update) a few tools and set environment variables in the Cloud9 IDE.
+
+* Upload the required files
+
+You can upload files directly to your Cloud9 environment using drag and drop
+
+   * Click **File** in the top left of the Cloud9 environment
+   * Click **Upload Local Files...**
+
+![cloud9-setupScript-download](/static/images/content/cloud9/upload-files.png)
+
+   * Drag and drop the eks-cluster.yml and env-setup.sh files into the **Upload Files** pop-up window
+   
+![cloud9-setupScript-download](/static/images/content/cloud9/drag-drop.png)
+
+   * Verify File upload
+
+![cloud9-setupScript-download](/static/images/content/cloud9/confirm-upload.png)
+
+Though files upload to the **environment** directory, it's somewhat more straightforward to work in the home directory.
+
+* Run **copy** command in the Cloud9 terminal:
+
+```bash
+cd
+cp environment/env-setup.sh /tmp/
+cp environment/eksctl-cluster.yml .
+```
+
+![cloud9-setupScript-download](/static/images/content/cloud9/setupScripts.png)
+
+### Run the setup script
+
+* Run **env-setup.sh**:
+    
+```bash
+cd
+. /tmp/env-setup.sh
+```
+
+![cloud9-setupScript-start](/static/images/content/cloud9/startSetupPersonal-script.png)
+
+</details>
 
 ## Step 3: Update Cloud9 Instance
 
