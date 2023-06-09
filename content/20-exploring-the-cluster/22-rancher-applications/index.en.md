@@ -19,9 +19,9 @@ In Exploring the Cluster, we briefly looked at the Rancher App Catalog, but now 
 
 ### Step 1:
 
-In the left menu, let's click on **`Charts`**. On the right hand side, you will see a search bar, let's search for **`longhorn`**.
+Under **`Apps`** In the left menu, click **`Charts`**. On the right hand side, you will see a filter box. Search for **`longhorn`**.
 
-Once you see it filter out, click on **`Longhorn`**.
+Select the **`Longhorn`** chart.
 
 ![rancher-app-catalog-longhorn](/static/images/content/22-app-longhorn-search.png)
 
@@ -33,9 +33,13 @@ Here you will see all the relevant information related to **`Longhorn`** such as
 
 ### Step 3:
 
-Once you finish reviewing the chart, let's click on **`Install`** and follow the steps listed. You shouldn't need to change any configuration options.
+Once you finish reviewing the chart, click on **`Install`**. Then click **`Next`** and **`Install`** to complete the 
+installation. You shouldn't need to change any configuration options.
 
-Feel free to close the shell window as soon as it opens or after you see the **`SUCCESS`** message. If you are familiar with Helm, you will recongize the commands. Under the hood the App Catalog is deploying Longhorn with Helm using specific Helm Values.
+If you are familiar with Helm, you may recognize the Helm commands running in the shell pane at the bottom of the page.
+Under the hood the App Catalog is deploying Longhorn with Helm using specific Helm Values.
+Feel free to close the shell pane as soon as it opens or after you see the **`SUCCESS`** 
+message. 
 
 ![rancher-app-longhorn-installed](/static/images/content/22-app-longhorn-installed.png)
 
@@ -67,9 +71,10 @@ Feel free to continue exploring Longhorn, but those who want to keep moving forw
 
 ### Step 1:
 
-Just like with Longhorn... in the left menu, let's click on **`Charts`**. On the right hand side, you will see a search bar, let's search for **`neuvector`**.
+Just like with Longhorn... in the left menu, let's click on **`Charts`**. On the right hand side, you will see a 
+filter box. Search for **`neuvector`**.
 
-Once you see it filter out, you will see two options. Let's click on the **`blue`** chart for **`NeuVector`**.
+You will see two Neuvector chart options. Click on the **`blue`** chart for **`NeuVector`**.
 
 ![rancher-app-catalog-neuvector](/static/images/content/22-app-neuvector-search.png)
 
@@ -82,9 +87,12 @@ Here you will see all the relevant information related to **`NeuVector`** such a
 
 ### Step 3:
 
-Once you finish reviewing the chart, let's click on **`Install`** and follow the steps listed. We will need to change one of the configuration options.
+Once you finish reviewing the chart, click on **`Install`** and follow the steps listed. We will need to change one 
+of the configuration options.
 
-Under **`Container Runtime`**, let's click the box for **`k3s Container Runtime`** and enter **`/run/k3s/containerd/containerd.sock`**. Interesting enough Rancher RKE2 using a lot of the components overlap with our Kubernetes distribution (k3s).
+Under **`Container Runtime`**, check the box for **`k3s Container Runtime`** and confirm 
+**`/run/k3s/containerd/containerd.sock`** is populated in the path box. Uncheck the Docker runtime.
+Rancher RKE2 has a lot of components in common with Rancher's k3s distribution of Kubernetes.
 
 Once you set the configuration option, click **`Install`**.
 
@@ -92,7 +100,8 @@ Once you set the configuration option, click **`Install`**.
 
 ### Step 4:
 
-Just like with Longhorn, feel free to close the shell window as soon as it opens or after you see the **`SUCCESS`** message.
+Neuvector should install in less than a minute. Just like with Longhorn, feel free to close the shell pane as 
+soon as it opens or after you see the **`SUCCESS`** message.
 
 ![rancher-app-neuvector-installed](/static/images/content/22-app-neuvector-installed.png)
 
@@ -100,13 +109,16 @@ Just like with Longhorn, feel free to close the shell window as soon as it opens
 
 In the left menu, you should now see an item named **`NeuVector`**.
 
-Let's click on it and then right click on the **`NeuVector`** box and **`Open in a New Tab`**.
+Click on it and then right click on the **`NeuVector`** box and **`Open in a New Tab`**.
 
 ![rancher-app-neuvector-menu](/static/images/content/22-app-neuvector-menu.png)
 
 ### Step 6:
 
-Once NeuVector opens in a new tab, let's enter the default username of **`"admin"`** and default password of **`"admin"`** and click **`Login`**.
+Once NeuVector opens in a new tab, accept the End User License Agreement if shown. If propmted for credentials, 
+enter the default username **`"admin"`** and default password **`"admin"`** and click **`Login`**.
+
+Be sure to change default passwords for NeuVector and throughout the system when deploying to production.
 
 ![rancher-neuvector-login](/static/images/content/22-neuvector-login.png)
 
@@ -116,9 +128,10 @@ Welcome to Rancher NeuVector! You're greeted with the dashboard that provides an
 
 ![rancher-neuvector-home](/static/images/content/22-neuvector-home.png)
 
-Let's head over to the Network Activity tool by clicking **`Network Activity`** on the the left side menu. 
+Head over to the Network Activity tool by clicking **`Network Activity`** on the the left side menu. 
 
-Here you are able to see an complete picture of all nodes, namespaces, containers, and more inside of the cluster. If you click on any item, you are able to view even more information related to that item.
+Here you can see an complete picture of all nodes, namespaces, containers, and more inside of the cluster. If you 
+click on any item, you can view even more information related to that item.
 
 ![rancher-neuvector-network-activity](/static/images/content/22-neuvector-network-activity.png)
 
@@ -129,4 +142,5 @@ Another important aspect to NeuVector is Vulnerabilities scanning, detection, an
 
 ## Completed!
 
-We're done! You've deployed and explored Rancher Longhorn and Rancher NeuVector using the Rancher Multi-Cluster Manager, all without a single line of code! Let's move onto deploying a few Kubernetes applications using Rancher.
+We're done! You've deployed and explored Rancher Longhorn and Rancher NeuVector using the Rancher Multi-Cluster 
+Manager, all without a single line of code! Let's move onto deploying a few Kubernetes applications using Rancher.
