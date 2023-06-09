@@ -56,17 +56,22 @@ Download the required workshop files by clicking the link below and clicking *"d
 Log into the [AWS Management Console](https://aws.amazon.com/console/) and open the [CloudFormation Console](https://console.aws.amazon.com/cloudformation/home).
 
 ### Step 3:
-Click the **Create Stack** button and upload the Rancher RKE2 Management Cluster CloudFormation Template (`rke2-eks-cluster.yaml`).
+Click the **Create Stack** button and click **Upload a template file** to upload the Rancher RKE2 Management Cluster CloudFormation Template (`rke2-eks-cluster.yaml`).
 
 ![aws-console-cf-home](/static/images/content/12-aws-cf-home.png)
 
 ### Step 4:
-Complete all required configuration information and follow the instructions within the AWS CloudFormation Console. You should not have to change any information, unless you would like to deviate from the workshop configuration.
+Complete all required configuration variables: 
+- select a valid Stack name (for example, `rancher-manager-stack`)
 
-Here is an example of the CloudFormation stack deployed successfully:
+You should not have to change any additional variables or stack options, unless you would like to deviate from the workshop configuration.
+
+On the Review screen, check the box to acknowledge that AWS CloudFormation will create IAM resources with custom names and then click **Submit**.
+
+Here is an example of the CloudFormation stack deployed successfully. The `mgmt` stack is the one that was deployed with the CloudFormation template and the `aws-cloud9` stack is deployed by the `mgmt` stack.
 
 ![aws-console-cf-templates](/static/images/content/12-aws-cf-template.png)
 
 ### Step 5:
 
-Once the CloudFormation Stack has moved to `CREATE_COMPLETE` status, please click **Next** to continue.
+The stack may take between 10 and 15 minutes to create. Once the CloudFormation Stack has moved to `CREATE_COMPLETE` status, please click **Next** to continue.

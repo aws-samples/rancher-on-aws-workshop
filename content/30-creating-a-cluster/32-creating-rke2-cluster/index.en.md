@@ -17,7 +17,8 @@ In the following module, you will complete the outcomes listed below:
 
 ### Step 1:
 
-Let's start by heading back to the Rancher Multi-Cluster Manager and opening the side menu. In the side menu, click into **`Cluster Management`**.
+Let's start by heading back to the Rancher Multi-Cluster Manager. Open the side menu by clicking the hamburger button
+at the top left of the page. In the side menu, click **`Cluster Management`**.
 
 ![rancher-cluster-menu](/static/images/content/31-cluster-menu.png)
 
@@ -107,12 +108,14 @@ Here you will see all the available options you can use to configure the creatio
 
 <b>Root Disk Size:</b> 128
 
-<b>VPC/Subnet:</b> mgmt-rke2-private-1
+<b>VPC/Subnet:</b> ...-private-1
 
 <i>Click <b>"Show Advanced"</b></i>
 
 <b>Use only private address:</b> ✓
 </pre>
+
+Add a new pool with the plus sign on the left pool list panel.
 
 <pre>
 <b>pool2</b>
@@ -131,7 +134,7 @@ Here you will see all the available options you can use to configure the creatio
 
 <b>Root Disk Size:</b> 128
 
-<b>VPC/Subnet:</b> mgmt-rke2-private-1
+<b>VPC/Subnet:</b> ...-private-1
 
 <i>Click <b>"Show Advanced"</b></i>
 
@@ -142,7 +145,7 @@ Here you will see all the available options you can use to configure the creatio
 
 ### Cluster Configuration:
 
-No changes are required in this section, but as we mentioned before, free to explore the different configuration options.
+No changes are required in this section, but feel free to explore the different configuration options.
 
 Once you are ready to create the cluster, click on **`Create`**.
 
@@ -156,7 +159,7 @@ Here you will see the **`rke2-cluster`** listed in the menu we saw before with a
 
 ### Step 4:
 
-Let's click into the **`rke2-cluster`**. You will see that it is starting to create resources on AWS and each of the nodes are in different states.
+Let's click into the **`rke2-cluster`**. You will see that it is starting to create resources on AWS and each of the nodes are in different states. The cluster creation process will take roughly 5 to 10 minutes.
 
 ![rancher-cluster-create-ec2-success-details](/static/images/content/31-cluster-create-ec2-success-details.png)
 

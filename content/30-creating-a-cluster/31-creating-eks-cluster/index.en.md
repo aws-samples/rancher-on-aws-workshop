@@ -16,7 +16,8 @@ In the following module, you will complete the outcomes listed below:
 
 Let's start by accessing the Cloud9 IDE.
 
-In the menu on the left of this screen click **Open AWS console** to launch the AWS account for this workshop.
+If you are at an event using Workshp Studio, navigate to the AWS Console by clicking **Open AWS console** on the left 
+nav bar of the workshop page.
 
 ![workshop-studio-console](/static/images/content/cloud9/access-console.png)
 
@@ -32,7 +33,7 @@ Once the IDE has loaded, we recommend you use the **+** button and select **New 
 
 ![cloud9-dashboard](/static/images/content/cloud9/terminal-open.png)
 
-You can close the smaller terminal window at the bottom if you'd like. Otherwise, welcome to Cloud9!
+You can close the smaller terminal window at the bottom if you'd like. Welcome to Cloud9!
 
 ![cloud9-new-terminal](/static/images/content/cloud9/terminal.png)
 
@@ -78,6 +79,8 @@ curl ':assetUrl{path="/resources/eksctl-cluster.yml" source=s3}' --output ~/eksc
 
 ## Step 3: Update Cloud9 Instance
 
+In order to give our Cloud9 IDE instance permission to create an EKS cluster we
+must change the IAM role the instance is using to one with the correct permissions.
 
 ### Disable Cloud9 temporary credentials:
 * Click the cog wheel in the upper right of the Cloud9 IDE
@@ -96,7 +99,7 @@ curl ':assetUrl{path="/resources/eksctl-cluster.yml" source=s3}' --output ~/eksc
 
 ### Modify Cloud9 instance IAM Role
 
-* Click the **W** in the upper right of the Cloud9 IDE
+* Click the profile circle (for Workshop Stuio, it will be **W**) in the upper right of the Cloud9 IDE
 
 ![cloud9-submenu-button](/static/images/content/cloud9/open-submenu.png)
 
