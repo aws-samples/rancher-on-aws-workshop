@@ -135,7 +135,7 @@ enter the default username **`"admin"`** and default password **`"admin"`** and 
 
 Be sure to change default passwords for NeuVector and throughout the system when deploying to production.
 
-![rancher-neuvector-login](/static/images/content/22-neuvector-login.png)
+![rancher-neuvector-login](/static/images/content/22-neuvector-eula.png)
 
 ### Step 7:
 
