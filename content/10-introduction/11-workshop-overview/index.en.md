@@ -13,10 +13,11 @@ weight: 11
 * Importing a EKS Cluster using the Rancher Multi-Cluster Manager
 * Kubernetes and Cluster Management Best Practices with AWS and Rancher
 
-## Workshop Requirements
+## Requirements:
 * Basic Knowledge of Kubernetes and AWS Infrastructure.
 * AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
-* AWS IAM Account with *elevated privileges* allowing you to interact with various AWS Services.
+  * AWS IAM with *elevated privileges* to interact with AWS Services.
+  * AWS Service Quota with at least 56 vCPUs, 220 GiB Memory, and 1750 Gi of Storage.
 
 The `AdministratorAccess` managed policy in IAM provides sufficient permissions, although your organization may choose to use a custom policy with more restrictions. For more information, see [AWS managed policies for job functions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html).
 

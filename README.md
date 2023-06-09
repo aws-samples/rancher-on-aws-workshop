@@ -15,7 +15,8 @@ workshop content in the [AWS Workshop Studio](https://catalog.us-east-1.prod.wor
 ## Requirements:
 * Basic Knowledge of Kubernetes and AWS Infrastructure.
 * AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
-* AWS IAM Account with *elevated privileges* to interact with AWS Services.
+  * AWS IAM with *elevated privileges* to interact with AWS Services.
+  * AWS Service Quota with at least 56 vCPUs, 220 GiB Memory, and 1750 Gi of Storage.
 
 ## Table of Contents
 * [Introduction](/content/10-introduction/index.en.md)
