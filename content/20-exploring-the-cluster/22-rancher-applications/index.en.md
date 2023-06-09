@@ -131,7 +131,7 @@ Welcome to Rancher NeuVector! You're greeted with the dashboard that provides an
 Head over to the Network Activity tool by clicking **`Network Activity`** on the the left side menu. 
 
 Here you can see an complete picture of all nodes, namespaces, containers, and more inside of the cluster. If you 
-click on any item, you can view even more information related to that item.
+right-click on any item, you can view more information related to that item.
 
 ![rancher-neuvector-network-activity](/static/images/content/22-neuvector-network-activity.png)
 

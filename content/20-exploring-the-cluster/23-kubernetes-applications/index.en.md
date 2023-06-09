@@ -5,35 +5,27 @@ weight: 23
 
 In the following module, you will complete the outcomes listed below:
 
-1. Use Rancher Fleet to deploy two Kuberenetes applications.
+1. Use Rancher Fleet to deploy two Kubernetes applications.
 2. Explore the application lifecycle management of Kubernetes applications with the Rancher Multi-Cluster Manager.
 
 ---
 
 
-# Deploying the Kubernetes Applications
+# Deploying Kubernetes Applications
 
 ### Step 1:
-
-
 
 ![rancher-fleet-menu](/static/images/content/23-fleet-menu.png)
 
 ### Step 2:
 
-
-
 ![rancher-fleet-home](/static/images/content/23-fleet-home.png)
 
 ### Step 3:
 
-
-
 ![rancher-fleet-shell](/static/images/content/23-fleet-shell.png)
 
 ### Step 4:
-
-
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/static/fleet/fleet-default.yaml 
