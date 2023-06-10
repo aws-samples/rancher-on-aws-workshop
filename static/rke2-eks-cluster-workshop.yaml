@@ -1039,6 +1039,7 @@ Resources:
       ImageId: 'amazonlinux-2-x86_64'
       InstanceType: 't2.medium'
       Name: 'AWS-RGS-Workshop'
+      SubnetId: !Ref RancherPublicSubnet1
 
   KMSSecretsKey:
     Type: AWS::KMS::Key
