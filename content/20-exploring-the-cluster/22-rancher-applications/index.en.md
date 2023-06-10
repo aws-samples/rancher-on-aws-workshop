@@ -5,8 +5,8 @@ weight: 22
 
 In the following module, you will complete the outcomes listed below:
 
-1. Use the Rancher App Catalog to deploy Rancher Longhorn and Rancher NeuVector
-2. Explore features inside of Rancher Longhorn and Rancher NeuVector.
+1. Use the Rancher App Catalog to deploy Longhorn and NeuVector
+2. Explore features inside of Longhorn and NeuVector.
 
 ---
 
@@ -15,7 +15,7 @@ In the following module, you will complete the outcomes listed below:
 
 In Exploring the Cluster, we briefly looked at the Rancher App Catalog, but now we are going dive deeper into it with two of the Rancher Kubernetes applications (Longhorn and NeuVector).
 
-## Deploying Rancher Longhorn
+## Deploying Longhorn
 
 ### Step 1:
 
@@ -68,7 +68,7 @@ Let's click on it and then right click on the **`Longhorn`** box and **`Open in 
 
 ### Step 6:
 
-Welcome to Rancher Longhorn! Here is the overview of anything and everything storage related on the cluster, including important storage metrics.
+Welcome to Longhorn! Here is the overview of anything and everything storage related on the cluster, including important storage metrics.
 
 ![rancher-longhorn-home](/static/images/content/22-longhorn-home.png)
 
@@ -82,7 +82,7 @@ Additionally, we are able to manage and configure Longhorn by clicking on **`Set
 
 Feel free to continue exploring Longhorn, but those who want to keep moving forward, let's deploy NeuVector!
 
-## Deploying Rancher NeuVector
+## Deploying NeuVector
 
 ### Step 1:
 
@@ -139,7 +139,7 @@ Be sure to change default passwords for NeuVector and throughout the system when
 
 ### Step 7:
 
-Welcome to Rancher NeuVector! You're greeted with the dashboard that provides an overview of your current security events, metrics, and risks. A really cool feature here is the Risk Score, which highlights security concerns and ways to improve it. Some are even single click changes!
+Welcome to NeuVector! You're greeted with the dashboard that provides an overview of your current security events, metrics, and risks. A really cool feature here is the Risk Score, which highlights security concerns and ways to improve it. Some are even single click changes!
 
 ![rancher-neuvector-home](/static/images/content/22-neuvector-home.png)
 
@@ -157,4 +157,4 @@ Another important aspect to NeuVector is Vulnerabilities scanning, detection, an
 
 ## Completed!
 
-We're done! You've deployed and explored Rancher Longhorn and Rancher NeuVector using the Rancher Multi-Cluster Manager, all without a single line of code! Let's move onto deploying a few Kubernetes applications using Rancher.
+We're done! You've deployed and explored Longhorn and NeuVector using the Rancher Multi-Cluster Manager, all without a single line of code! Let's move onto deploying a few Kubernetes applications using Rancher.
