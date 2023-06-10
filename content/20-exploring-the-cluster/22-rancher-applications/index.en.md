@@ -133,7 +133,7 @@ Click on it and then right click on the **`NeuVector`** box and **`Open in a New
 Once NeuVector opens in a new tab, accept the End User License Agreement if shown. If propmted for credentials, 
 enter the default username **`"admin"`** and default password **`"admin"`** and click **`Login`**.
 
-Be sure to change default passwords for NeuVector and throughout the system when deploying to production.
+>**Note: Ensure to update the admin password from the default password of `admin` as soon as possible! Default passwords should never be used in any environment.**
 
 ![rancher-neuvector-login](/static/images/content/22-neuvector-eula.png)
 
