@@ -15,8 +15,8 @@ Learn how to easily deploy and manage Kubernetes with Rancher on the AWS Cloud!
 * Basic Knowledge of Kubernetes and AWS Infrastructure.
 * AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
   * AWS Account with the ability to deploy into *us-east-1*.
-  * AWS Account IAM with *elevated privileges* to interact with AWS Services.
-  * AWS Service Quota with at least 56 vCPUs, 220 GiB Memory, and 1750 Gi of Storage.
+  * AWS Account IAM Role with *elevated privileges* to interact with AWS Services.
+  * AWS Service Quota with at least 1 VPC, 56 vCPUs, 220 GiB Memory, and 1750 Gi of Storage.
 
 ## Table of Contents
 * [Introduction](/content/10-introduction/index.en.md)
