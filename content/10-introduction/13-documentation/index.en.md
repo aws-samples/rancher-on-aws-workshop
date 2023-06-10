@@ -10,8 +10,8 @@ Please use the links below to view the official documentation for each of the pr
 ## Rancher Products:
 * Rancher Kubernetes Engine 2 (RKE2) - [documentation](https://docs.rke2.io)
 * Rancher Multi Cluster Manager (MCM) - [documentation](https://ranchermanager.docs.rancher.com)
-* Rancher Longhorn (Storage) - [documentation](https://docs.longhorn.io)
-* Rancher NeuVector (Security) - [documentation](https://open-docs.neuvector.com)
+* Longhorn (Storage) - [documentation](https://docs.longhorn.io)
+* NeuVector (Security) - [documentation](https://open-docs.neuvector.com)
 
 For any questions or to get in touch with Rancher, please contact us via email at **natsec@rancherfederal.com!**
 

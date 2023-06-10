@@ -9,13 +9,13 @@ params:
 additionalLinks:
   - title: AWS Documentation Homepage
     link: https://docs.aws.amazon.com
-  - title: Rancher Multicluster Management
-    link: https://ranchermanager.docs.rancher.com/
   - title: Rancher Kubernetes Engine 2 (RKE2)
     link: https://docs.rke2.io/
-  - title: Rancher Longhorn (Storage)
+  - title: Rancher Multicluster Management (MCM)
+    link: https://ranchermanager.docs.rancher.com/
+  - title: Longhorn (Storage)
     link: https://docs.longhorn.io
-  - title: Rancher NeuVector (Security)
+  - title: NeuVector (Security)
     link: https://open-docs.neuvector.com
 
 awsAccountConfig:
