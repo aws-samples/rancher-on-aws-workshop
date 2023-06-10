@@ -41,10 +41,12 @@ You're done! Please head over and start the workshop by clicking the **"Welcome 
 
 ## For Use Outside AWS Events
 
-If you're completing this workshop outside an official AWS event, you will need to configure the required infrastructure before starting the workshop content. Please be aware that this will incur costs to your AWS Account.
+If you're completing this workshop outside an official AWS event, you will need to configure the required infrastructure before starting the workshop content. 
+
+Please be aware that this will incur costs to your AWS Account. Additionally, ensure you are deploying in the **`us-east-1`** region.
 
 ### Step 1:
-Download the required workshop files by clicking the link below and clicking *"download"* in your browser.
+Download the required workshop files by clicking the link below and clicking **`download`** in your browser.
 * :button[RKE2/EKS Cloud Formation Template]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/static/rke2-eks-cluster.yaml' action=download variant='link'}
     * Cloudformation template to deploy the Rancher Cluster
 * :button[EKS cluster config file]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/assets/eksctl-cluster.yml' action=download variant='link'}
@@ -62,16 +64,17 @@ Click the **Create Stack** button and click **Upload a template file** to upload
 
 ### Step 4:
 Complete all required configuration variables: 
-- select a valid Stack name (for example, `rancher-manager-stack`)
 
-You should not have to change any additional variables or stack options, unless you would like to deviate from the workshop configuration.
+1. Select a valid stack name (for example, **`"rke2-eks-stack"`**)
+2. You should not have to change any additional variables or stack options, unless you would like to deviate from the workshop configuration.
+3. On the review screen, check the box to acknowledge that AWS CloudFormation will create IAM resources with custom names and then click **Submit**.
 
-On the Review screen, check the box to acknowledge that AWS CloudFormation will create IAM resources with custom names and then click **Submit**.
-
-Here is an example of the CloudFormation stack deployed successfully. The `mgmt` stack is the one that was deployed with the CloudFormation template and the `aws-cloud9` stack is deployed by the `mgmt` stack.
+Here is an example of the CloudFormation Stack deployed successfully. The **`mgmt`** stack is the one that was deployed with the uploaded CloudFormation Template and the **`aws-cloud9`** stack is deployed by the **`mgmt`** stack.
 
 ![aws-console-cf-templates](/static/images/content/12-aws-cf-template.png)
 
 ### Step 5:
 
-The stack may take between 10 and 15 minutes to create. Once the CloudFormation Stack has moved to `CREATE_COMPLETE` status, please click **Next** to continue.
+The stack may take between 10 and 15 minutes to create and provision completely.
+
+Once the CloudFormation Stack has moved to **`CREATE_COMPLETE`** status, please click **`Next`** to continue to the workshop!
