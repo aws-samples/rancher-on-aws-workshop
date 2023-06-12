@@ -5,7 +5,7 @@ weight: 23
 
 In the following module, you will complete the outcomes listed below:
 
-1. Use Rancher Fleet to deploy two Kubernetes applications.
+1. Use Rancher Fleet to deploy a Kubernetes application.
 2. Explore the application lifecycle management of Kubernetes applications with the Rancher Multi-Cluster Manager.
 
 ---
@@ -37,8 +37,13 @@ kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-wo
 
 ### Step 6:
 
+```bash
+kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/static/fleet/fleet-navlink.yaml
+```
+
+### Step 7:
 
 
 ## Completed!
 
-We're done! You've just deployed two Kubernetes applications using the Rancher Multi-Cluster Manager. Let's move onto creating a Amazon EKS Cluster using `eksctl` and Cloud9!
+We're done! You've just deployed a Kubernetes application using the Rancher Multi-Cluster Manager. Let's move onto creating a Amazon EKS Cluster using `eksctl` and Cloud9!

@@ -1,25 +1,6 @@
 apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
-  name: rancher-demo-app
-  namespace: fleet-default
-spec:
-  repo: https://github.com/aws-samples/rancher-on-aws-workshop
-  branch: main
-  targetNamespace: default
-  paths:
-    - /static/fleet/rancher-demo-app
-  targets:
-    - clusterSelector:
-        matchExpressions:
-          - key: provider.cattle.io
-            operator: NotIn
-            values:
-              - harvester
----
-apiVersion: fleet.cattle.io/v1alpha1
-kind: GitRepo
-metadata:
   name: flask-demo-app
   namespace: fleet-default
 spec:

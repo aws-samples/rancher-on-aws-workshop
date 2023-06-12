@@ -1,0 +1,17 @@
+apiVersion: ui.cattle.io/v1
+kind: NavLink
+metadata:
+  name: flask
+spec:
+  label: Flask
+  target: _blank
+  description: Flask Demo Application
+  group: Flask Demo App
+  label: Flask Demo App
+  sideLabel: Flask
+  toService:
+    name: flask
+    namespace: flask
+    port: "5000"
+    path: /
+    scheme: http
