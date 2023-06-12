@@ -31,9 +31,12 @@ In the following module, you will complete the outcomes listed below:
 kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/static/fleet/fleet-local.yaml
 ```
 
+![rancher-fleet-deployed](/static/images/content/23-fleet-deployed.png)
+
 ### Step 5:
 
 
+![rancher-fleet-deployed-detailed](/static/images/content/23-fleet-deployed-detailed.png)
 
 ### Step 6:
 
@@ -41,8 +44,19 @@ kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-wo
 kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/static/fleet/fleet-navlink.yaml
 ```
 
+![rancher-fleet-navlinks](/static/images/content/23-fleet-navlinks.png)
+
 ### Step 7:
 
+![rancher-fleet-local-cluster](/static/images/content/23-fleet-local-cluster.png)
+
+### Step 8:
+
+![rancher-fleet-local-cluster-demo-app](/static/images/content/23-fleet-local-cluster-demo-app.png)
+
+### Step 9:
+
+![rancher-fleet-demo-app](/static/images/content/23-fleet-demo-app.png)
 
 ## Completed!
 
