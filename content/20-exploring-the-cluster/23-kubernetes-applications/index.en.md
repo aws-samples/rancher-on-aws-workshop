@@ -62,7 +62,7 @@ Now that we have successfully deployed our demo application... let's head back t
 
 ### Step 7:
 
-Once we are in the **`local`** cluster, in the side menu, you should see a new menu time named **`Flask Demo App`**! This is the demo application that we deployed using Fleet. Let's click on it so we can see how to access it. Just like with Longhorn and NeuVector, there is a box to click to open the application. Let's right click on the **`Flask Demo App`** box and **`Open in a New Tab`**.
+Once we are in the **`local`** cluster, in the side menu, you should see a new menu time named **`Flask Demo App`**! This is the demo application that we deployed using Fleet. Let's click on it so we can see how to access it. Just like with Longhorn and NeuVector, there is a box to click to open the application. Let's click on the **`Flask Demo App`** box to open the application.
 
 ![rancher-fleet-local-cluster-demo-app](/static/images/content/23-fleet-local-cluster-demo-app.png)
 
