@@ -63,14 +63,6 @@ spec:
         persistentVolumeClaim:
           claimName: redis
 ---
-apiVersion: v1
-kind: Secret
-metadata:
-  name: redis
-stringData:
-  CRYPTO_KEY_VALUE: "flaskisthebestdemoapplication"
-  CRYPTO_KEY_PROVIDER: "secret"
----
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -78,7 +70,6 @@ metadata:
   labels:
     app: redis
 spec:
-  storageClassName: "longhorn-crypto-per-volume"
   accessModes: 
     - ReadWriteMany
   resources:
