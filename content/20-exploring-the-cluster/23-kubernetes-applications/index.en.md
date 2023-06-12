@@ -56,31 +56,17 @@ Under the **`name`** tab, let's click on **`flask`** to see more details about t
 
 ### Step 6:
 
-Before we go deeper into the demo application, let's make sure we are able to access it by setting up the Rancher Proxy to acccess the Kubernetes Service for the application. Normally, you would be using some type of Kubernetes Ingress, such as an Elastic Load Balancer to access your application.
-
-Copy and paste the following command into the **`kubectl`** shell and press enter. Once the command completes, close the shell.
-
-```bash
-kubectl apply -f https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/static/fleet/fleet-navlink.yaml
-```
-
-![rancher-fleet-navlinks](/static/images/content/23-fleet-navlinks.png)
-
-### Step 7:
-
-Now that we have successfully deployed our demo application and ensured we are able access it. Let's head back to the **`local`** cluster, by clicking the hamburger button at the top left of the page. In the side menu, click **`local`**.
+Now that we have successfully deployed our demo application... let's head back to the **`local`** cluster, by clicking the hamburger button at the top left of the page. In the side menu, click **`local`**.
 
 ![rancher-fleet-local-cluster](/static/images/content/23-fleet-local-cluster.png)
 
-### Step 8:
+### Step 7:
 
-Once we are in the **`local`** cluster, in the side menu, you should see a new menu time named **`Flask Demo App`**! This is the demo application that we deployed using Fleet. Let's click on it so we can see how to access it.
+Once we are in the **`local`** cluster, in the side menu, you should see a new menu time named **`Flask Demo App`**! This is the demo application that we deployed using Fleet. Let's click on it so we can see how to access it. Just like with Longhorn and NeuVector, there is a box to click to open the application. Let's right click on the **`Flask Demo App`** box and **`Open in a New Tab`**.
 
 ![rancher-fleet-local-cluster-demo-app](/static/images/content/23-fleet-local-cluster-demo-app.png)
 
-### Step 9:
-
-Just like with Longhorn and NeuVector, there is a box to click to open the application. Let's right click on the **`Flask Demo App`** box and **`Open in a New Tab`**.
+### Step 8:
 
 Here you will see your demo application!! It is a fairly simple application that uses a Flask user interface to interact with Redis database and stores the key:value each time the site is visted by a user. 
 
