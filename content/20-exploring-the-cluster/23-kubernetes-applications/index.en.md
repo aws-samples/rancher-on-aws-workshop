@@ -68,7 +68,7 @@ Once we are in the **`local`** cluster, in the side menu, you should see a new m
 
 ### Step 8:
 
-Here you will see your demo application!! It is a fairly simple application that uses a Flask user interface to interact with Redis database and stores the key:value each time the site is visted by a user. 
+Here you will see your demo application!! It is a fairly simple demo application that uses a Flask user interface to interact with a Redis database and stores the key value each time the site is visted by a user. 
 
 Notice you are able to see the amount of hits on the site and the exact server (aka the pod)!
 
