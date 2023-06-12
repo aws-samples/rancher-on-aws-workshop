@@ -26,7 +26,7 @@ at the top left of the page. In the side menu, click **`Cluster Management`**.
 
  **`Cluster Management`** is one the most powerful features of the Rancher Multi-Cluster Manager. You are able to create and import any type of Kubernetes cluster and manage the complete lifecycle. We are going to start off with **`creating`** an Rancher RKE2 Cluster, but will also be importing an EKS Cluster later in the workshop! 
  
- For now, you will only see your **`local-cluster`**. This cluster is the cluster that the Rancher Multi-Cluster Manager is running on locally. Let's get started by adding our AWS Cloud Credentials so we can create our RKE2 Cluster on AWS.
+ For now, you will only see your **`local`** cluster. This cluster is the cluster that the Rancher Multi-Cluster Manager is running on locally. Let's get started by adding our AWS Cloud Credentials so we can create our RKE2 Cluster on AWS.
 
 ![rancher-cluster-home](/static/images/content/31-cluster-home.png)
 
