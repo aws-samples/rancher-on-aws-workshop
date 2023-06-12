@@ -8,7 +8,7 @@ spec:
   branch: main
   targetNamespace: default
   paths:
-    - /rancher-demo-app
+    - /static/fleet/rancher-demo-app
   targets:
     - clusterSelector:
         matchExpressions:
@@ -27,7 +27,7 @@ spec:
   branch: main
   targetNamespace: default
   paths:
-    - /flask-demo-app
+    - /static/fleet/flask-demo-app
   targets:
     - clusterSelector:
         matchExpressions:
