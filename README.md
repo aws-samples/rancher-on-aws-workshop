@@ -10,9 +10,9 @@ Learn how to easily deploy and manage Kubernetes with Rancher on the AWS Cloud!
 **Created together by [Rancher Government Solutions](https://ranchergovernment.com) and [Amazon Web Services](https://aws.amazon.com) under the MIT-0 and CC-BY-4.0 Licenses.**
 
 This repository has the source code for the workshop content and environment. To get started with the **Rancher on AWS Workshop**, please head to the 
-workshop content in the [AWS Workshop Studio](https://catalog.us-east-1.prod.workshops.aws/workshops/be7b2281-57e8-44d0-a40e-1b7ea0d88f2a/en-US)!
+workshop content in the **[AWS Workshop Studio](https://catalog.us-east-1.prod.workshops.aws/workshops/be7b2281-57e8-44d0-a40e-1b7ea0d88f2a)!**
 
-## Requirements:
+## Requirements
 * Basic Knowledge of Kubernetes and AWS Infrastructure.
 * AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
   * AWS Account with the ability to deploy into *us-east-1*.
