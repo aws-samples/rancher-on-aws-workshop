@@ -42,8 +42,6 @@ In the top right hand corner, click the **`Import Exisiting`** button. Since we 
 
 ### Step 2:
 
-
-
 ### Cluster Configuration:
 
 Here is our configuration view for **`importing`** a cluster. As you can see there is not much needed to get your cluster imported into Rancher.
@@ -61,7 +59,6 @@ Let's set a few of the configurations options. Take a look below:
 
 ![rancher-cluster-import-eks-cluster](/static/images/content/41-cluster-import-eks-cluster.png)
 
-
 ### Step 3:
 
 Once we have set the few configuration options, you can now see the EKS cluster is showing as **`pending`**. With most clusters, all you need to do is wait a few seconds or possbily a minute and they will come online.
@@ -76,13 +73,13 @@ If we did want to check the status or if the cluster did not automatically **`im
 
 ### Step 5:
 
-Since there *should* not be any issues with **`importing`** the EKS Cluster, this will be the view of the EKS Cluster once it is imported into Rancher!
+Once the **`eks-cluster`** completes importing and provisioning the management resources, you should see the cluster as **`Active`** and all available nodes like below:
 
 ![rancher-cluster-import-eks-successful](/static/images/content/41-cluster-import-eks-successful.png)
 
 ### Step 6:
 
-From the previous screenshot, let's click on the **`eks-cluster`** in the side menu. This will bring us to a similiar view that we saw earlier of the **`management clsuter`**. Here we are able to interact with our EKS Cluster in the *exact* same way as our **`management cluster`** and **`rke2-cluster`**. It's pretty cool to be able to have **n** number of clusters and have a true single pane of glass!
+From the previous screenshot, let's click on the **`eks-cluster`** in the side menu. This will bring us to a similiar view that we saw earlier of the **`management cluster`**. Here we are able to interact with our EKS Cluster in the *exact* same way as our **`management cluster`** and **`rke2-cluster`**. It's pretty cool to be able to have **n** number of clusters and have a true single pane of glass!
 
 ![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-details.png)
 
