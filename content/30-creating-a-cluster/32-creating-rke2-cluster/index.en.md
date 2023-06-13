@@ -49,7 +49,7 @@ In the top right corner, click on the **`Create`**. Here you will see all the av
 
 Now you may be curious how we are going to get the Cloud Credentials. Just like when we were Exploring the Cluster, we are going to go back to the AWS Console and **`Cloud Formation`**, then click on the **`rke2-eks-cluster`** stack and then click on **`Outputs`** tab.
 
-In the **`Outputs`** tab, you should see the **`CloudCredentialKey`** and **`CloudCredentialSecret`**. Let's copy and paste both those values into the Rancher Multi-Cluster Manager. Below is the information you will need to input before clicking **`Create`**.
+In the **`Outputs`** tab, you should see the **`CloudCredentialKey`** and **`CloudCredentialSecret`**. Let's copy and paste both those values into the Rancher Multi-Cluster Manager. Below is the information you will need to input before clicking **`"Create"`**. Ensure to update **`us-west-2`** to **`us-east-1`**.
 
 * **Name:** aws
 * **Access Key:** *CloudCredentialKey*
@@ -127,7 +127,9 @@ Here you will see the **`rke2-cluster`** listed in the menu we saw before with a
 
 ### Step 4:
 
-Let's click into the **`rke2-cluster`**. You will see that it is starting to create resources on AWS and each of the nodes are in different states. The cluster creation process will take roughly 5 to 10 minutes.
+Let's click into the **`rke2-cluster`**. You will see that it is starting to create resources on AWS and each of the nodes are in different states. The cluster creation process will take roughly 5 to 10 minutes. 
+
+Feel free to continue exploring the Cluster Management feature while we wait for the cluster to create and provision!
 
 ![rancher-cluster-create-ec2-success-details](/static/images/content/31-cluster-create-ec2-success-details.png)
 
