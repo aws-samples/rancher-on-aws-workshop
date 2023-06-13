@@ -42,6 +42,7 @@ You can close the smaller terminal window at the bottom if you'd like. Welcome t
 <details>
 <summary>Using AWS Workshop Studio</summary>
 
+::expand[
 ### Download the env-setup.sh file:
 
 The setup script will install (or update) a few tools and set environment variables in the Cloud9 IDE.
@@ -78,12 +79,13 @@ curl ':assetUrl{path="/resources/eksctl-cluster.yml" source=s3}' --output ~/eksc
 ```
 
 ![cloud9-eks-config-download](/static/images/content/cloud9/eks-conf-download.png)
-
+]{header="Using AWS Workshop Studio"}
 </details>
 
 <details>
 <summary>Using Personal AWS Account</summary>
 
+::expand[
 ### Upload the required files:
 
 Upload the **env-setup.sh** and **eks-cluster.yml** files that were downloaded in the **Workshop Environment** section of the instructions to the Cloud9 environment
@@ -129,7 +131,7 @@ cd
 ```
 
 ![cloud9-setupScript-start](/static/images/content/cloud9/startSetupPersonal-script.png)
-
+]{header="Using Personal AWS Account"}
 </details>
 
 ## Step 3: Update Cloud9 Instance
