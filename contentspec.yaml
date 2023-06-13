@@ -17,6 +17,8 @@ additionalLinks:
     link: https://docs.longhorn.io
   - title: NeuVector (Security)
     link: https://open-docs.neuvector.com
+  - title: Fleet (GitOps)
+    link: https://fleet.rancher.io
 
 awsAccountConfig:
   # A list of valid account sources that are compatible for this content.
