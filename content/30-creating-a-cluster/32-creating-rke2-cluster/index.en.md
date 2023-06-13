@@ -93,6 +93,7 @@ Here you will see all the available options you can use to configure the creatio
     * Instance Type: m5.xlarge
     * Root Disk Size: 128
     * VPC/Subnet: ...private-1
+    > Use the Subnet ending with ***private-1***
     * ***Show Advanced Drop-Down***
         * ***Use only private address***
 
@@ -108,6 +109,7 @@ Add a new pool with the plus sign on the left pool list panel.
     * Instance Type: m5.xlarge
     * Root Disk Size: 128
     * VPC/Subnet: ...private-1
+    > Use the Subnet ending with ***private-1***
     * ***Show Advanced Drop-Down***
         * ***Use only private address***
 

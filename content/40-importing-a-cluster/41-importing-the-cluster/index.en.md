@@ -50,15 +50,10 @@ Here is our configuration view for **`importing`** a cluster. As you can see the
 
 Let's set a few of the configurations options. Take a look below:
 
-<pre>
-<b>Cluster Name:</b> eks-cluster
-
-<b>Region:</b> us-east-1
-
-<b>Cloud Credentials:</b> aws
-
-<b>Cluster To Register:</b> eks-cluster
-</pre>
+* Cluster Name: eks-cluster
+* Region: us-east-1
+* Cloud Credentials: aws
+* Cluster To Register: eks-cluster
 
 ![rancher-cluster-import-eks](/static/images/content/41-cluster-import-eks.png)
 
