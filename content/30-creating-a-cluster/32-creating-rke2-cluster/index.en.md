@@ -51,15 +51,10 @@ Now you may be curious how we are going to get the Cloud Credentials. Just like 
 
 In the **`Outputs`** tab, you should see the **`CloudCredentialKey`** and **`CloudCredentialSecret`**. Let's copy and paste both those values into the Rancher Multi-Cluster Manager. Below is the information you will need to input before clicking **`Create`**.
 
-<pre>
-<b>Name:</b> aws
-
-<b>Access Key:</b> <i>CloudCredentialKey</i>
-
-<b>Secret Key:</b> <i>CloudCredentialSecret</i>
-
-<b>Default Region:</b> us-east-1
-</pre>
+* Name: aws
+* Access Key: **CloudCredentialKey**
+* Secret Key: **CloudCredentialSecret**
+* Default Region: us-east-1
 
 ![rancher-cluster-creds-cf](/static/images/content/31-cluster-creds-cf.png)
 
@@ -79,67 +74,42 @@ Here you will see all the available options you can use to configure the creatio
 
 ### Cluster Information:
 
-<pre>
-<b>Cloud Credential:</b> aws
-
-<b>Cluster Name:</b> rke2-cluster
-
-<b>Cluster Description:</b> rke2 downstream cluster
-</pre>
+* Cloud Credential: aws
+* Cluster Name: rke2-cluster
+* Cluster Description: rke2 downstream cluster
 
 ![rancher-cluster-create-ec2](/static/images/content/31-cluster-create-ec2.png)
 
 ### Machine Pools:
 
-<pre>
-<b>pool1</b>
-
-<b>Pool Name:</b> cp-nodes
-
-<b>Machine Count:</b> 3
-
-<b>Roles:</b> etcd and Control Plane
-
-<b>Region:</b> us-east-1
-
-<b>Zone:</b> A
-
-<b>Instance Type:</b> m5.xlarge
-
-<b>Root Disk Size:</b> 128
-
-<b>VPC/Subnet:</b> ...-private-1
-
-<i>Click <b>"Show Advanced"</b></i>
-
-<b>Use only private address:</b> ✓
-</pre>
+* pool1
+    * Pool Name: cp-nodes
+    * Machine Count: 3
+    * Roles:
+        - etcd
+        - Control Plane
+    * Region: us-east-1
+    * Zone: A
+    * Instance Type: m5.xlarge
+    * Root Disk Size: 128
+    * VPC/Subnet: ...private-1
+    * ***Show Advanced Drop-Down***
+        * ***Use only private address***
 
 Add a new pool with the plus sign on the left pool list panel.
 
-<pre>
-<b>pool2</b>
-
-<b>Pool Name:</b> wk-nodes
-
-<b>Machine Count:</b> 3
-
-<b>Roles:</b> Worker
-
-<b>Region:</b> us-east-1
-
-<b>Zone:</b> A
-
-<b>Instance Type:</b> m5.xlarge
-
-<b>Root Disk Size:</b> 128
-
-<b>VPC/Subnet:</b> ...-private-1
-
-<i>Click <b>"Show Advanced"</b></i>
-
-<b>Use only private address:</b> ✓
-</pre>
+* pool2
+    * Pool Name: wk-nodes
+    * Machine Count: 3
+    * Roles:
+        - Worker
+    * Region: us-east-1
+    * Zone: A
+    * Instance Type: m5.xlarge
+    * Root Disk Size: 128
+    * VPC/Subnet: ...private-1
+    * ***Show Advanced Drop-Down***
+        * ***Use only private address***
 
 ![rancher-cluster-create-ec2-pools](/static/images/content/31-cluster-create-ec2-pools.png)
 
