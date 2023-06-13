@@ -55,10 +55,10 @@ Parameters:
     MaxLength: '50'
     NoEcho: true
   AssetsBucketName:
-    Description: Workshop Studio assets bucket name
+    Description: AWS Workshop Studio Assets Bucket Name
     Type: String
   AssetsBucketPrefix:
-    Description: Workshop Studio assets bucket prefix
+    Description: AWS Workshop Studio Assets Bucket Prefix
     Type: String
 
 Mappings:
