@@ -17,23 +17,21 @@ In Exploring the Cluster, we briefly looked at the Rancher App Catalog, but now 
 
 ## Deploying Longhorn
 
-### Step 1:
+### Step 1 (Longhorn):
 
-Under **`Apps`** In the left menu, click **`Charts`**. On the right hand side, you will see a filter box. Search for **`longhorn`**.
-
-Select the **`Longhorn`** chart.
+In the left side menu, under **`Apps`**, click **`Charts`**. On the right hand side, you will see a filter box. Search for **`longhorn`**. Select the blue box **`Longhorn`** chart.
 
 ![rancher-app-catalog-longhorn](/static/images/content/22-app-longhorn-search.png)
 
-### Step 2:
+### Step 2 (Longhorn):
 
 Here you will see all the relevant information related to **`Longhorn`** such as the Current Version or the Helm Chart README.
 
 ![rancher-app-longhorn-setup](/static/images/content/22-app-longhorn-setup.png)
 
-### Step 3:
+### Step 3 (Longhorn):
 
-Before we install Longhorn, we have to make sure we have the prequistes installed on each node in the cluster. Longhorn requires **`nfs`** and **`iscsi`** and provides two **`kubectl`** commands to easily install both packages.
+Before we install Longhorn, we have to make sure we have the prequistes installed on each node in the cluster. Longhorn requires **`nfs`** and **`iscsi`** and provides two **`kubectl`** deployment configs (aka yamls) to easily install both packages.
 
 To run these commnads, let's use the kubectl shell provided by the Rancher Manager. On your keyboard, click the **`backtick`** key.
 
@@ -49,24 +47,23 @@ kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.4.2/depl
 
 ![rancher-app-longhorn-kubectl-complete](/static/images/content/22-app-longhorn-kubectl-complete.png)
 
-### Step 4:
+### Step 4 (Longhorn):
 
-Once you close the kubectl shell and finish reviewing the chart, click on **`Install`**. Then click **`Next`** and **`Install`** to complete the 
-installation. You shouldn't need to change any configuration options.
+Once you close the kubectl shell and finish reviewing the chart, click on **`Install`**, then click **`Next`**, and finally click **`Install`** to complete the installation. You shouldn't need to change any configuration options.
 
 If you are familiar with Helm, you may recognize the Helm commands running in the shell pane at the bottom of the page. Under the hood the App Catalog is deploying Longhorn with Helm using specific Helm Values. Feel free to close the shell pane as soon as it opens or after you see the **`SUCCESS`** message. 
 
 ![rancher-app-longhorn-installed](/static/images/content/22-app-longhorn-installed.png)
 
-### Step 5:
+### Step 5 (Longhorn):
 
 In the left menu, you should now see an item named **`Longhorn`**.
 
-Let's click on it and then right click on the **`Longhorn`** box and **`Open in a New Tab`**.
+Let's click on it and then click on the **`Longhorn`** box.
 
 ![rancher-app-longhorn-menu](/static/images/content/22-app-longhorn-menu.png)
 
-### Step 6:
+### Step 6 (Longhorn):
 
 Welcome to Longhorn! Here is the overview of anything and everything storage related on the cluster, including important storage metrics.
 
@@ -84,60 +81,64 @@ Feel free to continue exploring Longhorn, but those who want to keep moving forw
 
 ## Deploying NeuVector
 
-### Step 1:
+### Step 1 (NeuVector):
 
-Just like with Longhorn... in the left menu, let's click on **`Charts`**. On the right hand side, you will see a 
+Just like with Longhorn... in the left side menu, under **`Apps`**, click **`Charts`**. On the right hand side, you will see a 
 filter box. Search for **`neuvector`**.
 
-You will see two Neuvector chart options. Click on the **`blue`** chart for **`NeuVector`**.
+You will see two Neuvector chart options. Click on the **`blue`** box for the **`NeuVector`** Chart.
 
 ![rancher-app-catalog-neuvector](/static/images/content/22-app-neuvector-search.png)
 
-### Step 2:
+### Step 2 (NeuVector):
 
 Here you will see all the relevant information related to **`NeuVector`** such as the Current Version or the Helm Chart README.
 
 ![rancher-app-neuvector-setup](/static/images/content/22-app-neuvector-setup.png)
 
+### Step 3 (NeuVector):
 
-### Step 3:
+Once you finish reviewing the chart, click on **`Next`** and follow the steps listed. We will need to change two 
+of the configuration options. Before proceeding, ake sure to check the box for **`Customize Helm options before install`**.
 
-Once you finish reviewing the chart, click on **`Install`** and follow the steps listed. We will need to change one 
-of the configuration options.
+![rancher-app-neuvector-helm](/static/images/content/22-app-neuvector-helm.png)
 
 Under **`Container Runtime`**, check the box for **`k3s Container Runtime`** and confirm 
 **`/run/k3s/containerd/containerd.sock`** is populated in the path box. Uncheck the Docker runtime.
 Rancher RKE2 has a lot of components in common with Rancher's k3s distribution of Kubernetes.
 
-Once you set the configuration option, click **`Install`**.
+![rancher-app-neuvector-helm-config-1](/static/images/content/22-app-neuvector-helm-config-1.png)
 
-![rancher-app-neuvector-config](/static/images/content/22-app-neuvector-config.png)
+Under **`PVC Configuration`**, check the box for **`PVC Status`**. Additionally, under **`Storage Class Name`** enter **`longhorn`**.
 
-### Step 4:
+![rancher-app-neuvector-helm-config-2](/static/images/content/22-app-neuvector-helm-config-2.png)
+
+Once you set the configuration option, click **`Next`** and then click **`Install`**.
+
+### Step 4 (NeuVector):
 
 Neuvector should install in less than a minute. Just like with Longhorn, feel free to close the shell pane as 
 soon as it opens or after you see the **`SUCCESS`** message.
 
 ![rancher-app-neuvector-installed](/static/images/content/22-app-neuvector-installed.png)
 
-### Step 5:
+### Step 5 (NeuVector):
 
 In the left menu, you should now see an item named **`NeuVector`**.
 
-Click on it and then right click on the **`NeuVector`** box and **`Open in a New Tab`**.
+Let's click on it and then click on the **`NeuVector`** box.
 
 ![rancher-app-neuvector-menu](/static/images/content/22-app-neuvector-menu.png)
 
-### Step 6:
+### Step 6 (NeuVector):
 
-Once NeuVector opens in a new tab, accept the End User License Agreement if shown. If propmted for credentials, 
-enter the default username **`"admin"`** and default password **`"admin"`** and click **`Login`**.
+Once NeuVector opens in a new tab, accept the End User License Agreement if shown. If propmted for credentials, enter the default username **`"admin"`** and default password **`"admin"`** and click **`Login`**.
 
 >**Note: Ensure to update the admin password from the default password of `admin` as soon as possible! Default passwords should never be used in any environment.**
 
 ![rancher-neuvector-login](/static/images/content/22-neuvector-eula.png)
 
-### Step 7:
+### Step 7 (NeuVector):
 
 Welcome to NeuVector! You're greeted with the dashboard that provides an overview of your current security events, metrics, and risks. A really cool feature here is the Risk Score, which highlights security concerns and ways to improve it. Some are even single click changes!
 
@@ -145,8 +146,7 @@ Welcome to NeuVector! You're greeted with the dashboard that provides an overvie
 
 Head over to the Network Activity tool by clicking **`Network Activity`** on the the left side menu. 
 
-Here you can see an complete picture of all nodes, namespaces, containers, and more inside of the cluster. If you 
-right-click on any item, you can view more information related to that item.
+Here you can see an complete picture of all nodes, namespaces, containers, and more inside of the cluster. If you right-click on any item, you can view more information related to that item.
 
 ![rancher-neuvector-network-activity](/static/images/content/22-neuvector-network-activity.png)
 

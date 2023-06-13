@@ -25,12 +25,13 @@ Let's start by heading back to the Rancher Multi-Cluster Manager. Click the the 
 
 Once the Fleet opens, there should be no Git Repositories listed, but let's switch our namespace to **`fleet-local`** to prepare for deploying our application. In the top right corner, switch **`fleet-default`** to **`fleet-local`**.
 
+In Fleet, the **`fleet-default`** namespace is for all downstream clusters (all created and imported clusters) and the **`fleet-local`** namespace is for the local cluster (the management cluster). 
+
 ![rancher-fleet-home](/static/images/content/23-fleet-home.png)
 
 ### Step 3:
 
-Fleet allows you to use the Rancher Multi-Cluster Manager to add Git Repos and it allows use to use a GitRepo Resource. We're going to use a preconfigured GitRepo Resource and the **`kubectl`** shell.
-
+Fleet allows you to use the Rancher Multi-Cluster Manager to add Git Repos and uses a "GitRepo Resource" for configuration. You are able to use the user interface or a deployment config (aka yamls), but we're going to use a preconfigured GitRepo Resource and the **`kubectl`** shell to apply it.
 
 Just like in Exploring the Cluster, to use the kubectl shell, use your keyboard and click the **`backtick`** key.
 
@@ -64,11 +65,13 @@ Now that we have successfully deployed our demo application... let's head back t
 
 Once we are in the **`local`** cluster, in the side menu, you should see a new menu time named **`Flask Demo App`**! This is the demo application that we deployed using Fleet. Let's click on it so we can see how to access it. Just like with Longhorn and NeuVector, there is a box to click to open the application. Let's click on the **`Flask Demo App`** box to open the application.
 
+In your own clusters, you are able to add important applications or links into this side menu. We see a lot of customers create links for their enterprise applications so they are easily accesible and use the Rancher Proxy (aka authentication)! You can find out more information [here](https://ranchermanager.docs.rancher.com/v2.7/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/custom-branding).
+
 ![rancher-fleet-local-cluster-demo-app](/static/images/content/23-fleet-local-cluster-demo-app.png)
 
 ### Step 8:
 
-Here you will see your demo application!! It is a fairly simple demo application that uses a Flask user interface to interact with a Redis database and stores the key value each time the site is visted by a user. 
+Here you will see your demo application!! It is a fairly simple demo application that uses a Flask user interface to interact with a Redis database and stores the key value pair of each time the site is visted by a user. 
 
 Notice you are able to see the amount of hits on the site and the exact server (aka the pod)!
 

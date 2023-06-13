@@ -1,4 +1,4 @@
-# Workshop Studio Assets
+# AWS Workshop Studio Assets
 
 This folder used for storing static assets in a remote S3 bucket and folder dedicated to your workshop. For instructions on how to leverage S3 to store asset files, see the instructions at:
 
