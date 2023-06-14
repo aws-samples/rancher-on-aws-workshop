@@ -144,7 +144,15 @@ Welcome to NeuVector! You're greeted with the dashboard that provides an overvie
 
 ![rancher-neuvector-home](/static/images/content/22-neuvector-home.png)
 
-Head over to the Network Activity tool by clicking **`Network Activity`** on the the left side menu. 
+### Step 8 (NeuVector):
+
+Before we continue to explore NeuVector, let's turn on auto scanning of the cluster. In the top right hand corner of the dashboard, please click on the **`Fourth Bubble`** and then click the slider for **`Auto Scan`**. Now when we visit other areas of NeuVector, we will have results from the current status of the cluster.
+
+![rancher-neuvector-home-autoscan](/static/images/content/22-neuvector-home-autoscan.png)
+
+### Step 9 (NeuVector):
+
+Now let's head over to the Network Activity tool by clicking **`Network Activity`** on the the left side menu.
 
 Here you can see an complete picture of all nodes, namespaces, containers, and more inside of the cluster. If you right-click on any item, you can view more information related to that item.
 
