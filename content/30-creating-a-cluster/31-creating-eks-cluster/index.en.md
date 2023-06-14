@@ -7,7 +7,7 @@ In the following module, you will complete the outcomes listed below:
 
 1. Access and Configure an AWS Cloud9 IDE
    * AWS Cloud9 is cloud-based integrated development environment (IDE) that lets you write, run, and debug code all within the browser.
-2. Create a 3 node Amazon EKS Cluster with a provided cluster config
+2. Create a 3 node Amazon EKS Cluster with a provided cluster config.
 
 ---
 
@@ -51,7 +51,7 @@ The setup script will install (or update) a few tools and set environment variab
 
 ```bash
 cd
-curl ':assetUrl{path="/resources/env-setup.sh" source=s3}' --output /tmp/setup.sh
+curl https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/assets/env-setup.sh --output /tmp/setup.sh
 ```
 
 ![cloud9-setupScript-download](/static/images/content/cloud9/setupScript-download.png)
@@ -75,7 +75,7 @@ The cluster config file defines the EKS cluster settings and permissions for the
 * Run the **curl** command in the Cloud9 terminal):
 
 ```bash
-curl ':assetUrl{path="/resources/eksctl-cluster.yml" source=s3}' --output ~/eksctl-cluster.yml
+curl https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/assets/eksctl-cluster.yml --output ~/eksctl-cluster.yml
 ```
 
 ![cloud9-eks-config-download](/static/images/content/cloud9/eks-conf-download.png)
