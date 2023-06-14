@@ -33,7 +33,7 @@ Learn how to easily deploy and manage Kubernetes with Rancher on the AWS Cloud!
 * [Importing a Cluster](/content/40-importing-a-cluster/index.en.md)
   * [Importing the Cluster](/content/40-importing-a-cluster/41-importing-the-cluster/index.en.md)
 * [Additional AWS Integrations](/content/50-additional-integrations/index.en.md)
-* [Conclusion](/content/60-conclusion/index.en.md)
+* [Workshop Conclusion](/content/60-conclusion/index.en.md)
 
 ## GitHub Repository
 Visit our [GitHub repository](https://github.com/aws-samples/rancher-on-aws-workshop) to find the workshop source code. We welcome your suggestions or improvements!
