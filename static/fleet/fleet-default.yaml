@@ -1,12 +1,12 @@
 apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
-  name: flask-demo-app
+  name: flask
   namespace: fleet-default
 spec:
   repo: https://github.com/aws-samples/rancher-on-aws-workshop
   branch: main
-  targetNamespace: default
+  targetNamespace: flask
   paths:
     - /static/fleet/flask-demo-app
   targets:
@@ -16,3 +16,21 @@ spec:
             operator: NotIn
             values:
               - harvester
+---
+apiVersion: ui.cattle.io/v1
+kind: NavLink
+metadata:
+  name: flask
+spec:
+  label: Flask
+  target: _blank
+  description: Flask Demo Application
+  group: Flask Demo App
+  label: Flask Demo App
+  sideLabel: Flask
+  toService:
+    name: flask
+    namespace: flask
+    port: "5000"
+    path: /
+    scheme: http
