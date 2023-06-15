@@ -51,7 +51,7 @@ The setup script will install (or update) a few tools and set environment variab
 
 ```bash
 cd
-curl https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/assets/env-setup.sh --output /tmp/setup.sh
+curl ':assetUrl{path="/assets/env-setup.sh" source=s3}' --output /tmp/setup.sh
 ```
 
 ![cloud9-setupScript-download](/static/images/content/cloud9/setupScript-download.png)
@@ -75,7 +75,7 @@ The cluster config file defines the EKS cluster settings and permissions for the
 * Run the **curl** command in the Cloud9 terminal):
 
 ```bash
-curl https://raw.githubusercontent.com/aws-samples/rancher-on-aws-workshop/main/assets/eksctl-cluster.yml --output ~/eksctl-cluster.yml
+curl ':assetUrl{path="/assets/eksctl-cluster.yml" source=s3}' --output ~/eksctl-cluster.yml
 ```
 
 ![cloud9-eks-config-download](/static/images/content/cloud9/eks-conf-download.png)
