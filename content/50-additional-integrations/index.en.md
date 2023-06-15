@@ -68,7 +68,7 @@ The install script will:
 * Run the **curl** command in the Cloud9 terminal:
 
  ```bash
-curl ':assetUrl{path="/assets/install-ack-sc-memdb.sh" source=s3}' --output ~/install-ack-sc-memdb.sh
+curl ':assetUrl{path="install-ack-sc-memdb.sh" source=s3}' --output ~/install-ack-sc-memdb.sh
 ```
 
 ![cloud9-ackScript-download](/static/images/content/cloud9/install-ACK-download.png)
