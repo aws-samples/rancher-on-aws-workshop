@@ -1,20 +1,20 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: RKE2 Kubernetes/Rancher Manager with EKS Cluster CloudFormation Template
 
-Metadata: 
-  AWS::CloudFormation::Interface: 
-    ParameterGroups: 
-      - 
-        Label: 
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      -
+        Label:
           default: "AWS Configuration Options"
-        Parameters: 
+        Parameters:
           - VolumeSize
           - VPCCidr
           - AllowedCidr
-      - 
-        Label: 
+      -
+        Label:
           default: "Rancher Configuration Options"
-        Parameters: 
+        Parameters:
           - RancherClusterToken
           - RancherBootstrapPassword
 
@@ -36,9 +36,9 @@ Parameters:
     Description: "Allow CIDR for Inbound Traffic to Rancher (Default: 0.0.0.0/0)"
     Type: String
     Default: '0.0.0.0/0'
-  WorkshopC9InstanceVolumeSize: 
+  WorkshopC9InstanceVolumeSize:
     Type: Number
-    Description: The Size in GB of the Cloud9 Instance Volume. 
+    Description: The Size in GB of the Cloud9 Instance Volume.
     Default: 24
   RancherClusterToken:
     Description: "Cluster Join Token for RKE2 Cluster (Default: Pa22word)"
@@ -64,7 +64,7 @@ Parameters:
 Mappings:
   AWSRegionArch2AMI:
     us-east-1:
-      HVM64: ami-08cdaea7883b8b88a
+      HVM64: ami-0a88744460c2b27c0
 
 Resources:
   ######
@@ -72,7 +72,7 @@ Resources:
   ######
   PlaceSecret:
     Type: AWS::SecretsManager::Secret
-    Properties: 
+    Properties:
       Description: 'Rancher user and pasword combination'
       Name: RancherPass
       SecretString: !Sub
@@ -160,7 +160,7 @@ Resources:
             - '-'
             - - !Ref 'AWS::StackName'
               - rancher-public-3
-  
+
   ###################
   # Private Subnets #
   ###################
@@ -350,7 +350,7 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
-              AWS: 
+              AWS:
               - !GetAtt RancherCloudCredentialUser.Arn
               Service:
               - ec2.amazonaws.com
@@ -433,7 +433,7 @@ Resources:
 
   RancherCloudCredentialUser:
     Type: AWS::IAM::User
-    Properties: 
+    Properties:
       UserName: rancher-cloud-credential-user
 
   RancherCloudCredentialsPolicy:
@@ -478,7 +478,7 @@ Resources:
   RancherCloudCredentialKey:
     Type: AWS::IAM::AccessKey
     DependsOn: RancherCloudCredentialUser
-    Properties: 
+    Properties:
       UserName: !Ref RancherCloudCredentialUser
 
   RancherInstanceRole:
@@ -489,7 +489,7 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
-              AWS: 
+              AWS:
               - !GetAtt RancherCloudCredentialUser.Arn
               Service:
               - ec2.amazonaws.com
@@ -704,7 +704,7 @@ Resources:
     Type: AWS::EC2::SecurityGroup
     Properties:
       VpcId: !Ref 'RancherVPC'
-      GroupDescription: Enable EFS access from Rancher subnets to port 2049 
+      GroupDescription: Enable EFS access from Rancher subnets to port 2049
       SecurityGroupEgress:
         - IpProtocol: '-1'
           FromPort: '0'
@@ -824,7 +824,7 @@ Resources:
   RancherCPELB:
     Type: AWS::ElasticLoadBalancing::LoadBalancer
     Properties:
-      Subnets: 
+      Subnets:
         - !Ref 'RancherPublicSubnet1'
         - !Ref 'RancherPublicSubnet2'
         - !Ref 'RancherPublicSubnet3'
@@ -869,7 +869,7 @@ Resources:
         UnhealthyThreshold: '5'
         Interval: '30'
         Timeout: '5'
-  
+
   ###########
   # AWS EKS #
   ###########
@@ -958,10 +958,10 @@ Resources:
                   - "eks.amazonaws.com"
                   - "eks-nodegroup.amazonaws.com"
                   - "eks-fargate.amazonaws.com"
-  
+
   EKSCTLRole:
     Type: AWS::IAM::Role
-    DependsOn: 
+    DependsOn:
       - EksAllAccessManagedPolicy
       - IAMLimitedAccessManagedPolicy
     Properties:
@@ -1056,8 +1056,8 @@ Resources:
              AWS: !Sub arn:aws:iam::${AWS::AccountId}:root
            Action: kms:*
            Resource: '*'
-  
-Outputs: 
+
+Outputs:
   CloudCredentialArn:
     Description: AWS Credential ARN
     Value: !GetAtt RancherCloudCredentialUser.Arn
