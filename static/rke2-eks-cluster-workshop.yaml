@@ -39,7 +39,7 @@ Parameters:
   WorkshopC9InstanceVolumeSize:
     Type: Number
     Description: The Size in GB of the Cloud9 Instance Volume.
-    Default: 24
+    Default: 32
   RancherClusterToken:
     Description: "Cluster Join Token for RKE2 Cluster (Default: Pa22word)"
     Type: String
@@ -64,7 +64,9 @@ Parameters:
 Mappings:
   AWSRegionArch2AMI:
     us-east-1:
-      HVM64: ami-0fbb7dc61be0ac719
+      HVM64: ami-0c5e3d1f21d6ce27f
+    us-west-2:
+      HVM64: ami-06980da992b300927
 
 Resources:
   ######
