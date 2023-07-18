@@ -39,7 +39,7 @@ Parameters:
   WorkshopC9InstanceVolumeSize:
     Type: Number
     Description: The Size in GB of the Cloud9 Instance Volume.
-    Default: 24
+    Default: 32
   RancherClusterToken:
     Description: "Cluster Join Token for RKE2 Cluster (Default: Pa22word)"
     Type: String
