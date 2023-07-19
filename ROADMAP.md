@@ -7,7 +7,7 @@ This document describes the current status and the upcoming milestones of the Ra
 | Status | Milestone | Goals | Type | ETA |
 | :---: | :---: | :---: | :---: | :---: |
 | 🚀 | **[Determine Improvements and Launch Roadmap](#determine-improvements-and-launch-roadmap)** | 0 / 2 | `enhancement` | Jul 28 2023 |
-| 🚀 | **[Improve Screenshot Highlighting](#improve-screenshot-highlighting)** | 0 / 6 | `enhancement` | Jul 28 2023 |
+| 🚀 | **[Improve Screenshot Highlighting](#improve-screenshot-highlighting)** | 0 / 6 | `enhancement` | Aug 04 2023 |
 | 🚀 | **[Add Second Demo Application](#add-second-demo-applications)** | 0 / 3 | `feature` | Aug 11 2023 |
 | 🚀 | **[Implement Support for Additional Regions](#implement-support-for-additional-regions)** | 0 / 4 | `enhancement` | Aug 25 2023 |
 
