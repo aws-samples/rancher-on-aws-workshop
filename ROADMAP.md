@@ -4,12 +4,12 @@ This document describes the current status and the upcoming milestones of the Ra
 
 ## Milestone Overview and Summary
 
-| Status | Milestone | Goals | ETA |
-| :---: | :--- | :---: | :---: |
-| 🚀 | **[Determine Improvements and Launch Roadmap](#determine-improvements-and-launch-roadmap)** | 0 / 2 | Jul 28 2023 |
-| 🚀 | **[Improve Screenshot Highlighting](#improve-screenshot-highlighting)** | 0 / 6 | Jul 28 2023 |
-| 🚀 | **[Add Second Demo Application](#add-second-demo-applications)** | 0 / 3 | Aug 11 2023 |
-| 🚀 | **[Implement Support for Additional Regions](#implement-support-for-additional-regions)** | 0 / 4 | Aug 25 2023 |
+| Status | Milestone | Goals | Type | ETA |
+| :---: | :---: | :---: | :---: | :---: |
+| 🚀 | **[Determine Improvements and Launch Roadmap](#determine-improvements-and-launch-roadmap)** | 0 / 2 | `enhancement` | Jul 28 2023 |
+| 🚀 | **[Improve Screenshot Highlighting](#improve-screenshot-highlighting)** | 0 / 6 | `enhancement` | Jul 28 2023 |
+| 🚀 | **[Add Second Demo Application](#add-second-demo-applications)** | 0 / 3 | `feature` | Aug 11 2023 |
+| 🚀 | **[Implement Support for Additional Regions](#implement-support-for-additional-regions)** | 0 / 4 | `enhancement` | Aug 25 2023 |
 
 ### Determine Improvements and Launch Roadmap
 
@@ -18,7 +18,7 @@ This will allow us to then identify our initial improvements or issues and the l
 GitHub Issue(s): [Issue 46](https://github.com/aws-samples/rancher-on-aws-workshop/issues/46)
 
 | Status | Name | Branch | Assignee |
-| :---: | :--- | --- | --- |
+| :---: | :---: | :---: | :---: |
 | ❌ | Determine Rancher Goals | zackbradys-issue-46 | Zack Brady |
 | ❌ | Determine AWS Goals | marshkkm-issue-46 | Kevin Marshall |
 
