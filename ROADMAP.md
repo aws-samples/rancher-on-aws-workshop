@@ -6,10 +6,11 @@ This document describes the current status and the upcoming milestones of the Ra
 
 | Status | Milestone | Goals | Type | ETA |
 | :---: | :---: | :---: | :---: | :---: |
-| 🚀 | **[Determine Improvements and Launch Roadmap](#determine-improvements-and-launch-roadmap)** | 0 / 2 | `enhancement` | Jul 28 2023 |
+| ✔ | **[Determine Improvements and Launch Roadmap](#determine-improvements-and-launch-roadmap)** | 2 / 2 | `enhancement` | Jul 21 2023 |
 | 🚀 | **[Improve Screenshot Highlighting](#improve-screenshot-highlighting)** | 0 / 6 | `enhancement` | Aug 04 2023 |
-| 🚀 | **[Add Second Demo Application](#add-second-demo-applications)** | 0 / 3 | `feature` | Aug 11 2023 |
-| 🚀 | **[Implement Support for Additional Regions](#implement-support-for-additional-regions)** | 0 / 4 | `enhancement` | Aug 25 2023 |
+| 🚀 | **[Add Additional Demo Applications](#add-additional-demo-applications)** | 0 / 3 | `feature` | Aug 25 2023 |
+| 🚀 | **[Implement Support for Additional Regions](#implement-support-for-additional-regions)** | 0 / 4 | `feature` | Sep 29 2023 |
+| 🚀 | **[Cloud9 Optimization and Improvements](#cloud9-optimization-and-improvements)** | 0 / 4 | `enhancement` | Sep 29 2023 |
 
 ### Determine Improvements and Launch Roadmap
 
@@ -19,8 +20,8 @@ GitHub Issue(s): [Issue 46](https://github.com/aws-samples/rancher-on-aws-worksh
 
 | Status | Name | Branch | Assignee |
 | :---: | :---: | :---: | :---: |
-| ❌ | Determine Rancher Goals | zackbradys-issue-46 | Zack Brady |
-| ❌ | Determine AWS Goals | marshkkm-issue-46 | Kevin Marshall |
+| ✔ | Determine Rancher Goals | `zackbradys-issue-46` | Zack Brady |
+| ✔ | Determine AWS Goals | `zackbradys-issue-46` | Kevin Marshall |
 
 ### Improve Screenshot Highlighting
 
@@ -28,14 +29,14 @@ GitHub Issue(s): [Issue 3](https://github.com/aws-samples/rancher-on-aws-worksho
 
 | Status | Issue | Branch | Assignee |
 | :---: | :---: | :---: | :---: |
-| ❌ | Introduction Highlighting | intro-highlightning | |
-| ❌ | Exploring the Cluster Highlighting | exploring-highlightning | |
-| ❌ | Creating a Cluster Highlighting | creating-highlightning | |
-| ❌ | Importing a Cluster Highlighting | importing-highlightning | |
-| ❌ | Additional Integrations Highlighting | integrations-highlightning | |
-| ❌ | Conclusion Highlighting | conclusion-highlightning | |
+| ✔ | Introduction Highlighting | `main` | Zack Brady |
+| ❌ | Exploring the Cluster Highlighting | `screenshot-highlightning` | |
+| ✔ | Creating a Cluster Highlighting | `main` | Kevin Marshall |
+| ❌ | Importing a Cluster Highlighting | `screenshot-highlightning` | |
+| ❌ | Additional Integrations Highlighting | `screenshot-highlightning` | |
+| ✔ | Conclusion Highlighting | `main` | Zack Brady |
 
-### Add Second Demo Application
+### Add Additional Demo Applications
 
 GitHub Issue(s): [Issue 43](https://github.com/aws-samples/rancher-on-aws-workshop/issues/43)
 
@@ -51,7 +52,18 @@ GitHub Issue(s):
 
 | Status | Issue | Branch | Assignee |
 | :---: | :---: | :---: | :---: |
-| ✔ | | | |
-| ✔ | | | |
+| ✔ | Build and Generate AWS AMI for us-west-2 | `main` | Zack Brady |
+| ✔ | Test AWS AMI with Workshop | `main` | Zack Brady |
+| ❌ | | | |
+| ❌ | | | |
+
+### Cloud9 Optimization and Improvements
+
+GitHub Issue(s):
+
+| Status | Issue | Branch | Assignee |
+| :---: | :---: | :---: | :---: |
+| ❌ | | | |
+| ❌ | | | |
 | ❌ | | | |
 | ❌ | | | |
