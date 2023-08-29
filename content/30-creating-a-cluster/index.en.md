@@ -1,5 +1,5 @@
 ---
-title: "Creating a Cluster"
+title: 'Creating a Cluster'
 weight: 30
 ---
 

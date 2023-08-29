@@ -1,5 +1,5 @@
 ---
-title: "Workshop Introduction"
+title: 'Workshop Introduction'
 weight: 10
 ---
 
@@ -7,13 +7,13 @@ weight: 10
 
 # Welcome to the Rancher on AWS Workshop!
 
-In this workshop, we will be utilzing the Rancher Product Stack on the AWS Cloud to complete the following workshop modules:
+In this workshop, we will be using the Rancher Product Stack on the AWS Cloud to complete the following modules:
 
-* **Exploring** a Rancher RKE2 Kubernetes cluster.
-* **Creating** a AWS EKS Kubernetes cluster.
-* **Creating** a Rancher RKE2 Kubernetes cluster.
-* **Importing** the AWS EKS Kuberenetes cluster. 
+- **Exploring** a Rancher RKE2 Kubernetes cluster.
+- **Creating** a AWS EKS Kubernetes cluster.
+- **Creating** a Rancher RKE2 Kubernetes cluster.
+- **Importing** the AWS EKS Kuberenetes cluster.
 
 ![workshop-overview-diagram](/static/images/workshop-overview-diagram.png)
 
-To get started, please click **Next** to head over to the **Workshop Overview!**
+To get started, click **Next** to head to the **Workshop Overview!**

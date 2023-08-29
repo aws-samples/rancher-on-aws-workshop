@@ -1,5 +1,5 @@
 ---
-title: "Importing the Cluster"
+title: 'Importing the Cluster'
 weight: 41
 ---
 
@@ -10,25 +10,23 @@ In the following module, you will complete the outcomes listed below:
 
 ---
 
-
 # Importing the EKS Cluster
 
 ## Cluster Management
 
 ### Step 1:
 
-Now that we've successfully created an EKS Cluster and an RKE2 Cluster. Let's **`import`** the EKS Cluster into our Rancher Multi-Cluster Manager. Since we created the RKE2 Cluster from the Rancher Multi-Cluster Manager, we don't have to import it into it!
+We have successfully created an EKS Cluster and an RKE2 Cluster. Next, we'll **import** the EKS Cluster to be managed by the Rancher Multi-Cluster Manager. (Since we created the RKE2 Cluster from the Rancher Multi-Cluster Manager, it's already managed. We don't have to import it.)
 
-Let's start of by clicking the side menu and heading to **`Cluster Management`**. 
+Start by selecting **`Cluster Management`** from the left menu.
 
 ![rancher-cluster-menu](/static/images/content/41-cluster-menu.png)
 
 ### Step 2:
 
-Once inside of **`Cluster Management`**, we can see the original **`local`** cluster and the created **`rke2-cluster`**. As we have mentioned previosuly in this workshop, the **`local`** cluster is our **`management`** cluster and the **`rke2-cluster`** is our **`downstream cluster`**./
+Once in **`Cluster Management`**, we can see the original **`local`** cluster and the created **`rke2-cluster`**. As we have mentioned previosuly in this workshop, the **`local`** cluster is our **`management`** cluster and the **`rke2-cluster`** is our **`downstream cluster`**./
 
 ![rancher-cluster-home](/static/images/content/41-cluster-home.png)
-
 
 ## Importing the Cluster
 
@@ -48,10 +46,10 @@ Here is our configuration view for **`importing`** a cluster. As you can see the
 
 Let's set a few of the configurations options. Take a look below:
 
-* **Cluster Name:** eks-cluster
-* **Region:** us-east-1
-* **Cloud Credentials:** aws
-* **Cluster To Register:** eks-cluster
+- **Cluster Name:** eks-cluster
+- **Region:** us-east-1
+- **Cloud Credentials:** aws
+- **Cluster To Register:** eks-cluster
 
 ![rancher-cluster-import-eks](/static/images/content/41-cluster-import-eks.png)
 
@@ -79,10 +77,9 @@ Once the **`eks-cluster`** completes importing and provisioning the management r
 
 ### Step 6:
 
-From the previous screenshot, let's click on the **`eks-cluster`** in the side menu. This will bring us to a similiar view that we saw earlier of the **`management cluster`**. Here we are able to interact with our EKS Cluster in the *exact* same way as our **`management cluster`** and **`rke2-cluster`**. It's pretty cool to be able to have **n** number of clusters and have a true single pane of glass!
+From the previous screenshot, let's click on the **`eks-cluster`** in the side menu. This will bring us to a similiar view that we saw earlier of the **`management cluster`**. Here we are able to interact with our EKS Cluster in the _exact_ same way as our **`management cluster`** and **`rke2-cluster`**. It's pretty cool to be able to have **n** number of clusters and have a true single pane of glass!
 
 ![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-details.png)
-
 
 ## Completed!
 
