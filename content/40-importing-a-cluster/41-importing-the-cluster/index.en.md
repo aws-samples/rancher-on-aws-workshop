@@ -24,7 +24,7 @@ Start by selecting **`Cluster Management`** from the left menu.
 
 ### Step 2:
 
-Once in **`Cluster Management`**, we can see the original **`local`** cluster and the created **`rke2-cluster`**. As we have mentioned previosuly in this workshop, the **`local`** cluster is our **`management`** cluster and the **`rke2-cluster`** is our **`downstream cluster`**./
+In **`Cluster Management`**, we can see the original **`local`** cluster and the created **`rke2-cluster`**. As we have mentioned previosuly in this workshop, the **`local`** cluster is our **`management`** cluster and the **`rke2-cluster`** is our **`downstream cluster`**.
 
 ![rancher-cluster-home](/static/images/content/41-cluster-home.png)
 
@@ -32,9 +32,9 @@ Once in **`Cluster Management`**, we can see the original **`local`** cluster an
 
 ### Step 1:
 
-Since we have an understanding of our current state, let's start the process of **`importing`** the EKS Cluster.
+Next we will start the process of **`importing`** the EKS Cluster.
 
-In the top right hand corner, click the **`Import Exisiting`** button. Since we created an EKS Cluster using **`eksctl`**, let's click on **`Amazon EKS`** as the type of cluster we want to **`import`** into Rancher!
+In the top right hand corner, click the **`Import Exisiting`** button. Since we created an EKS Cluster using **`eksctl`**, click on **`Amazon EKS`** as the type of cluster we want to **`import`** into Rancher.
 
 ![rancher-cluster-import-options](/static/images/content/41-cluster-import-options.png)
 
@@ -42,9 +42,9 @@ In the top right hand corner, click the **`Import Exisiting`** button. Since we 
 
 ### Cluster Configuration:
 
-Here is our configuration view for **`importing`** a cluster. As you can see there is not much needed to get your cluster imported into Rancher.
+This is the configuration step for the cluster **`import`** process.
 
-Let's set a few of the configurations options. Take a look below:
+Set a few of the configurations options to the following values:
 
 - **Cluster Name:** eks-cluster
 - **Region:** us-east-1
@@ -59,28 +59,28 @@ Let's set a few of the configurations options. Take a look below:
 
 ### Step 3:
 
-Once we have set the few configuration options, you can now see the EKS cluster is showing as **`pending`**. With most clusters, all you need to do is wait a few seconds or possbily a minute and they will come online.
+Once you have completed the configuration, the EKS cluster will be in the **`pending`** state. Rancher resources are now being created in the cluster that is being imported. In most cases, the cluster import will complete in less than a minute.
 
 ![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-success.png)
 
 ### Step 4:
 
-If we did want to check the status or if the cluster did not automatically **`import`** into the Rancher Multi-Cluster Manager. Here is where we can see the possible steps to **`import`** the cluster into Rancher!
+You can select the cluster to find more details about the `import` process or troubleshoot any issues.
 
 ![rancher-cluster-import-eks-success-details](/static/images/content/41-cluster-import-eks-success-details.png)
 
 ### Step 5:
 
-Once the **`eks-cluster`** completes importing and provisioning the management resources, you should see the cluster as **`Active`** and all available nodes like below:
+Once the **`eks-cluster`** completes importing and provisioning the management resources, you will see the cluster as **`Active`**. The available downstream nodes will be listed.
 
 ![rancher-cluster-import-eks-successful](/static/images/content/41-cluster-import-eks-successful.png)
 
 ### Step 6:
 
-From the previous screenshot, let's click on the **`eks-cluster`** in the side menu. This will bring us to a similiar view that we saw earlier of the **`management cluster`**. Here we are able to interact with our EKS Cluster in the _exact_ same way as our **`management cluster`** and **`rke2-cluster`**. It's pretty cool to be able to have **n** number of clusters and have a true single pane of glass!
+Next, click on the **`eks-cluster`** in the side menu. This is the cluster detail view of our EKS `downstream cluster`. We can interact with our EKS Cluster in the _exact_ same way as our `management cluster` and RKE2 `downstream cluster`. Rancher Multi-Cluster Manager provides a single pane of glass to interact with and manage multiple clusters of different types.
 
 ![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-details.png)
 
 ## Completed!
 
-We're done! You've just imported an EKS Cluster using the Rancher Multi-Cluster Manager. If you have the time, feel free to move onto installing and configuring the **Additional AWS Integrations**! Otherwise, wrap up with the **Conclusion**!
+We're done! We imported an EKS Cluster using the Rancher Multi-Cluster Manager. If you have more time to learn, you can optionally move on to install and configure **Additional AWS Integrations**. Otherwise, wrap up with the **Conclusion** section.

@@ -9,7 +9,7 @@ weight: 60
 
 ## You've Completed the Workshop!
 
-Thank you for completing the Rancher on AWS Workshop! We hope you were able to learn the ease of deployment of Kubernetes with Rancher on AWS!
+Thank you for completing the Rancher on AWS Workshop! We hope you were able to learn the ease of deploying and managing Kubernetes on AWS using Rancher.
 
 Let's review what you've accomplished by completing this workshop:
 

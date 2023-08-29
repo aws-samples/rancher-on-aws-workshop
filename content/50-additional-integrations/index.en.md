@@ -24,17 +24,17 @@ In the following module, you will complete the outcomes listed below:
   - eksctl - A command line tool for working with EKS clusters.
   - Helm 3.8+ - A tool for installing and managing Kubernetes applications.
 
-If you've followed this workshop all the way through, all of the prerequisite have been met. From here, you will only need to use the Cloud9 IDE!
+If you've followed this workshop all the way through, all of the prerequisite have been met. From here, you will only need to use the AWS Cloud9 IDE!
 
 ## Step 1: Access the Cloud9 IDE
 
-Let's start by accessing the Cloud9 IDE.
+Start by accessing the Cloud9 IDE.
 
 In the menu on the left of this screen click **Open AWS console** to launch the AWS account for this workshop.
 
 ![workshop-studio-console](/static/images/content/cloud9/access-console.png)
 
-Access the Cloud9 service by searching for it in the menu bar at the top of the screen:
+Access the AWS Cloud9 service by searching for it in the menu bar at the top of the screen:
 
 ![aws-console-search](/static/images/content/cloud9/search.png)
 
@@ -47,8 +47,8 @@ Once the IDE has loaded, we recommend you use the **+** button and select
 
 ![cloud9-dashboard](/static/images/content/cloud9/terminal-open.png)
 
-You can close the smaller terminal window at the bottom if you'd like. Otherwise,
-welcome to Cloud9!
+You can close the smaller terminal window at the bottom if you'd like.
+Welcome to Cloud9!
 
 ![cloud9-new-terminal](/static/images/content/cloud9/terminal.png)
 
@@ -135,4 +135,4 @@ cd
 
 ## Completed!
 
-We're done! You've just created a managed Amazon MemoryDB for a Redis Cluster using the ACK MemoryDB Controller! Let's wrap up with taking a look at the **Conclusion**.
+We're done! We created a managed Amazon MemoryDB for a Redis Cluster using the ACK MemoryDB Controller. Next, we will wrap up with the **Conclusion** section.
