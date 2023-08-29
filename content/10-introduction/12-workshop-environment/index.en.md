@@ -1,5 +1,5 @@
 ---
-title: "Workshop Environment"
+title: 'Workshop Environment'
 weight: 12
 ---
 
@@ -16,7 +16,7 @@ To access your AWS Account for the workshop, please visit the **[AWS Workshop St
 
 ### Step 1:
 
-Once click **`Get Started`**.
+Click **`Get Started`**.
 
 ![aws-event-engine-dashboard](/static/images/content/12-aws-ws-dashboard.png)
 
@@ -32,7 +32,7 @@ Review the platform Terms and Conditions and click **`Join Event`**.
 
 ### Step 3:
 
-Once you are logged into the *AWS Workshop Studio Dashboard*, you are able to view your account related information. Please review the information provided for your account.
+Once you are logged into the _AWS Workshop Studio Dashboard_, you are able to view your account related information. Please review the information provided for your account.
 
 ![aws-ws-home](/static/images/content/12-ws-home.png)
 
@@ -45,6 +45,7 @@ Additionally, once the AWS Console opens, click **`Get Started`** to start the w
 ![aws-ws-console](/static/images/content/12-ws-console.png)
 
 ::::
+
 </details>
 
 <details>
@@ -52,19 +53,20 @@ Additionally, once the AWS Console opens, click **`Get Started`** to start the w
 
 ::::expand{header="For Use Outside AWS Events"}
 
-If you're completing this workshop outside an official AWS event, you will need to configure the required infrastructure before starting the workshop content. 
+If you're completing this workshop outside an official AWS event, you will need to configure the required infrastructure before starting the workshop content.
 
-Please be aware that this will incur costs to your AWS Account. Additionally, ensure you are deploying in the **`us-east-1`** region. After completetion of the workshop, verify all resources have been deleted. Cleanup Instructions are provided in the [Workshop Conclusion](/content/60-conclusion/index.en.md)!
+Please be aware that this will incur costs to your AWS Account. Additionally, ensure you are deploying in the **`us-east-1`** region. After completing the workshop, verify all resources have been deleted. Cleanup instructions are provided in the [Workshop Conclusion](/content/60-conclusion/index.en.md).
 
 ### Step 1:
 
 Download the required workshop files by clicking the link below and clicking **`download`** in your browser.
-* :button[RKE2/EKS Cloud Formation Template]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/static/rke2-eks-cluster.yaml' action=download variant='link'}
-    * Cloudformation template to deploy the Rancher Cluster
-* :button[EKS cluster config file]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/assets/eksctl-cluster.yml' action=download variant='link'}
-    * EKS Cluster Configuration file to easily create an EKS cluster using eksctl
-* :button[Environment Setup script]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/assets/env-setup.sh' action=download variant='link'}
-    * A simple shell script to set environment variables, install software, etc. which will be done in a Cloud based IDE
+
+- :button[RKE2/EKS Cloud Formation Template]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/static/rke2-eks-cluster.yaml' action=download variant='link'}
+  - Cloudformation template to deploy the Rancher Cluster
+- :button[EKS cluster config file]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/assets/eksctl-cluster.yml' action=download variant='link'}
+  - EKS Cluster Configuration file to easily create an EKS cluster using eksctl
+- :button[Environment Setup script]{href='https://github.com/aws-samples/rancher-on-aws-workshop/raw/main/assets/env-setup.sh' action=download variant='link'}
+  - A simple shell script to set environment variables, install software, etc. which you will run in a cloud-based IDE
 
 ### Step 2:
 
@@ -78,7 +80,7 @@ Click the **Create Stack** button and click **Upload a template file** to upload
 
 ### Step 4:
 
-Complete all required configuration variables: 
+Complete all required configuration variables:
 
 1. Select a valid stack name (for example, **`"rke2-eks-stack"`**)
 2. You should not have to change any additional variables or stack options, unless you would like to deviate from the workshop configuration.
@@ -95,4 +97,5 @@ The stack may take between 10 and 15 minutes to create and provision completely.
 Once the CloudFormation Stack has moved to **`CREATE_COMPLETE`** status, please click **`Next`** to continue to the workshop!
 
 ::::
+
 </details>

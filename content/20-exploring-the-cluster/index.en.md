@@ -1,5 +1,5 @@
 ---
-title: "Exploring the Cluster"
+title: 'Exploring the Cluster'
 weight: 20
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Importing a Cluster"
+title: 'Importing a Cluster'
 weight: 40
 ---
 

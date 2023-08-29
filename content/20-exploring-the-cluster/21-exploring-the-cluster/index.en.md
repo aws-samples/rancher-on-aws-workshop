@@ -1,5 +1,5 @@
 ---
-title: "Exploring the Cluster"
+title: 'Exploring the Cluster'
 weight: 21
 ---
 
@@ -10,14 +10,13 @@ In the following module, you will complete the outcomes listed below:
 
 ---
 
-
 # Exploring the RKE2 Cluster
 
 ## AWS Console
 
 ### Step 1:
 
-Let's start by accessing the AWS Console.
+We will start by accessing the AWS Console.
 
 At the top of the page, select the search bar and search for **`"CloudFormation"`** and click on it.
 
@@ -26,93 +25,96 @@ At the top of the page, select the search bar and search for **`"CloudFormation"
 
 ### Step 2:
 
-In the **`CloudFormation Console`**, click on the Rancher Manager **`Stack`**. If you are using AWS Workshop Studio at an AWS Event, the stack will be named **`rke2-eks-cluster-workshop`**. Outside AWS Workshop Studio, the stack will have a user-defined name from when it was created in the previous section.
+In the **`CloudFormation Console`**, click on the Rancher Manager **`Stack`**. If you are using AWS Workshop Studio at an AWS Event, the stack will be named **`rke2-eks-cluster-workshop`**. Outside AWS Workshop Studio, the stack will have a user-defined name you selected in the previous section.
 
-Inside of the stack, click on the **`Outputs`** tab. You should see the **`RancherURL`**, click the link in a new tab to bring up the Rancher Multi-Cluster Manager. If you a presented with a certificate warning, you can safely proceed since the workshop environment uses self-signed certificates for learning purposes. In a production environment, always use certificates issued from a trusted Certificate Authority. [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) makes it easy to provision, manage, deploy, and renew SSL/TLS certificates.
+On the stack detail page, click on the **`Outputs`** tab. You should see the **`RancherURL`**. Open the link in a new tab to bring up the Rancher Multi-Cluster Manager web interface. If your browser presents you with a certificate warning, you can safely proceed.
+
+> The workshop environment uses self-signed certificates for learning purposes. In a production environment, always use certificates issued from a trusted public or private certificate authority. [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) makes it easy to provision, manage, deploy, and renew SSL/TLS certificates.
 
 ![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt.png)
 ![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt-detail.png)
-
 
 ## Rancher Multi-Cluster Manager
 
 ### Step 1:
 
-Once the Rancher Multi-Cluster Manager opens, we will need to complete the bootstrapping steps.
+Next, we need to complete the bootstrap process in the Rancher Multi-Cluster Manager.
 
-First let's enter the bootstrap password (that was set during installation) of **`"Pa22word"`** and **`Log in with Local User`**.
+First, enter the bootstrap password that was set during installation: **`"Pa22word"`**. Select **`Log in with Local User`**.
 
 ![rancher-bootstrapping-password](/static/images/content/21-rancher-bootstrap-pw.png)
 ![rancher-bootstrapping-password](/static/images/content/21-rancher-bootstrap-pw-detail.png)
 
 ### Step 2:
 
-Now let's verify the few items on the setup page and click **`Continue`**!
+Next, verify a few items on the setup page and click **`Continue`**!
 
-* **`Server URL`** (should not need any changes)
-* **`[ ] Allow collection of anonymous statistics to help us improve rancher`**
-* **`[X] By checking the box, you accept the End User License Agreement & Terms & Conditions`**
+- **`Server URL`** (do not update)
+- **`[ ] Allow collection of anonymous statistics to help us improve Rancher`**
+- **`[X] By checking the box, you accept the End User License Agreement & Terms & Conditions`**
 
 ![rancher-bootstrapping-setup](/static/images/content/21-rancher-bootstrap-setup.png)
 ![rancher-bootstrapping-setup](/static/images/content/21-rancher-bootstrap-setup-detail.png)
 
 ### Step 3:
 
-Welcome to the Rancher Multi-Cluster Manager!! The starting page in the Rancher Multi-Cluster Manager provides an overview of the cluster managed by this MCM cluster.
+Welcome to the Rancher Multi-Cluster Manager! The starting page in the Rancher Multi-Cluster Manager provides an overview of the cluster(s) managed by this MCM cluster.
 
-Under **`Clusters`**, you should see a cluster named **`local`**. This cluster is your **`management cluster`**. As we move through the workshop, we will be creating and importing additional clusters into the Rancher Manager, known as **`downstream cluster(s)`**.
+Under **`Clusters`**, you should see a cluster named **`local`**. This cluster is your **`management cluster`**. As we move through the workshop, we will be creating and importing additional clusters with the Rancher Manager. These are known as **`downstream cluster(s)`**. In most production enviroments, run workload and applications on downstream clusters and reserve the management cluster only for the Rancher Multi-Cluster Manager.
 
 ![rancher-manager-home](/static/images/content/21-rancher-home.png)
 ![rancher-manager-home-detail](/static/images/content/21-rancher-home-detail.png)
 
-Let's go ahead and click on the **`local`** cluster and start to explore it.
+Go ahead and click on the **`local`** cluster and start to explore it.
 
-This is the homepage for the cluster where you are able to see a overview of the entire cluster. The overview has everything from node statistics to recent cluster events to various Kubernetes resources. Collecting the same information with **`kubectl`** commands takes significantly more effort.
+This is the cluster homepage, where you can see a overview of the selected cluster. The overview has everything from node statistics to recent cluster events to various Kubernetes resources. (Collecting the same information with **`kubectl`** commands can take significantly more effort.)
 
 ![rancher-local-cluster-home](/static/images/content/21-rancher-local-home.png)
 
-In the left menu under **`Cluster`**, click the **`Nodes`** menu item. Here we can see a lot of information related to each of the nodes in our **`management cluster`**. 
+In the left menu under **`Cluster`**, click the **`Nodes`** menu item. Here we can see information related to each node in our **`management cluster`**.
 
 One item to highlight here is the label on the **`Control Plane, Etcd`** nodes:
-* **`Taints: CriticalAddons Only-true:NoExecute`**
 
-In most Kubernetes environments, you should have dedicated nodes for control plane and etcd to ensure stability and reserve resources for system workloads. In Kubernetes, that is done through Taints and Tolerations, as you can see here.
+- **`Taints: CriticalAddons Only-true:NoExecute`**
+
+In most production Kubernetes environments, you should have dedicated nodes for control plane and etcd to ensure stability and reserve resources for system workloads. In Kubernetes, that is done through Taints and Tolerations, as you can see here.
+
+> You can learn more about best-practices for production Kubernetes clusters here: https://kubernetes.io/docs/setup/production-environment/#production-control-plane
 
 ![rancher-manager-nodes](/static/images/content/21-rancher-nodes.png)
 
-Let's dive a little deeper into workloads. We mentioned system workloads, so let's check out everything we have running on this cluster.
+Let's dive a little deeper into workloads. Next we'll check out the system workloads running on this cluster.
 
-In the menu, under **`Workload`**, click the **`Deployments`** menu item. Here we can see all the deployments running on our cluster. If you don't see any deployments that's because there are no deployments in the Kubernetes default namespace. Change the drop-down at the top of the screen to select `All Namespaces`. If you are familiar with RKE2 or Rancher, you will see that the only deployments are Rancher MCM-related workloads. As we move through the workshop, we can come back here to see the additional deployments.
+In the menu, under **`Workload`**, click the **`Deployments`** menu item. Here are all the deployments running on our cluster. If you don't see any deployments, you may have the `default` Kubernetes namespace selected. By default there are no deployments in the Kubernetes default namespace of our brand-new cluster. Change the drop-down at the top of the screen to select `All Namespaces`. If you are familiar with RKE2 or Rancher, you will see that the only deployments are Rancher MCM-related workloads. As we move through the workshop, we can come back here to see the additional deployments.
 
-*A Kubernetes **deployment** is a resource object that provides a declarative configuration to containerized applications and allows you to describe an applications lifecycle.*
+_A Kubernetes **deployment** is a resource object that provides a declarative configuration to containerized applications and allows you to describe an applications lifecycle._
 
 ![rancher-manager-deployments](/static/images/content/21-rancher-deployments.png)
 
-Under the same **`Workload`** menu, let's click the **`Pods`** menu item. Here we are able to see all the individual pods running on our cluster. If you were paying attention to the names of the deployments, you will see there is related pods. Feel free to click on one of the pods and investigate all the information that Rancher provides you.
+Under the same **`Workload`** menu, click the **`Pods`** menu item. Here you can see all the individual pods running on our cluster. If you were paying attention to the names of the deployments, you will see each deployment consists of pods. Select one of the pods to see more pod details.
 
-*A Kubernetes **pod** is a resource object made up of one or more containers. Pods can contain a single container or multiple tightly coupled containers.*
+_A Kubernetes **pod** is a resource object made up of one or more containers. Pods can contain a single container or multiple tightly coupled containers._
 
 ![rancher-manager-pods](/static/images/content/21-rancher-pods.png)
 
-Instead of going through all the **`Workload`** items in the menu, let's head over to **`Service Discovery`** and click the **`Services`** menu item. Here we are able to see all the services inside of your cluster. Let's take a look at the **`rancher`** service. You will notice that some of the services have the same name as the pods they forward traffic to, which is set in the `Selector` column.
+Next, navigate to **`Service Discovery`** and click the **`Services`** menu item. Here you can see all the services inside the cluster. Let's take a look at the **`rancher`** service. You will notice that some of the services have the same name as the pods they forward traffic to. The pods to forward traffic to are selected by the value in the `Selector` column.
 
-*A Kubernetes **service** is a resource object for exposing a network application that is running as one or more Pods in your cluster by abstracting away manually configuration.*
+_A Kubernetes **service** is a resource object for exposing a network application that is running as one or more Pods in your cluster by abstracting away manually configuration._
 
 ![rancher-manager-services](/static/images/content/21-rancher-services.png)
 
-Next let's take a look at one of the most popular features of the Rancher Multi-Cluster Manager. On the left menu, click on the **`Apps`** menu item. 
+Next we will take a look at the application management feature of the Rancher Multi-Cluster Manager. On the left menu, click on the **`Apps`** menu item.
 
-This is the Rancher App Catalog, which provides intergrated and improved Helm Charts aka "Rancher Charts" for the most popular Kubernetes applications. You will likely recognize some of the popular products and projects. Developer can also add their own Helm Charts to the Rancher App Catalog so user and deployment teams are able to deploy them easily.
+This is the Rancher App Catalog, which provides an interface for managing popular Kubernetes application via Helm Charts. You will likely recognize some of the popular products and projects. Developers can also add their own Helm Charts to the Rancher App Catalog so users and deployment teams can deploy them easily.
 
 ![rancher-manager-app-catalog](/static/images/content/21-rancher-app-catalog.png)
 
-Rancher has a few ways for your teams is deploy applications. Right from the console, you are able to deploy from the App Catalog, use the included kubectl shell, or by manually importing a yaml. Additionally, you are able to use Rancher's GitOps tool, known as Fleet, which we will get into more later in the workshop. Let's take a look at some additional ways to deploy applications below:
+Rancher provides multiple ways for teams to deploy applications. From the console you can deploy from the App Catalog, use the included kubectl shell, or manually import a chart in yaml format. Additionally, you can use Fleet, a GitOps tool, which we will explore later in the workshop. You can see a few additional ways to deploy applications below:
 
 ![rancher-manager-kubectl-shell](/static/images/content/21-rancher-kubectl-shell.png)
 
 ![rancher-manager-import-yaml](/static/images/content/21-rancher-import-yaml.png)
 
-
 ## Completed!
 
-We're done! You've just explored an RKE2 Cluster using the Rancher Multi-Cluster Manager. Feel free to take a few minutes and explore more of the features inside of the console. Then click **Next** to move on to deploy the rest of the Rancher Stack!
+We're done! We explored an RKE2 Cluster in AWS using the Rancher Multi-Cluster Manager. You can take a few more minutes to explore more of the cluster. Then click **Next** to move to the next section and deploy additional components of the Rancher Stack.
