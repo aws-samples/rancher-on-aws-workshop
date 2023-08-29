@@ -29,7 +29,7 @@ In the **`CloudFormation Console`**, click on the Rancher Manager **`Stack`**. I
 
 On the stack detail page, click on the **`Outputs`** tab. You should see the **`RancherURL`**. Open the link in a new tab to bring up the Rancher Multi-Cluster Manager web interface. If your browser presents you with a certificate warning, you can safely proceed.
 
-> The workshop environment uses self-signed certificates for learning purposes. In a production environment, always use certificates issued from a trusted Certificate Authority. [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) makes it easy to provision, manage, deploy, and renew SSL/TLS certificates.
+> The workshop environment uses self-signed certificates for learning purposes. In a production environment, always use certificates issued from a trusted public or private certificate authority. [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) makes it easy to provision, manage, deploy, and renew SSL/TLS certificates.
 
 ![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt.png)
 ![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt-detail.png)
@@ -49,7 +49,7 @@ First, enter the bootstrap password that was set during installation: **`"Pa22wo
 
 Next, verify a few items on the setup page and click **`Continue`**!
 
-- **`Server URL`** (should not need to be changed)
+- **`Server URL`** (do not update)
 - **`[ ] Allow collection of anonymous statistics to help us improve Rancher`**
 - **`[X] By checking the box, you accept the End User License Agreement & Terms & Conditions`**
 
@@ -60,14 +60,14 @@ Next, verify a few items on the setup page and click **`Continue`**!
 
 Welcome to the Rancher Multi-Cluster Manager! The starting page in the Rancher Multi-Cluster Manager provides an overview of the cluster(s) managed by this MCM cluster.
 
-Under **`Clusters`**, you should see a cluster named **`local`**. This cluster is your **`management cluster`**. As we move through the workshop, we will be creating and importing additional clusters with the Rancher Manager. These are known as **`downstream cluster(s)`**.
+Under **`Clusters`**, you should see a cluster named **`local`**. This cluster is your **`management cluster`**. As we move through the workshop, we will be creating and importing additional clusters with the Rancher Manager. These are known as **`downstream cluster(s)`**. In most production enviroments, run workload and applications on downstream clusters and reserve the management cluster only for the Rancher Multi-Cluster Manager.
 
 ![rancher-manager-home](/static/images/content/21-rancher-home.png)
 ![rancher-manager-home-detail](/static/images/content/21-rancher-home-detail.png)
 
 Go ahead and click on the **`local`** cluster and start to explore it.
 
-This is the cluster homepage, where you are able to see a overview of the entire cluster. The overview has everything from node statistics to recent cluster events to various Kubernetes resources. (Collecting the same information with **`kubectl`** commands can take significantly more effort.)
+This is the cluster homepage, where you can see a overview of the selected cluster. The overview has everything from node statistics to recent cluster events to various Kubernetes resources. (Collecting the same information with **`kubectl`** commands can take significantly more effort.)
 
 ![rancher-local-cluster-home](/static/images/content/21-rancher-local-home.png)
 

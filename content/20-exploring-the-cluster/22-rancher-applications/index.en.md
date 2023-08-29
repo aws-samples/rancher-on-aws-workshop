@@ -12,7 +12,7 @@ In the following module, you will complete the outcomes listed below:
 
 # Deploying the Rancher Applications
 
-In Exploring the Cluster, we briefly looked at the Rancher App Catalog, but now we are going dive deeper by installing two Rancher Kubernetes applications: Longhorn and NeuVector.
+In Exploring the Cluster, we briefly looked at the Rancher App Catalog. Now, we are going dive deeper by installing two core Rancher Kubernetes applications: Longhorn and NeuVector.
 
 ## Deploying Longhorn
 

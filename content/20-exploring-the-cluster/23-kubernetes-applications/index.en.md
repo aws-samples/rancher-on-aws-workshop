@@ -78,4 +78,4 @@ On the demo app interface, you are able to see both the total amount of hits on 
 
 ## Completed!
 
-We're done! We deployed a Kubernetes application using Fleet and the Rancher Multi-Cluster Manager. Let's move onto creating a Amazon EKS Cluster using `eksctl` and Cloud9!
+We're done! We deployed a Kubernetes application using Fleet and the Rancher Multi-Cluster Manager. In the next section, we will create an Amazon EKS Cluster using `eksctl` and AWS Cloud9.
