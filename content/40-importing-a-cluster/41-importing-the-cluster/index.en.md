@@ -51,15 +51,13 @@ Set a few of the configurations options to the following values:
 - **Cloud Credentials:** aws
 - **Cluster To Register:** eks-cluster
 
-![rancher-cluster-import-eks](/static/images/content/41-cluster-import-eks.png)
-
 ![rancher-cluster-import-eks-config](/static/images/content/41-cluster-import-eks-config.png)
 
 ![rancher-cluster-import-eks-cluster](/static/images/content/41-cluster-import-eks-cluster.png)
 
 ### Step 3:
 
-Once you have completed the configuration, the EKS cluster will be in the **`pending`** state. Rancher resources are now being created in the cluster that is being imported. In most cases, the cluster import will complete in less than a minute.
+Once you have completed the configuration, click the **`Register Cluster`** button. On the next page, the EKS cluster will be in a **`pending`** state. Rancher will be provisioning resources in the cluster that is being imported. In most cases, the cluster import will complete in less than a minute, but can take a few minutes.
 
 ![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-success.png)
 
