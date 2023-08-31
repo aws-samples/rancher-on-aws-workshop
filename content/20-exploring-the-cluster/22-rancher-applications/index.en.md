@@ -30,18 +30,18 @@ Here are all the relevant details for the **`Longhorn`** chart, like the Current
 
 ### Step 3 (Longhorn):
 
-Before we install Longhorn, we have to make sure we have the prerequistes installed on each node in the cluster. Longhorn requires **`nfs`** and **`iscsi`**. Longhorn provides **`kubectl`** deployment manifests to install each package.
+Before we install Longhorn, we have to make sure we have the prerequistes installed on each node in the cluster. Longhorn requires **`nfs`** and **`iscsi`** under the hood. Longhorn provides deployment scripts via **`kubectl`** to install the dependencies.
 
-To install the dependencies, run these commnads using the kubectl shell provided by the Rancher Manager. On your keyboard, click the **`backtick`** key.
+To install the dependencies, we are going to run these commnads using the kubectl shell provided by the Rancher Manager. On your keyboard, click the **`backtick`** key.
 
 ![rancher-app-longhorn-kubectl](/static/images/content/22-app-longhorn-kubectl.png)
 
-Once the kubectl shell opens, copy and paste the two commands below. Once they complete, you can close the kubectl shell.
+Once the kubectl shell opens, copy and paste the codeblock below and press **`enter`**. Once they complete, you can close the kubectl shell!
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.4.2/deploy/prerequisite/longhorn-iscsi-installation.yaml
+kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/master/deploy/prerequisite/longhorn-iscsi-installation.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.4.2/deploy/prerequisite/longhorn-nfs-installation.yaml
+kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/master/deploy/prerequisite/longhorn-nfs-installation.yaml
 ```
 
 ![rancher-app-longhorn-kubectl-complete](/static/images/content/22-app-longhorn-kubectl-complete.png)
