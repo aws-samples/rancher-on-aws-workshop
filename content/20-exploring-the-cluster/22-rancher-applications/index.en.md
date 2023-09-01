@@ -85,7 +85,7 @@ Feel free to explore Longhorn more, and then continue on to deploy NeuVector.
 The Rancher App Manager installation process for NeuVector is very similar to the one for Longhorn. In the left side menu, under **`Apps`**, click **`Charts`**. On the right hand side, you will see a
 filter box. Search for **`neuvector`**.
 
-You will see two Neuvector chart options. Click on the **`blue`** box for the **`NeuVector`** Chart.
+You will see two Neuvector chart options. Click on the **`NeuVector`** Chart.
 
 ![rancher-app-catalog-neuvector](/static/images/content/22-app-neuvector-search.png)
 
