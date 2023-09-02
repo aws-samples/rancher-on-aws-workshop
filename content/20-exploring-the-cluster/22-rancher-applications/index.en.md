@@ -184,7 +184,7 @@ Click on **`Install`**, then click **`Next`**, and finally click **`Install`** t
 
 In the left menu, you should now see **`Monitoring`**. Click on it to open it.
 
-Weclome to the Rancher Monitoring stack! By default, the stack deploys the Prometheus Operator, Prometheus Adapter, Grafana, AlertManager, and other additional manifests and resources. It allows users to monitor their Kubernetes clusters with Prometheus, view and visualize metrics with Grafana, and set up alerts and notifications with AlertManager.
+Weclome to the Rancher Monitoring stack! By default, the stack deploys the Prometheus Operator and Adapter, Grafana, AlertManager, and other additional manifests and resources. It allows users to monitor their Kubernetes clusters with Prometheus, view and visualize metrics with Grafana, and set up alerts and notifications with AlertManager.
 
 ![rancher-app-monitoring-menu](/static/images/content/22-app-monitoring-menu.png)
 
@@ -198,10 +198,7 @@ Test
 
 Test
 
-### Step 7 (Monitoring):
-
-Test
-
+![rancher-app-monitoring-prometheus](/static/images/content/22-app-monitoring-prometheus.png)
 
 ## Completed!
 
