@@ -55,7 +55,9 @@ Welcome to Cloud9!
 ## Step 2: Create the Amazon MemoryDB for Redis Cluster
 
 <details>
-<summary>Using AWS Workshop Studio</summary>
+<summary>For Workshops at AWS Events</summary>
+
+::::expand{header="For Workshops at AWS Events"}
 
 ### Download the install-ack-sc-memdb.sh script
 
@@ -74,10 +76,14 @@ curl ':assetUrl{path="install-ack-sc-memdb.sh" source=s3}' --output ~/install-ac
 
 ![cloud9-ackScript-download](/static/images/content/cloud9/install-ACK-download.png)
 
+::::
+
 </details>
 
 <details>
-<summary>Using Personal AWS Account</summary>
+<summary>For Use Outside AWS Events</summary>
+
+::::expand{header="For Use Outside AWS Events"}
 
 ### Download the install-ack-sc-memdb.sh script
 
@@ -115,6 +121,8 @@ cp environment/install-acl-sc-memdb.sh .
 ```
 
 ![cloud9-setupScript-download](/static/images/content/cloud9/setupScripts-ACK.png)
+
+::::
 
 </details>
 
