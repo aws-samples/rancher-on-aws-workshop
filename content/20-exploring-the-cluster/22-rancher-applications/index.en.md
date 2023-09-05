@@ -190,13 +190,15 @@ Weclome to the Rancher Monitoring stack! By default, the stack deploys the Prome
 
 ### Step 5 (Monitoring):
 
-Test
+In the middle of the dashboard, click on **`Grafana`**.
+
+This should open the **`Grafana Dashboard`** in a new tab. Here you will find preconfigured and default dashboard of important cluster and application metrics. Most users will use the preconfigured and default dashboards as examples to create their own dashboards!
 
 ![rancher-app-monitoring-grafana](/static/images/content/22-app-monitoring-grafana.png)
 
 ### Step 6 (Monitoring):
 
-Test
+Head back to the Rancher Manager and Monitoring. In the middle of the dashboard, click on **`Prometheus Targets`**. Here you will find the preconfigured targets and endpoints that Prometheus is monitoring out of the box. Feel free to explore the rest of Prometheus using the top navigation.
 
 ![rancher-app-monitoring-prometheus](/static/images/content/22-app-monitoring-prometheus.png)
 
