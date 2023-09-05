@@ -12,7 +12,7 @@ In the following module, you will complete the outcomes listed below:
 
 # Deploying the Rancher Applications
 
-In Exploring the Cluster, we briefly looked at the Rancher App Catalog. Now, we are going dive deeper by installing two core Rancher Kubernetes applications: Longhorn and NeuVector.
+In Exploring the Cluster, we briefly looked at the Rancher App Catalog. Now, we are going dive deeper into it by installing three Rancher Kubernetes applications: Longhorn, NeuVector, and Monitoring.
 
 ## Deploying Longhorn
 
@@ -160,6 +160,48 @@ Another important feature of NeuVector is vulnerability scanning, detection, and
 
 ![rancher-neuvector-vulnerabilities](/static/images/content/22-neuvector-vulnerabilities.png)
 
+## Deploying Monitoring
+
+### Step 1 (Monitoring):
+
+In the left side menu, under **`Apps`**, click **`Charts`**. On the right hand side, you will see a filter box. Search for **`monitoring`**. Click the blue box to select the **`Monitoring`** chart.
+
+![rancher-app-catalog-monitoring](/static/images/content/22-app-monitoring-search.png)
+
+### Step 2 (Monitoring):
+
+Here are all the relevant details for the **`Monitoring`** chart, like the Current Version or the Helm Chart README.
+
+![rancher-app-monitoring-setup](/static/images/content/22-app-monitoring-setup.png)
+
+### Step 3 (Monitoring):
+
+Click on **`Install`**, then click **`Next`**, and finally click **`Install`** to complete the installation. You shouldn't need to change any configuration options.
+
+![rancher-app-longhorn-installed](/static/images/content/22-app-monitoring-installed.png)
+
+### Step 4 (Monitoring):
+
+In the left menu, you should now see **`Monitoring`**. Click on it to open it.
+
+Weclome to the Rancher Monitoring stack! By default, the stack deploys the Prometheus Operator and Adapter, Grafana, AlertManager, and other additional manifests and resources. It allows users to monitor their Kubernetes clusters with Prometheus, view and visualize metrics with Grafana, and set up alerts and notifications with AlertManager.
+
+![rancher-app-monitoring-menu](/static/images/content/22-app-monitoring-menu.png)
+
+### Step 5 (Monitoring):
+
+In the middle of the dashboard, click on **`Grafana`**.
+
+This should open the **`Grafana Dashboard`** in a new tab. Here you will find preconfigured and default dashboard of important cluster and application metrics. Most users will use the preconfigured and default dashboards as examples to create their own dashboards!
+
+![rancher-app-monitoring-grafana](/static/images/content/22-app-monitoring-grafana.png)
+
+### Step 6 (Monitoring):
+
+Head back to the Rancher Manager and Monitoring. In the middle of the dashboard, click on **`Prometheus Targets`**. Here you will find the preconfigured targets and endpoints that Prometheus is monitoring out of the box. Feel free to explore the rest of Prometheus using the top navigation.
+
+![rancher-app-monitoring-prometheus](/static/images/content/22-app-monitoring-prometheus.png)
+
 ## Completed!
 
-We're done! We deployed and explored Longhorn and NeuVector using the Rancher Multi-Cluster Manager using the Rancher App Manager. Click **Next** to move on to deploy additional Kubernetes applications using Rancher.
+We're done! We deployed and explored Longhorn, NeuVector, and Monitoring using the Rancher Multi-Cluster Manager App Catalog. Click **Next** to move on to deploy additional example Kubernetes applications using Rancher.
