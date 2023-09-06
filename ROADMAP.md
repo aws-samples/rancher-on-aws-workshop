@@ -7,8 +7,8 @@ This document describes the current status and the upcoming milestones of the Ra
 | Status |                                          Milestone                                          | Goals |     Type      |     ETA     |
 | :----: | :-----------------------------------------------------------------------------------------: | :---: | :-----------: | :---------: |
 |   ✔    | **[Determine Improvements and Launch Roadmap](#determine-improvements-and-launch-roadmap)** | 2 / 2 | `enhancement` | Jul 21 2023 |
-|   🚀   |           **[Improve Screenshot Highlighting](#improve-screenshot-highlighting)**           | 3 / 6 | `enhancement` | Sep 01 2023 |
-|   ✔   |  **[Cleanup Workshop Formatting and Language](#cleanup-workshop-formatting-and-language)**   | 2 / 2 | `enhancement` | Sep 01 2023 |
+|   ✔    |           **[Improve Screenshot Highlighting](#improve-screenshot-highlighting)**           | 6 / 6 | `enhancement` | Sep 01 2023 |
+|   ✔    |  **[Cleanup Workshop Formatting and Language](#cleanup-workshop-formatting-and-language)**  | 2 / 2 | `enhancement` | Sep 01 2023 |
 |   🚀   |          **[Add Additional Demo Applications](#add-additional-demo-applications)**          | 0 / 3 |   `feature`   | Sep 29 2023 |
 |   🚀   |  **[Implement Support for Additional Regions](#implement-support-for-additional-regions)**  | 0 / 4 |   `feature`   | Sep 29 2023 |
 |   🚀   |      **[Cloud9 Optimization and Improvements](#cloud9-optimization-and-improvements)**      | 0 / 4 | `enhancement` | Sep 29 2023 |
@@ -30,12 +30,21 @@ GitHub Issue(s): [Issue 3](https://github.com/aws-samples/rancher-on-aws-worksho
 
 | Status |                Issue                 |           Branch           |   Assignee  |
 | :----: | :----------------------------------: | :------------------------: | :--------:  |
-|   ✔    |      Introduction Highlighting       |           `main`           | @zackbradys |
-|   ❌   |  Exploring the Cluster Highlighting  | `screenshot-highlightning` | @zackbradys |
-|   ✔    |   Creating a Cluster Highlighting    |           `main`           |  @marshkkm  |
-|   ❌   |   Importing a Cluster Highlighting   | `screenshot-highlightning` | @zackbradys |
-|   ❌   | Additional Integrations Highlighting | `screenshot-highlightning` |  @marshkkm  |
-|   ✔    |       Conclusion Highlighting        |           `main`           | @zackbradys |
+|    ✔   |      Introduction Highlighting       |           `main`           | @zackbradys |
+|    ✔   |  Exploring the Cluster Highlighting  | `screenshot-highlightning` | @zackbradys |
+|    ✔   |   Creating a Cluster Highlighting    |           `main`           |  @marshkkm  |
+|    ✔   |   Importing a Cluster Highlighting   | `screenshot-highlightning` | @zackbradys |
+|    ✔   | Additional Integrations Highlighting | `screenshot-highlightning` |  @marshkkm  |
+|    ✔   |       Conclusion Highlighting        |           `main`           | @zackbradys |
+
+### Cleanup Workshop Formatting and Language
+
+GitHub Issue(s): [Issue 51](https://github.com/aws-samples/rancher-on-aws-workshop/issues/51)
+
+| Status |                Issue                   |          Branch             | Assignee |
+| :----: | :------------------------------------: | :-------------------------: | :------: |
+|   ✔   |      Cleanup Workshop Formatting        | `erdevri/51-clean-up-prose` |  @evdevr |
+|   ✔   | Modifying Language and Correct Workshop | `erdevri/51-clean-up-prose` |  @evdevr |
 
 ### Add Additional Demo Applications
 
@@ -46,15 +55,6 @@ GitHub Issue(s): [Issue 43](https://github.com/aws-samples/rancher-on-aws-worksh
 |   ❌   |       |   ``   |          |
 |   ❌   |       |   ``   |          |
 |   ❌   |       |   ``   |          |
-
-### Cleanup Workshop Formatting and Language
-
-GitHub Issue(s): [Issue 51](https://github.com/aws-samples/rancher-on-aws-workshop/issues/51)
-
-| Status |                Issue                   |          Branch             | Assignee |
-| :----: | :------------------------------------: | :-------------------------: | :------: |
-|   ✔   |      Cleanup Workshop Formatting        | `erdevri/51-clean-up-prose` |  @evdevr |
-|   ✔   | Modifying Language and Correct Workshop | `erdevri/51-clean-up-prose` |  @evdevr |
 
 ### Implement Support for Additional Regions
 
