@@ -8,7 +8,7 @@ weight: 11
 ## Workshop Topics
 
 - Deploying and Exploring Rancher on AWS
-- Deploying Longhorn and NeuVector using the Rancher Multi-Cluster Manager
+- Deploying Longhorn, NeuVector, and Monitoring using the Rancher Multi-Cluster Manager
 - Creating a EC2 RKE2 Cluster using the Rancher Multi-Cluster Manager
 - Creating a EKS Cluster using AWS Cloud9 and `eksctl`
 - Importing a EKS Cluster using the Rancher Multi-Cluster Manager
@@ -29,7 +29,7 @@ The `AdministratorAccess` managed policy in IAM provides sufficient permissions,
 **Total Duration of the workshop is 3 Hours.**
 
 - Exploring a Rancher RKE2 Kubernetes cluster on EC2 Instances. (30m)
-- Deploying Longhorn and NeuVector using the Rancher Multi-Cluster Manager. (15m)
+- Deploying Longhorn, NeuVector, and Monitoring using the Rancher Multi-Cluster Manager. (15m)
 - Deploying Kubernetes Demo Applications using the RRancher Multi-Cluster Manager. (15m)
 - Short Break! (15m)
 - Creating a Amazon EKS Kubernetes cluster on EC2 Instances. (30m)
