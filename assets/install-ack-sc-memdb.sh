@@ -95,7 +95,7 @@ echo '================= Create MemoryDB Subnet Group ================='
 
 VPC_ID=$(aws --region $AWS_REGION eks describe-cluster --name $EKS_CLUSTER_NAME --query cluster.resourcesVpcConfig.vpcId)
 SUBNET_IDS=$(aws --region $AWS_REGION ec2 describe-subnets \
-  --filters "Name=vpc-id,Values=${VPC_ID}" \
+  --filters "Name=vpc-id,Values=${VPC_ID}" "Name=availability-zone,Values=us-east-1a,us-east-1d,us-east-1c"\
   --query 'Subnets[*].SubnetId' \
   --output text
 )
