@@ -90,9 +90,8 @@ Here you can see all the available options you can use to configure cluster crea
   - **Zone:** A
   - **Instance Type:** m5.xlarge
   - **Root Disk Size:** 128
-  - **VPC/Subnet:** ...-private-1
-    - Use the Subnet ending with _private-1_
-  - **Show Advanced Drop-Down:** Use only private address
+  - **VPC/Subnet:** ___-private-1
+  - **Show Advanced** *(drop down):* Use only private address
 
 Add a new pool with the plus sign on the left pool list panel.
 
@@ -104,10 +103,8 @@ Add a new pool with the plus sign on the left pool list panel.
   - **Zone:** A
   - **Instance Type:** m5.xlarge
   - **Root Disk Size:** 128
-  - VPC/Subnet: ...private-1
-  - **VPC/Subnet:** ...-private-1
-    - Use the Subnet ending with _private-1_
-  - **Show Advanced Drop-Down:** Use only private address
+  - **VPC/Subnet:** ___-private-1
+  - **Show Advanced** *(drop down):* Use only private address
 
 ![rancher-cluster-create-ec2-pools](/static/images/content/31-cluster-create-ec2-pools.png)
 
