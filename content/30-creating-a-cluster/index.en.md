@@ -10,3 +10,5 @@ weight: 30
 ## Creating the RKE2 Cluster Diagram
 
 ![creating-rke2-cluster-diagram](/static/images/creating-rke2-cluster-diagram.png)
+
+To continue, click **Next** to head to the **Creating the Cluster(s)!**

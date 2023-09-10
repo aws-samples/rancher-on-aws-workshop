@@ -16,4 +16,4 @@ In this workshop, we will be using the Rancher Product Stack on the AWS Cloud to
 
 ![workshop-overview-diagram](/static/images/workshop-overview-diagram.png)
 
-To get started, click **Next** to head to the **Workshop Overview!**
+To continue, click **Next** to head to the **Workshop Overview!**
