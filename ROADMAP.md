@@ -19,7 +19,7 @@ This will allow us to then identify our initial improvements or issues and the l
 
 GitHub Issue(s): [Issue 46](https://github.com/aws-samples/rancher-on-aws-workshop/issues/46)
 
-| Status |          Name           |        Branch         |   Assignee  |
+| Status |          Name           |        Branch         |  Assignee   |
 | :----: | :---------------------: | :-------------------: | :---------: |
 |   ✔    | Determine Rancher Goals | `zackbradys-issue-46` | @zackbradys |
 |   ✔    |   Determine AWS Goals   | `zackbradys-issue-46` |  @marshkkm  |
@@ -28,23 +28,23 @@ GitHub Issue(s): [Issue 46](https://github.com/aws-samples/rancher-on-aws-worksh
 
 GitHub Issue(s): [Issue 3](https://github.com/aws-samples/rancher-on-aws-workshop/issues/3)
 
-| Status |                Issue                 |           Branch           |   Assignee  |
-| :----: | :----------------------------------: | :------------------------: | :--------:  |
-|    ✔   |      Introduction Highlighting       |           `main`           | @zackbradys |
-|    ✔   |  Exploring the Cluster Highlighting  | `screenshot-highlightning` | @zackbradys |
-|    ✔   |   Creating a Cluster Highlighting    |           `main`           |  @marshkkm  |
-|    ✔   |   Importing a Cluster Highlighting   | `screenshot-highlightning` | @zackbradys |
-|    ✔   | Additional Integrations Highlighting | `screenshot-highlightning` |  @marshkkm  |
-|    ✔   |       Conclusion Highlighting        |           `main`           | @zackbradys |
+| Status |                Issue                 |           Branch           |  Assignee   |
+| :----: | :----------------------------------: | :------------------------: | :---------: |
+|   ✔    |      Introduction Highlighting       |           `main`           | @zackbradys |
+|   ✔    |  Exploring the Cluster Highlighting  | `screenshot-highlightning` | @zackbradys |
+|   ✔    |   Creating a Cluster Highlighting    |           `main`           |  @marshkkm  |
+|   ✔    |   Importing a Cluster Highlighting   | `screenshot-highlightning` | @zackbradys |
+|   ✔    | Additional Integrations Highlighting | `screenshot-highlightning` |  @marshkkm  |
+|   ✔    |       Conclusion Highlighting        |           `main`           | @zackbradys |
 
 ### Cleanup Workshop Formatting and Language
 
 GitHub Issue(s): [Issue 51](https://github.com/aws-samples/rancher-on-aws-workshop/issues/51)
 
-| Status |                Issue                   |          Branch             | Assignee |
-| :----: | :------------------------------------: | :-------------------------: | :------: |
-|   ✔   |      Cleanup Workshop Formatting        | `erdevri/51-clean-up-prose` |  @evdevr |
-|   ✔   | Modifying Language and Correct Workshop | `erdevri/51-clean-up-prose` |  @evdevr |
+| Status |                  Issue                  |           Branch            | Assignee |
+| :----: | :-------------------------------------: | :-------------------------: | :------: |
+|   ✔    |       Cleanup Workshop Formatting       | `erdevri/51-clean-up-prose` | @evdevr  |
+|   ✔    | Modifying Language and Correct Workshop | `erdevri/51-clean-up-prose` | @evdevr  |
 
 ### Add Additional Demo Applications
 
@@ -60,7 +60,7 @@ GitHub Issue(s): [Issue 43](https://github.com/aws-samples/rancher-on-aws-worksh
 
 GitHub Issue(s):
 
-| Status |                  Issue                   | Branch |   Assignee  |
+| Status |                  Issue                   | Branch |  Assignee   |
 | :----: | :--------------------------------------: | :----: | :---------: |
 |   ✔    | Build and Generate AWS AMI for us-west-2 | `main` | @zackbradys |
 |   ✔    |        Test AWS AMI with Workshop        | `main` | @zackbradys |

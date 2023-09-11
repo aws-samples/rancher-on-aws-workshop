@@ -11,10 +11,10 @@ metadata:
   name: ${EKS_CLUSTER_NAME}
   region: ${AWS_REGION}
   version: "1.25"
-  
+
 iam:
   serviceRoleARN: ${ClusterRoleArn}
-  
+
 nodeGroups:
   - name: nodeGrp-1
     instanceType: m5.large

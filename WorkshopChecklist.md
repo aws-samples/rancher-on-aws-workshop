@@ -41,7 +41,7 @@
 - Workshop Prerequisites
   - Basic understanding of AWS, Rancher, Kubernetes, and Terminal/CLI (Command Line Interface).
   - AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
-  - AWS IAM Account with *elevated privileges* allowing you to interact with various AWS Services.
+  - AWS IAM Account with _elevated privileges_ allowing you to interact with various AWS Services.
 - Workshop Costs
   - Total Cost of the Workshop is less than $10.
   - Infers running the workshop for the Expected Duration of 3 hours.
