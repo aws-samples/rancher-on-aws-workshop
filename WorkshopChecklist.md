@@ -13,7 +13,7 @@
 
 - Topics Covered
   - Deploying and Exploring the Rancher Ecosystem on AWS
-  - Deploying Longhorn and NeuVector using the Rancher Multi-Cluster Manager
+  - Deploying Longhorn, NeuVector, and Monitoring using the Rancher Multi-Cluster Manager
   - Creating a EC2 RKE2 Cluster using the Rancher Multi-Cluster Manager
   - Creating a EKS Cluster using AWS Cloud9 and EKSCTL
   - Importing a EKS Cluster using the Rancher Multi-Cluster Manager
@@ -21,7 +21,7 @@
 - Expected Duration
   - Total (3 Hours)
   - Exploring a Rancher RKE2 Kubernetes cluster on EC2 Instances. (30m)
-  - Deploying Longhorn and NeuVector using the Rancher Multi-Cluster Manager. (15m)
+  - Deploying Longhorn, NeuVector, and Monitoring using the Rancher Multi-Cluster Manager. (15m)
   - Deploying Kubernetes Demo Applications using the RRancher Multi-Cluster Manager. (15m)
   - Short Break! (15m)
   - Creating a AWS EKS Kubernetes cluster on EC2 Instances. (30m)
@@ -41,7 +41,7 @@
 - Workshop Prerequisites
   - Basic understanding of AWS, Rancher, Kubernetes, and Terminal/CLI (Command Line Interface).
   - AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
-  - AWS IAM Account with *elevated privileges* allowing you to interact with various AWS Services.
+  - AWS IAM Account with _elevated privileges_ allowing you to interact with various AWS Services.
 - Workshop Costs
   - Total Cost of the Workshop is less than $10.
   - Infers running the workshop for the Expected Duration of 3 hours.
@@ -51,7 +51,7 @@
 - [x] Confirm Workshop Infrastructure works
 - [x] Confirm Workshop works in customer account. If so, provide setup instructions. (N/A)
 - [x] Confirm Workshop has account login information and works
-- [x] State if the Workshop only works with Event Engine - CFTs will be publicly available, allowing to be ran outside of Event Engine   
+- [x] State if the Workshop only works with Event Engine - CFTs will be publicly available, allowing to be ran outside of Event Engine
 - [x] State any computer hardware prerequisite setup information (laptops, etc.) An internet connected machine
 - [x] State if the Workshop only works in specific regions - Only us-east-1 at the moment
 

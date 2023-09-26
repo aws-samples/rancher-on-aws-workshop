@@ -17,6 +17,8 @@ additionalLinks:
     link: https://docs.longhorn.io
   - title: NeuVector (Security)
     link: https://open-docs.neuvector.com
+  - title: Rancher Monitoring
+    link: https://ranchermanager.docs.rancher.com/pages-for-subheaders/monitoring-and-alerting
   - title: Fleet (GitOps)
     link: https://fleet.rancher.io
 
@@ -26,37 +28,36 @@ awsAccountConfig:
   #   - `WorkshopStudio`: Accounts will be provisioned for the event by Workshop Studio.
   #   - `CustomerProvided`: Customer is responsible for using their own accounts.
   # Note: An event can be configured to have a mix of values mentioned above.
-  accountSources: 
+  accountSources:
     - WorkshopStudio
     - CustomerProvided
 
   # List of valid IAM service linked roles that need to be provisioned for accounts provisioned for this event.
   # Service linked roles will be automatically created by Workshop Studio when provisioning accounts.
-#  serviceLinkedRoles:
-#    - ec2.amazonaws.com
+  #  serviceLinkedRoles:
+  #    - ec2.amazonaws.com
 
-# The following configuration is specific to the ParticipantRole's scoped permissions.
+  # The following configuration is specific to the ParticipantRole's scoped permissions.
   # This role is assumed by Participants when accessing an account provisioned by Workshop Studio.
-  participantRole: 
-
+  participantRole:
     # List of paths to files containing valid IAM policies that are to be attached to the account's ParticipantRole.
     # Paths need to be relative to the root of the content's repository and must be located in the `static/` directory.
     # Note: At this moment, only IAM policies defined in JSON format are supported.
-    iamPolicies: 
+    iamPolicies:
       - static/iam-policy.json
 
     # List of valid IAM managed policies to be attached to the account's ParticipantRole. Only AWS managed policies are supported at this moment (https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)
-    managedPolicies: 
+    managedPolicies:
       - "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
       - "arn:aws:iam::aws:policy/AWSCloudFormationReadOnlyAccess"
       - "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
       - "arn:aws:iam::aws:policy/IAMReadOnlyAccess"
       - "arn:aws:iam::aws:policy/AWSCloud9Administrator"
-    
+
     # List of valid trusted principals to be referenced in the ParticipantRole's trust policy
     trustedPrincipals:
       # List of AWS service principals
-      service: 
+      service:
         - secretsmanager.amazonaws.com
 
   # If set to `true`, an EC2 KeyPair called `ws-default-keypair` will be created in the AWS Account and the private key material
@@ -65,7 +66,6 @@ awsAccountConfig:
 
   # Defines a set of accessible and deployable regions for events leveraging this content.
   regionConfiguration:
-
     # The minimum number of regions an event operator must choose. Valid range: 1 to 3
     minAccessibleRegions: 1
 
@@ -73,9 +73,9 @@ awsAccountConfig:
     maxAccessibleRegions: 1
 
     # [OPTIONAL] Regions defined under `accessibleRegions` are regions that can be made accessible to Participants.
-      # Note:
-      #  - No resources will be deployed to these regions by Workshop Studio.
-      #  - If deployableRegions are defined, the deployment region is accessible by participants without additional configuration.
+    # Note:
+    #  - No resources will be deployed to these regions by Workshop Studio.
+    #  - If deployableRegions are defined, the deployment region is accessible by participants without additional configuration.
     accessibleRegions:
       # Note: Although all keys below are optional, you must define at least one of the three keys if accessibleRegions is defined.
 
@@ -83,8 +83,8 @@ awsAccountConfig:
       required:
         - us-east-1
 
-  # Set of regions where the configured CloudFormation templates will be deployed to.
-      # Note: Only 1 deployment region is supported currently.
+    # Set of regions where the configured CloudFormation templates will be deployed to.
+    # Note: Only 1 deployment region is supported currently.
     deployableRegions:
       # Note: Although all keys below are optional, you must define at least one of the three keys if deployableRegions is defined.
 
@@ -94,14 +94,13 @@ awsAccountConfig:
         - us-east-1
 
 infrastructure:
-  # A list of CloudFormation templates (CFTs) that are present in the content's repository. 
+  # A list of CloudFormation templates (CFTs) that are present in the content's repository.
   # These CFTs will be used by Workshop Studio's provisioning process and will be deployed to AWS accounts.
   # Note: The order of CFTs defined here will be the same order that Workshop Studio will deploy them to
   # the AWS accounts. Make sure the CFTs are in the correct order if some depend on others.
   cloudformationTemplates:
-
-      # The template's location relative to the root of the content's repo. 
-      # Note: Templates must be located in the `static/` directory
+    # The template's location relative to the root of the content's repo.
+    # Note: Templates must be located in the `static/` directory
     - templateLocation: static/rke2-eks-cluster-workshop.yaml
 
       # Friendly name for the corresponding cloudformation template.

@@ -5,8 +5,8 @@ weight: 22
 
 In the following module, you will complete the outcomes listed below:
 
-1. Use the Rancher App Catalog to deploy Longhorn and NeuVector
-2. Explore features of Longhorn and NeuVector.
+1. Use the Rancher App Catalog to deploy Longhorn, NeuVector, and Monitoring.
+2. Explore features of Longhorn, NeuVector, and Monitoring.
 
 ---
 
