@@ -18,7 +18,7 @@ weight: 11
 
 - Basic Knowledge of Kubernetes and Containers.
 - Basic Knowledge of AWS and Cloud Infrastructure.
-- (Helpful) Basic Knowledge of Rancher, RKE2, and AWS EKS.
+- (Helpful) Basic Knowledge of Rancher, RKE2, EKS, and Cloud9.
 
 <details>
 <summary>For Workshops at AWS Events</summary>
@@ -46,7 +46,7 @@ weight: 11
 
 </details>
 
-## Table of Contents
+## Workshop Expected Duration
 
 **Total Duration of the workshop is 3 Hours.**
 

@@ -16,7 +16,7 @@ Learn how to easily deploy and manage Kubernetes with Rancher on the AWS Cloud!
 
 - Basic Knowledge of Kubernetes and Containers.
 - Basic Knowledge of AWS and Cloud Infrastructure.
-- (Helpful) Basic Knowledge of Rancher, RKE2, and AWS EKS.
+- (Helpful) Basic Knowledge of Rancher, RKE2, EKS, and Cloud9.
 
 <details>
 <summary>For Workshops at AWS Events</summary>

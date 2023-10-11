@@ -17,7 +17,7 @@ interactive workshop in the **[AWS Workshop Studio](https://catalog.workshops.aw
 
 - Basic Knowledge of Kubernetes and Containers.
 - Basic Knowledge of AWS and Cloud Infrastructure.
-- (Helpful) Basic Knowledge of Rancher, RKE2, and AWS EKS.
+- (Helpful) Basic Knowledge of Rancher, RKE2, EKS, and Cloud9.
 
 ## Table of Contents
 
