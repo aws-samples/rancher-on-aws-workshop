@@ -23,7 +23,7 @@ Learn how to easily deploy and manage Kubernetes with Rancher on the AWS Cloud!
 
 ::::expand{header="For Workshops at AWS Events"}
 
-- No additional requirements!
+- No additional requirements.
 
 ::::
 

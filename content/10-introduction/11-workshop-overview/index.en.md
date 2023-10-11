@@ -25,7 +25,7 @@ weight: 11
 
 ::::expand{header="For Workshops at AWS Events"}
 
-- No additional requirements!
+- No additional requirements.
 
 ::::
 
