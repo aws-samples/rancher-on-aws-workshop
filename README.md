@@ -15,11 +15,9 @@ interactive workshop in the **[AWS Workshop Studio](https://catalog.workshops.aw
 
 ## Requirements
 
-- Basic Knowledge of Kubernetes and AWS Infrastructure.
-- AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
-  - AWS Account with the ability to deploy into _us-east-1_.
-  - AWS Account IAM Role with _elevated privileges_ to interact with AWS Services.
-  - AWS Service Quota with at least 1 VPC, 56 vCPUs, 220 GiB Memory, and 1750 Gi of Storage.
+- Basic Knowledge of Kubernetes and Containers.
+- Basic Knowledge of AWS and Cloud Infrastructure.
+- (Helpful) Basic Knowledge of Rancher, RKE2, and AWS EKS.
 
 ## Table of Contents
 
