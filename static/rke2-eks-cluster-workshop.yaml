@@ -22,7 +22,7 @@ Parameters:
   VolumeSize:
     Description: "Volume Size for Rancher Nodes (Default: 128)"
     Type: Number
-    MinValue: '25'
+    MinValue: '32'
     Default: '128'
   VPCCidr:
     Description: "VPC CIDR - First 2 Octects Only (Default: 10.0)"
@@ -37,9 +37,10 @@ Parameters:
     Type: String
     Default: '0.0.0.0/0'
   WorkshopC9InstanceVolumeSize:
+    Description: "Volume Size for the Cloud9 Instance (Default: 32)"
     Type: Number
-    Description: The Size in GB of the Cloud9 Instance Volume.
-    Default: 32
+    MinValue: '16'
+    Default: '32'
   RancherClusterToken:
     Description: "Cluster Join Token for RKE2 Cluster (Default: Pa22word)"
     Type: String
@@ -55,18 +56,18 @@ Parameters:
     MaxLength: '50'
     NoEcho: true
   AssetsBucketName:
-    Description: AWS Workshop Studio Assets Bucket Name
+    Description: "AWS Workshop Studio Assets Bucket Name (Default: None)"
     Type: String
   AssetsBucketPrefix:
-    Description: AWS Workshop Studio Assets Bucket Prefix
+    Description: "AWS Workshop Studio Assets Bucket Prefix (Default: None)"
     Type: String
 
 Mappings:
   AWSRegionArch2AMI:
     us-east-1:
-      HVM64: ami-0952d52af14727a0c
+      HVM64: ami-09d634be7b09ca862
     us-west-2:
-      HVM64: ami-02c9e452bc50f23dc
+      HVM64: ami-07b6f00cd7f1769df
 
 Resources:
   ######
@@ -75,11 +76,11 @@ Resources:
   PlaceSecret:
     Type: AWS::SecretsManager::Secret
     Properties:
-      Description: 'Rancher user and pasword combination'
+      Description: 'Rancher Manager Username and Password'
       Name: RancherPass
       SecretString: !Sub
-       - 'username: admin, password: ${RanchPassword}'
-       - { RanchPassword: !Ref RancherBootstrapPassword }
+       - 'username: admin, password: ${RancherPassword}'
+       - { RancherPassword: !Ref RancherBootstrapPassword }
 
   #######
   # VPC #
@@ -541,7 +542,7 @@ Resources:
         BlockDeviceMappings:
           - Ebs:
               VolumeSize: !Ref 'VolumeSize'
-              VolumeType: gp2
+              VolumeType: gp3
               DeleteOnTermination: true
               Encrypted: true
             DeviceName: /dev/sda1
@@ -611,7 +612,7 @@ Resources:
         BlockDeviceMappings:
           - Ebs:
               VolumeSize: !Ref 'VolumeSize'
-              VolumeType: gp2
+              VolumeType: gp3
               DeleteOnTermination: true
               Encrypted: true
             DeviceName: /dev/sda1
@@ -769,11 +770,11 @@ Resources:
         - IpProtocol: tcp
           FromPort: '30080'
           ToPort: '30080'
-          SourceSecurityGroupId: !GetAtt 'RancherIngressELBSG.GroupId'
+          SourceSecurityGroupId: !GetAtt 'RancherIngressELBSecurityGroup.GroupId'
         - IpProtocol: tcp
           FromPort: '30443'
           ToPort: '30443'
-          SourceSecurityGroupId: !GetAtt 'RancherIngressELBSG.GroupId'
+          SourceSecurityGroupId: !GetAtt 'RancherIngressELBSecurityGroup.GroupId'
         - IpProtocol: '-1'
           FromPort: '0'
           ToPort: '65535'
@@ -800,7 +801,7 @@ Resources:
           ToPort: '9345'
           CidrIp: !Ref AllowedCidr
 
-  RancherIngressELBSG:
+  RancherIngressELBSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
       VpcId: !Ref 'RancherVPC'
@@ -856,7 +857,7 @@ Resources:
         - !Ref 'RancherPublicSubnet2'
         - !Ref 'RancherPublicSubnet3'
       SecurityGroups:
-        - !Ref 'RancherIngressELBSG'
+        - !Ref 'RancherIngressELBSecurityGroup'
       CrossZone: 'true'
       Listeners:
         - LoadBalancerPort: '80'
@@ -875,7 +876,7 @@ Resources:
   ###########
   # AWS EKS #
   ###########
-  EksAllAccessManagedPolicy:
+  EKSAllAccessManagedPolicy:
     Type: AWS::IAM::ManagedPolicy
     Properties:
       PolicyDocument:
@@ -964,7 +965,7 @@ Resources:
   EKSCTLRole:
     Type: AWS::IAM::Role
     DependsOn:
-      - EksAllAccessManagedPolicy
+      - EKSAllAccessManagedPolicy
       - IAMLimitedAccessManagedPolicy
     Properties:
       AssumeRolePolicyDocument:
@@ -981,7 +982,7 @@ Resources:
         - arn:aws:iam::aws:policy/AmazonEC2FullAccess
         - arn:aws:iam::aws:policy/AWSCloudFormationFullAccess
         - !Ref IAMLimitedAccessManagedPolicy
-        - !Ref EksAllAccessManagedPolicy
+        - !Ref EKSAllAccessManagedPolicy
 
   EKSCTLInstanceProfile:
     Type: AWS::IAM::InstanceProfile
