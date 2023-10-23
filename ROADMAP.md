@@ -9,9 +9,9 @@ This document describes the current status and the upcoming milestones of the Ra
 |   ✔    | **[Determine Improvements and Launch Roadmap](#determine-improvements-and-launch-roadmap)** | 2 / 2 | `enhancement` | Jul 21 2023 |
 |   ✔    |           **[Improve Screenshot Highlighting](#improve-screenshot-highlighting)**           | 6 / 6 | `enhancement` | Sep 01 2023 |
 |   ✔    |  **[Cleanup Workshop Formatting and Language](#cleanup-workshop-formatting-and-language)**  | 2 / 2 | `enhancement` | Sep 01 2023 |
-|   🚀   |          **[Add Additional Demo Applications](#add-additional-demo-applications)**          | 0 / 3 |   `feature`   | Sep 29 2023 |
-|   🚀   |  **[Implement Support for Additional Regions](#implement-support-for-additional-regions)**  | 0 / 4 |   `feature`   | Sep 29 2023 |
-|   🚀   |      **[Cloud9 Optimization and Improvements](#cloud9-optimization-and-improvements)**      | 0 / 4 | `enhancement` | Sep 29 2023 |
+|   🚀   |          **[Add Additional Demo Applications](#add-additional-demo-applications)**          | 0 / 3 |   `feature`   | Oct 20 2023 |
+|   🚀   |  **[Implement Support for Additional Regions](#implement-support-for-additional-regions)**  | 0 / 4 |   `feature`   | Oct 31 2023 |
+|   🚀   |      **[Cloud9 Optimization and Improvements](#cloud9-optimization-and-improvements)**      | 0 / 4 | `enhancement` | Nov 30 2023 |
 
 ### Determine Improvements and Launch Roadmap
 
@@ -50,11 +50,13 @@ GitHub Issue(s): [Issue 51](https://github.com/aws-samples/rancher-on-aws-worksh
 
 GitHub Issue(s): [Issue 43](https://github.com/aws-samples/rancher-on-aws-workshop/issues/43)
 
-| Status | Issue | Branch | Assignee |
-| :----: | :---: | :----: | :------: |
-|   ❌   |       |   ``   |          |
-|   ❌   |       |   ``   |          |
-|   ❌   |       |   ``   |          |
+| Status |               Issue               |         Branch         |  Assignee   |
+| :----: | :-------------------------------: | :--------------------: | :---------: |
+|   ❌   |     Update Existing Demo App      | `zackbradys-demo-apps` | @zackbradys |
+|   ❌   | Update Exisiting Fleet Deployment | `zackbradys-demo-apps` | @zackbradys |
+|   ❌   |  Add Additional Demo Application  | `zackbradys-demo-apps` | @zackbradys |
+|   ❌   | Update and Test Fleet Deployments | `zackbradys-demo-apps` | @zackbradys |
+|   ❌   | Validate and Test Both Demo Apps  | `zackbradys-demo-apps` | @zackbradys |
 
 ### Implement Support for Additional Regions
 
@@ -64,6 +66,7 @@ GitHub Issue(s):
 | :----: | :--------------------------------------: | :----: | :---------: |
 |   ✔    | Build and Generate AWS AMI for us-west-2 | `main` | @zackbradys |
 |   ✔    |        Test AWS AMI with Workshop        | `main` | @zackbradys |
+|   ✔    |     Test Cloudformation with AWS AMI     | `main` | @zackbradys |
 |   ❌   |                                          |   ``   |             |
 |   ❌   |                                          |   ``   |             |
 |   ❌   |                                          |   ``   |             |
@@ -74,6 +77,8 @@ GitHub Issue(s):
 
 | Status | Issue | Branch | Assignee |
 | :----: | :---: | :----: | :------: |
+|   ❌   |       |   ``   |          |
+|   ❌   |       |   ``   |          |
 |   ❌   |       |   ``   |          |
 |   ❌   |       |   ``   |          |
 |   ❌   |       |   ``   |          |
