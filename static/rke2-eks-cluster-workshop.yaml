@@ -4,28 +4,26 @@ Description: RKE2 Kubernetes/Rancher Manager with EKS Cluster CloudFormation Tem
 Metadata:
   AWS::CloudFormation::Interface:
     ParameterGroups:
-      -
-        Label:
-          default: "AWS Configuration Options"
+      - Label:
+          default: 'AWS Configuration Options'
         Parameters:
           - VolumeSize
           - VPCCidr
           - AllowedCidr
-      -
-        Label:
-          default: "Rancher Configuration Options"
+      - Label:
+          default: 'Rancher Configuration Options'
         Parameters:
           - RancherClusterToken
           - RancherBootstrapPassword
 
 Parameters:
   VolumeSize:
-    Description: "Volume Size for Rancher Nodes (Default: 128)"
+    Description: 'Volume Size for Rancher Nodes (Default: 128)'
     Type: Number
-    MinValue: '25'
+    MinValue: '32'
     Default: '128'
   VPCCidr:
-    Description: "VPC CIDR - First 2 Octects Only (Default: 10.0)"
+    Description: 'VPC CIDR - First 2 Octects Only (Default: 10.0)'
     Type: String
     MinLength: '3'
     MaxLength: '7'
@@ -33,40 +31,41 @@ Parameters:
     AllowedPattern: (\d{1,3})\.(\d{1,3})
     ConstraintDescription: must be a valid dot-separated string of the form x.x
   AllowedCidr:
-    Description: "Allow CIDR for Inbound Traffic to Rancher (Default: 0.0.0.0/0)"
+    Description: 'Allow CIDR for Inbound Traffic to Rancher (Default: 0.0.0.0/0)'
     Type: String
     Default: '0.0.0.0/0'
   WorkshopC9InstanceVolumeSize:
+    Description: 'Volume Size for the Cloud9 Instance (Default: 32)'
     Type: Number
-    Description: The Size in GB of the Cloud9 Instance Volume.
-    Default: 32
+    MinValue: '16'
+    Default: '32'
   RancherClusterToken:
-    Description: "Cluster Join Token for RKE2 Cluster (Default: Pa22word)"
+    Description: 'Cluster Join Token for RKE2 Cluster (Default: Pa22word)'
     Type: String
     Default: Pa22word
     MinLength: '5'
     MaxLength: '200'
     NoEcho: true
   RancherBootstrapPassword:
-    Description: "Initial Password to Access Rancher Manager (Default: Pa22word)"
+    Description: 'Initial Password to Access Rancher Manager (Default: Pa22word)'
     Type: String
     Default: Pa22word
     MinLength: '5'
     MaxLength: '50'
     NoEcho: true
   AssetsBucketName:
-    Description: AWS Workshop Studio Assets Bucket Name
+    Description: 'AWS Workshop Studio Assets Bucket Name (Default: None)'
     Type: String
   AssetsBucketPrefix:
-    Description: AWS Workshop Studio Assets Bucket Prefix
+    Description: 'AWS Workshop Studio Assets Bucket Prefix (Default: None)'
     Type: String
 
 Mappings:
   AWSRegionArch2AMI:
     us-east-1:
-      HVM64: ami-0952d52af14727a0c
+      HVM64: ami-0a304994b2ceb8861
     us-west-2:
-      HVM64: ami-02c9e452bc50f23dc
+      HVM64: ami-0811585bdf2fb0df4
 
 Resources:
   ######
@@ -75,11 +74,11 @@ Resources:
   PlaceSecret:
     Type: AWS::SecretsManager::Secret
     Properties:
-      Description: 'Rancher user and pasword combination'
+      Description: 'Rancher Manager Username and Password'
       Name: RancherPass
       SecretString: !Sub
-       - 'username: admin, password: ${RanchPassword}'
-       - { RanchPassword: !Ref RancherBootstrapPassword }
+        - 'username: admin, password: ${RancherPassword}'
+        - { RancherPassword: !Ref RancherBootstrapPassword }
 
   #######
   # VPC #
@@ -353,9 +352,9 @@ Resources:
           - Effect: Allow
             Principal:
               AWS:
-              - !GetAtt RancherCloudCredentialUser.Arn
+                - !GetAtt RancherCloudCredentialUser.Arn
               Service:
-              - ec2.amazonaws.com
+                - ec2.amazonaws.com
             Action:
               - sts:AssumeRole
       Path: /
@@ -475,7 +474,7 @@ Resources:
               - iam:RemoveRoleFromInstanceProfile
             Resource: '*'
       Users:
-      - !Ref RancherCloudCredentialUser
+        - !Ref RancherCloudCredentialUser
 
   RancherCloudCredentialKey:
     Type: AWS::IAM::AccessKey
@@ -492,9 +491,9 @@ Resources:
           - Effect: Allow
             Principal:
               AWS:
-              - !GetAtt RancherCloudCredentialUser.Arn
+                - !GetAtt RancherCloudCredentialUser.Arn
               Service:
-              - ec2.amazonaws.com
+                - ec2.amazonaws.com
             Action:
               - sts:AssumeRole
       Path: /
@@ -523,9 +522,9 @@ Resources:
     Type: AWS::EC2::LaunchTemplate
     Properties:
       LaunchTemplateName: !Join
-            - '-'
-            - - !Ref 'AWS::StackName'
-              - cp-launch-template
+        - '-'
+        - - !Ref 'AWS::StackName'
+          - cp-launch-template
       LaunchTemplateData:
         IamInstanceProfile:
           Arn: !GetAtt RancherInstanceProfile.Arn
@@ -541,7 +540,7 @@ Resources:
         BlockDeviceMappings:
           - Ebs:
               VolumeSize: !Ref 'VolumeSize'
-              VolumeType: gp2
+              VolumeType: gp3
               DeleteOnTermination: true
               Encrypted: true
             DeviceName: /dev/sda1
@@ -595,9 +594,9 @@ Resources:
       - RancherCPAutoScalingGroup
     Properties:
       LaunchTemplateName: !Join
-            - '-'
-            - - !Ref 'AWS::StackName'
-              - worker-launch-template
+        - '-'
+        - - !Ref 'AWS::StackName'
+          - worker-launch-template
       LaunchTemplateData:
         DisableApiTermination: 'true'
         ImageId: !FindInMap
@@ -611,7 +610,7 @@ Resources:
         BlockDeviceMappings:
           - Ebs:
               VolumeSize: !Ref 'VolumeSize'
-              VolumeType: gp2
+              VolumeType: gp3
               DeleteOnTermination: true
               Encrypted: true
             DeviceName: /dev/sda1
@@ -681,7 +680,7 @@ Resources:
       FileSystemId: !Ref RancherEFS
       SubnetId: !Ref RancherPrivateSubnet1
       SecurityGroups:
-      - !Ref RancherEFSSecurityGroup
+        - !Ref RancherEFSSecurityGroup
 
   MountTargetPrivateSubnet2:
     Type: AWS::EFS::MountTarget
@@ -689,7 +688,7 @@ Resources:
       FileSystemId: !Ref RancherEFS
       SubnetId: !Ref RancherPrivateSubnet2
       SecurityGroups:
-      - !Ref RancherEFSSecurityGroup
+        - !Ref RancherEFSSecurityGroup
 
   MountTargetPrivateSubnet3:
     Type: AWS::EFS::MountTarget
@@ -697,7 +696,7 @@ Resources:
       FileSystemId: !Ref RancherEFS
       SubnetId: !Ref RancherPrivateSubnet3
       SecurityGroups:
-      - !Ref RancherEFSSecurityGroup
+        - !Ref RancherEFSSecurityGroup
 
   ###################
   # Security Groups #
@@ -769,11 +768,11 @@ Resources:
         - IpProtocol: tcp
           FromPort: '30080'
           ToPort: '30080'
-          SourceSecurityGroupId: !GetAtt 'RancherIngressELBSG.GroupId'
+          SourceSecurityGroupId: !GetAtt 'RancherIngressELBSecurityGroup.GroupId'
         - IpProtocol: tcp
           FromPort: '30443'
           ToPort: '30443'
-          SourceSecurityGroupId: !GetAtt 'RancherIngressELBSG.GroupId'
+          SourceSecurityGroupId: !GetAtt 'RancherIngressELBSecurityGroup.GroupId'
         - IpProtocol: '-1'
           FromPort: '0'
           ToPort: '65535'
@@ -800,7 +799,7 @@ Resources:
           ToPort: '9345'
           CidrIp: !Ref AllowedCidr
 
-  RancherIngressELBSG:
+  RancherIngressELBSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
       VpcId: !Ref 'RancherVPC'
@@ -856,7 +855,7 @@ Resources:
         - !Ref 'RancherPublicSubnet2'
         - !Ref 'RancherPublicSubnet3'
       SecurityGroups:
-        - !Ref 'RancherIngressELBSG'
+        - !Ref 'RancherIngressELBSecurityGroup'
       CrossZone: 'true'
       Listeners:
         - LoadBalancerPort: '80'
@@ -875,7 +874,7 @@ Resources:
   ###########
   # AWS EKS #
   ###########
-  EksAllAccessManagedPolicy:
+  EKSAllAccessManagedPolicy:
     Type: AWS::IAM::ManagedPolicy
     Properties:
       PolicyDocument:
@@ -884,23 +883,23 @@ Resources:
           - Effect: Allow
             Action:
               - eks:*
-            Resource: "*"
+            Resource: '*'
           - Effect: Allow
             Action:
               - ssm:GetParameter
               - ssm:GetParameters
             Resource:
-              - !Sub "arn:aws:ssm:*:${AWS::AccountId}:parameter/aws/*"
-              - "arn:aws:ssm:*::parameter/aws/*"
+              - !Sub 'arn:aws:ssm:*:${AWS::AccountId}:parameter/aws/*'
+              - 'arn:aws:ssm:*::parameter/aws/*'
           - Effect: Allow
             Action:
               - kms:CreateGrant
               - kms:DescribeKey
-            Resource: "*"
+            Resource: '*'
           - Effect: Allow
             Action:
               - logs:PutRetentionPolicy
-            Resource: "*"
+            Resource: '*'
 
   IAMLimitedAccessManagedPolicy:
     Type: AWS::IAM::ManagedPolicy
@@ -937,34 +936,34 @@ Resources:
               - iam:DeletePolicy
               - iam:ListPolicyVersions
             Resource:
-              - !Sub "arn:aws:iam::${AWS::AccountId}:instance-profile/*"
-              - !Sub "arn:aws:iam::${AWS::AccountId}:role/*"
-              - !Sub "arn:aws:iam::${AWS::AccountId}:policy/eksctl-*"
-              - !Sub "arn:aws:iam::${AWS::AccountId}:oidc-provider/*"
-              - !Sub "arn:aws:iam::${AWS::AccountId}:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup"
-              - !Sub "arn:aws:iam::${AWS::AccountId}:role/eksctl-managed-*"
+              - !Sub 'arn:aws:iam::${AWS::AccountId}:instance-profile/*'
+              - !Sub 'arn:aws:iam::${AWS::AccountId}:role/*'
+              - !Sub 'arn:aws:iam::${AWS::AccountId}:policy/eksctl-*'
+              - !Sub 'arn:aws:iam::${AWS::AccountId}:oidc-provider/*'
+              - !Sub 'arn:aws:iam::${AWS::AccountId}:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup'
+              - !Sub 'arn:aws:iam::${AWS::AccountId}:role/eksctl-managed-*'
           - Effect: Allow
             Action:
               - iam:GetRole
             Resource:
-              - !Sub "arn:aws:iam::${AWS::AccountId}:role/*"
+              - !Sub 'arn:aws:iam::${AWS::AccountId}:role/*'
           - Effect: Allow
             Action:
               - iam:CreateServiceLinkedRole
               - kms:DescribeKey
               - kms:ListKeys
-            Resource: "*"
+            Resource: '*'
             Condition:
               StringEquals:
-                "iam:AWSServiceName":
-                  - "eks.amazonaws.com"
-                  - "eks-nodegroup.amazonaws.com"
-                  - "eks-fargate.amazonaws.com"
+                'iam:AWSServiceName':
+                  - 'eks.amazonaws.com'
+                  - 'eks-nodegroup.amazonaws.com'
+                  - 'eks-fargate.amazonaws.com'
 
   EKSCTLRole:
     Type: AWS::IAM::Role
     DependsOn:
-      - EksAllAccessManagedPolicy
+      - EKSAllAccessManagedPolicy
       - IAMLimitedAccessManagedPolicy
     Properties:
       AssumeRolePolicyDocument:
@@ -973,7 +972,7 @@ Resources:
           - Effect: Allow
             Principal:
               Service:
-              - ec2.amazonaws.com
+                - ec2.amazonaws.com
             Action:
               - sts:AssumeRole
       Path: /
@@ -981,7 +980,7 @@ Resources:
         - arn:aws:iam::aws:policy/AmazonEC2FullAccess
         - arn:aws:iam::aws:policy/AWSCloudFormationFullAccess
         - !Ref IAMLimitedAccessManagedPolicy
-        - !Ref EksAllAccessManagedPolicy
+        - !Ref EKSAllAccessManagedPolicy
 
   EKSCTLInstanceProfile:
     Type: AWS::IAM::InstanceProfile
@@ -998,15 +997,15 @@ Resources:
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:
-        - Effect: Allow
-          Principal:
-            Service:
-            - eks.amazonaws.com
-            - ec2.amazonaws.com
-            - iam.amazonaws.com
-            - cloudformation.amazonaws.com
-          Action:
-          - sts:AssumeRole
+          - Effect: Allow
+            Principal:
+              Service:
+                - eks.amazonaws.com
+                - ec2.amazonaws.com
+                - iam.amazonaws.com
+                - cloudformation.amazonaws.com
+            Action:
+              - sts:AssumeRole
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AmazonEKSClusterPolicy
 
@@ -1017,15 +1016,15 @@ Resources:
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:
-        - Effect: Allow
-          Principal:
-            Service:
-            - eks.amazonaws.com
-            - ec2.amazonaws.com
-            - iam.amazonaws.com
-            - cloudformation.amazonaws.com
-          Action:
-          - sts:AssumeRole
+          - Effect: Allow
+            Principal:
+              Service:
+                - eks.amazonaws.com
+                - ec2.amazonaws.com
+                - iam.amazonaws.com
+                - cloudformation.amazonaws.com
+            Action:
+              - sts:AssumeRole
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy
         - arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
@@ -1046,18 +1045,18 @@ Resources:
   KMSSecretsKey:
     Type: AWS::KMS::Key
     Properties:
-      Description: "key for EKS secrets encryption"
+      Description: 'key for EKS secrets encryption'
       Enabled: true
       KeyPolicy:
-         Version: '2012-10-17'
-         Id: key-default-1
-         Statement:
-         - Sid: Enable IAM User Permissions
-           Effect: Allow
-           Principal:
-             AWS: !Sub arn:aws:iam::${AWS::AccountId}:root
-           Action: kms:*
-           Resource: '*'
+        Version: '2012-10-17'
+        Id: key-default-1
+        Statement:
+          - Sid: Enable IAM User Permissions
+            Effect: Allow
+            Principal:
+              AWS: !Sub arn:aws:iam::${AWS::AccountId}:root
+            Action: kms:*
+            Resource: '*'
 
 Outputs:
   CloudCredentialArn:
@@ -1075,10 +1074,10 @@ Outputs:
   Cloud9IDE:
     Value:
       Fn::Join:
-      - ''
-      - - https://
-        - Ref: AWS::Region
-        - ".console.aws.amazon.com/cloud9/ide/"
-        - Ref: EKSCloud9Env
-        - "?region="
-        - Ref: AWS::Region
+        - ''
+        - - https://
+          - Ref: AWS::Region
+          - '.console.aws.amazon.com/cloud9/ide/'
+          - Ref: EKSCloud9Env
+          - '?region='
+          - Ref: AWS::Region

@@ -14,11 +14,35 @@ Learn how to easily deploy and manage Kubernetes with Rancher on the AWS Cloud!
 
 ## Requirements
 
-- Basic Knowledge of Kubernetes and AWS Infrastructure.
+- Basic Knowledge of Kubernetes and Containers.
+- Basic Knowledge of AWS and Cloud Infrastructure.
+- (Helpful) Basic Knowledge of Rancher, RKE2, EKS, and Cloud9.
+
+<details>
+<summary>For Workshops at AWS Events</summary>
+
+::::expand{header="For Workshops at AWS Events"}
+
+- No additional requirements.
+
+::::
+
+</details>
+
+<details>
+<summary>For Use Outside AWS Events</summary>
+
+::::expand{header="For Use Outside AWS Events"}
+
 - AWS Account - If you don't have one, it's easy and free to [create one now](https://aws.amazon.com/)!
   - AWS Account with the ability to deploy into _us-east-1_.
   - AWS Account IAM Role with _elevated privileges_ to interact with AWS Services.
   - AWS Service Quota with at least 1 VPC, 56 vCPUs, 220 GiB Memory, and 1750 Gi of Storage.
+- _Note:_ The `AdministratorAccess` managed policy in IAM provides sufficient permissions, although your organization may choose to use a custom policy with more restrictions. For more information, see [AWS managed policies for job functions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html).
+
+::::
+
+</details>
 
 ## Table of Contents
 
