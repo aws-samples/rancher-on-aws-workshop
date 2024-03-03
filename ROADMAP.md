@@ -9,9 +9,9 @@ This document describes the current status and the upcoming milestones of the Ra
 |   ✔    | **[Determine Improvements and Launch Roadmap](#determine-improvements-and-launch-roadmap)** | 2 / 2 | `enhancement` | Jul 21 2023 |
 |   ✔    |           **[Improve Screenshot Highlighting](#improve-screenshot-highlighting)**           | 6 / 6 | `enhancement` | Sep 01 2023 |
 |   ✔    |  **[Cleanup Workshop Formatting and Language](#cleanup-workshop-formatting-and-language)**  | 2 / 2 | `enhancement` | Sep 01 2023 |
-|   🚀   |          **[Add Additional Demo Applications](#add-additional-demo-applications)**          | 0 / 3 |   `feature`   | Oct 20 2023 |
-|   🚀   |  **[Implement Support for Additional Regions](#implement-support-for-additional-regions)**  | 0 / 4 |   `feature`   | Oct 31 2023 |
-|   🚀   |      **[Cloud9 Optimization and Improvements](#cloud9-optimization-and-improvements)**      | 0 / 4 | `enhancement` | Nov 30 2023 |
+|   🚀   |          **[Add Additional Demo Applications](#add-additional-demo-applications)**          | 0 / 3 |   `feature`   | Apr 01 2024 |
+|   🚀   |  **[Implement Support for Additional Regions](#implement-support-for-additional-regions)**  | 0 / 4 |   `feature`   | Jun 01 2024 |
+|   🚀   |      **[Cloud9 Optimization and Improvements](#cloud9-optimization-and-improvements)**      | 0 / 4 | `enhancement` | May 01 2024 |
 
 ### Determine Improvements and Launch Roadmap
 
