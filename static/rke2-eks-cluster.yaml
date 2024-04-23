@@ -847,7 +847,7 @@ Resources:
         Timeout: '5'
 
   RancherELB:
-    DependsOn: PublicInternetGateway
+    DependsOn: PublicGatewayAttachment
     Type: AWS::ElasticLoadBalancing::LoadBalancer
     Properties:
       Subnets:
