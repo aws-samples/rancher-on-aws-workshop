@@ -46,21 +46,21 @@ Learn how to easily deploy and manage Kubernetes with Rancher on the AWS Cloud!
 
 ## Table of Contents
 
-- [Introduction](/content/10-introduction/index.en.md)
-  - [Workshop Overview](/content/10-introduction/11-workshop-overview/index.en.md)
-  - [Workshop Environment](/content/10-introduction/12-workshop-environment/index.en.md)
-  - [Documentation](/content/10-introduction/13-documentation/index.en.md)
-- [Exploring the Cluster](/content/20-exploring-the-cluster/index.en.md)
-  - [Exploring the Cluster](/content/20-exploring-the-cluster/21-exploring-the-cluster/index.en.md)
-  - [Rancher Applications](/content/20-exploring-the-cluster/22-rancher-applications/index.en.md)
-  - [Kubernetes Applications](/content/20-exploring-the-cluster/23-kubernetes-applications/index.en.md)
-- [Creating a Cluster](/content/30-creating-a-cluster/index.en.md)
-  - [Creating the EKS Cluster](/content/30-creating-a-cluster/31-creating-eks-cluster/index.en.md)
-  - [Creating the RKE2 Cluster](/content/30-creating-a-cluster/32-creating-rke2-cluster/index.en.md)
-- [Importing a Cluster](/content/40-importing-a-cluster/index.en.md)
-  - [Importing the Cluster](/content/40-importing-a-cluster/41-importing-the-cluster/index.en.md)
-- [Additional AWS Integrations](/content/50-additional-integrations/index.en.md)
-- [Workshop Conclusion](/content/60-conclusion/index.en.md)
+- [Introduction](/10-introduction)
+  - [Workshop Overview](/10-introduction/11-workshop-overview)
+  - [Workshop Environment](/10-introduction/12-workshop-environment)
+  - [Documentation](/10-introduction/13-documentation)
+- [Exploring the Cluster](/20-exploring-the-cluster)
+  - [Exploring the Cluster](/20-exploring-the-cluster/21-exploring-the-cluster)
+  - [Rancher Applications](/20-exploring-the-cluster/22-rancher-applications)
+  - [Kubernetes Applications](/20-exploring-the-cluster/23-kubernetes-applications)
+- [Creating a Cluster](/30-creating-a-cluster)
+  - [Creating the EKS Cluster](/30-creating-a-cluster/31-creating-eks-cluster)
+  - [Creating the RKE2 Cluster](/30-creating-a-cluster/32-creating-rke2-cluster)
+- [Importing a Cluster](/40-importing-a-cluster)
+  - [Importing the Cluster](/40-importing-a-cluster/41-importing-the-cluster)
+- [Additional AWS Integrations](/50-additional-integrations)
+- [Workshop Conclusion](/60-conclusion)
 
 ### GitHub Repository
 
