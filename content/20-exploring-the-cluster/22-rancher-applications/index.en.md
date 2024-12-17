@@ -39,9 +39,11 @@ To install the dependencies, run these commnads using the kubectl shell provided
 Once the kubectl shell opens, copy and paste the codeblock below and press **`enter`**. Once they complete, you can close the kubectl shell.
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.5.1/deploy/prerequisite/longhorn-iscsi-installation.yaml
+kubectl create namespace longhorn-system
 
-kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.5.1/deploy/prerequisite/longhorn-nfs-installation.yaml
+kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/refs/heads/master/deploy/prerequisite/longhorn-iscsi-installation.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/refs/heads/master/deploy/prerequisite/longhorn-nfs-installation.yaml
 ```
 
 ![rancher-app-longhorn-kubectl-complete](/static/images/content/22-app-longhorn-kubectl-complete.png)
@@ -204,4 +206,4 @@ Head back to the Rancher Manager and Monitoring. In the middle of the dashboard,
 
 ## Completed!
 
-We're done! We deployed and explored Longhorn, NeuVector, and Monitoring using the Rancher Multi-Cluster Manager App Catalog. Click **Next** to move on to deploy additional example Kubernetes applications using Rancher.
+We're done! We deployed and explored Longhorn, NeuVector, and Monitoring using the Rancher Manager App Catalog. Click **Next** to move on to deploy additional example Kubernetes applications using Rancher.

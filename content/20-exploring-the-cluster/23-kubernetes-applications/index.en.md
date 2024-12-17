@@ -6,7 +6,7 @@ weight: 23
 In the following module, you will complete the outcomes listed below:
 
 1. Use Rancher Fleet to deploy a Kubernetes application.
-2. Explore the application lifecycle management of Kubernetes applications with the Rancher Multi-Cluster Manager.
+2. Explore the application lifecycle management of Kubernetes applications with the Rancher Manager.
 
 ---
 
@@ -16,7 +16,7 @@ In the previous section, we deployed applications using the Rancher App Catalog.
 
 ### Step 1:
 
-Start back in the Rancher Multi-Cluster Manager. Click the the hamburger button (three lines) at the top left of the page. In the side menu, click **`Continuous Delivery`**.
+Start back in the Rancher Manager. Click the the hamburger button (three lines) at the top left of the page. In the side menu, click **`Continuous Delivery`**.
 
 ![rancher-fleet-menu](/static/images/content/23-fleet-menu.png)
 
@@ -30,7 +30,7 @@ In Fleet, the **`fleet-default`** namespace is used for all downstream clusters 
 
 ### Step 3:
 
-You can use the Rancher Multi-Cluster Manager to add Git Repos to Fleet. Fleet is configured with the `GitRepo` custom resource. You can use the user interface or provide a Kubernetes manifest, but we're going to use the **`kubectl`** shell to apply a simple provided `GitRepo` resource for this workshop.
+You can use the Rancher Manager to add Git Repos to Fleet. Fleet is configured with the `GitRepo` custom resource. You can use the user interface or provide a Kubernetes manifest, but we're going to use the **`kubectl`** shell to apply a simple provided `GitRepo` resource for this workshop.
 
 Just like in Exploring the Cluster, to enter the kubectl shell press the **`backtick`** key on your keyboard.
 
@@ -64,7 +64,7 @@ Now that we have successfully deployed our demo application, navigate back to th
 
 In the side menu of the **`local`** cluster, you should see a new menu named **`Flask Demo App`**. This is a link to the demo application that we deployed using Fleet. When you select the new link, you have the option to access the application. Click on the **`Flask Demo App`** box to open the application.
 
-In the Rancher Multi-Cluster Manager interface, users can add important applications or links to this side menu. Many administrators create links for enterprise applications to make them easily accesible to users via the Rancher Proxy. You can learn more about configuring the Rancher Multi-Cluster Manager interface [here](https://ranchermanager.docs.rancher.com/v2.7/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/custom-branding).
+In the Rancher Manager interface, users can add important applications or links to this side menu. Many administrators create links for enterprise applications to make them easily accesible to users via the Rancher Proxy. You can learn more about configuring the Rancher Manager interface [here](https://ranchermanager.docs.rancher.com/v2.7/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/custom-branding).
 
 ![rancher-fleet-local-cluster-demo-app](/static/images/content/23-fleet-local-cluster-demo-app.png)
 
@@ -78,4 +78,4 @@ On the demo app interface, you are able to see both the total amount of hits on 
 
 ## Completed!
 
-We're done! We deployed a Kubernetes application using Fleet and the Rancher Multi-Cluster Manager. In the next section, we will create an Amazon EKS Cluster using `eksctl` and AWS Cloud9.
+We're done! We deployed a Kubernetes application using Fleet and the Rancher Manager. In the next section, we will create an Amazon EKS Cluster using `eksctl` and AWS Cloud9.

@@ -5,8 +5,8 @@ weight: 41
 
 In the following module, you will complete the outcomes listed below:
 
-1. Use the Rancher Multi-Cluster Manager to import the newly created EKS Cluster.
-2. Access the manage the imported EKS Cluster using the Rancher Multi-Cluster Manager.
+1. Use the Rancher Manager to import the newly created EKS Cluster.
+2. Access the manage the imported EKS Cluster using the Rancher Manager.
 
 ---
 
@@ -16,7 +16,7 @@ In the following module, you will complete the outcomes listed below:
 
 ### Step 1:
 
-We have successfully created an EKS Cluster and an RKE2 Cluster. Next, we'll **import** the EKS Cluster to be managed by the Rancher Multi-Cluster Manager. (Since we created the RKE2 Cluster from the Rancher Multi-Cluster Manager, it's already managed. We don't have to import it.)
+We have successfully created an EKS Cluster and an RKE2 Cluster. Next, we'll **import** the EKS Cluster to be managed by the Rancher Manager. (Since we created the RKE2 Cluster from the Rancher Manager, it's already managed. We don't have to import it.)
 
 Start by selecting **`Cluster Management`** from the left menu.
 
@@ -75,10 +75,10 @@ Once the **`eks-cluster`** completes importing and provisioning the management r
 
 ### Step 6:
 
-Next, click on the **`eks-cluster`** in the side menu. This is the cluster detail view of our EKS `downstream cluster`. We can interact with our EKS Cluster in the _exact_ same way as our `management cluster` and RKE2 `downstream cluster`. Rancher Multi-Cluster Manager provides a single pane of glass to interact with and manage multiple clusters of different types.
+Next, click on the **`eks-cluster`** in the side menu. This is the cluster detail view of our EKS `downstream cluster`. We can interact with our EKS Cluster in the _exact_ same way as our `management cluster` and RKE2 `downstream cluster`. Rancher Manager provides a single pane of glass to interact with and manage multiple clusters of different types.
 
 ![rancher-cluster-import-eks-success](/static/images/content/41-cluster-import-eks-details.png)
 
 ## Completed!
 
-We're done! We imported an EKS Cluster using the Rancher Multi-Cluster Manager. If you have more time to learn, you can optionally move on to install and configure **Additional AWS Integrations**. Otherwise, wrap up with the **Conclusion** section.
+We're done! We imported an EKS Cluster using the Rancher Manager. If you have more time to learn, you can optionally move on to install and configure **Additional AWS Integrations**. Otherwise, wrap up with the **Conclusion** section.

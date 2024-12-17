@@ -5,8 +5,8 @@ weight: 32
 
 In the following module, you will complete the outcomes listed below:
 
-1. Use the Rancher Multi-Cluster Manager to create a 6 node RKE2 Cluster.
-2. Access the manage the newly created RKE2 Cluster using the Rancher Multi-Cluster Manager.
+1. Use the Rancher Manager to create a 6 node RKE2 Cluster.
+2. Access the manage the newly created RKE2 Cluster using the Rancher Manager.
 
 ---
 
@@ -16,16 +16,16 @@ In the following module, you will complete the outcomes listed below:
 
 ### Step 1:
 
-Start in the Rancher Multi-Cluster Manager. Open the side menu by clicking the hamburger button
+Start in the Rancher Manager. Open the side menu by clicking the hamburger button
 at the top left of the page. In the side menu, click **`Cluster Management`**.
 
 ![rancher-cluster-menu](/static/images/content/31-cluster-menu.png)
 
 ### Step 2:
 
-**`Cluster Management`** is one the most powerful features of the Rancher Multi-Cluster Manager. You are able to create, import, and manage any type of Kubernetes cluster. We are going to start by creating an Rancher RKE2 Cluster. We will import an EKS Cluster later in the workshop.
+**`Cluster Management`** is one the most powerful features of the Rancher Manager. You are able to create, import, and manage any type of Kubernetes cluster. We are going to start by creating an Rancher RKE2 Cluster. We will import an EKS Cluster later in the workshop.
 
-For now, you can only view and access the `local` cluster. This cluster has the Rancher Multi-Cluster Manager deployed on it and is known as the `management` cluster. In production deployments, workloads should run only `downstream` clusters. This allows the two types of clusters to scale independently and prevents a workload from impacting the resources and operation of the Rancher Multi-Cluster Manager.
+For now, you can only view and access the `local` cluster. This cluster has the Rancher Manager deployed on it and is known as the `management` cluster. In production deployments, workloads should run only `downstream` clusters. This allows the two types of clusters to scale independently and prevents a workload from impacting the resources and operation of the Rancher Manager.
 
 ![rancher-cluster-home](/static/images/content/31-cluster-home.png)
 
@@ -33,13 +33,13 @@ For now, you can only view and access the `local` cluster. This cluster has the 
 
 ### Step 1:
 
-Next, we will add AWS credentials to allow Rancher Multi-Cluster Manager to create and manage Amazon EKS clusters. In the left menu, click `Cloud Credentials`. You will not see any credentials yet.
+Next, we will add AWS credentials to allow Rancher Manager to create and manage Amazon EKS clusters. In the left menu, click `Cloud Credentials`. You will not see any credentials yet.
 
 ![rancher-cluster-creds-home](/static/images/content/31-cluster-creds-home.png)
 
 ### Step 2:
 
-In the top right corner, click on **`Create`**. Here you will see all the cloud service providers that you can use with the Rancher Multi-Cluster Manager. We're going to use AWS, so click on **`Amazon`**.
+In the top right corner, click on **`Create`**. Here you will see all the cloud service providers that you can use with the Rancher Manager. We're going to use AWS, so click on **`Amazon`**.
 
 ![rancher-cluster-creds-options](/static/images/content/31-cluster-creds-options.png)
 
@@ -47,7 +47,7 @@ In the top right corner, click on **`Create`**. Here you will see all the cloud 
 
 AWS CloudFormation created an AWS Identity and Access Management (IAM) user when the workshop was provisioned. Next, we will retrieve the credentials for that user from CloudFormation. Just like when we were Exploring the Cluster, go to the AWS Console and navigate to **`Cloud Formation`**. Click on the **`rke2-eks-cluster`** stack and then click on **`Outputs`** tab.
 
-In the **`Outputs`** tab, you should see the **`CloudCredentialKey`** and **`CloudCredentialSecret`**. Let's copy and paste both those values into the Rancher Multi-Cluster Manager. Below is the information you need to input before clicking **`"Create"`**. Ensure to update **Default Region** to **`us-east-1`**.
+In the **`Outputs`** tab, you should see the **`CloudCredentialKey`** and **`CloudCredentialSecret`**. Let's copy and paste both those values into the Rancher Manager. Below is the information you need to input before clicking **`"Create"`**. Ensure to update **Default Region** to **`us-east-1`**.
 
 - **Name:** aws
 - **Access Key:** _CloudCredentialKey_
@@ -64,7 +64,7 @@ In the **`Outputs`** tab, you should see the **`CloudCredentialKey`** and **`Clo
 
 ### Step 1:
 
-Now that we have a **`Cloud Credential`** added to the Rancher Multi-Cluster Manager, let's create a cluster. In the left menu, click **`Clusters`**, then click **`Create`**. Just like the Cloud Credential menu, you can see all the available Cloud Providers that you can use to create a cluster. Select **`Amazon EC2`**.
+Now that we have a **`Cloud Credential`** added to the Rancher Manager, let's create a cluster. In the left menu, click **`Clusters`**, then click **`Create`**. Just like the Cloud Credential menu, you can see all the available Cloud Providers that you can use to create a cluster. Select **`Amazon EC2`**.
 
 ![rancher-cluster-create-options](/static/images/content/31-cluster-create-options.png)
 
@@ -118,7 +118,7 @@ Once you are ready to create the cluster, click on **`Create`**.
 
 ### Step 3:
 
-Here you will see the **`rke2-cluster`** listed in the menu we saw before with all the clusters under management of the Rancher Multi-Cluster Manager.
+Here you will see the **`rke2-cluster`** listed in the menu we saw before with all the clusters under management of the Rancher Manager.
 
 ![rancher-cluster-create-ec2-success](/static/images/content/31-cluster-create-ec2-success.png)
 
@@ -146,4 +146,4 @@ Here you will notice this is the same view that we saw under Exploring the Clust
 
 ## Completed!
 
-We're done! We created an RKE2 Cluster on EC2 using the Rancher Multi-Cluster Manager. Let's move on to import an Amazon EKS Cluster into Rancher.
+We're done! We created an RKE2 Cluster on EC2 using the Rancher Manager. Let's move on to import an Amazon EKS Cluster into Rancher.
