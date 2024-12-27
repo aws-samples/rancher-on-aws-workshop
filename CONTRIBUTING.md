@@ -42,7 +42,7 @@ Looking at the existing issues is a great way to find something to contribute on
 ## Code of Conduct
 
 This project has adopted the [Amazon Open Source Code of Conduct](https://aws.github.io/code-of-conduct). For more information see the [Code of Conduct FAQ](https://aws.github.io/code-of-conduct-faq) or contact
-opensource-codeofconduct@amazon.com with any additional questions or comments. If you have any Rancher specific questions or comments, please out to natsec@rancherfederal.com.
+opensource-codeofconduct@amazon.com with any additional questions or comments. If you have any Rancher specific questions or comments, please out to natsec@ranchergovernment.com.
 
 ## Security Issue Notifications
 

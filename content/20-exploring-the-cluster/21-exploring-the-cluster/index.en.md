@@ -6,7 +6,7 @@ weight: 21
 In the following module, you will complete the outcomes listed below:
 
 1. Access the AWS Console and AWS CloudFormation Console to find the Rancher cluster URL
-2. Explore an RKE2 Cluster with the Rancher Multi-Cluster Manager
+2. Explore an RKE2 Cluster with the Rancher Manager
 
 ---
 
@@ -27,18 +27,18 @@ At the top of the page, select the search bar and search for **`"CloudFormation"
 
 In the **`CloudFormation Console`**, click on the Rancher Manager **`Stack`**. If you are using AWS Workshop Studio at an AWS Event, the stack will be named **`rke2-eks-cluster-workshop`**. Outside AWS Workshop Studio, the stack will have a user-defined name you selected in the previous section.
 
-On the stack detail page, click on the **`Outputs`** tab. You should see the **`RancherURL`**. Open the link in a new tab to bring up the Rancher Multi-Cluster Manager web interface. If your browser presents you with a certificate warning, you can safely proceed.
+On the stack detail page, click on the **`Outputs`** tab. You should see the **`RancherURL`**. Open the link in a new tab to bring up the Rancher Manager web interface. If your browser presents you with a certificate warning, you can safely proceed.
 
 > The workshop environment uses self-signed certificates for learning purposes. In a production environment, always use certificates issued from a trusted public or private certificate authority. [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) makes it easy to provision, manage, deploy, and renew SSL/TLS certificates.
 
 ![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt.png)
 ![aws-console-cf-mgmt](/static/images/content/21-aws-cf-mgmt-detail.png)
 
-## Rancher Multi-Cluster Manager
+## Rancher Manager
 
 ### Step 1:
 
-Next, we need to complete the bootstrap process in the Rancher Multi-Cluster Manager.
+Next, we need to complete the bootstrap process in the Rancher Manager.
 
 First, enter the bootstrap password that was set during installation: **`"Pa22word"`**. Select **`Log in with Local User`**.
 
@@ -58,9 +58,9 @@ Next, verify a few items on the setup page and click **`Continue`**!
 
 ### Step 3:
 
-Welcome to the Rancher Multi-Cluster Manager! The starting page in the Rancher Multi-Cluster Manager provides an overview of the cluster(s) managed by this MCM cluster.
+Welcome to the Rancher Manager! The starting page in the Rancher Manager provides an overview of the cluster(s) managed by this MCM cluster.
 
-Under **`Clusters`**, you should see a cluster named **`local`**. This cluster is your **`management cluster`**. As we move through the workshop, we will be creating and importing additional clusters with the Rancher Manager. These are known as **`downstream cluster(s)`**. In most production enviroments, run workload and applications on downstream clusters and reserve the management cluster only for the Rancher Multi-Cluster Manager.
+Under **`Clusters`**, you should see a cluster named **`local`**. This cluster is your **`management cluster`**. As we move through the workshop, we will be creating and importing additional clusters with the Rancher Manager. These are known as **`downstream cluster(s)`**. In most production enviroments, run workload and applications on downstream clusters and reserve the management cluster only for the Rancher Manager.
 
 ![rancher-manager-home](/static/images/content/21-rancher-home.png)
 ![rancher-manager-home-detail](/static/images/content/21-rancher-home-detail.png)
@@ -79,7 +79,7 @@ One item to highlight here is the label on the **`Control Plane, Etcd`** nodes:
 
 In most production Kubernetes environments, you should have dedicated nodes for control plane and etcd to ensure stability and reserve resources for system workloads. In Kubernetes, that is done through Taints and Tolerations, as you can see here.
 
-> You can learn more about best-practices for production Kubernetes clusters here: https://kubernetes.io/docs/setup/production-environment/#production-control-plane
+> You can learn more about best practices for production Kubernetes clusters here: https://kubernetes.io/docs/setup/production-environment/#production-control-plane
 
 ![rancher-manager-nodes](/static/images/content/21-rancher-nodes.png)
 
@@ -103,7 +103,7 @@ _A Kubernetes **service** is a resource object for exposing a network applicatio
 
 ![rancher-manager-services](/static/images/content/21-rancher-services.png)
 
-Next we will take a look at the application management feature of the Rancher Multi-Cluster Manager. On the left menu, click on the **`Apps`** menu item.
+Next we will take a look at the application management feature of the Rancher Manager. On the left menu, click on the **`Apps`** menu item.
 
 This is the Rancher App Catalog, which provides an interface for managing popular Kubernetes application via Helm Charts. You will likely recognize some of the popular products and projects. Developers can also add their own Helm Charts to the Rancher App Catalog so users and deployment teams can deploy them easily.
 
@@ -117,4 +117,4 @@ Rancher provides multiple ways for teams to deploy applications. From the consol
 
 ## Completed!
 
-We're done! We explored an RKE2 Cluster in AWS using the Rancher Multi-Cluster Manager. You can take a few more minutes to explore more of the cluster. Then click **Next** to move to the next section and deploy additional components of the Rancher Stack.
+We're done! We explored an RKE2 Cluster in AWS using the Rancher Manager. You can take a few more minutes to explore more of the cluster. Then click **Next** to move to the next section and deploy additional components of the Rancher Stack.

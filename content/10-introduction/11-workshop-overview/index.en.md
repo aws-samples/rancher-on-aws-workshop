@@ -8,10 +8,10 @@ weight: 11
 ## Workshop Topics
 
 - Deploying and Exploring Rancher on AWS
-- Deploying Longhorn, NeuVector, and Monitoring using the Rancher Multi-Cluster Manager
-- Creating a EC2 RKE2 Cluster using the Rancher Multi-Cluster Manager
+- Deploying Longhorn, NeuVector, and Monitoring using the Rancher Manager
+- Creating a EC2 RKE2 Cluster using the Rancher Manager
 - Creating a EKS Cluster using AWS Cloud9 and `eksctl`
-- Importing a EKS Cluster using the Rancher Multi-Cluster Manager
+- Importing a EKS Cluster using the Rancher Manager
 - Kubernetes and Cluster Management Best Practices with AWS and Rancher
 
 ## Requirements
@@ -51,13 +51,13 @@ weight: 11
 **Total Duration of the workshop is 3 Hours.**
 
 - Exploring a Rancher RKE2 Kubernetes cluster on EC2 Instances. (30m)
-- Deploying Longhorn, NeuVector, and Monitoring using the Rancher Multi-Cluster Manager. (15m)
-- Deploying Kubernetes Demo Applications using the RRancher Multi-Cluster Manager. (15m)
+- Deploying Longhorn, NeuVector, and Monitoring using the Rancher Manager. (15m)
+- Deploying Kubernetes Demo Applications using the Rancher Manager. (15m)
 - Short Break! (15m)
 - Creating a Amazon EKS Kubernetes cluster on EC2 Instances. (30m)
 - Creating a Rancher RKE2 Kubernetes cluster on EC2 Instances. (30m)
 - Importing an existing Amazon EKS Kubernetes cluster. (15m)
-- Cluster and Application Lifecycle Management best-practices with AWS and Rancher. (15m)
+- Cluster and Application Lifecycle Management best practices with AWS and Rancher. (15m)
 - Supply Chain Security and Management with AWS and Rancher. (15m)
 
 ## Workshop Outcomes
@@ -66,8 +66,8 @@ weight: 11
 - Ability to deploy Kubernetes clusters from the Rancher Management Console.
 - Ability to deploy Kubernetes Applications from the Rancher Management Console.
 - Ability to deploy EKS Applications and Helm Charts from EKS or Rancher Management Console.
-- Understanding of best-practices for deploying and managing Kubernetes with AWS and Rancher.
-- Understanding of best-practices for securing and managing Software Supply Chains with AWS and Rancher.
+- Understanding of best practices for deploying and managing Kubernetes with AWS and Rancher.
+- Understanding of best practices for securing and managing Software Supply Chains with AWS and Rancher.
 
 ## Workshop Audience
 

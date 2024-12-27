@@ -11,7 +11,7 @@ additionalLinks:
     link: https://docs.aws.amazon.com
   - title: Rancher Kubernetes Engine 2 (RKE2)
     link: https://docs.rke2.io/
-  - title: Rancher Multicluster Management (MCM)
+  - title: Rancher Manager (MCM)
     link: https://ranchermanager.docs.rancher.com/
   - title: Longhorn (Storage)
     link: https://docs.longhorn.io

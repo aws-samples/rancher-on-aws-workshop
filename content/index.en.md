@@ -8,7 +8,7 @@ title: 'Welcome to Rancher on AWS'
 
 Learn how to easily deploy and manage Kubernetes with Rancher on the AWS Cloud!
 
-**Created together by [Rancher Government Solutions](https://ranchergovernment.com) and [Amazon Web Services](https://aws.amazon.com) under the MIT-0 and CC-BY-4.0 Licenses.**
+**Created together by [Rancher Government](https://ranchergovernment.com) and [Amazon Web Services](https://aws.amazon.com) under the MIT-0 and CC-BY-4.0 Licenses.**
 
 **To get started, please review the information below and then start the workshop by clicking next!**
 

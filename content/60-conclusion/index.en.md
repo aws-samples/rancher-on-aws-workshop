@@ -17,12 +17,12 @@ Let's review what you've accomplished by completing this workshop:
 - Ability to deploy Kubernetes clusters from the Rancher Management Console.
 - Ability to deploy Kubernetes Applications from the Rancher Management Console.
 - Ability to deploy EKS Applications and Helm Charts from EKS or Rancher Management Console.
-- Understanding of best-practices for deploying and managing Kubernetes with AWS and Rancher.
-- Understanding of best-practices for securing and managing Software Supply Chains with AWS and Rancher.
+- Understanding of best practices for deploying and managing Kubernetes with AWS and Rancher.
+- Understanding of best practices for securing and managing Software Supply Chains with AWS and Rancher.
 
-For any questions or to continue this conversation with the RGS team, please contact us via email at natsec@rancherfederal.com!
+For any questions or to continue this conversation with the RGS team... please contact us via email at natsec@ranchergovernment.com!
 
-For any questions or to continue this conversation with the AWS team, please contact us via email at mpo-proserve@amazon.com!
+For any questions or to continue this conversation with the AWS team... please contact us via email at mpo-proserve@amazon.com!
 
 ## Workshop Cleanup
 
@@ -32,7 +32,7 @@ If you're completing this workshop outside an official event, please follow the 
 
 ### Step 1:
 
-From the Rancher Multi-Cluster Manager, delete the **`rke2-cluster`** and **`eks-cluster`**.
+From the Rancher Manager, delete the **`rke2-cluster`** and **`eks-cluster`**.
 
 ### Step 2:
 
