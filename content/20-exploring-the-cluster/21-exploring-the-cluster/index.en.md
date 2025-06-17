@@ -40,7 +40,7 @@ On the stack detail page, click on the **`Outputs`** tab. You should see the **`
 
 Next, we need to complete the bootstrap process in the Rancher Manager.
 
-First, enter the bootstrap password that was set during installation: **`"Pa22word"`**. Select **`Log in with Local User`**.
+First, enter the bootstrap password that was set during installation: **`"Pa22w0rd"`**. Select **`Log in with Local User`**.
 
 ![rancher-bootstrapping-password](/static/images/content/21-rancher-bootstrap-pw.png)
 ![rancher-bootstrapping-password](/static/images/content/21-rancher-bootstrap-pw-detail.png)

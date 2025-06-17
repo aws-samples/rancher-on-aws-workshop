@@ -40,16 +40,16 @@ Parameters:
     MinValue: '16'
     Default: '32'
   RancherClusterToken:
-    Description: 'Cluster Join Token for RKE2 Cluster (Default: Pa22word)'
+    Description: 'Cluster Join Token for RKE2 Cluster (Default: Pa22w0rd)'
     Type: String
-    Default: Pa22word
+    Default: Pa22w0rd
     MinLength: '5'
     MaxLength: '200'
     NoEcho: true
   RancherBootstrapPassword:
-    Description: 'Initial Password to Access Rancher Manager (Default: Pa22word)'
+    Description: 'Initial Password to Access Rancher Manager (Default: Pa22w0rd)'
     Type: String
-    Default: Pa22word
+    Default: Pa22w0rd
     MinLength: '5'
     MaxLength: '50'
     NoEcho: true
@@ -63,9 +63,9 @@ Parameters:
 Mappings:
   AWSRegionArch2AMI:
     us-east-1:
-      HVM64: ami-027475322a7005b9a
+      HVM64: ami-05a737c75cac0d883
     us-west-2:
-      HVM64: ami-039603dd852eacf07
+      HVM64: ami-09e4fa9ccfbc1b06c
 
 Resources:
   ######
