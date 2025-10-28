@@ -111,3 +111,7 @@ infrastructure:
           defaultValue: "{{.AssetsBucketName}}"
         - templateParameter: AssetsBucketPrefix
           defaultValue: "{{.AssetsBucketPrefix}}"
+    - templateLocation: static/cfn/code-editor.yaml
+      label: CodeEditor
+      participantVisibleStackOutputs:
+        - URL

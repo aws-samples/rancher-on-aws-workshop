@@ -15,7 +15,7 @@
   - Deploying and Exploring the Rancher Ecosystem on AWS
   - Deploying Longhorn, NeuVector, and Monitoring using the Rancher Manager
   - Creating a EC2 RKE2 Cluster using the Rancher Manager
-  - Creating a EKS Cluster using AWS Cloud9 and EKSCTL
+  - Creating a EKS Cluster using AWS Code Editor and EKSCTL
   - Importing a EKS Cluster using the Rancher Manager
   - Kubernetes and Cluster Management Best Practices with AWS and Rancher
 - Expected Duration

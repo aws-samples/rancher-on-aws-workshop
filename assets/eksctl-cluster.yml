@@ -10,7 +10,7 @@ availabilityZones:
 metadata:
   name: ${EKS_CLUSTER_NAME}
   region: ${AWS_REGION}
-  version: "1.25"
+  version: "1.34"
   
 iam:
   serviceRoleARN: ${ClusterRoleArn}
